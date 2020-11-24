@@ -13,13 +13,11 @@
 
     <!-- Custom fonts for this template-->
     <link href="assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="<?php echo base_url().'css/sb-admin-2.css'?>" rel="stylesheet">
-   
+    <link href="<?php echo base_url() . 'css/sb-admin-2.css' ?>" rel="stylesheet">
+
 
 </head>
 
@@ -36,21 +34,21 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                        
+
                             <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Design Login Sementara</h1>
                                     </div>
-                                    <form class="user" action="<?php echo base_url().'login/auth'?>" method="post">
+                                    <form class="user" action="<?php echo base_url() . 'login/auth' ?>" method="post">
                                         <div class="form-group">
-                                        <label for="username" class="sr-only">Username</label>
-            <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
+                                            <label for="username" class="sr-only">Username</label>
+                                            <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
                                         </div>
                                         <div class="form-group">
-                                        <label for="password" class="sr-only">Password</label>
-            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+                                            <label for="password" class="sr-only">Password</label>
+                                            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -61,7 +59,7 @@
                                         </div>
                                         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
                                     </form>
-                                 
+
                                     <div class="text-center">
                                         <a class="small" href="forgot-password.html">Forgot Password?</a>
                                     </div>
