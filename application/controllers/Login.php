@@ -9,7 +9,10 @@ class Login extends CI_Controller
 
     function index()
     {
+        $data['judul'] = 'ALT | Login';
+        $this->load->view('templates/header', $data);
         $this->load->view('v_login');
+        $this->load->view('templates/footer');
     }
 
     function auth()
@@ -53,7 +56,7 @@ class Login extends CI_Controller
     function logout()
     {
         $this->session->sess_destroy();
-        $url = base_url('');
+        $url = base_url();
         redirect($url);
     }
 }
