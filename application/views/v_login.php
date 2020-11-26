@@ -11,7 +11,7 @@
 
                             <form class="mt-5 mb-5 login-input" action="<?= base_url('login/auth') ?>" method="post">
                                 <div class="form-group">
-                                    <input type="text" id="username" name="username" class="form-control" placeholder="Username">
+                                    <input type="text" id="username" name="email" class="form-control" placeholder="Email">
                                 </div>
                                 <div class="form-group">
                                     <input type="password" id="password" name="password" class="form-control" placeholder="Password">
