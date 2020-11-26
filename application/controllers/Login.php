@@ -10,6 +10,7 @@ class Login extends CI_Controller
     function index()
     {
         $data['judul'] = 'ALT | Login';
+        $data['h_100'] = 'Login';
         $this->load->view('templates/header', $data);
         $this->load->view('v_login');
         $this->load->view('templates/footer');

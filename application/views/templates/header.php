@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="<?= isset($h_100)?'h-100' : '' ?>" lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -15,9 +15,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css') ?>">
     <!-- Custom Stylesheet -->
     <link href="<?= base_url('assets/css/style.css') ?>" rel="stylesheet">
-
+    
 </head>
 
-<body>
-
-    <div id="main-wrapper">
+<body class="h-100">

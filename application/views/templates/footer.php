@@ -29,8 +29,6 @@
 
 <script src="<?= base_url('assets/js/dashboard/dashboard-1.js') ?>"></script>
 
-</div>
-
 </body>
 
 </html>
