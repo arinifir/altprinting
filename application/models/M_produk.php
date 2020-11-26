@@ -16,7 +16,8 @@ Class M_produk extends CI_Model{
             'diskon_produk'      => $this->input->post('diskon_produk'),
             'desk_produk'      => $this->input->post('desk_produk'),
             'gambar_produk'      => $this->input->post('gambar_produk'),
-            'kategori_produk'  => $this->input->post('kategori_produk')
+            'kategori_produk'  => $this->input->post('kategori_produk'),
+            'status_produk'  => $this->input->post('status_produk')
          ];
          $this->db->insert('tb_produk',$data);
     }
@@ -35,7 +36,8 @@ Class M_produk extends CI_Model{
             'diskon_produk'      => $this->input->post('diskon_produk'),
             'desk_produk'      => $this->input->post('desk_produk'),
             'gambar_produk'      => $this->input->post('gambar_produk'),
-            'kategori_produk'  => $this->input->post('kategori_produk')
+            'kategori_produk'  => $this->input->post('kategori_produk'),
+            'status_produk'  => $this->input->post('status_produk')
          ];
          $kd_produk=$this->input->post('kd_produk');
          $this->db->where('kd_produk',$kd_produk);
