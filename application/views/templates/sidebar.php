@@ -4,8 +4,13 @@
             <li class="nav-label">Dashboard</li>
             <li>
                 <li>
-                <a href="" aria-expanded="false">
+                <a href="#" aria-expanded="">
                     <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="<?php echo site_url('Produk') ?>" aria-expanded="false">
+                    <i class="icon-list menu-icon"></i><span class="nav-text">Produk</span>
                 </a>
             </li>
             </li>
