@@ -4,6 +4,7 @@
             <li class="nav-label">Dashboard</li>
             <li>
                 <li>
+<<<<<<< Updated upstream
                 <a href="#" aria-expanded="">
                     <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
                 </a>
@@ -13,6 +14,12 @@
                     <i class="icon-list menu-icon"></i><span class="nav-text">Produk</span>
                 </a>
             </li>
+=======
+                <a href="" aria-expanded="false">
+                    <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
+                </a>
+            </li>
+>>>>>>> Stashed changes
             </li>
             <li class="mega-menu mega-menu-sm">
                 <a class="has-arrow" href="javascript:void()" aria-expanded="false">
