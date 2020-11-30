@@ -27,7 +27,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="<?= base_url('Sadmin/kategori') ?>" aria-expanded="false">
+                        <a href="<?= base_url('Sadmin/datakategori') ?>" aria-expanded="false">
                             <i class="fa fa-list menu-icon"></i><span class="nav-text">Kategori</span>
                         </a>
                     </li>

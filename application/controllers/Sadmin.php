@@ -21,6 +21,8 @@ class Sadmin extends CI_Controller
         $this->load->view('sadmin/vdashboard');
         $this->load->view('sadmin/footer');
     }
+
+    // Admin
     public function datadmin()
     {
         $level = 2;
@@ -138,6 +140,8 @@ class Sadmin extends CI_Controller
         $this->session->set_flashdata('berhasil', 'Akun ID '.$id.' Dinonaktifkan');
         redirect('Sadmin/datadmin');
     }
+
+    //Pelanggan
     public function datapelanggan()
     {
         $level = 3;
@@ -254,5 +258,70 @@ class Sadmin extends CI_Controller
         $this->admin->editData('tb_user', $data, $where);
         $this->session->set_flashdata('berhasil', 'Akun ID '.$id.' Dinonaktifkan');
         redirect('Sadmin/datapelanggan');
+    }
+
+    //kategori
+    public function datakategori()
+    {
+        $data['kategori'] = $this->admin->tampilkategori();
+        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/topbar');
+        $this->load->view('sadmin/sidebar');
+        $this->load->view('sadmin/vkategori', $data);
+        $this->load->view('sadmin/footer');
+    }
+    public function addkategori()
+    {
+        $cekkode = $this->admin->cekkode();
+        // contoh JRD0004, angka 3 adalah awal pengambilan angka, dan 4 jumlah angka yang diambil
+        $nourut = substr($cekkode, 2, 3);
+        $nourut++;
+        $char = "KG";
+        $kode = $char . sprintf("%03s", $nourut);
+
+        $this->form_validation->set_rules('kategori', 'Kategori', 'required');
+        $this->form_validation->set_message('required', 'Isi Data!');
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('gagal', 'Data tidak sesuai atau data kosong!');
+            redirect('Sadmin/datakategori');
+        } else {
+            $nama = $this->input->post("kategori", TRUE);
+            $data = [
+                'kd_kategori' => $kode,
+                'kategori' => $nama
+            ];
+            $this->admin->addData('tb_kategori', $data);
+            $this->session->set_flashdata('berhasil', 'Berhasil Menambahkan Data.');
+            redirect('Sadmin/datakategori');
+        }
+    }
+    public function editkategori()
+    {
+        $this->form_validation->set_rules('kategori', 'Kategori', 'required');
+        $this->form_validation->set_message('required', 'Isi Data!');
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('gagal', 'Data tidak sesuai atau data kosong!');
+            redirect('Sadmin/datakategori');
+        } else {
+            $kode = $this->input->post("kode", TRUE);
+            $nama = $this->input->post("kategori", TRUE);
+            $data = ['kategori' => $nama];
+            $where = ['kd_kategori' => $kode];
+            $this->admin->editData('tb_kategori', $data, $where);
+            $this->session->set_flashdata('berhasil', 'Berhasil Mengubah Data Kategori.');
+            redirect('Sadmin/datakategori');
+        }
+    }
+    public function delkategori($id)
+    {
+        $data = $this->admin->cekProduk($id);
+        if ($data == 0) {
+            $this->admin->delData('tb_kategori', ['kd_kategori' => $id]);
+            $this->session->set_flashdata('berhasil', 'Berhasil Menghapus Data Kategori.');
+            redirect('Sadmin/datakategori');
+        } else {
+            $this->session->set_flashdata('error', 'Tidak Bisa Menghapus Data ini!');
+            redirect('Sadmin/datakategori');
+        }
     }
 }

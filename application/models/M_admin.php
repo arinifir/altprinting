@@ -32,4 +32,16 @@ class M_admin extends CI_Model
     public function cekEmail($id){
         return $this->db->get_where('tb_user', ['email'=>$id])->num_rows();
     }
+    public function tampilkategori()
+    {
+        return $this->db->get('tb_kategori')->result();
+    }
+    public function cekProduk($id){
+        return $this->db->get_where('tb_produk', ['tb_produk.kategori_produk'=>$id])->num_rows();
+    }
+    public function cekkode(){ 
+        $query = $this->db->query("SELECT MAX(kd_produk) as kd_produk from tb_produk");
+        $hasil = $query->row();
+        return $hasil->kd_produk;
+    }
 }
