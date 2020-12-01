@@ -32,13 +32,40 @@
                                     <form class="form-valide" action="<?= base_url('Sadmin/addkategori') ?>" method="post">
                                         <div class="modal-body">
                                             <div class="form-group">
-                                                <label class="col-lg-4 col-form-label" for="val-username">Kategori <span class="text-danger">*</span>
+                                                <label class="col-lg-4 col-form-label" for="val-username">Kode Voucher <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-12">
-                                                    <input type="text" class="form-control" id="val-username" name="kategori" placeholder="Enter a kategori..">
+                                                    <input type="text" class="form-control" id="val-username" name="kode" placeholder="Enter a kode..">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-lg-4 col-form-label" for="val-email">Voucher <span class="text-danger">*</span>
+                                                </label>
+                                                <div class="col-lg-12">
+                                                    <input type="text" class="form-control" id="val-email" name="voucher" placeholder="Enter a voucher..">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-lg-4 col-form-label" for="val-password">Potongan Voucher<span class="text-danger">*</span>
+                                                </label>
+                                                <div class="col-lg-12">
+                                                    <input type="number" class="form-control" id="val-password" name="potongan" placeholder="Enter Potongan..">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-lg-4 col-form-label" for="val-email">Jenis<span class="text-danger">*</span>
+                                                </label>
+                                                <div class="col-lg-12">
+                                                    <select id="inputState" name="jenis" class="form-control">
+                                                        <option selected="selected" disabled>Pilih...</option>
+                                                        <option value="1">Pengurangan</option>
+                                                        <option value="2">Persentase</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                             <button type="submit" class="btn btn-primary">Tambahkan</button>
@@ -110,11 +137,11 @@
                                             <td><?= $v->voucher; ?></td>
                                             <td><?= $v->potongan_voucher; ?></td>
                                             <td>
-                                                <?php if ($v->jenis_voucher == 1) { 
+                                                <?php if ($v->jenis_voucher == 1) {
                                                     echo 'Pengurangan';
-                                                } else { 
+                                                } else {
                                                     echo 'Persentase';
-                                                }?>
+                                                } ?>
                                             </td>
                                             <td>
                                                 <?php if ($v->status_voucher == 1) { ?>
