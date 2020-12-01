@@ -20,7 +20,7 @@
                             <button type="button" class="btn mb-1 btn-primary" data-toggle="modal" data-target="#addModal">Tambah Data
                                 <span class="btn-icon-right"><i class="fa fa-plus"></i></span>
                             </button>
-                        </div>&nbsp;
+                        </div>
                         <div class="modal fade" id="addModal">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -115,7 +115,7 @@
                             <table class="table table-striped table-bordered zero-configuration">
                                 <thead>
                                     <tr>
-                                        <th>Action</th>
+                                        <th conspan="2">Action</th>
                                         <th>No</th>
                                         <th>ID Admin</th>
                                         <th>Nama</th>
@@ -167,7 +167,7 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>Action</th>
+                                        <th conspan="2">Action</th>
                                         <th>No</th>
                                         <th>ID Admin</th>
                                         <th>Nama</th>

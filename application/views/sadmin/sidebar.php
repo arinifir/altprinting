@@ -31,20 +31,25 @@
                             <i class="fa fa-list menu-icon"></i><span class="nav-text">Kategori</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="<?= base_url('Sadmin/datavoucher') ?>" aria-expanded="false">
+                            <i class="fa fa-money menu-icon"></i><span class="nav-text">Voucher</span>
+                        </a>
+                    </li>
                     <li class="nav-label">Transaksi</li>
                     <li>
                         <a href="<?= base_url('Sadmin/datatransaksi') ?>" aria-expanded="false">
-                            <i class="fa fa-shopping-cart menu-icon"></i><span class="nav-text">Data Transaksi</span>
+                            <i class="fa fa-cart-arrow-down menu-icon"></i><span class="nav-text">Data Transaksi</span>
                         </a>
                     </li>
                     <li>
                         <a href="<?= base_url('Sadmin/confirmbayar') ?>" aria-expanded="false">
-                            <i class="fa fa-shopping-bag menu-icon"></i><span class="nav-text">Konfirmasi Pembayaran</span>
+                            <i class="fa fa-credit-card-alt menu-icon"></i><span class="nav-text">Konfirmasi Pembayaran</span>
                         </a>
                     </li>
                     <li>
                         <a href="<?= base_url('Sadmin/antriankirim') ?>" aria-expanded="false">
-                            <i class="fa fa-cart-arrow-down menu-icon"></i><span class="nav-text">Menunggu Pengiriman</span>
+                            <i class="fa fa-cubes menu-icon"></i><span class="nav-text">Menunggu Pengiriman</span>
                         </a>
                     </li>
                     <li>

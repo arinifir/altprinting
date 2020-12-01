@@ -274,10 +274,10 @@ class Sadmin extends CI_Controller
     {
         $cekkode = $this->admin->cekkode();
         // contoh JRD0004, angka 3 adalah awal pengambilan angka, dan 4 jumlah angka yang diambil
-        $nourut = substr($cekkode, 2, 3);
+        $nourut = substr($cekkode, 3, 2);
         $nourut++;
-        $char = "KG";
-        $kode = $char . sprintf("%03s", $nourut);
+        $char = "KTG";
+        $kode = $char . sprintf("%02s", $nourut);
 
         $this->form_validation->set_rules('kategori', 'Kategori', 'required');
         $this->form_validation->set_message('required', 'Isi Data!');
@@ -323,5 +323,61 @@ class Sadmin extends CI_Controller
             $this->session->set_flashdata('error', 'Tidak Bisa Menghapus Data ini!');
             redirect('Sadmin/datakategori');
         }
+    }
+
+    //produk
+    public function dataproduk()
+    {
+        $data['produk'] = $this->admin->tampilproduk();
+        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/topbar');
+        $this->load->view('sadmin/sidebar');
+        $this->load->view('sadmin/vproduk', $data);
+        $this->load->view('sadmin/footer');
+    }
+    public function editdesk()
+    {
+        $kode = $this->input->post("kode", TRUE);
+        $desk = $this->input->post("desk", TRUE);
+        $data = ['desk_produk' => $desk];
+        $where = ['kd_produk' => $kode];
+        $this->admin->editData('tb_produk', $data, $where);
+        $this->session->set_flashdata('berhasil', 'Berhasil Mengubah Data.');
+        redirect('Sadmin/dataproduk');
+    }
+    public function editdiskon()
+    {
+        $kode = $this->input->post("kode", TRUE);
+        $diskon = $this->input->post("diskon", TRUE);
+        $data = ['diskon_produk' => $diskon];
+        $where = ['kd_produk' => $kode];
+        $this->admin->editData('tb_produk', $data, $where);
+        $this->session->set_flashdata('berhasil', 'Berhasil Mengubah Diskon.');
+        redirect('Sadmin/dataproduk');
+    }
+    public function produkaktif($id)
+    {
+        $data = ['status_produk' => 1];
+        $where = ['kd_produk' => $id];
+        $this->admin->editData('tb_produk', $data, $where);
+        $this->session->set_flashdata('berhasil', 'Produk Kode '.$id.' Ditampilkan');
+        redirect('Sadmin/dataproduk');
+    }
+    public function produkarsip($id)
+    {
+        $data = ['status_produk' => 2];
+        $where = ['kd_produk' => $id];
+        $this->admin->editData('tb_produk', $data, $where);
+        $this->session->set_flashdata('berhasil', 'Produk Kode '.$id.' Diarsipkan');
+        redirect('Sadmin/dataproduk');
+    }
+    public function datavoucher()
+    {
+        $data['voucher'] = $this->admin->tampilvoucher();
+        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/topbar');
+        $this->load->view('sadmin/sidebar');
+        $this->load->view('sadmin/voucher', $data);
+        $this->load->view('sadmin/footer');
     }
 }

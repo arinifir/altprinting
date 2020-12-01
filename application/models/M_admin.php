@@ -39,9 +39,23 @@ class M_admin extends CI_Model
     public function cekProduk($id){
         return $this->db->get_where('tb_produk', ['tb_produk.kategori_produk'=>$id])->num_rows();
     }
+    public function cekByProduk($id){
+        return $this->db->get_where('tb_produk', ['tb_produk.kategori_produk'=>$id])->num_rows();
+    }
     public function cekkode(){ 
-        $query = $this->db->query("SELECT MAX(kd_produk) as kd_produk from tb_produk");
+        $query = $this->db->query("SELECT MAX(kd_kategori) as kd_kategori from tb_kategori");
         $hasil = $query->row();
-        return $hasil->kd_produk;
+        return $hasil->kd_kategori;
+    }
+    public function tampilproduk()
+    {
+        $this->db->select('*');
+        $this->db->from('tb_produk');
+        $this->db->join('tb_kategori', 'tb_produk.kategori_produk = tb_kategori.kd_kategori');
+        return $this->db->get()->result();
+    }
+    public function tampilvoucher()
+    {
+        return $this->db->get('tb_voucher')->result();
     }
 }

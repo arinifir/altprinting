@@ -15,6 +15,9 @@
     <link href="<?= base_url('assets/admin/') ?>plugins/sweetalert/css/sweetalert.css" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('assets/admin/') ?>plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
     <!-- Custom Stylesheet -->
+    <link href="<?= base_url('assets/admin/') ?>plugins/tables/css/datatable/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="<?= base_url('assets/admin/') ?>plugins/summernote/dist/summernote.css" rel="stylesheet">
     <link href="<?= base_url('assets/admin/') ?>css/style.css" rel="stylesheet">
+
 
 </head>

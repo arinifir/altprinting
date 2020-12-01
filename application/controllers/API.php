@@ -9,6 +9,7 @@ class API extends CI_Controller
         parent::__construct();
         //load model admin
         $this->load->model('m_api', 'api');
+        $this->load->model('m_admin', 'admin');
     }
     public function login()
     {
@@ -16,12 +17,6 @@ class API extends CI_Controller
         $email = $this->input->post("email", TRUE);
         $pass = md5($this->input->post("password", TRUE));
         $data = $this->api->checkuser('tb_user', $email);
-        // if ($email == "" || $pass == "") {
-        //     $output = [
-        //         'status' => "null",
-        //         'message' =>  "email atau password kosong"
-        //     ];
-        // } else {
         if ($data) {
             if ($data['status'] == 1) {
                 if ($data['password'] == $pass) {
@@ -92,5 +87,30 @@ class API extends CI_Controller
     }
     public function register()
     {
+    }
+
+    public function deleteproduk($id)
+    {
+        $paket=$this->db->get_where('tb_paket', ['tb_paket.kd_produk'=>$id])->num_rows();
+        $ulasan=$this->db->get_where('tb_ulasan', ['tb_ulasan.kd_produk'=>$id])->num_rows();
+        if ($paket == 0 && $ulasan == 0) {
+            echo 'berhasil';
+        } else {
+            echo 'gagal';
+        }
+    }
+    public function delbyproduk($id)
+    {
+        $this->admin->delData('tb_paket', ['kd_produk' => $id]);
+        $this->admin->delData('tb_ulasan', ['kd_produk' => $id]);
+        $this->admin->delData('tb_produk', ['kd_produk' => $id]);
+        $this->session->set_flashdata('berhasil', 'Berhasil Menghapus Data Produk.');
+        redirect('Sadmin/dataproduk');
+    }
+    public function delproduk($id)
+    {
+        $this->admin->delData('tb_produk', ['kd_produk' => $id]);
+        $this->session->set_flashdata('berhasil', 'Berhasil Menghapus Data Produk.');
+        redirect('Sadmin/dataproduk');
     }
 }

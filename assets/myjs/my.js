@@ -51,3 +51,31 @@ $('.btnlogin').on('click', function() {
         }
     });
 })
+$(document).on('click','.btnDel', function () { 
+    const id = $(this).data('id')
+    console.log(id);
+    $.ajax({
+        url: base_url+"API/deleteproduk/"+id,
+        dataType: "text",
+        success: function (response) {
+            if (response=="berhasil") {
+                window.location.href = base_url+'API/delproduk/'+id;
+            }else{
+                Swal.fire({
+                    title: 'Apakah Anda Yakin?',
+                    text: "Jika Anda menghapus data ini, Data yang terkait juga akan dihapus permanen!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = base_url+'API/delbyproduk/'+id;
+                    }
+                })
+            }
+        }
+    });
+    
+})

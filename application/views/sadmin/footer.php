@@ -41,6 +41,13 @@
     <!-- ChartistJS -->
     <script src="<?= base_url('assets/admin/') ?>plugins/chartist/js/chartist.min.js"></script>
     <script src="<?= base_url('assets/admin/') ?>plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
+    <!-- Datatables -->
+    <script src="<?= base_url('assets/admin/') ?>plugins/tables/js/jquery.dataTables.min.js"></script>
+    <script src="<?= base_url('assets/admin/') ?>plugins/tables/js/datatable/dataTables.bootstrap4.min.js"></script>
+    <script src="<?= base_url('assets/admin/') ?>plugins/tables/js/datatable-init/datatable-basic.min.js"></script>
+    <!-- Editor -->
+    <script src="<?= base_url('assets/admin/') ?>plugins/summernote/dist/summernote.min.js"></script>
+    <script src="<?= base_url('assets/admin/') ?>plugins/summernote/dist/summernote-init.js"></script>
     <!-- SweetAlert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="<?= base_url('assets/myjs/') ?>my.js"></script>
