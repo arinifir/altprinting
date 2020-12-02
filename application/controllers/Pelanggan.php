@@ -26,6 +26,15 @@ class Pelanggan extends CI_Controller {
  } 
 
  function hapus($id){
+  $fk_check = $this->M_pelanggan->delete_user($id);
+
+  if($fk_check) {
+  // Unable to delete record
+  // $fk_check is an array containing $fk_check['code'] & $fk_check['message']
+  exit();
+  }
+  
+  // Here your record has been deleted
     
 }
   

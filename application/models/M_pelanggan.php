@@ -17,4 +17,12 @@ public function duatable() {
     $this->db->delete($table);
   }
   
+  function delete_user($id)
+{
+            if ( ! $this->db->delete('tb_alamat', array('id_alamat' => $id)))
+            {
+                            return $this->db->error();
+            }
+    return FALSE;
+}
 }
