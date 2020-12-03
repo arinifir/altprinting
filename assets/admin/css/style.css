@@ -24,10 +24,6 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 @import url(../plugins/animate/animate.min.css);
 @import url(../plugins/metismenu/css/metisMenu.min.css);
 @import url(../plugins/bootstrap-select/dist/css/bootstrap-select.min.css);
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .gradient-1,
 .dropdown-mega-menu .ext-link.link-1 a,
 .morris-hover,
@@ -57,17 +53,6 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 }
 
 .gradient-6 {
-<<<<<<< Updated upstream
-	background-image: linear-gradient(135deg, #97ABFF 10%, #123597 100%);
-}
-
-.gradient-7 {
-	background-image: linear-gradient(135deg, #3C8CE7 10%, #00EAFF 100%);
-}
-
-.gradient-8 {
-	background-image: linear-gradient(135deg, #EE9AE5 10%, #5961F9 100%);
-=======
 	background-image: linear-gradient(135deg, #97abff 10%, #123597 100%);
 }
 
@@ -77,14 +62,10 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 
 .gradient-8 {
 	background-image: linear-gradient(135deg, #ee9ae5 10%, #5961f9 100%);
->>>>>>> Stashed changes
 }
 
 .gradient-anchor,
 .gradient-9 {
-<<<<<<< Updated upstream
-	background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
-=======
 	background-image: linear-gradient(
 		to right,
 		#b8cbb8 0%,
@@ -94,7 +75,6 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 		#ee609c 66%,
 		#ee609c 100%
 	);
->>>>>>> Stashed changes
 }
 
 .gradient-anchor {
@@ -117,11 +97,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 	--orange: #fd7e14;
 	--yellow: #fa3a0e;
 	--green: #2dce89;
-<<<<<<< Updated upstream
-	--teal: #00A9A2;
-=======
 	--teal: #00a9a2;
->>>>>>> Stashed changes
 	--cyan: #11cdef;
 	--white: #fff;
 	--gray: #f7fafc;
@@ -140,16 +116,11 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 	--breakpoint-lg: 992px;
 	--breakpoint-xl: 1200px;
 	--breakpoint-xxl: 1400;
-<<<<<<< Updated upstream
-	--font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-	--font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-=======
 	--font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
 		Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
 		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 	--font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
 		"Liberation Mono", "Courier New", monospace;
->>>>>>> Stashed changes
 }
 
 *,
@@ -192,11 +163,7 @@ body {
 	line-height: 1.5;
 	color: #76838f;
 	text-align: left;
-<<<<<<< Updated upstream
-	background-color: #F3F3F9;
-=======
 	background-color: #f3f3f9;
->>>>>>> Stashed changes
 }
 
 [tabindex="-1"]:focus {
@@ -257,11 +224,7 @@ dt {
 }
 
 dd {
-<<<<<<< Updated upstream
-	margin-bottom: .5rem;
-=======
 	margin-bottom: 0.5rem;
->>>>>>> Stashed changes
 	margin-left: 0;
 }
 
@@ -291,19 +254,11 @@ sup {
 }
 
 sub {
-<<<<<<< Updated upstream
-	bottom: -.25em;
-}
-
-sup {
-	top: -.5em;
-=======
 	bottom: -0.25em;
 }
 
 sup {
 	top: -0.5em;
->>>>>>> Stashed changes
 }
 
 a {
@@ -312,10 +267,6 @@ a {
 	background-color: transparent;
 	-webkit-text-decoration-skip: objects;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 a:hover {
 	color: #2e28f6;
 	text-decoration: underline;
@@ -325,19 +276,11 @@ a:not([href]):not([tabindex]) {
 	color: inherit;
 	text-decoration: none;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 a:not([href]):not([tabindex]):hover,
 a:not([href]):not([tabindex]):focus {
 	color: inherit;
 	text-decoration: none;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 a:not([href]):not([tabindex]):focus {
 	outline: 0;
 }
@@ -346,12 +289,8 @@ pre,
 code,
 kbd,
 samp {
-<<<<<<< Updated upstream
-	font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-=======
 	font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
 		"Courier New", monospace;
->>>>>>> Stashed changes
 	font-size: 1em;
 }
 
@@ -472,11 +411,7 @@ legend {
 	width: 100%;
 	max-width: 100%;
 	padding: 0;
-<<<<<<< Updated upstream
-	margin-bottom: .5rem;
-=======
 	margin-bottom: 0.5rem;
->>>>>>> Stashed changes
 	font-size: 1.5rem;
 	line-height: inherit;
 	color: inherit;
@@ -634,10 +569,6 @@ mark,
 .list-inline-item {
 	display: inline-block;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .list-inline-item:not(:last-child) {
 	margin-right: 0.5rem;
 }
@@ -657,10 +588,6 @@ mark,
 	font-size: 80%;
 	color: #f7fafc;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .blockquote-footer::before {
 	content: "\2014 \00A0";
 }
@@ -672,11 +599,7 @@ mark,
 
 .img-thumbnail {
 	padding: 0.25rem;
-<<<<<<< Updated upstream
-	background-color: #F3F3F9;
-=======
 	background-color: #f3f3f9;
->>>>>>> Stashed changes
 	border: 1px solid #dee2e6;
 	border-radius: 0.25rem;
 	max-width: 100%;
@@ -702,12 +625,7 @@ code {
 	color: #e91e63;
 	word-break: break-word;
 }
-<<<<<<< Updated upstream
-
-a>code {
-=======
 a > code {
->>>>>>> Stashed changes
 	color: inherit;
 }
 
@@ -718,10 +636,6 @@ kbd {
 	background-color: #212529;
 	border-radius: 0.2rem;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 kbd kbd {
 	padding: 0;
 	font-size: 100%;
@@ -733,10 +647,6 @@ pre {
 	font-size: 87.5%;
 	color: #212529;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 pre code {
 	font-size: inherit;
 	color: inherit;
@@ -755,37 +665,21 @@ pre code {
 	margin-right: auto;
 	margin-left: auto;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 @media (min-width: 576px) {
 	.container {
 		max-width: 540px;
 	}
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 @media (min-width: 768px) {
 	.container {
 		max-width: 720px;
 	}
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 @media (min-width: 992px) {
 	.container {
 		max-width: 960px;
 	}
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 @media (min-width: 1200px) {
 	.container {
 		max-width: 1140px;
@@ -811,14 +705,8 @@ pre code {
 	margin-right: 0;
 	margin-left: 0;
 }
-<<<<<<< Updated upstream
-
-.no-gutters>.col,
-.no-gutters>[class*="col-"] {
-=======
 .no-gutters > .col,
 .no-gutters > [class*="col-"] {
->>>>>>> Stashed changes
 	padding-right: 0;
 	padding-left: 0;
 }
@@ -1096,218 +984,59 @@ pre code {
 		flex-grow: 1;
 		max-width: 100%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-sm-auto {
 		flex: 0 0 auto;
 		width: auto;
 		max-width: none;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-sm-1 {
 		flex: 0 0 8.33333%;
 		max-width: 8.33333%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-sm-2 {
 		flex: 0 0 16.66667%;
 		max-width: 16.66667%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-sm-3 {
 		flex: 0 0 25%;
 		max-width: 25%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-sm-4 {
 		flex: 0 0 33.33333%;
 		max-width: 33.33333%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-sm-5 {
 		flex: 0 0 41.66667%;
 		max-width: 41.66667%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-sm-6 {
 		flex: 0 0 50%;
 		max-width: 50%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-sm-7 {
 		flex: 0 0 58.33333%;
 		max-width: 58.33333%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-sm-8 {
 		flex: 0 0 66.66667%;
 		max-width: 66.66667%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-sm-9 {
 		flex: 0 0 75%;
 		max-width: 75%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-sm-10 {
 		flex: 0 0 83.33333%;
 		max-width: 83.33333%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-sm-11 {
 		flex: 0 0 91.66667%;
 		max-width: 91.66667%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-sm-12 {
 		flex: 0 0 100%;
 		max-width: 100%;
 	}
-<<<<<<< Updated upstream
-
-	.order-sm-first {
-		order: -1;
-	}
-
-	.order-sm-last {
-		order: 13;
-	}
-
-	.order-sm-0 {
-		order: 0;
-	}
-
-	.order-sm-1 {
-		order: 1;
-	}
-
-	.order-sm-2 {
-		order: 2;
-	}
-
-	.order-sm-3 {
-		order: 3;
-	}
-
-	.order-sm-4 {
-		order: 4;
-	}
-
-	.order-sm-5 {
-		order: 5;
-	}
-
-	.order-sm-6 {
-		order: 6;
-	}
-
-	.order-sm-7 {
-		order: 7;
-	}
-
-	.order-sm-8 {
-		order: 8;
-	}
-
-	.order-sm-9 {
-		order: 9;
-	}
-
-	.order-sm-10 {
-		order: 10;
-	}
-
-	.order-sm-11 {
-		order: 11;
-	}
-
-	.order-sm-12 {
-		order: 12;
-	}
-
-	.offset-sm-0 {
-		margin-left: 0;
-	}
-
-	.offset-sm-1 {
-		margin-left: 8.33333%;
-	}
-
-	.offset-sm-2 {
-		margin-left: 16.66667%;
-	}
-
-	.offset-sm-3 {
-		margin-left: 25%;
-	}
-
-	.offset-sm-4 {
-		margin-left: 33.33333%;
-	}
-
-	.offset-sm-5 {
-		margin-left: 41.66667%;
-	}
-
-	.offset-sm-6 {
-		margin-left: 50%;
-	}
-
-	.offset-sm-7 {
-		margin-left: 58.33333%;
-	}
-
-	.offset-sm-8 {
-		margin-left: 66.66667%;
-	}
-
-	.offset-sm-9 {
-		margin-left: 75%;
-	}
-
-	.offset-sm-10 {
-		margin-left: 83.33333%;
-	}
-
-=======
 	.order-sm-first {
 		order: -1;
 	}
@@ -1386,7 +1115,6 @@ pre code {
 	.offset-sm-10 {
 		margin-left: 83.33333%;
 	}
->>>>>>> Stashed changes
 	.offset-sm-11 {
 		margin-left: 91.66667%;
 	}
@@ -1398,218 +1126,59 @@ pre code {
 		flex-grow: 1;
 		max-width: 100%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-md-auto {
 		flex: 0 0 auto;
 		width: auto;
 		max-width: none;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-md-1 {
 		flex: 0 0 8.33333%;
 		max-width: 8.33333%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-md-2 {
 		flex: 0 0 16.66667%;
 		max-width: 16.66667%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-md-3 {
 		flex: 0 0 25%;
 		max-width: 25%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-md-4 {
 		flex: 0 0 33.33333%;
 		max-width: 33.33333%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-md-5 {
 		flex: 0 0 41.66667%;
 		max-width: 41.66667%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-md-6 {
 		flex: 0 0 50%;
 		max-width: 50%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-md-7 {
 		flex: 0 0 58.33333%;
 		max-width: 58.33333%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-md-8 {
 		flex: 0 0 66.66667%;
 		max-width: 66.66667%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-md-9 {
 		flex: 0 0 75%;
 		max-width: 75%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-md-10 {
 		flex: 0 0 83.33333%;
 		max-width: 83.33333%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-md-11 {
 		flex: 0 0 91.66667%;
 		max-width: 91.66667%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-md-12 {
 		flex: 0 0 100%;
 		max-width: 100%;
 	}
-<<<<<<< Updated upstream
-
-	.order-md-first {
-		order: -1;
-	}
-
-	.order-md-last {
-		order: 13;
-	}
-
-	.order-md-0 {
-		order: 0;
-	}
-
-	.order-md-1 {
-		order: 1;
-	}
-
-	.order-md-2 {
-		order: 2;
-	}
-
-	.order-md-3 {
-		order: 3;
-	}
-
-	.order-md-4 {
-		order: 4;
-	}
-
-	.order-md-5 {
-		order: 5;
-	}
-
-	.order-md-6 {
-		order: 6;
-	}
-
-	.order-md-7 {
-		order: 7;
-	}
-
-	.order-md-8 {
-		order: 8;
-	}
-
-	.order-md-9 {
-		order: 9;
-	}
-
-	.order-md-10 {
-		order: 10;
-	}
-
-	.order-md-11 {
-		order: 11;
-	}
-
-	.order-md-12 {
-		order: 12;
-	}
-
-	.offset-md-0 {
-		margin-left: 0;
-	}
-
-	.offset-md-1 {
-		margin-left: 8.33333%;
-	}
-
-	.offset-md-2 {
-		margin-left: 16.66667%;
-	}
-
-	.offset-md-3 {
-		margin-left: 25%;
-	}
-
-	.offset-md-4 {
-		margin-left: 33.33333%;
-	}
-
-	.offset-md-5 {
-		margin-left: 41.66667%;
-	}
-
-	.offset-md-6 {
-		margin-left: 50%;
-	}
-
-	.offset-md-7 {
-		margin-left: 58.33333%;
-	}
-
-	.offset-md-8 {
-		margin-left: 66.66667%;
-	}
-
-	.offset-md-9 {
-		margin-left: 75%;
-	}
-
-	.offset-md-10 {
-		margin-left: 83.33333%;
-	}
-
-=======
 	.order-md-first {
 		order: -1;
 	}
@@ -1688,7 +1257,6 @@ pre code {
 	.offset-md-10 {
 		margin-left: 83.33333%;
 	}
->>>>>>> Stashed changes
 	.offset-md-11 {
 		margin-left: 91.66667%;
 	}
@@ -1700,218 +1268,59 @@ pre code {
 		flex-grow: 1;
 		max-width: 100%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-lg-auto {
 		flex: 0 0 auto;
 		width: auto;
 		max-width: none;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-lg-1 {
 		flex: 0 0 8.33333%;
 		max-width: 8.33333%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-lg-2 {
 		flex: 0 0 16.66667%;
 		max-width: 16.66667%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-lg-3 {
 		flex: 0 0 25%;
 		max-width: 25%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-lg-4 {
 		flex: 0 0 33.33333%;
 		max-width: 33.33333%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-lg-5 {
 		flex: 0 0 41.66667%;
 		max-width: 41.66667%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-lg-6 {
 		flex: 0 0 50%;
 		max-width: 50%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-lg-7 {
 		flex: 0 0 58.33333%;
 		max-width: 58.33333%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-lg-8 {
 		flex: 0 0 66.66667%;
 		max-width: 66.66667%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-lg-9 {
 		flex: 0 0 75%;
 		max-width: 75%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-lg-10 {
 		flex: 0 0 83.33333%;
 		max-width: 83.33333%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-lg-11 {
 		flex: 0 0 91.66667%;
 		max-width: 91.66667%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-lg-12 {
 		flex: 0 0 100%;
 		max-width: 100%;
 	}
-<<<<<<< Updated upstream
-
-	.order-lg-first {
-		order: -1;
-	}
-
-	.order-lg-last {
-		order: 13;
-	}
-
-	.order-lg-0 {
-		order: 0;
-	}
-
-	.order-lg-1 {
-		order: 1;
-	}
-
-	.order-lg-2 {
-		order: 2;
-	}
-
-	.order-lg-3 {
-		order: 3;
-	}
-
-	.order-lg-4 {
-		order: 4;
-	}
-
-	.order-lg-5 {
-		order: 5;
-	}
-
-	.order-lg-6 {
-		order: 6;
-	}
-
-	.order-lg-7 {
-		order: 7;
-	}
-
-	.order-lg-8 {
-		order: 8;
-	}
-
-	.order-lg-9 {
-		order: 9;
-	}
-
-	.order-lg-10 {
-		order: 10;
-	}
-
-	.order-lg-11 {
-		order: 11;
-	}
-
-	.order-lg-12 {
-		order: 12;
-	}
-
-	.offset-lg-0 {
-		margin-left: 0;
-	}
-
-	.offset-lg-1 {
-		margin-left: 8.33333%;
-	}
-
-	.offset-lg-2 {
-		margin-left: 16.66667%;
-	}
-
-	.offset-lg-3 {
-		margin-left: 25%;
-	}
-
-	.offset-lg-4 {
-		margin-left: 33.33333%;
-	}
-
-	.offset-lg-5 {
-		margin-left: 41.66667%;
-	}
-
-	.offset-lg-6 {
-		margin-left: 50%;
-	}
-
-	.offset-lg-7 {
-		margin-left: 58.33333%;
-	}
-
-	.offset-lg-8 {
-		margin-left: 66.66667%;
-	}
-
-	.offset-lg-9 {
-		margin-left: 75%;
-	}
-
-	.offset-lg-10 {
-		margin-left: 83.33333%;
-	}
-
-=======
 	.order-lg-first {
 		order: -1;
 	}
@@ -1990,7 +1399,6 @@ pre code {
 	.offset-lg-10 {
 		margin-left: 83.33333%;
 	}
->>>>>>> Stashed changes
 	.offset-lg-11 {
 		margin-left: 91.66667%;
 	}
@@ -2002,218 +1410,59 @@ pre code {
 		flex-grow: 1;
 		max-width: 100%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-xl-auto {
 		flex: 0 0 auto;
 		width: auto;
 		max-width: none;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-xl-1 {
 		flex: 0 0 8.33333%;
 		max-width: 8.33333%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-xl-2 {
 		flex: 0 0 16.66667%;
 		max-width: 16.66667%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-xl-3 {
 		flex: 0 0 25%;
 		max-width: 25%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-xl-4 {
 		flex: 0 0 33.33333%;
 		max-width: 33.33333%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-xl-5 {
 		flex: 0 0 41.66667%;
 		max-width: 41.66667%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-xl-6 {
 		flex: 0 0 50%;
 		max-width: 50%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-xl-7 {
 		flex: 0 0 58.33333%;
 		max-width: 58.33333%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-xl-8 {
 		flex: 0 0 66.66667%;
 		max-width: 66.66667%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-xl-9 {
 		flex: 0 0 75%;
 		max-width: 75%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-xl-10 {
 		flex: 0 0 83.33333%;
 		max-width: 83.33333%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-xl-11 {
 		flex: 0 0 91.66667%;
 		max-width: 91.66667%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-xl-12 {
 		flex: 0 0 100%;
 		max-width: 100%;
 	}
-<<<<<<< Updated upstream
-
-	.order-xl-first {
-		order: -1;
-	}
-
-	.order-xl-last {
-		order: 13;
-	}
-
-	.order-xl-0 {
-		order: 0;
-	}
-
-	.order-xl-1 {
-		order: 1;
-	}
-
-	.order-xl-2 {
-		order: 2;
-	}
-
-	.order-xl-3 {
-		order: 3;
-	}
-
-	.order-xl-4 {
-		order: 4;
-	}
-
-	.order-xl-5 {
-		order: 5;
-	}
-
-	.order-xl-6 {
-		order: 6;
-	}
-
-	.order-xl-7 {
-		order: 7;
-	}
-
-	.order-xl-8 {
-		order: 8;
-	}
-
-	.order-xl-9 {
-		order: 9;
-	}
-
-	.order-xl-10 {
-		order: 10;
-	}
-
-	.order-xl-11 {
-		order: 11;
-	}
-
-	.order-xl-12 {
-		order: 12;
-	}
-
-	.offset-xl-0 {
-		margin-left: 0;
-	}
-
-	.offset-xl-1 {
-		margin-left: 8.33333%;
-	}
-
-	.offset-xl-2 {
-		margin-left: 16.66667%;
-	}
-
-	.offset-xl-3 {
-		margin-left: 25%;
-	}
-
-	.offset-xl-4 {
-		margin-left: 33.33333%;
-	}
-
-	.offset-xl-5 {
-		margin-left: 41.66667%;
-	}
-
-	.offset-xl-6 {
-		margin-left: 50%;
-	}
-
-	.offset-xl-7 {
-		margin-left: 58.33333%;
-	}
-
-	.offset-xl-8 {
-		margin-left: 66.66667%;
-	}
-
-	.offset-xl-9 {
-		margin-left: 75%;
-	}
-
-	.offset-xl-10 {
-		margin-left: 83.33333%;
-	}
-
-=======
 	.order-xl-first {
 		order: -1;
 	}
@@ -2292,7 +1541,6 @@ pre code {
 	.offset-xl-10 {
 		margin-left: 83.33333%;
 	}
->>>>>>> Stashed changes
 	.offset-xl-11 {
 		margin-left: 91.66667%;
 	}
@@ -2304,218 +1552,59 @@ pre code {
 		flex-grow: 1;
 		max-width: 100%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-xxl-auto {
 		flex: 0 0 auto;
 		width: auto;
 		max-width: none;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-xxl-1 {
 		flex: 0 0 8.33333%;
 		max-width: 8.33333%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-xxl-2 {
 		flex: 0 0 16.66667%;
 		max-width: 16.66667%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-xxl-3 {
 		flex: 0 0 25%;
 		max-width: 25%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-xxl-4 {
 		flex: 0 0 33.33333%;
 		max-width: 33.33333%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-xxl-5 {
 		flex: 0 0 41.66667%;
 		max-width: 41.66667%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-xxl-6 {
 		flex: 0 0 50%;
 		max-width: 50%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-xxl-7 {
 		flex: 0 0 58.33333%;
 		max-width: 58.33333%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-xxl-8 {
 		flex: 0 0 66.66667%;
 		max-width: 66.66667%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-xxl-9 {
 		flex: 0 0 75%;
 		max-width: 75%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-xxl-10 {
 		flex: 0 0 83.33333%;
 		max-width: 83.33333%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-xxl-11 {
 		flex: 0 0 91.66667%;
 		max-width: 91.66667%;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.col-xxl-12 {
 		flex: 0 0 100%;
 		max-width: 100%;
 	}
-<<<<<<< Updated upstream
-
-	.order-xxl-first {
-		order: -1;
-	}
-
-	.order-xxl-last {
-		order: 13;
-	}
-
-	.order-xxl-0 {
-		order: 0;
-	}
-
-	.order-xxl-1 {
-		order: 1;
-	}
-
-	.order-xxl-2 {
-		order: 2;
-	}
-
-	.order-xxl-3 {
-		order: 3;
-	}
-
-	.order-xxl-4 {
-		order: 4;
-	}
-
-	.order-xxl-5 {
-		order: 5;
-	}
-
-	.order-xxl-6 {
-		order: 6;
-	}
-
-	.order-xxl-7 {
-		order: 7;
-	}
-
-	.order-xxl-8 {
-		order: 8;
-	}
-
-	.order-xxl-9 {
-		order: 9;
-	}
-
-	.order-xxl-10 {
-		order: 10;
-	}
-
-	.order-xxl-11 {
-		order: 11;
-	}
-
-	.order-xxl-12 {
-		order: 12;
-	}
-
-	.offset-xxl-0 {
-		margin-left: 0;
-	}
-
-	.offset-xxl-1 {
-		margin-left: 8.33333%;
-	}
-
-	.offset-xxl-2 {
-		margin-left: 16.66667%;
-	}
-
-	.offset-xxl-3 {
-		margin-left: 25%;
-	}
-
-	.offset-xxl-4 {
-		margin-left: 33.33333%;
-	}
-
-	.offset-xxl-5 {
-		margin-left: 41.66667%;
-	}
-
-	.offset-xxl-6 {
-		margin-left: 50%;
-	}
-
-	.offset-xxl-7 {
-		margin-left: 58.33333%;
-	}
-
-	.offset-xxl-8 {
-		margin-left: 66.66667%;
-	}
-
-	.offset-xxl-9 {
-		margin-left: 75%;
-	}
-
-	.offset-xxl-10 {
-		margin-left: 83.33333%;
-	}
-
-=======
 	.order-xxl-first {
 		order: -1;
 	}
@@ -2594,7 +1683,6 @@ pre code {
 	.offset-xxl-10 {
 		margin-left: 83.33333%;
 	}
->>>>>>> Stashed changes
 	.offset-xxl-11 {
 		margin-left: 91.66667%;
 	}
@@ -2605,39 +1693,21 @@ pre code {
 	margin-bottom: 1rem;
 	background-color: transparent;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .table th,
 .table td {
 	padding: 0.75rem;
 	vertical-align: top;
 	border-top: 1px solid #dee2e6;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .table thead th {
 	vertical-align: bottom;
 	border-bottom: 2px solid #dee2e6;
 }
-<<<<<<< Updated upstream
-
-.table tbody+tbody {
-	border-top: 2px solid #dee2e6;
-}
-
-.table .table {
-	background-color: #F3F3F9;
-=======
 .table tbody + tbody {
 	border-top: 2px solid #dee2e6;
 }
 .table .table {
 	background-color: #f3f3f9;
->>>>>>> Stashed changes
 }
 
 .table-sm th,
@@ -2648,18 +1718,10 @@ pre code {
 .table-bordered {
 	border: 1px solid #dee2e6;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .table-bordered th,
 .table-bordered td {
 	border: 1px solid #dee2e6;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .table-bordered thead th,
 .table-bordered thead td {
 	border-bottom-width: 2px;
@@ -2668,11 +1730,7 @@ pre code {
 .table-borderless th,
 .table-borderless td,
 .table-borderless thead th,
-<<<<<<< Updated upstream
-.table-borderless tbody+tbody {
-=======
 .table-borderless tbody + tbody {
->>>>>>> Stashed changes
 	border: 0;
 }
 
@@ -2685,236 +1743,133 @@ pre code {
 }
 
 .table-primary,
-<<<<<<< Updated upstream
-.table-primary>th,
-.table-primary>td {
-=======
 .table-primary > th,
 .table-primary > td {
->>>>>>> Stashed changes
 	background-color: #d8d7fd;
 }
 
 .table-hover .table-primary:hover {
 	background-color: #c0bffc;
 }
-<<<<<<< Updated upstream
-
-.table-hover .table-primary:hover>td,
-.table-hover .table-primary:hover>th {
-=======
 .table-hover .table-primary:hover > td,
 .table-hover .table-primary:hover > th {
->>>>>>> Stashed changes
 	background-color: #c0bffc;
 }
 
 .table-secondary,
-<<<<<<< Updated upstream
-.table-secondary>th,
-.table-secondary>td {
-=======
 .table-secondary > th,
 .table-secondary > td {
->>>>>>> Stashed changes
 	background-color: #e0e2ee;
 }
 
 .table-hover .table-secondary:hover {
 	background-color: #d0d3e5;
 }
-<<<<<<< Updated upstream
-
-.table-hover .table-secondary:hover>td,
-.table-hover .table-secondary:hover>th {
-=======
 .table-hover .table-secondary:hover > td,
 .table-hover .table-secondary:hover > th {
->>>>>>> Stashed changes
 	background-color: #d0d3e5;
 }
 
 .table-success,
-<<<<<<< Updated upstream
-.table-success>th,
-.table-success>td {
-=======
 .table-success > th,
 .table-success > td {
->>>>>>> Stashed changes
 	background-color: #d7f4d7;
 }
 
 .table-hover .table-success:hover {
 	background-color: #c3efc3;
 }
-<<<<<<< Updated upstream
-
-.table-hover .table-success:hover>td,
-.table-hover .table-success:hover>th {
-=======
 .table-hover .table-success:hover > td,
 .table-hover .table-success:hover > th {
->>>>>>> Stashed changes
 	background-color: #c3efc3;
 }
 
 .table-info,
-<<<<<<< Updated upstream
-.table-info>th,
-.table-info>td {
-=======
 .table-info > th,
 .table-info > td {
->>>>>>> Stashed changes
 	background-color: #cddaff;
 }
 
 .table-hover .table-info:hover {
 	background-color: #b4c7ff;
 }
-<<<<<<< Updated upstream
-
-.table-hover .table-info:hover>td,
-.table-hover .table-info:hover>th {
-=======
 .table-hover .table-info:hover > td,
 .table-hover .table-info:hover > th {
->>>>>>> Stashed changes
 	background-color: #b4c7ff;
 }
 
 .table-warning,
-<<<<<<< Updated upstream
-.table-warning>th,
-.table-warning>td {
-=======
 .table-warning > th,
 .table-warning > td {
->>>>>>> Stashed changes
 	background-color: #fbe4d0;
 }
 
 .table-hover .table-warning:hover {
 	background-color: #f9d7b9;
 }
-<<<<<<< Updated upstream
-
-.table-hover .table-warning:hover>td,
-.table-hover .table-warning:hover>th {
-=======
 .table-hover .table-warning:hover > td,
 .table-hover .table-warning:hover > th {
->>>>>>> Stashed changes
 	background-color: #f9d7b9;
 }
 
 .table-danger,
-<<<<<<< Updated upstream
-.table-danger>th,
-.table-danger>td {
-=======
 .table-danger > th,
 .table-danger > td {
->>>>>>> Stashed changes
 	background-color: #ffd2d2;
 }
 
 .table-hover .table-danger:hover {
 	background-color: #ffb9b9;
 }
-<<<<<<< Updated upstream
-
-.table-hover .table-danger:hover>td,
-.table-hover .table-danger:hover>th {
-=======
 .table-hover .table-danger:hover > td,
 .table-hover .table-danger:hover > th {
->>>>>>> Stashed changes
 	background-color: #ffb9b9;
 }
 
 .table-light,
-<<<<<<< Updated upstream
-.table-light>th,
-.table-light>td {
-=======
 .table-light > th,
 .table-light > td {
->>>>>>> Stashed changes
 	background-color: #fdfdfe;
 }
 
 .table-hover .table-light:hover {
 	background-color: #ececf6;
 }
-<<<<<<< Updated upstream
-
-.table-hover .table-light:hover>td,
-.table-hover .table-light:hover>th {
-=======
 .table-hover .table-light:hover > td,
 .table-hover .table-light:hover > th {
->>>>>>> Stashed changes
 	background-color: #ececf6;
 }
 
 .table-dark,
-<<<<<<< Updated upstream
-.table-dark>th,
-.table-dark>td {
-=======
 .table-dark > th,
 .table-dark > td {
->>>>>>> Stashed changes
 	background-color: #c6c6c6;
 }
 
 .table-hover .table-dark:hover {
 	background-color: #b9b9b9;
 }
-<<<<<<< Updated upstream
-
-.table-hover .table-dark:hover>td,
-.table-hover .table-dark:hover>th {
-=======
 .table-hover .table-dark:hover > td,
 .table-hover .table-dark:hover > th {
->>>>>>> Stashed changes
 	background-color: #b9b9b9;
 }
 
 .table-active,
-<<<<<<< Updated upstream
-.table-active>th,
-.table-active>td {
-=======
 .table-active > th,
 .table-active > td {
->>>>>>> Stashed changes
 	background-color: rgba(0, 0, 0, 0.075);
 }
 
 .table-hover .table-active:hover {
 	background-color: rgba(0, 0, 0, 0.075);
 }
-<<<<<<< Updated upstream
-
-.table-hover .table-active:hover>td,
-.table-hover .table-active:hover>th {
-=======
 .table-hover .table-active:hover > td,
 .table-hover .table-active:hover > th {
->>>>>>> Stashed changes
 	background-color: rgba(0, 0, 0, 0.075);
 }
 
 .table .thead-dark th {
-<<<<<<< Updated upstream
-	color: #F3F3F9;
-=======
 	color: #f3f3f9;
->>>>>>> Stashed changes
 	background-color: #212529;
 	border-color: #32383e;
 }
@@ -2926,39 +1881,20 @@ pre code {
 }
 
 .table-dark {
-<<<<<<< Updated upstream
-	color: #F3F3F9;
-	background-color: #212529;
-}
-
-=======
 	color: #f3f3f9;
 	background-color: #212529;
 }
->>>>>>> Stashed changes
 .table-dark th,
 .table-dark td,
 .table-dark thead th {
 	border-color: #32383e;
 }
-<<<<<<< Updated upstream
-
-.table-dark.table-bordered {
-	border: 0;
-}
-
-.table-dark.table-striped tbody tr:nth-of-type(odd) {
-	background-color: rgba(255, 255, 255, 0.05);
-}
-
-=======
 .table-dark.table-bordered {
 	border: 0;
 }
 .table-dark.table-striped tbody tr:nth-of-type(odd) {
 	background-color: rgba(255, 255, 255, 0.05);
 }
->>>>>>> Stashed changes
 .table-dark.table-hover tbody tr:hover {
 	background-color: rgba(255, 255, 255, 0.075);
 }
@@ -2971,12 +1907,7 @@ pre code {
 		-webkit-overflow-scrolling: touch;
 		-ms-overflow-style: -ms-autohiding-scrollbar;
 	}
-<<<<<<< Updated upstream
-
-	.table-responsive-sm>.table-bordered {
-=======
 	.table-responsive-sm > .table-bordered {
->>>>>>> Stashed changes
 		border: 0;
 	}
 }
@@ -2989,12 +1920,7 @@ pre code {
 		-webkit-overflow-scrolling: touch;
 		-ms-overflow-style: -ms-autohiding-scrollbar;
 	}
-<<<<<<< Updated upstream
-
-	.table-responsive-md>.table-bordered {
-=======
 	.table-responsive-md > .table-bordered {
->>>>>>> Stashed changes
 		border: 0;
 	}
 }
@@ -3007,12 +1933,7 @@ pre code {
 		-webkit-overflow-scrolling: touch;
 		-ms-overflow-style: -ms-autohiding-scrollbar;
 	}
-<<<<<<< Updated upstream
-
-	.table-responsive-lg>.table-bordered {
-=======
 	.table-responsive-lg > .table-bordered {
->>>>>>> Stashed changes
 		border: 0;
 	}
 }
@@ -3025,12 +1946,7 @@ pre code {
 		-webkit-overflow-scrolling: touch;
 		-ms-overflow-style: -ms-autohiding-scrollbar;
 	}
-<<<<<<< Updated upstream
-
-	.table-responsive-xl>.table-bordered {
-=======
 	.table-responsive-xl > .table-bordered {
->>>>>>> Stashed changes
 		border: 0;
 	}
 }
@@ -3043,12 +1959,7 @@ pre code {
 		-webkit-overflow-scrolling: touch;
 		-ms-overflow-style: -ms-autohiding-scrollbar;
 	}
-<<<<<<< Updated upstream
-
-	.table-responsive-xxl>.table-bordered {
-=======
 	.table-responsive-xxl > .table-bordered {
->>>>>>> Stashed changes
 		border: 0;
 	}
 }
@@ -3060,12 +1971,7 @@ pre code {
 	-webkit-overflow-scrolling: touch;
 	-ms-overflow-style: -ms-autohiding-scrollbar;
 }
-<<<<<<< Updated upstream
-
-.table-responsive>.table-bordered {
-=======
 .table-responsive > .table-bordered {
->>>>>>> Stashed changes
 	border: 0;
 }
 
@@ -3083,27 +1989,15 @@ pre code {
 	border-radius: 0.25rem;
 	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 @media screen and (prefers-reduced-motion: reduce) {
 	.form-control {
 		transition: none;
 	}
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .form-control::-ms-expand {
 	background-color: transparent;
 	border: 0;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .form-control:focus {
 	color: #495057;
 	background-color: #fff;
@@ -3111,18 +2005,10 @@ pre code {
 	outline: 0;
 	box-shadow: 0 0 0 0.2rem rgba(117, 113, 249, 0.25);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .form-control::placeholder {
 	color: #f7fafc;
 	opacity: 1;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .form-control:disabled,
 .form-control[readonly] {
 	background-color: #e9ecef;
@@ -3174,10 +2060,6 @@ select.form-control:focus::-ms-value {
 	border: solid transparent;
 	border-width: 1px 0;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .form-control-plaintext.form-control-sm,
 .form-control-plaintext.form-control-lg {
 	padding-right: 0;
@@ -3224,14 +2106,8 @@ textarea.form-control {
 	margin-right: -5px;
 	margin-left: -5px;
 }
-<<<<<<< Updated upstream
-
-.form-row>.col,
-.form-row>[class*="col-"] {
-=======
 .form-row > .col,
 .form-row > [class*="col-"] {
->>>>>>> Stashed changes
 	padding-right: 5px;
 	padding-left: 5px;
 }
@@ -3247,12 +2123,7 @@ textarea.form-control {
 	margin-top: 0.3rem;
 	margin-left: -1.25rem;
 }
-<<<<<<< Updated upstream
-
-.form-check-input:disabled~.form-check-label {
-=======
 .form-check-input:disabled ~ .form-check-label {
->>>>>>> Stashed changes
 	color: #8898aa;
 }
 
@@ -3266,10 +2137,6 @@ textarea.form-control {
 	padding-left: 0;
 	margin-right: 0.75rem;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .form-check-inline .form-check-input {
 	position: static;
 	margin-top: 0;
@@ -3292,11 +2159,7 @@ textarea.form-control {
 	display: none;
 	max-width: 100%;
 	padding: 0.25rem 0.5rem;
-<<<<<<< Updated upstream
-	margin-top: .1rem;
-=======
 	margin-top: 0.1rem;
->>>>>>> Stashed changes
 	font-size: 0.76563rem;
 	line-height: 1.5;
 	color: #212529;
@@ -3310,10 +2173,6 @@ textarea.form-control {
 .custom-select.is-valid {
 	border-color: #6fd96f;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .was-validated .form-control:valid:focus,
 .form-control.is-valid:focus,
 .was-validated .custom-select:valid:focus,
@@ -3321,85 +2180,6 @@ textarea.form-control {
 	border-color: #6fd96f;
 	box-shadow: 0 0 0 0.2rem rgba(111, 217, 111, 0.25);
 }
-<<<<<<< Updated upstream
-
-.was-validated .form-control:valid~.valid-feedback,
-.was-validated .form-control:valid~.valid-tooltip,
-.form-control.is-valid~.valid-feedback,
-.form-control.is-valid~.valid-tooltip,
-.was-validated .custom-select:valid~.valid-feedback,
-.was-validated .custom-select:valid~.valid-tooltip,
-.custom-select.is-valid~.valid-feedback,
-.custom-select.is-valid~.valid-tooltip {
-	display: block;
-}
-
-.was-validated .form-control-file:valid~.valid-feedback,
-.was-validated .form-control-file:valid~.valid-tooltip,
-.form-control-file.is-valid~.valid-feedback,
-.form-control-file.is-valid~.valid-tooltip {
-	display: block;
-}
-
-.was-validated .form-check-input:valid~.form-check-label,
-.form-check-input.is-valid~.form-check-label {
-	color: #6fd96f;
-}
-
-.was-validated .form-check-input:valid~.valid-feedback,
-.was-validated .form-check-input:valid~.valid-tooltip,
-.form-check-input.is-valid~.valid-feedback,
-.form-check-input.is-valid~.valid-tooltip {
-	display: block;
-}
-
-.was-validated .custom-control-input:valid~.custom-control-label,
-.custom-control-input.is-valid~.custom-control-label {
-	color: #6fd96f;
-}
-
-.was-validated .custom-control-input:valid~.custom-control-label::before,
-.custom-control-input.is-valid~.custom-control-label::before {
-	background-color: #d4f4d4;
-}
-
-.was-validated .custom-control-input:valid~.valid-feedback,
-.was-validated .custom-control-input:valid~.valid-tooltip,
-.custom-control-input.is-valid~.valid-feedback,
-.custom-control-input.is-valid~.valid-tooltip {
-	display: block;
-}
-
-.was-validated .custom-control-input:valid:checked~.custom-control-label::before,
-.custom-control-input.is-valid:checked~.custom-control-label::before {
-	background-color: #97e497;
-}
-
-.was-validated .custom-control-input:valid:focus~.custom-control-label::before,
-.custom-control-input.is-valid:focus~.custom-control-label::before {
-	box-shadow: 0 0 0 1px #F3F3F9, 0 0 0 0.2rem rgba(111, 217, 111, 0.25);
-}
-
-.was-validated .custom-file-input:valid~.custom-file-label,
-.custom-file-input.is-valid~.custom-file-label {
-	border-color: #6fd96f;
-}
-
-.was-validated .custom-file-input:valid~.custom-file-label::after,
-.custom-file-input.is-valid~.custom-file-label::after {
-	border-color: inherit;
-}
-
-.was-validated .custom-file-input:valid~.valid-feedback,
-.was-validated .custom-file-input:valid~.valid-tooltip,
-.custom-file-input.is-valid~.valid-feedback,
-.custom-file-input.is-valid~.valid-tooltip {
-	display: block;
-}
-
-.was-validated .custom-file-input:valid:focus~.custom-file-label,
-.custom-file-input.is-valid:focus~.custom-file-label {
-=======
 .was-validated .form-control:valid ~ .valid-feedback,
 .was-validated .form-control:valid ~ .valid-tooltip,
 .form-control.is-valid ~ .valid-feedback,
@@ -3478,7 +2258,6 @@ textarea.form-control {
 
 .was-validated .custom-file-input:valid:focus ~ .custom-file-label,
 .custom-file-input.is-valid:focus ~ .custom-file-label {
->>>>>>> Stashed changes
 	box-shadow: 0 0 0 0.2rem rgba(111, 217, 111, 0.25);
 }
 
@@ -3497,11 +2276,7 @@ textarea.form-control {
 	display: none;
 	max-width: 100%;
 	padding: 0.25rem 0.5rem;
-<<<<<<< Updated upstream
-	margin-top: .1rem;
-=======
 	margin-top: 0.1rem;
->>>>>>> Stashed changes
 	font-size: 0.76563rem;
 	line-height: 1.5;
 	color: #fff;
@@ -3515,10 +2290,6 @@ textarea.form-control {
 .custom-select.is-invalid {
 	border-color: #ff5e5e;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .was-validated .form-control:invalid:focus,
 .form-control.is-invalid:focus,
 .was-validated .custom-select:invalid:focus,
@@ -3526,85 +2297,6 @@ textarea.form-control {
 	border-color: #ff5e5e;
 	box-shadow: 0 0 0 0.2rem rgba(255, 94, 94, 0.25);
 }
-<<<<<<< Updated upstream
-
-.was-validated .form-control:invalid~.invalid-feedback,
-.was-validated .form-control:invalid~.invalid-tooltip,
-.form-control.is-invalid~.invalid-feedback,
-.form-control.is-invalid~.invalid-tooltip,
-.was-validated .custom-select:invalid~.invalid-feedback,
-.was-validated .custom-select:invalid~.invalid-tooltip,
-.custom-select.is-invalid~.invalid-feedback,
-.custom-select.is-invalid~.invalid-tooltip {
-	display: block;
-}
-
-.was-validated .form-control-file:invalid~.invalid-feedback,
-.was-validated .form-control-file:invalid~.invalid-tooltip,
-.form-control-file.is-invalid~.invalid-feedback,
-.form-control-file.is-invalid~.invalid-tooltip {
-	display: block;
-}
-
-.was-validated .form-check-input:invalid~.form-check-label,
-.form-check-input.is-invalid~.form-check-label {
-	color: #ff5e5e;
-}
-
-.was-validated .form-check-input:invalid~.invalid-feedback,
-.was-validated .form-check-input:invalid~.invalid-tooltip,
-.form-check-input.is-invalid~.invalid-feedback,
-.form-check-input.is-invalid~.invalid-tooltip {
-	display: block;
-}
-
-.was-validated .custom-control-input:invalid~.custom-control-label,
-.custom-control-input.is-invalid~.custom-control-label {
-	color: #ff5e5e;
-}
-
-.was-validated .custom-control-input:invalid~.custom-control-label::before,
-.custom-control-input.is-invalid~.custom-control-label::before {
-	background-color: #ffdede;
-}
-
-.was-validated .custom-control-input:invalid~.invalid-feedback,
-.was-validated .custom-control-input:invalid~.invalid-tooltip,
-.custom-control-input.is-invalid~.invalid-feedback,
-.custom-control-input.is-invalid~.invalid-tooltip {
-	display: block;
-}
-
-.was-validated .custom-control-input:invalid:checked~.custom-control-label::before,
-.custom-control-input.is-invalid:checked~.custom-control-label::before {
-	background-color: #ff9191;
-}
-
-.was-validated .custom-control-input:invalid:focus~.custom-control-label::before,
-.custom-control-input.is-invalid:focus~.custom-control-label::before {
-	box-shadow: 0 0 0 1px #F3F3F9, 0 0 0 0.2rem rgba(255, 94, 94, 0.25);
-}
-
-.was-validated .custom-file-input:invalid~.custom-file-label,
-.custom-file-input.is-invalid~.custom-file-label {
-	border-color: #ff5e5e;
-}
-
-.was-validated .custom-file-input:invalid~.custom-file-label::after,
-.custom-file-input.is-invalid~.custom-file-label::after {
-	border-color: inherit;
-}
-
-.was-validated .custom-file-input:invalid~.invalid-feedback,
-.was-validated .custom-file-input:invalid~.invalid-tooltip,
-.custom-file-input.is-invalid~.invalid-feedback,
-.custom-file-input.is-invalid~.invalid-tooltip {
-	display: block;
-}
-
-.was-validated .custom-file-input:invalid:focus~.custom-file-label,
-.custom-file-input.is-invalid:focus~.custom-file-label {
-=======
 .was-validated .form-control:invalid ~ .invalid-feedback,
 .was-validated .form-control:invalid ~ .invalid-tooltip,
 .form-control.is-invalid ~ .invalid-feedback,
@@ -3683,7 +2375,6 @@ textarea.form-control {
 
 .was-validated .custom-file-input:invalid:focus ~ .custom-file-label,
 .custom-file-input.is-invalid:focus ~ .custom-file-label {
->>>>>>> Stashed changes
 	box-shadow: 0 0 0 0.2rem rgba(255, 94, 94, 0.25);
 }
 
@@ -3692,17 +2383,9 @@ textarea.form-control {
 	flex-flow: row wrap;
 	align-items: center;
 }
-<<<<<<< Updated upstream
-
 .form-inline .form-check {
 	width: 100%;
 }
-
-=======
-.form-inline .form-check {
-	width: 100%;
-}
->>>>>>> Stashed changes
 @media (min-width: 576px) {
 	.form-inline label {
 		display: flex;
@@ -3710,10 +2393,6 @@ textarea.form-control {
 		justify-content: center;
 		margin-bottom: 0;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.form-inline .form-group {
 		display: flex;
 		flex: 0 0 auto;
@@ -3721,34 +2400,18 @@ textarea.form-control {
 		align-items: center;
 		margin-bottom: 0;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.form-inline .form-control {
 		display: inline-block;
 		width: auto;
 		vertical-align: middle;
 	}
-<<<<<<< Updated upstream
-
 	.form-inline .form-control-plaintext {
 		display: inline-block;
 	}
-
-=======
-	.form-inline .form-control-plaintext {
-		display: inline-block;
-	}
->>>>>>> Stashed changes
 	.form-inline .input-group,
 	.form-inline .custom-select {
 		width: auto;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.form-inline .form-check {
 		display: flex;
 		align-items: center;
@@ -3756,28 +2419,16 @@ textarea.form-control {
 		width: auto;
 		padding-left: 0;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.form-inline .form-check-input {
 		position: relative;
 		margin-top: 0;
 		margin-right: 0.25rem;
 		margin-left: 0;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.form-inline .custom-control {
 		align-items: center;
 		justify-content: center;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.form-inline .custom-control-label {
 		margin-bottom: 0;
 	}
@@ -3795,49 +2446,27 @@ textarea.form-control {
 	font-size: 0.875rem;
 	line-height: 1.5;
 	border-radius: 0.25rem;
-<<<<<<< Updated upstream
-	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-=======
 	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
 		border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
->>>>>>> Stashed changes
 @media screen and (prefers-reduced-motion: reduce) {
 	.btn {
 		transition: none;
 	}
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn:hover,
 .btn:focus {
 	text-decoration: none;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn:focus,
 .btn.focus {
 	outline: 0;
 	box-shadow: 0 0 0 0.2rem rgba(117, 113, 249, 0.25);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn.disabled,
 .btn:disabled {
 	opacity: 0.65;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn:not(:disabled):not(.disabled) {
 	cursor: pointer;
 }
@@ -3852,57 +2481,31 @@ fieldset:disabled a.btn {
 	background-color: #7571f9;
 	border-color: #7571f9;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-primary:hover {
 	color: #fff;
 	background-color: #514cf7;
 	border-color: #4540f7;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-primary:focus,
 .btn-primary.focus {
 	box-shadow: 0 0 0 0.2rem rgba(117, 113, 249, 0.5);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-primary.disabled,
 .btn-primary:disabled {
 	color: #fff;
 	background-color: #7571f9;
 	border-color: #7571f9;
 }
-<<<<<<< Updated upstream
-
-.btn-primary:not(:disabled):not(.disabled):active,
-.btn-primary:not(:disabled):not(.disabled).active,
-.show>.btn-primary.dropdown-toggle {
-=======
 .btn-primary:not(:disabled):not(.disabled):active,
 .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
->>>>>>> Stashed changes
 	color: #fff;
 	background-color: #4540f7;
 	border-color: #3a34f6;
 }
-<<<<<<< Updated upstream
-
-.btn-primary:not(:disabled):not(.disabled):active:focus,
-.btn-primary:not(:disabled):not(.disabled).active:focus,
-.show>.btn-primary.dropdown-toggle:focus {
-=======
 .btn-primary:not(:disabled):not(.disabled):active:focus,
 .btn-primary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-primary.dropdown-toggle:focus {
->>>>>>> Stashed changes
 	box-shadow: 0 0 0 0.2rem rgba(117, 113, 249, 0.5);
 }
 
@@ -3911,57 +2514,31 @@ fieldset:disabled a.btn {
 	background-color: #9097c4;
 	border-color: #9097c4;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-secondary:hover {
 	color: #fff;
 	background-color: #7780b7;
 	border-color: #6f78b2;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-secondary:focus,
 .btn-secondary.focus {
 	box-shadow: 0 0 0 0.2rem rgba(144, 151, 196, 0.5);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-secondary.disabled,
 .btn-secondary:disabled {
 	color: #212529;
 	background-color: #9097c4;
 	border-color: #9097c4;
 }
-<<<<<<< Updated upstream
-
-.btn-secondary:not(:disabled):not(.disabled):active,
-.btn-secondary:not(:disabled):not(.disabled).active,
-.show>.btn-secondary.dropdown-toggle {
-=======
 .btn-secondary:not(:disabled):not(.disabled):active,
 .btn-secondary:not(:disabled):not(.disabled).active,
 .show > .btn-secondary.dropdown-toggle {
->>>>>>> Stashed changes
 	color: #fff;
 	background-color: #6f78b2;
 	border-color: #6670ae;
 }
-<<<<<<< Updated upstream
-
-.btn-secondary:not(:disabled):not(.disabled):active:focus,
-.btn-secondary:not(:disabled):not(.disabled).active:focus,
-.show>.btn-secondary.dropdown-toggle:focus {
-=======
 .btn-secondary:not(:disabled):not(.disabled):active:focus,
 .btn-secondary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-secondary.dropdown-toggle:focus {
->>>>>>> Stashed changes
 	box-shadow: 0 0 0 0.2rem rgba(144, 151, 196, 0.5);
 }
 
@@ -3970,57 +2547,31 @@ fieldset:disabled a.btn {
 	background-color: #6fd96f;
 	border-color: #6fd96f;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-success:hover {
 	color: #212529;
 	background-color: #51d151;
 	border-color: #47ce47;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-success:focus,
 .btn-success.focus {
 	box-shadow: 0 0 0 0.2rem rgba(111, 217, 111, 0.5);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-success.disabled,
 .btn-success:disabled {
 	color: #212529;
 	background-color: #6fd96f;
 	border-color: #6fd96f;
 }
-<<<<<<< Updated upstream
-
-.btn-success:not(:disabled):not(.disabled):active,
-.btn-success:not(:disabled):not(.disabled).active,
-.show>.btn-success.dropdown-toggle {
-=======
 .btn-success:not(:disabled):not(.disabled):active,
 .btn-success:not(:disabled):not(.disabled).active,
 .show > .btn-success.dropdown-toggle {
->>>>>>> Stashed changes
 	color: #212529;
 	background-color: #47ce47;
 	border-color: #3dcc3d;
 }
-<<<<<<< Updated upstream
-
-.btn-success:not(:disabled):not(.disabled):active:focus,
-.btn-success:not(:disabled):not(.disabled).active:focus,
-.show>.btn-success.dropdown-toggle:focus {
-=======
 .btn-success:not(:disabled):not(.disabled):active:focus,
 .btn-success:not(:disabled):not(.disabled).active:focus,
 .show > .btn-success.dropdown-toggle:focus {
->>>>>>> Stashed changes
 	box-shadow: 0 0 0 0.2rem rgba(111, 217, 111, 0.5);
 }
 
@@ -4029,57 +2580,31 @@ fieldset:disabled a.btn {
 	background-color: #4d7cff;
 	border-color: #4d7cff;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-info:hover {
 	color: #fff;
 	background-color: #2760ff;
 	border-color: #1a56ff;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-info:focus,
 .btn-info.focus {
 	box-shadow: 0 0 0 0.2rem rgba(77, 124, 255, 0.5);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-info.disabled,
 .btn-info:disabled {
 	color: #fff;
 	background-color: #4d7cff;
 	border-color: #4d7cff;
 }
-<<<<<<< Updated upstream
-
-.btn-info:not(:disabled):not(.disabled):active,
-.btn-info:not(:disabled):not(.disabled).active,
-.show>.btn-info.dropdown-toggle {
-=======
 .btn-info:not(:disabled):not(.disabled):active,
 .btn-info:not(:disabled):not(.disabled).active,
 .show > .btn-info.dropdown-toggle {
->>>>>>> Stashed changes
 	color: #fff;
 	background-color: #1a56ff;
 	border-color: #0d4dff;
 }
-<<<<<<< Updated upstream
-
-.btn-info:not(:disabled):not(.disabled):active:focus,
-.btn-info:not(:disabled):not(.disabled).active:focus,
-.show>.btn-info.dropdown-toggle:focus {
-=======
 .btn-info:not(:disabled):not(.disabled):active:focus,
 .btn-info:not(:disabled):not(.disabled).active:focus,
 .show > .btn-info.dropdown-toggle:focus {
->>>>>>> Stashed changes
 	box-shadow: 0 0 0 0.2rem rgba(77, 124, 255, 0.5);
 }
 
@@ -4088,57 +2613,31 @@ fieldset:disabled a.btn {
 	background-color: #f29d56;
 	border-color: #f29d56;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-warning:hover {
 	color: #212529;
 	background-color: #ef8832;
 	border-color: #ee8227;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-warning:focus,
 .btn-warning.focus {
 	box-shadow: 0 0 0 0.2rem rgba(242, 157, 86, 0.5);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-warning.disabled,
 .btn-warning:disabled {
 	color: #212529;
 	background-color: #f29d56;
 	border-color: #f29d56;
 }
-<<<<<<< Updated upstream
-
-.btn-warning:not(:disabled):not(.disabled):active,
-.btn-warning:not(:disabled):not(.disabled).active,
-.show>.btn-warning.dropdown-toggle {
-=======
 .btn-warning:not(:disabled):not(.disabled):active,
 .btn-warning:not(:disabled):not(.disabled).active,
 .show > .btn-warning.dropdown-toggle {
->>>>>>> Stashed changes
 	color: #212529;
 	background-color: #ee8227;
 	border-color: #ed7b1b;
 }
-<<<<<<< Updated upstream
-
-.btn-warning:not(:disabled):not(.disabled):active:focus,
-.btn-warning:not(:disabled):not(.disabled).active:focus,
-.show>.btn-warning.dropdown-toggle:focus {
-=======
 .btn-warning:not(:disabled):not(.disabled):active:focus,
 .btn-warning:not(:disabled):not(.disabled).active:focus,
 .show > .btn-warning.dropdown-toggle:focus {
->>>>>>> Stashed changes
 	box-shadow: 0 0 0 0.2rem rgba(242, 157, 86, 0.5);
 }
 
@@ -4147,57 +2646,31 @@ fieldset:disabled a.btn {
 	background-color: #ff5e5e;
 	border-color: #ff5e5e;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-danger:hover {
 	color: #fff;
 	background-color: #ff3838;
 	border-color: #ff2b2b;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-danger:focus,
 .btn-danger.focus {
 	box-shadow: 0 0 0 0.2rem rgba(255, 94, 94, 0.5);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-danger.disabled,
 .btn-danger:disabled {
 	color: #fff;
 	background-color: #ff5e5e;
 	border-color: #ff5e5e;
 }
-<<<<<<< Updated upstream
-
-.btn-danger:not(:disabled):not(.disabled):active,
-.btn-danger:not(:disabled):not(.disabled).active,
-.show>.btn-danger.dropdown-toggle {
-=======
 .btn-danger:not(:disabled):not(.disabled):active,
 .btn-danger:not(:disabled):not(.disabled).active,
 .show > .btn-danger.dropdown-toggle {
->>>>>>> Stashed changes
 	color: #fff;
 	background-color: #ff2b2b;
 	border-color: #ff1e1e;
 }
-<<<<<<< Updated upstream
-
-.btn-danger:not(:disabled):not(.disabled):active:focus,
-.btn-danger:not(:disabled):not(.disabled).active:focus,
-.show>.btn-danger.dropdown-toggle:focus {
-=======
 .btn-danger:not(:disabled):not(.disabled):active:focus,
 .btn-danger:not(:disabled):not(.disabled).active:focus,
 .show > .btn-danger.dropdown-toggle:focus {
->>>>>>> Stashed changes
 	box-shadow: 0 0 0 0.2rem rgba(255, 94, 94, 0.5);
 }
 
@@ -4206,57 +2679,31 @@ fieldset:disabled a.btn {
 	background-color: #f8f9fa;
 	border-color: #f8f9fa;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-light:hover {
 	color: #212529;
 	background-color: #e2e6ea;
 	border-color: #dae0e5;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-light:focus,
 .btn-light.focus {
 	box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-light.disabled,
 .btn-light:disabled {
 	color: #212529;
 	background-color: #f8f9fa;
 	border-color: #f8f9fa;
 }
-<<<<<<< Updated upstream
-
-.btn-light:not(:disabled):not(.disabled):active,
-.btn-light:not(:disabled):not(.disabled).active,
-.show>.btn-light.dropdown-toggle {
-=======
 .btn-light:not(:disabled):not(.disabled):active,
 .btn-light:not(:disabled):not(.disabled).active,
 .show > .btn-light.dropdown-toggle {
->>>>>>> Stashed changes
 	color: #212529;
 	background-color: #dae0e5;
 	border-color: #d3d9df;
 }
-<<<<<<< Updated upstream
-
-.btn-light:not(:disabled):not(.disabled):active:focus,
-.btn-light:not(:disabled):not(.disabled).active:focus,
-.show>.btn-light.dropdown-toggle:focus {
-=======
 .btn-light:not(:disabled):not(.disabled):active:focus,
 .btn-light:not(:disabled):not(.disabled).active:focus,
 .show > .btn-light.dropdown-toggle:focus {
->>>>>>> Stashed changes
 	box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);
 }
 
@@ -4265,57 +2712,31 @@ fieldset:disabled a.btn {
 	background-color: #333333;
 	border-color: #333333;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-dark:hover {
 	color: #fff;
 	background-color: #202020;
 	border-color: #1a1a1a;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-dark:focus,
 .btn-dark.focus {
 	box-shadow: 0 0 0 0.2rem rgba(51, 51, 51, 0.5);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-dark.disabled,
 .btn-dark:disabled {
 	color: #fff;
 	background-color: #333333;
 	border-color: #333333;
 }
-<<<<<<< Updated upstream
-
-.btn-dark:not(:disabled):not(.disabled):active,
-.btn-dark:not(:disabled):not(.disabled).active,
-.show>.btn-dark.dropdown-toggle {
-=======
 .btn-dark:not(:disabled):not(.disabled):active,
 .btn-dark:not(:disabled):not(.disabled).active,
 .show > .btn-dark.dropdown-toggle {
->>>>>>> Stashed changes
 	color: #fff;
 	background-color: #1a1a1a;
 	border-color: #131313;
 }
-<<<<<<< Updated upstream
-
-.btn-dark:not(:disabled):not(.disabled):active:focus,
-.btn-dark:not(:disabled):not(.disabled).active:focus,
-.show>.btn-dark.dropdown-toggle:focus {
-=======
 .btn-dark:not(:disabled):not(.disabled):active:focus,
 .btn-dark:not(:disabled):not(.disabled).active:focus,
 .show > .btn-dark.dropdown-toggle:focus {
->>>>>>> Stashed changes
 	box-shadow: 0 0 0 0.2rem rgba(51, 51, 51, 0.5);
 }
 
@@ -4325,56 +2746,30 @@ fieldset:disabled a.btn {
 	background-image: none;
 	border-color: #7571f9;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-outline-primary:hover {
 	color: #fff;
 	background-color: #7571f9;
 	border-color: #7571f9;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-outline-primary:focus,
 .btn-outline-primary.focus {
 	box-shadow: 0 0 0 0.2rem rgba(117, 113, 249, 0.5);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-outline-primary.disabled,
 .btn-outline-primary:disabled {
 	color: #7571f9;
 	background-color: transparent;
 }
-<<<<<<< Updated upstream
-
-.btn-outline-primary:not(:disabled):not(.disabled):active,
-.btn-outline-primary:not(:disabled):not(.disabled).active,
-.show>.btn-outline-primary.dropdown-toggle {
-=======
 .btn-outline-primary:not(:disabled):not(.disabled):active,
 .btn-outline-primary:not(:disabled):not(.disabled).active,
 .show > .btn-outline-primary.dropdown-toggle {
->>>>>>> Stashed changes
 	color: #fff;
 	background-color: #7571f9;
 	border-color: #7571f9;
 }
-<<<<<<< Updated upstream
-
-.btn-outline-primary:not(:disabled):not(.disabled):active:focus,
-.btn-outline-primary:not(:disabled):not(.disabled).active:focus,
-.show>.btn-outline-primary.dropdown-toggle:focus {
-=======
 .btn-outline-primary:not(:disabled):not(.disabled):active:focus,
 .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-primary.dropdown-toggle:focus {
->>>>>>> Stashed changes
 	box-shadow: 0 0 0 0.2rem rgba(117, 113, 249, 0.5);
 }
 
@@ -4384,56 +2779,30 @@ fieldset:disabled a.btn {
 	background-image: none;
 	border-color: #9097c4;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-outline-secondary:hover {
 	color: #212529;
 	background-color: #9097c4;
 	border-color: #9097c4;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-outline-secondary:focus,
 .btn-outline-secondary.focus {
 	box-shadow: 0 0 0 0.2rem rgba(144, 151, 196, 0.5);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-outline-secondary.disabled,
 .btn-outline-secondary:disabled {
 	color: #9097c4;
 	background-color: transparent;
 }
-<<<<<<< Updated upstream
-
-.btn-outline-secondary:not(:disabled):not(.disabled):active,
-.btn-outline-secondary:not(:disabled):not(.disabled).active,
-.show>.btn-outline-secondary.dropdown-toggle {
-=======
 .btn-outline-secondary:not(:disabled):not(.disabled):active,
 .btn-outline-secondary:not(:disabled):not(.disabled).active,
 .show > .btn-outline-secondary.dropdown-toggle {
->>>>>>> Stashed changes
 	color: #212529;
 	background-color: #9097c4;
 	border-color: #9097c4;
 }
-<<<<<<< Updated upstream
-
-.btn-outline-secondary:not(:disabled):not(.disabled):active:focus,
-.btn-outline-secondary:not(:disabled):not(.disabled).active:focus,
-.show>.btn-outline-secondary.dropdown-toggle:focus {
-=======
 .btn-outline-secondary:not(:disabled):not(.disabled):active:focus,
 .btn-outline-secondary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-secondary.dropdown-toggle:focus {
->>>>>>> Stashed changes
 	box-shadow: 0 0 0 0.2rem rgba(144, 151, 196, 0.5);
 }
 
@@ -4443,56 +2812,30 @@ fieldset:disabled a.btn {
 	background-image: none;
 	border-color: #6fd96f;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-outline-success:hover {
 	color: #212529;
 	background-color: #6fd96f;
 	border-color: #6fd96f;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-outline-success:focus,
 .btn-outline-success.focus {
 	box-shadow: 0 0 0 0.2rem rgba(111, 217, 111, 0.5);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-outline-success.disabled,
 .btn-outline-success:disabled {
 	color: #6fd96f;
 	background-color: transparent;
 }
-<<<<<<< Updated upstream
-
-.btn-outline-success:not(:disabled):not(.disabled):active,
-.btn-outline-success:not(:disabled):not(.disabled).active,
-.show>.btn-outline-success.dropdown-toggle {
-=======
 .btn-outline-success:not(:disabled):not(.disabled):active,
 .btn-outline-success:not(:disabled):not(.disabled).active,
 .show > .btn-outline-success.dropdown-toggle {
->>>>>>> Stashed changes
 	color: #212529;
 	background-color: #6fd96f;
 	border-color: #6fd96f;
 }
-<<<<<<< Updated upstream
-
-.btn-outline-success:not(:disabled):not(.disabled):active:focus,
-.btn-outline-success:not(:disabled):not(.disabled).active:focus,
-.show>.btn-outline-success.dropdown-toggle:focus {
-=======
 .btn-outline-success:not(:disabled):not(.disabled):active:focus,
 .btn-outline-success:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-success.dropdown-toggle:focus {
->>>>>>> Stashed changes
 	box-shadow: 0 0 0 0.2rem rgba(111, 217, 111, 0.5);
 }
 
@@ -4502,56 +2845,30 @@ fieldset:disabled a.btn {
 	background-image: none;
 	border-color: #4d7cff;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-outline-info:hover {
 	color: #fff;
 	background-color: #4d7cff;
 	border-color: #4d7cff;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-outline-info:focus,
 .btn-outline-info.focus {
 	box-shadow: 0 0 0 0.2rem rgba(77, 124, 255, 0.5);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-outline-info.disabled,
 .btn-outline-info:disabled {
 	color: #4d7cff;
 	background-color: transparent;
 }
-<<<<<<< Updated upstream
-
-.btn-outline-info:not(:disabled):not(.disabled):active,
-.btn-outline-info:not(:disabled):not(.disabled).active,
-.show>.btn-outline-info.dropdown-toggle {
-=======
 .btn-outline-info:not(:disabled):not(.disabled):active,
 .btn-outline-info:not(:disabled):not(.disabled).active,
 .show > .btn-outline-info.dropdown-toggle {
->>>>>>> Stashed changes
 	color: #fff;
 	background-color: #4d7cff;
 	border-color: #4d7cff;
 }
-<<<<<<< Updated upstream
-
-.btn-outline-info:not(:disabled):not(.disabled):active:focus,
-.btn-outline-info:not(:disabled):not(.disabled).active:focus,
-.show>.btn-outline-info.dropdown-toggle:focus {
-=======
 .btn-outline-info:not(:disabled):not(.disabled):active:focus,
 .btn-outline-info:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-info.dropdown-toggle:focus {
->>>>>>> Stashed changes
 	box-shadow: 0 0 0 0.2rem rgba(77, 124, 255, 0.5);
 }
 
@@ -4561,56 +2878,30 @@ fieldset:disabled a.btn {
 	background-image: none;
 	border-color: #f29d56;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-outline-warning:hover {
 	color: #212529;
 	background-color: #f29d56;
 	border-color: #f29d56;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-outline-warning:focus,
 .btn-outline-warning.focus {
 	box-shadow: 0 0 0 0.2rem rgba(242, 157, 86, 0.5);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-outline-warning.disabled,
 .btn-outline-warning:disabled {
 	color: #f29d56;
 	background-color: transparent;
 }
-<<<<<<< Updated upstream
-
-.btn-outline-warning:not(:disabled):not(.disabled):active,
-.btn-outline-warning:not(:disabled):not(.disabled).active,
-.show>.btn-outline-warning.dropdown-toggle {
-=======
 .btn-outline-warning:not(:disabled):not(.disabled):active,
 .btn-outline-warning:not(:disabled):not(.disabled).active,
 .show > .btn-outline-warning.dropdown-toggle {
->>>>>>> Stashed changes
 	color: #212529;
 	background-color: #f29d56;
 	border-color: #f29d56;
 }
-<<<<<<< Updated upstream
-
-.btn-outline-warning:not(:disabled):not(.disabled):active:focus,
-.btn-outline-warning:not(:disabled):not(.disabled).active:focus,
-.show>.btn-outline-warning.dropdown-toggle:focus {
-=======
 .btn-outline-warning:not(:disabled):not(.disabled):active:focus,
 .btn-outline-warning:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-warning.dropdown-toggle:focus {
->>>>>>> Stashed changes
 	box-shadow: 0 0 0 0.2rem rgba(242, 157, 86, 0.5);
 }
 
@@ -4620,56 +2911,30 @@ fieldset:disabled a.btn {
 	background-image: none;
 	border-color: #ff5e5e;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-outline-danger:hover {
 	color: #fff;
 	background-color: #ff5e5e;
 	border-color: #ff5e5e;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-outline-danger:focus,
 .btn-outline-danger.focus {
 	box-shadow: 0 0 0 0.2rem rgba(255, 94, 94, 0.5);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-outline-danger.disabled,
 .btn-outline-danger:disabled {
 	color: #ff5e5e;
 	background-color: transparent;
 }
-<<<<<<< Updated upstream
-
-.btn-outline-danger:not(:disabled):not(.disabled):active,
-.btn-outline-danger:not(:disabled):not(.disabled).active,
-.show>.btn-outline-danger.dropdown-toggle {
-=======
 .btn-outline-danger:not(:disabled):not(.disabled):active,
 .btn-outline-danger:not(:disabled):not(.disabled).active,
 .show > .btn-outline-danger.dropdown-toggle {
->>>>>>> Stashed changes
 	color: #fff;
 	background-color: #ff5e5e;
 	border-color: #ff5e5e;
 }
-<<<<<<< Updated upstream
-
-.btn-outline-danger:not(:disabled):not(.disabled):active:focus,
-.btn-outline-danger:not(:disabled):not(.disabled).active:focus,
-.show>.btn-outline-danger.dropdown-toggle:focus {
-=======
 .btn-outline-danger:not(:disabled):not(.disabled):active:focus,
 .btn-outline-danger:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-danger.dropdown-toggle:focus {
->>>>>>> Stashed changes
 	box-shadow: 0 0 0 0.2rem rgba(255, 94, 94, 0.5);
 }
 
@@ -4679,56 +2944,30 @@ fieldset:disabled a.btn {
 	background-image: none;
 	border-color: #f8f9fa;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-outline-light:hover {
 	color: #212529;
 	background-color: #f8f9fa;
 	border-color: #f8f9fa;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-outline-light:focus,
 .btn-outline-light.focus {
 	box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-outline-light.disabled,
 .btn-outline-light:disabled {
 	color: #f8f9fa;
 	background-color: transparent;
 }
-<<<<<<< Updated upstream
-
-.btn-outline-light:not(:disabled):not(.disabled):active,
-.btn-outline-light:not(:disabled):not(.disabled).active,
-.show>.btn-outline-light.dropdown-toggle {
-=======
 .btn-outline-light:not(:disabled):not(.disabled):active,
 .btn-outline-light:not(:disabled):not(.disabled).active,
 .show > .btn-outline-light.dropdown-toggle {
->>>>>>> Stashed changes
 	color: #212529;
 	background-color: #f8f9fa;
 	border-color: #f8f9fa;
 }
-<<<<<<< Updated upstream
-
-.btn-outline-light:not(:disabled):not(.disabled):active:focus,
-.btn-outline-light:not(:disabled):not(.disabled).active:focus,
-.show>.btn-outline-light.dropdown-toggle:focus {
-=======
 .btn-outline-light:not(:disabled):not(.disabled):active:focus,
 .btn-outline-light:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-light.dropdown-toggle:focus {
->>>>>>> Stashed changes
 	box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);
 }
 
@@ -4738,56 +2977,30 @@ fieldset:disabled a.btn {
 	background-image: none;
 	border-color: #333333;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-outline-dark:hover {
 	color: #fff;
 	background-color: #333333;
 	border-color: #333333;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-outline-dark:focus,
 .btn-outline-dark.focus {
 	box-shadow: 0 0 0 0.2rem rgba(51, 51, 51, 0.5);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-outline-dark.disabled,
 .btn-outline-dark:disabled {
 	color: #333333;
 	background-color: transparent;
 }
-<<<<<<< Updated upstream
-
-.btn-outline-dark:not(:disabled):not(.disabled):active,
-.btn-outline-dark:not(:disabled):not(.disabled).active,
-.show>.btn-outline-dark.dropdown-toggle {
-=======
 .btn-outline-dark:not(:disabled):not(.disabled):active,
 .btn-outline-dark:not(:disabled):not(.disabled).active,
 .show > .btn-outline-dark.dropdown-toggle {
->>>>>>> Stashed changes
 	color: #fff;
 	background-color: #333333;
 	border-color: #333333;
 }
-<<<<<<< Updated upstream
-
-.btn-outline-dark:not(:disabled):not(.disabled):active:focus,
-.btn-outline-dark:not(:disabled):not(.disabled).active:focus,
-.show>.btn-outline-dark.dropdown-toggle:focus {
-=======
 .btn-outline-dark:not(:disabled):not(.disabled):active:focus,
 .btn-outline-dark:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-dark.dropdown-toggle:focus {
->>>>>>> Stashed changes
 	box-shadow: 0 0 0 0.2rem rgba(51, 51, 51, 0.5);
 }
 
@@ -4796,30 +3009,18 @@ fieldset:disabled a.btn {
 	color: #7571f9;
 	background-color: transparent;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-link:hover {
 	color: #2e28f6;
 	text-decoration: underline;
 	background-color: transparent;
 	border-color: transparent;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-link:focus,
 .btn-link.focus {
 	text-decoration: underline;
 	border-color: transparent;
 	box-shadow: none;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-link:disabled,
 .btn-link.disabled {
 	color: #f7fafc;
@@ -4827,11 +3028,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-lg,
-<<<<<<< Updated upstream
-.btn-group-lg>.btn {
-=======
 .btn-group-lg > .btn {
->>>>>>> Stashed changes
 	padding: 0.5rem 1rem;
 	font-size: 1.09375rem;
 	line-height: 1.5;
@@ -4839,11 +3036,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-sm,
-<<<<<<< Updated upstream
-.btn-group-sm>.btn {
-=======
 .btn-group-sm > .btn {
->>>>>>> Stashed changes
 	padding: 0.25rem 0.5rem;
 	font-size: 0.76563rem;
 	line-height: 1.5;
@@ -4854,12 +3047,7 @@ fieldset:disabled a.btn {
 	display: block;
 	width: 100%;
 }
-<<<<<<< Updated upstream
-
-.btn-block+.btn-block {
-=======
 .btn-block + .btn-block {
->>>>>>> Stashed changes
 	margin-top: 0.5rem;
 }
 
@@ -4872,19 +3060,11 @@ input[type="button"].btn-block {
 .fade {
 	transition: opacity 0.15s linear;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 @media screen and (prefers-reduced-motion: reduce) {
 	.fade {
 		transition: none;
 	}
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .fade:not(.show) {
 	opacity: 0;
 }
@@ -4899,10 +3079,6 @@ input[type="button"].btn-block {
 	overflow: hidden;
 	transition: height 0.35s ease;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 @media screen and (prefers-reduced-motion: reduce) {
 	.collapsing {
 		transition: none;
@@ -5079,30 +3255,18 @@ input[type="button"].btn-block {
 	background-color: transparent;
 	border: 0;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .dropdown-item:hover,
 .dropdown-item:focus {
 	color: #16181b;
 	text-decoration: none;
 	background-color: #f8f9fa;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .dropdown-item.active,
 .dropdown-item:active {
 	color: #fff;
 	text-decoration: none;
 	background-color: #7571f9;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .dropdown-item.disabled,
 .dropdown-item:disabled {
 	color: #f7fafc;
@@ -5134,37 +3298,6 @@ input[type="button"].btn-block {
 	display: inline-flex;
 	vertical-align: middle;
 }
-<<<<<<< Updated upstream
-
-.btn-group>.btn,
-.btn-group-vertical>.btn {
-	position: relative;
-	flex: 0 1 auto;
-}
-
-.btn-group>.btn:hover,
-.btn-group-vertical>.btn:hover {
-	z-index: 1;
-}
-
-.btn-group>.btn:focus,
-.btn-group>.btn:active,
-.btn-group>.btn.active,
-.btn-group-vertical>.btn:focus,
-.btn-group-vertical>.btn:active,
-.btn-group-vertical>.btn.active {
-	z-index: 1;
-}
-
-.btn-group .btn+.btn,
-.btn-group .btn+.btn-group,
-.btn-group .btn-group+.btn,
-.btn-group .btn-group+.btn-group,
-.btn-group-vertical .btn+.btn,
-.btn-group-vertical .btn+.btn-group,
-.btn-group-vertical .btn-group+.btn,
-.btn-group-vertical .btn-group+.btn-group {
-=======
 .btn-group > .btn,
 .btn-group-vertical > .btn {
 	position: relative;
@@ -5190,7 +3323,6 @@ input[type="button"].btn-block {
 .btn-group-vertical .btn + .btn-group,
 .btn-group-vertical .btn-group + .btn,
 .btn-group-vertical .btn-group + .btn-group {
->>>>>>> Stashed changes
 	margin-left: -1px;
 }
 
@@ -5199,40 +3331,22 @@ input[type="button"].btn-block {
 	flex-wrap: wrap;
 	justify-content: flex-start;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-toolbar .input-group {
 	width: auto;
 }
 
-<<<<<<< Updated upstream
-.btn-group>.btn:first-child {
-	margin-left: 0;
-}
-
-.btn-group>.btn:not(:last-child):not(.dropdown-toggle),
-.btn-group>.btn-group:not(:last-child)>.btn {
-=======
 .btn-group > .btn:first-child {
 	margin-left: 0;
 }
 
 .btn-group > .btn:not(:last-child):not(.dropdown-toggle),
 .btn-group > .btn-group:not(:last-child) > .btn {
->>>>>>> Stashed changes
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
 }
 
-<<<<<<< Updated upstream
-.btn-group>.btn:not(:first-child),
-.btn-group>.btn-group:not(:first-child)>.btn {
-=======
 .btn-group > .btn:not(:first-child),
 .btn-group > .btn-group:not(:first-child) > .btn {
->>>>>>> Stashed changes
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 }
@@ -5241,41 +3355,23 @@ input[type="button"].btn-block {
 	padding-right: 0.5625rem;
 	padding-left: 0.5625rem;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .dropdown-toggle-split::after,
 .dropup .dropdown-toggle-split::after,
 .dropright .dropdown-toggle-split::after {
 	margin-left: 0;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .dropleft .dropdown-toggle-split::before {
 	margin-right: 0;
 }
 
-<<<<<<< Updated upstream
-.btn-sm+.dropdown-toggle-split,
-.btn-group-sm>.btn+.dropdown-toggle-split {
-=======
 .btn-sm + .dropdown-toggle-split,
 .btn-group-sm > .btn + .dropdown-toggle-split {
->>>>>>> Stashed changes
 	padding-right: 0.375rem;
 	padding-left: 0.375rem;
 }
 
-<<<<<<< Updated upstream
-.btn-lg+.dropdown-toggle-split,
-.btn-group-lg>.btn+.dropdown-toggle-split {
-=======
 .btn-lg + .dropdown-toggle-split,
 .btn-group-lg > .btn + .dropdown-toggle-split {
->>>>>>> Stashed changes
 	padding-right: 0.75rem;
 	padding-left: 0.75rem;
 }
@@ -5285,33 +3381,10 @@ input[type="button"].btn-block {
 	align-items: flex-start;
 	justify-content: center;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .btn-group-vertical .btn,
 .btn-group-vertical .btn-group {
 	width: 100%;
 }
-<<<<<<< Updated upstream
-
-.btn-group-vertical>.btn+.btn,
-.btn-group-vertical>.btn+.btn-group,
-.btn-group-vertical>.btn-group+.btn,
-.btn-group-vertical>.btn-group+.btn-group {
-	margin-top: -1px;
-	margin-left: 0;
-}
-
-.btn-group-vertical>.btn:not(:last-child):not(.dropdown-toggle),
-.btn-group-vertical>.btn-group:not(:last-child)>.btn {
-	border-bottom-right-radius: 0;
-	border-bottom-left-radius: 0;
-}
-
-.btn-group-vertical>.btn:not(:first-child),
-.btn-group-vertical>.btn-group:not(:first-child)>.btn {
-=======
 .btn-group-vertical > .btn + .btn,
 .btn-group-vertical > .btn + .btn-group,
 .btn-group-vertical > .btn-group + .btn,
@@ -5326,22 +3399,10 @@ input[type="button"].btn-block {
 }
 .btn-group-vertical > .btn:not(:first-child),
 .btn-group-vertical > .btn-group:not(:first-child) > .btn {
->>>>>>> Stashed changes
 	border-top-left-radius: 0;
 	border-top-right-radius: 0;
 }
 
-<<<<<<< Updated upstream
-.btn-group-toggle>.btn,
-.btn-group-toggle>.btn-group>.btn {
-	margin-bottom: 0;
-}
-
-.btn-group-toggle>.btn input[type="radio"],
-.btn-group-toggle>.btn input[type="checkbox"],
-.btn-group-toggle>.btn-group>.btn input[type="radio"],
-.btn-group-toggle>.btn-group>.btn input[type="checkbox"] {
-=======
 .btn-group-toggle > .btn,
 .btn-group-toggle > .btn-group > .btn {
 	margin-bottom: 0;
@@ -5350,7 +3411,6 @@ input[type="button"].btn-block {
 .btn-group-toggle > .btn input[type="checkbox"],
 .btn-group-toggle > .btn-group > .btn input[type="radio"],
 .btn-group-toggle > .btn-group > .btn input[type="checkbox"] {
->>>>>>> Stashed changes
 	position: absolute;
 	clip: rect(0, 0, 0, 0);
 	pointer-events: none;
@@ -5363,70 +3423,14 @@ input[type="button"].btn-block {
 	align-items: stretch;
 	width: 100%;
 }
-<<<<<<< Updated upstream
-
-.input-group>.form-control,
-.input-group>.custom-select,
-.input-group>.custom-file {
-=======
 .input-group > .form-control,
 .input-group > .custom-select,
 .input-group > .custom-file {
->>>>>>> Stashed changes
 	position: relative;
 	flex: 1 1 auto;
 	width: 1%;
 	margin-bottom: 0;
 }
-<<<<<<< Updated upstream
-
-.input-group>.form-control+.form-control,
-.input-group>.form-control+.custom-select,
-.input-group>.form-control+.custom-file,
-.input-group>.custom-select+.form-control,
-.input-group>.custom-select+.custom-select,
-.input-group>.custom-select+.custom-file,
-.input-group>.custom-file+.form-control,
-.input-group>.custom-file+.custom-select,
-.input-group>.custom-file+.custom-file {
-	margin-left: -1px;
-}
-
-.input-group>.form-control:focus,
-.input-group>.custom-select:focus,
-.input-group>.custom-file .custom-file-input:focus~.custom-file-label {
-	z-index: 3;
-}
-
-.input-group>.custom-file .custom-file-input:focus {
-	z-index: 4;
-}
-
-.input-group>.form-control:not(:last-child),
-.input-group>.custom-select:not(:last-child) {
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
-}
-
-.input-group>.form-control:not(:first-child),
-.input-group>.custom-select:not(:first-child) {
-	border-top-left-radius: 0;
-	border-bottom-left-radius: 0;
-}
-
-.input-group>.custom-file {
-	display: flex;
-	align-items: center;
-}
-
-.input-group>.custom-file:not(:last-child) .custom-file-label,
-.input-group>.custom-file:not(:last-child) .custom-file-label::after {
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
-}
-
-.input-group>.custom-file:not(:first-child) .custom-file-label {
-=======
 .input-group > .form-control + .form-control,
 .input-group > .form-control + .custom-select,
 .input-group > .form-control + .custom-file,
@@ -5466,7 +3470,6 @@ input[type="button"].btn-block {
 	border-bottom-right-radius: 0;
 }
 .input-group > .custom-file:not(:first-child) .custom-file-label {
->>>>>>> Stashed changes
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 }
@@ -5475,26 +3478,11 @@ input[type="button"].btn-block {
 .input-group-append {
 	display: flex;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .input-group-prepend .btn,
 .input-group-append .btn {
 	position: relative;
 	z-index: 2;
 }
-<<<<<<< Updated upstream
-
-.input-group-prepend .btn+.btn,
-.input-group-prepend .btn+.input-group-text,
-.input-group-prepend .input-group-text+.input-group-text,
-.input-group-prepend .input-group-text+.btn,
-.input-group-append .btn+.btn,
-.input-group-append .btn+.input-group-text,
-.input-group-append .input-group-text+.input-group-text,
-.input-group-append .input-group-text+.btn {
-=======
 .input-group-prepend .btn + .btn,
 .input-group-prepend .btn + .input-group-text,
 .input-group-prepend .input-group-text + .input-group-text,
@@ -5503,7 +3491,6 @@ input[type="button"].btn-block {
 .input-group-append .btn + .input-group-text,
 .input-group-append .input-group-text + .input-group-text,
 .input-group-append .input-group-text + .btn {
->>>>>>> Stashed changes
 	margin-left: -1px;
 }
 
@@ -5530,28 +3517,16 @@ input[type="button"].btn-block {
 	border: 1px solid #ced4da;
 	border-radius: 0.25rem;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .input-group-text input[type="radio"],
 .input-group-text input[type="checkbox"] {
 	margin-top: 0;
 }
 
-<<<<<<< Updated upstream
-.input-group-lg>.form-control,
-.input-group-lg>.input-group-prepend>.input-group-text,
-.input-group-lg>.input-group-append>.input-group-text,
-.input-group-lg>.input-group-prepend>.btn,
-.input-group-lg>.input-group-append>.btn {
-=======
 .input-group-lg > .form-control,
 .input-group-lg > .input-group-prepend > .input-group-text,
 .input-group-lg > .input-group-append > .input-group-text,
 .input-group-lg > .input-group-prepend > .btn,
 .input-group-lg > .input-group-append > .btn {
->>>>>>> Stashed changes
 	height: calc(2.64063rem + 2px);
 	padding: 0.5rem 1rem;
 	font-size: 1.09375rem;
@@ -5559,19 +3534,11 @@ input[type="button"].btn-block {
 	border-radius: 0.3rem;
 }
 
-<<<<<<< Updated upstream
-.input-group-sm>.form-control,
-.input-group-sm>.input-group-prepend>.input-group-text,
-.input-group-sm>.input-group-append>.input-group-text,
-.input-group-sm>.input-group-prepend>.btn,
-.input-group-sm>.input-group-append>.btn {
-=======
 .input-group-sm > .form-control,
 .input-group-sm > .input-group-prepend > .input-group-text,
 .input-group-sm > .input-group-append > .input-group-text,
 .input-group-sm > .input-group-prepend > .btn,
 .input-group-sm > .input-group-append > .btn {
->>>>>>> Stashed changes
 	height: calc(1.64844rem + 2px);
 	padding: 0.25rem 0.5rem;
 	font-size: 0.76563rem;
@@ -5579,14 +3546,6 @@ input[type="button"].btn-block {
 	border-radius: 0.2rem;
 }
 
-<<<<<<< Updated upstream
-.input-group>.input-group-prepend>.btn,
-.input-group>.input-group-prepend>.input-group-text,
-.input-group>.input-group-append:not(:last-child)>.btn,
-.input-group>.input-group-append:not(:last-child)>.input-group-text,
-.input-group>.input-group-append:last-child>.btn:not(:last-child):not(.dropdown-toggle),
-.input-group>.input-group-append:last-child>.input-group-text:not(:last-child) {
-=======
 .input-group > .input-group-prepend > .btn,
 .input-group > .input-group-prepend > .input-group-text,
 .input-group > .input-group-append:not(:last-child) > .btn,
@@ -5597,19 +3556,10 @@ input[type="button"].btn-block {
 .input-group
 	> .input-group-append:last-child
 	> .input-group-text:not(:last-child) {
->>>>>>> Stashed changes
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
 }
 
-<<<<<<< Updated upstream
-.input-group>.input-group-append>.btn,
-.input-group>.input-group-append>.input-group-text,
-.input-group>.input-group-prepend:not(:first-child)>.btn,
-.input-group>.input-group-prepend:not(:first-child)>.input-group-text,
-.input-group>.input-group-prepend:first-child>.btn:not(:first-child),
-.input-group>.input-group-prepend:first-child>.input-group-text:not(:first-child) {
-=======
 .input-group > .input-group-append > .btn,
 .input-group > .input-group-append > .input-group-text,
 .input-group > .input-group-prepend:not(:first-child) > .btn,
@@ -5618,7 +3568,6 @@ input[type="button"].btn-block {
 .input-group
 	> .input-group-prepend:first-child
 	> .input-group-text:not(:first-child) {
->>>>>>> Stashed changes
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 }
@@ -5640,28 +3589,6 @@ input[type="button"].btn-block {
 	z-index: -1;
 	opacity: 0;
 }
-<<<<<<< Updated upstream
-
-.custom-control-input:checked~.custom-control-label::before {
-	color: #fff;
-	background-color: #7571f9;
-}
-
-.custom-control-input:focus~.custom-control-label::before {
-	box-shadow: 0 0 0 1px #F3F3F9, 0 0 0 0.2rem rgba(117, 113, 249, 0.25);
-}
-
-.custom-control-input:active~.custom-control-label::before {
-	color: #fff;
-	background-color: white;
-}
-
-.custom-control-input:disabled~.custom-control-label {
-	color: #f7fafc;
-}
-
-.custom-control-input:disabled~.custom-control-label::before {
-=======
 .custom-control-input:checked ~ .custom-control-label::before {
 	color: #fff;
 	background-color: #7571f9;
@@ -5677,7 +3604,6 @@ input[type="button"].btn-block {
 	color: #f7fafc;
 }
 .custom-control-input:disabled ~ .custom-control-label::before {
->>>>>>> Stashed changes
 	background-color: #e9ecef;
 }
 
@@ -5685,10 +3611,6 @@ input[type="button"].btn-block {
 	position: relative;
 	margin-bottom: 0;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .custom-control-label::before {
 	position: absolute;
 	top: 0.15625rem;
@@ -5701,10 +3623,6 @@ input[type="button"].btn-block {
 	user-select: none;
 	background-color: #dee2e6;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .custom-control-label::after {
 	position: absolute;
 	top: 0.15625rem;
@@ -5722,29 +3640,6 @@ input[type="button"].btn-block {
 	border-radius: 0.25rem;
 }
 
-<<<<<<< Updated upstream
-.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-	background-color: #7571f9;
-}
-
-.custom-checkbox .custom-control-input:checked~.custom-control-label::after {
-	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
-}
-
-.custom-checkbox .custom-control-input:indeterminate~.custom-control-label::before {
-	background-color: #7571f9;
-}
-
-.custom-checkbox .custom-control-input:indeterminate~.custom-control-label::after {
-	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3E%3Cpath stroke='%23fff' d='M0 2h4'/%3E%3C/svg%3E");
-}
-
-.custom-checkbox .custom-control-input:disabled:checked~.custom-control-label::before {
-	background-color: rgba(117, 113, 249, 0.5);
-}
-
-.custom-checkbox .custom-control-input:disabled:indeterminate~.custom-control-label::before {
-=======
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
 	background-color: #7571f9;
 }
@@ -5774,7 +3669,6 @@ input[type="button"].btn-block {
 .custom-checkbox
 	.custom-control-input:disabled:indeterminate
 	~ .custom-control-label::before {
->>>>>>> Stashed changes
 	background-color: rgba(117, 113, 249, 0.5);
 }
 
@@ -5782,17 +3676,6 @@ input[type="button"].btn-block {
 	border-radius: 50%;
 }
 
-<<<<<<< Updated upstream
-.custom-radio .custom-control-input:checked~.custom-control-label::before {
-	background-color: #7571f9;
-}
-
-.custom-radio .custom-control-input:checked~.custom-control-label::after {
-	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%23fff'/%3E%3C/svg%3E");
-}
-
-.custom-radio .custom-control-input:disabled:checked~.custom-control-label::before {
-=======
 .custom-radio .custom-control-input:checked ~ .custom-control-label::before {
 	background-color: #7571f9;
 }
@@ -5804,7 +3687,6 @@ input[type="button"].btn-block {
 .custom-radio
 	.custom-control-input:disabled:checked
 	~ .custom-control-label::before {
->>>>>>> Stashed changes
 	background-color: rgba(117, 113, 249, 0.5);
 }
 
@@ -5816,57 +3698,33 @@ input[type="button"].btn-block {
 	line-height: 1.5;
 	color: #495057;
 	vertical-align: middle;
-<<<<<<< Updated upstream
-	background: #fff url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23333333' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right 0.75rem center;
-=======
 	background: #fff
 		url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23333333' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E")
 		no-repeat right 0.75rem center;
->>>>>>> Stashed changes
 	background-size: 8px 10px;
 	border: 1px solid #ced4da;
 	border-radius: 0.25rem;
 	appearance: none;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .custom-select:focus {
 	border-color: #ecebfe;
 	outline: 0;
 	box-shadow: 0 0 0 0.2rem rgba(236, 235, 254, 0.5);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .custom-select:focus::-ms-value {
 	color: #495057;
 	background-color: #fff;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .custom-select[multiple],
 .custom-select[size]:not([size="1"]) {
 	height: auto;
 	padding-right: 0.75rem;
 	background-image: none;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .custom-select:disabled {
 	color: #f7fafc;
 	background-color: #e9ecef;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .custom-select::-ms-expand {
 	opacity: 0;
 }
@@ -5901,23 +3759,6 @@ input[type="button"].btn-block {
 	margin: 0;
 	opacity: 0;
 }
-<<<<<<< Updated upstream
-
-.custom-file-input:focus~.custom-file-label {
-	border-color: #ecebfe;
-	box-shadow: 0 0 0 0.2rem rgba(117, 113, 249, 0.25);
-}
-
-.custom-file-input:focus~.custom-file-label::after {
-	border-color: #ecebfe;
-}
-
-.custom-file-input:disabled~.custom-file-label {
-	background-color: #e9ecef;
-}
-
-.custom-file-input:lang(en)~.custom-file-label::after {
-=======
 .custom-file-input:focus ~ .custom-file-label {
 	border-color: #ecebfe;
 	box-shadow: 0 0 0 0.2rem rgba(117, 113, 249, 0.25);
@@ -5929,7 +3770,6 @@ input[type="button"].btn-block {
 	background-color: #e9ecef;
 }
 .custom-file-input:lang(en) ~ .custom-file-label::after {
->>>>>>> Stashed changes
 	content: "Browse";
 }
 
@@ -5947,10 +3787,6 @@ input[type="button"].btn-block {
 	border: 1px solid #ced4da;
 	border-radius: 0.25rem;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .custom-file-label::after {
 	position: absolute;
 	top: 0;
@@ -5974,29 +3810,6 @@ input[type="button"].btn-block {
 	background-color: transparent;
 	appearance: none;
 }
-<<<<<<< Updated upstream
-
-.custom-range:focus {
-	outline: none;
-}
-
-.custom-range:focus::-webkit-slider-thumb {
-	box-shadow: 0 0 0 1px #F3F3F9, 0 0 0 0.2rem rgba(117, 113, 249, 0.25);
-}
-
-.custom-range:focus::-moz-range-thumb {
-	box-shadow: 0 0 0 1px #F3F3F9, 0 0 0 0.2rem rgba(117, 113, 249, 0.25);
-}
-
-.custom-range:focus::-ms-thumb {
-	box-shadow: 0 0 0 1px #F3F3F9, 0 0 0 0.2rem rgba(117, 113, 249, 0.25);
-}
-
-.custom-range::-moz-focus-outer {
-	border: 0;
-}
-
-=======
 .custom-range:focus {
 	outline: none;
 }
@@ -6012,7 +3825,6 @@ input[type="button"].btn-block {
 .custom-range::-moz-focus-outer {
 	border: 0;
 }
->>>>>>> Stashed changes
 .custom-range::-webkit-slider-thumb {
 	width: 1rem;
 	height: 1rem;
@@ -6020,33 +3832,18 @@ input[type="button"].btn-block {
 	background-color: #7571f9;
 	border: 0;
 	border-radius: 1rem;
-<<<<<<< Updated upstream
-	transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-	appearance: none;
-}
-
-=======
 	transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
 		box-shadow 0.15s ease-in-out;
 	appearance: none;
 }
->>>>>>> Stashed changes
 @media screen and (prefers-reduced-motion: reduce) {
 	.custom-range::-webkit-slider-thumb {
 		transition: none;
 	}
 }
-<<<<<<< Updated upstream
-
 .custom-range::-webkit-slider-thumb:active {
 	background-color: white;
 }
-
-=======
-.custom-range::-webkit-slider-thumb:active {
-	background-color: white;
-}
->>>>>>> Stashed changes
 .custom-range::-webkit-slider-runnable-track {
 	width: 100%;
 	height: 0.5rem;
@@ -6056,43 +3853,24 @@ input[type="button"].btn-block {
 	border-color: transparent;
 	border-radius: 1rem;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .custom-range::-moz-range-thumb {
 	width: 1rem;
 	height: 1rem;
 	background-color: #7571f9;
 	border: 0;
 	border-radius: 1rem;
-<<<<<<< Updated upstream
-	transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-	appearance: none;
-}
-
-=======
 	transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
 		box-shadow 0.15s ease-in-out;
 	appearance: none;
 }
->>>>>>> Stashed changes
 @media screen and (prefers-reduced-motion: reduce) {
 	.custom-range::-moz-range-thumb {
 		transition: none;
 	}
 }
-<<<<<<< Updated upstream
-
 .custom-range::-moz-range-thumb:active {
 	background-color: white;
 }
-
-=======
-.custom-range::-moz-range-thumb:active {
-	background-color: white;
-}
->>>>>>> Stashed changes
 .custom-range::-moz-range-track {
 	width: 100%;
 	height: 0.5rem;
@@ -6102,10 +3880,6 @@ input[type="button"].btn-block {
 	border-color: transparent;
 	border-radius: 1rem;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .custom-range::-ms-thumb {
 	width: 1rem;
 	height: 1rem;
@@ -6115,33 +3889,18 @@ input[type="button"].btn-block {
 	background-color: #7571f9;
 	border: 0;
 	border-radius: 1rem;
-<<<<<<< Updated upstream
-	transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-	appearance: none;
-}
-
-=======
 	transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
 		box-shadow 0.15s ease-in-out;
 	appearance: none;
 }
->>>>>>> Stashed changes
 @media screen and (prefers-reduced-motion: reduce) {
 	.custom-range::-ms-thumb {
 		transition: none;
 	}
 }
-<<<<<<< Updated upstream
-
 .custom-range::-ms-thumb:active {
 	background-color: white;
 }
-
-=======
-.custom-range::-ms-thumb:active {
-	background-color: white;
-}
->>>>>>> Stashed changes
 .custom-range::-ms-track {
 	width: 100%;
 	height: 0.5rem;
@@ -6151,18 +3910,10 @@ input[type="button"].btn-block {
 	border-color: transparent;
 	border-width: 0.5rem;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .custom-range::-ms-fill-lower {
 	background-color: #dee2e6;
 	border-radius: 1rem;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .custom-range::-ms-fill-upper {
 	margin-right: 15px;
 	background-color: #dee2e6;
@@ -6172,18 +3923,10 @@ input[type="button"].btn-block {
 .custom-control-label::before,
 .custom-file-label,
 .custom-select {
-<<<<<<< Updated upstream
-	transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-@media screen and (prefers-reduced-motion: reduce) {
-
-=======
 	transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
 		box-shadow 0.15s ease-in-out;
 }
 @media screen and (prefers-reduced-motion: reduce) {
->>>>>>> Stashed changes
 	.custom-control-label::before,
 	.custom-file-label,
 	.custom-select {
@@ -6203,18 +3946,10 @@ input[type="button"].btn-block {
 	display: block;
 	padding: 0.5rem 1rem;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .nav-link:hover,
 .nav-link:focus {
 	text-decoration: none;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .nav-link.disabled {
 	color: #f7fafc;
 }
@@ -6222,56 +3957,29 @@ input[type="button"].btn-block {
 .nav-tabs {
 	border-bottom: 1px solid #dee2e6;
 }
-<<<<<<< Updated upstream
-
 .nav-tabs .nav-item {
 	margin-bottom: -1px;
 }
-
-=======
-.nav-tabs .nav-item {
-	margin-bottom: -1px;
-}
->>>>>>> Stashed changes
 .nav-tabs .nav-link {
 	border: 1px solid transparent;
 	border-top-left-radius: 0.25rem;
 	border-top-right-radius: 0.25rem;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .nav-tabs .nav-link:hover,
 .nav-tabs .nav-link:focus {
 	border-color: #e9ecef #e9ecef #dee2e6;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .nav-tabs .nav-link.disabled {
 	color: #f7fafc;
 	background-color: transparent;
 	border-color: transparent;
 }
-<<<<<<< Updated upstream
-
-.nav-tabs .nav-link.active,
-.nav-tabs .nav-item.show .nav-link {
-	color: #495057;
-	background-color: #F3F3F9;
-	border-color: #dee2e6 #dee2e6 #F3F3F9;
-}
-
-=======
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
 	color: #495057;
 	background-color: #f3f3f9;
 	border-color: #dee2e6 #dee2e6 #f3f3f9;
 }
->>>>>>> Stashed changes
 .nav-tabs .dropdown-menu {
 	margin-top: -1px;
 	border-top-left-radius: 0;
@@ -6283,11 +3991,7 @@ input[type="button"].btn-block {
 }
 
 .nav-pills .nav-link.active,
-<<<<<<< Updated upstream
-.nav-pills .show>.nav-link {
-=======
 .nav-pills .show > .nav-link {
->>>>>>> Stashed changes
 	color: #fff;
 	background-color: #7571f9;
 }
@@ -6303,19 +4007,11 @@ input[type="button"].btn-block {
 	text-align: center;
 }
 
-<<<<<<< Updated upstream
-.tab-content>.tab-pane {
-	display: none;
-}
-
-.tab-content>.active {
-=======
 .tab-content > .tab-pane {
 	display: none;
 }
 
 .tab-content > .active {
->>>>>>> Stashed changes
 	display: block;
 }
 
@@ -6327,14 +4023,8 @@ input[type="button"].btn-block {
 	justify-content: space-between;
 	padding: 0.5rem 1rem;
 }
-<<<<<<< Updated upstream
-
-.navbar>.container,
-.navbar>.container-fluid {
-=======
 .navbar > .container,
 .navbar > .container-fluid {
->>>>>>> Stashed changes
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -6350,10 +4040,6 @@ input[type="button"].btn-block {
 	line-height: inherit;
 	white-space: nowrap;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .navbar-brand:hover,
 .navbar-brand:focus {
 	text-decoration: none;
@@ -6366,18 +4052,10 @@ input[type="button"].btn-block {
 	margin-bottom: 0;
 	list-style: none;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .navbar-nav .nav-link {
 	padding-right: 0;
 	padding-left: 0;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .navbar-nav .dropdown-menu {
 	position: static;
 	float: none;
@@ -6403,18 +4081,10 @@ input[type="button"].btn-block {
 	border: 1px solid transparent;
 	border-radius: 0.25rem;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .navbar-toggler:hover,
 .navbar-toggler:focus {
 	text-decoration: none;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .navbar-toggler:not(:disabled):not(.disabled) {
 	cursor: pointer;
 }
@@ -6430,14 +4100,8 @@ input[type="button"].btn-block {
 }
 
 @media (max-width: 575.98px) {
-<<<<<<< Updated upstream
-
-	.navbar-expand-sm>.container,
-	.navbar-expand-sm>.container-fluid {
-=======
 	.navbar-expand-sm > .container,
 	.navbar-expand-sm > .container-fluid {
->>>>>>> Stashed changes
 		padding-right: 0;
 		padding-left: 0;
 	}
@@ -6448,63 +4112,32 @@ input[type="button"].btn-block {
 		flex-flow: row nowrap;
 		justify-content: flex-start;
 	}
-<<<<<<< Updated upstream
-
-	.navbar-expand-sm .navbar-nav {
-		flex-direction: row;
-	}
-
-	.navbar-expand-sm .navbar-nav .dropdown-menu {
-		position: absolute;
-	}
-
-=======
 	.navbar-expand-sm .navbar-nav {
 		flex-direction: row;
 	}
 	.navbar-expand-sm .navbar-nav .dropdown-menu {
 		position: absolute;
 	}
->>>>>>> Stashed changes
 	.navbar-expand-sm .navbar-nav .nav-link {
 		padding-right: 0.5rem;
 		padding-left: 0.5rem;
 	}
-<<<<<<< Updated upstream
-
-	.navbar-expand-sm>.container,
-	.navbar-expand-sm>.container-fluid {
-		flex-wrap: nowrap;
-	}
-
-=======
 	.navbar-expand-sm > .container,
 	.navbar-expand-sm > .container-fluid {
 		flex-wrap: nowrap;
 	}
->>>>>>> Stashed changes
 	.navbar-expand-sm .navbar-collapse {
 		display: flex !important;
 		flex-basis: auto;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.navbar-expand-sm .navbar-toggler {
 		display: none;
 	}
 }
 
 @media (max-width: 767.98px) {
-<<<<<<< Updated upstream
-
-	.navbar-expand-md>.container,
-	.navbar-expand-md>.container-fluid {
-=======
 	.navbar-expand-md > .container,
 	.navbar-expand-md > .container-fluid {
->>>>>>> Stashed changes
 		padding-right: 0;
 		padding-left: 0;
 	}
@@ -6515,63 +4148,32 @@ input[type="button"].btn-block {
 		flex-flow: row nowrap;
 		justify-content: flex-start;
 	}
-<<<<<<< Updated upstream
-
-	.navbar-expand-md .navbar-nav {
-		flex-direction: row;
-	}
-
-	.navbar-expand-md .navbar-nav .dropdown-menu {
-		position: absolute;
-	}
-
-=======
 	.navbar-expand-md .navbar-nav {
 		flex-direction: row;
 	}
 	.navbar-expand-md .navbar-nav .dropdown-menu {
 		position: absolute;
 	}
->>>>>>> Stashed changes
 	.navbar-expand-md .navbar-nav .nav-link {
 		padding-right: 0.5rem;
 		padding-left: 0.5rem;
 	}
-<<<<<<< Updated upstream
-
-	.navbar-expand-md>.container,
-	.navbar-expand-md>.container-fluid {
-		flex-wrap: nowrap;
-	}
-
-=======
 	.navbar-expand-md > .container,
 	.navbar-expand-md > .container-fluid {
 		flex-wrap: nowrap;
 	}
->>>>>>> Stashed changes
 	.navbar-expand-md .navbar-collapse {
 		display: flex !important;
 		flex-basis: auto;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.navbar-expand-md .navbar-toggler {
 		display: none;
 	}
 }
 
 @media (max-width: 991.98px) {
-<<<<<<< Updated upstream
-
-	.navbar-expand-lg>.container,
-	.navbar-expand-lg>.container-fluid {
-=======
 	.navbar-expand-lg > .container,
 	.navbar-expand-lg > .container-fluid {
->>>>>>> Stashed changes
 		padding-right: 0;
 		padding-left: 0;
 	}
@@ -6582,63 +4184,32 @@ input[type="button"].btn-block {
 		flex-flow: row nowrap;
 		justify-content: flex-start;
 	}
-<<<<<<< Updated upstream
-
-	.navbar-expand-lg .navbar-nav {
-		flex-direction: row;
-	}
-
-	.navbar-expand-lg .navbar-nav .dropdown-menu {
-		position: absolute;
-	}
-
-=======
 	.navbar-expand-lg .navbar-nav {
 		flex-direction: row;
 	}
 	.navbar-expand-lg .navbar-nav .dropdown-menu {
 		position: absolute;
 	}
->>>>>>> Stashed changes
 	.navbar-expand-lg .navbar-nav .nav-link {
 		padding-right: 0.5rem;
 		padding-left: 0.5rem;
 	}
-<<<<<<< Updated upstream
-
-	.navbar-expand-lg>.container,
-	.navbar-expand-lg>.container-fluid {
-		flex-wrap: nowrap;
-	}
-
-=======
 	.navbar-expand-lg > .container,
 	.navbar-expand-lg > .container-fluid {
 		flex-wrap: nowrap;
 	}
->>>>>>> Stashed changes
 	.navbar-expand-lg .navbar-collapse {
 		display: flex !important;
 		flex-basis: auto;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.navbar-expand-lg .navbar-toggler {
 		display: none;
 	}
 }
 
 @media (max-width: 1199.98px) {
-<<<<<<< Updated upstream
-
-	.navbar-expand-xl>.container,
-	.navbar-expand-xl>.container-fluid {
-=======
 	.navbar-expand-xl > .container,
 	.navbar-expand-xl > .container-fluid {
->>>>>>> Stashed changes
 		padding-right: 0;
 		padding-left: 0;
 	}
@@ -6649,63 +4220,32 @@ input[type="button"].btn-block {
 		flex-flow: row nowrap;
 		justify-content: flex-start;
 	}
-<<<<<<< Updated upstream
-
-	.navbar-expand-xl .navbar-nav {
-		flex-direction: row;
-	}
-
-	.navbar-expand-xl .navbar-nav .dropdown-menu {
-		position: absolute;
-	}
-
-=======
 	.navbar-expand-xl .navbar-nav {
 		flex-direction: row;
 	}
 	.navbar-expand-xl .navbar-nav .dropdown-menu {
 		position: absolute;
 	}
->>>>>>> Stashed changes
 	.navbar-expand-xl .navbar-nav .nav-link {
 		padding-right: 0.5rem;
 		padding-left: 0.5rem;
 	}
-<<<<<<< Updated upstream
-
-	.navbar-expand-xl>.container,
-	.navbar-expand-xl>.container-fluid {
-		flex-wrap: nowrap;
-	}
-
-=======
 	.navbar-expand-xl > .container,
 	.navbar-expand-xl > .container-fluid {
 		flex-wrap: nowrap;
 	}
->>>>>>> Stashed changes
 	.navbar-expand-xl .navbar-collapse {
 		display: flex !important;
 		flex-basis: auto;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.navbar-expand-xl .navbar-toggler {
 		display: none;
 	}
 }
 
 @media (max-width: 1399.98px) {
-<<<<<<< Updated upstream
-
-	.navbar-expand-xxl>.container,
-	.navbar-expand-xxl>.container-fluid {
-=======
 	.navbar-expand-xxl > .container,
 	.navbar-expand-xxl > .container-fluid {
->>>>>>> Stashed changes
 		padding-right: 0;
 		padding-left: 0;
 	}
@@ -6716,49 +4256,24 @@ input[type="button"].btn-block {
 		flex-flow: row nowrap;
 		justify-content: flex-start;
 	}
-<<<<<<< Updated upstream
-
-	.navbar-expand-xxl .navbar-nav {
-		flex-direction: row;
-	}
-
-	.navbar-expand-xxl .navbar-nav .dropdown-menu {
-		position: absolute;
-	}
-
-=======
 	.navbar-expand-xxl .navbar-nav {
 		flex-direction: row;
 	}
 	.navbar-expand-xxl .navbar-nav .dropdown-menu {
 		position: absolute;
 	}
->>>>>>> Stashed changes
 	.navbar-expand-xxl .navbar-nav .nav-link {
 		padding-right: 0.5rem;
 		padding-left: 0.5rem;
 	}
-<<<<<<< Updated upstream
-
-	.navbar-expand-xxl>.container,
-	.navbar-expand-xxl>.container-fluid {
-		flex-wrap: nowrap;
-	}
-
-=======
 	.navbar-expand-xxl > .container,
 	.navbar-expand-xxl > .container-fluid {
 		flex-wrap: nowrap;
 	}
->>>>>>> Stashed changes
 	.navbar-expand-xxl .navbar-collapse {
 		display: flex !important;
 		flex-basis: auto;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.navbar-expand-xxl .navbar-toggler {
 		display: none;
 	}
@@ -6768,23 +4283,6 @@ input[type="button"].btn-block {
 	flex-flow: row nowrap;
 	justify-content: flex-start;
 }
-<<<<<<< Updated upstream
-
-.navbar-expand>.container,
-.navbar-expand>.container-fluid {
-	padding-right: 0;
-	padding-left: 0;
-}
-
-.navbar-expand .navbar-nav {
-	flex-direction: row;
-}
-
-.navbar-expand .navbar-nav .dropdown-menu {
-	position: absolute;
-}
-
-=======
 .navbar-expand > .container,
 .navbar-expand > .container-fluid {
 	padding-right: 0;
@@ -6796,32 +4294,18 @@ input[type="button"].btn-block {
 .navbar-expand .navbar-nav .dropdown-menu {
 	position: absolute;
 }
->>>>>>> Stashed changes
 .navbar-expand .navbar-nav .nav-link {
 	padding-right: 0.5rem;
 	padding-left: 0.5rem;
 }
-<<<<<<< Updated upstream
-
-.navbar-expand>.container,
-.navbar-expand>.container-fluid {
-	flex-wrap: nowrap;
-}
-
-=======
 .navbar-expand > .container,
 .navbar-expand > .container-fluid {
 	flex-wrap: nowrap;
 }
->>>>>>> Stashed changes
 .navbar-expand .navbar-collapse {
 	display: flex !important;
 	flex-basis: auto;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .navbar-expand .navbar-toggler {
 	display: none;
 }
@@ -6829,10 +4313,6 @@ input[type="button"].btn-block {
 .navbar-light .navbar-brand {
 	color: rgba(0, 0, 0, 0.9);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .navbar-light .navbar-brand:hover,
 .navbar-light .navbar-brand:focus {
 	color: rgba(0, 0, 0, 0.9);
@@ -6841,29 +4321,16 @@ input[type="button"].btn-block {
 .navbar-light .navbar-nav .nav-link {
 	color: rgba(0, 0, 0, 0.5);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link:focus {
 	color: rgba(0, 0, 0, 0.7);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .navbar-light .navbar-nav .nav-link.disabled {
 	color: rgba(0, 0, 0, 0.3);
 }
 
-<<<<<<< Updated upstream
-.navbar-light .navbar-nav .show>.nav-link,
-.navbar-light .navbar-nav .active>.nav-link,
-=======
 .navbar-light .navbar-nav .show > .nav-link,
 .navbar-light .navbar-nav .active > .nav-link,
->>>>>>> Stashed changes
 .navbar-light .navbar-nav .nav-link.show,
 .navbar-light .navbar-nav .nav-link.active {
 	color: rgba(0, 0, 0, 0.9);
@@ -6881,17 +4348,9 @@ input[type="button"].btn-block {
 .navbar-light .navbar-text {
 	color: rgba(0, 0, 0, 0.5);
 }
-<<<<<<< Updated upstream
-
 .navbar-light .navbar-text a {
 	color: rgba(0, 0, 0, 0.9);
 }
-
-=======
-.navbar-light .navbar-text a {
-	color: rgba(0, 0, 0, 0.9);
-}
->>>>>>> Stashed changes
 .navbar-light .navbar-text a:hover,
 .navbar-light .navbar-text a:focus {
 	color: rgba(0, 0, 0, 0.9);
@@ -6900,10 +4359,6 @@ input[type="button"].btn-block {
 .navbar-dark .navbar-brand {
 	color: #fff;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .navbar-dark .navbar-brand:hover,
 .navbar-dark .navbar-brand:focus {
 	color: #fff;
@@ -6912,29 +4367,16 @@ input[type="button"].btn-block {
 .navbar-dark .navbar-nav .nav-link {
 	color: rgba(255, 255, 255, 0.5);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link:focus {
 	color: rgba(255, 255, 255, 0.75);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .navbar-dark .navbar-nav .nav-link.disabled {
 	color: rgba(255, 255, 255, 0.25);
 }
 
-<<<<<<< Updated upstream
-.navbar-dark .navbar-nav .show>.nav-link,
-.navbar-dark .navbar-nav .active>.nav-link,
-=======
 .navbar-dark .navbar-nav .show > .nav-link,
 .navbar-dark .navbar-nav .active > .nav-link,
->>>>>>> Stashed changes
 .navbar-dark .navbar-nav .nav-link.show,
 .navbar-dark .navbar-nav .nav-link.active {
 	color: #fff;
@@ -6952,17 +4394,9 @@ input[type="button"].btn-block {
 .navbar-dark .navbar-text {
 	color: rgba(255, 255, 255, 0.5);
 }
-<<<<<<< Updated upstream
-
 .navbar-dark .navbar-text a {
 	color: #fff;
 }
-
-=======
-.navbar-dark .navbar-text a {
-	color: #fff;
-}
->>>>>>> Stashed changes
 .navbar-dark .navbar-text a:hover,
 .navbar-dark .navbar-text a:focus {
 	color: #fff;
@@ -6979,20 +4413,6 @@ input[type="button"].btn-block {
 	border: 1px solid rgba(0, 0, 0, 0.125);
 	border-radius: 0.25rem;
 }
-<<<<<<< Updated upstream
-
-.card>hr {
-	margin-right: 0;
-	margin-left: 0;
-}
-
-.card>.list-group:first-child .list-group-item:first-child {
-	border-top-left-radius: 0.25rem;
-	border-top-right-radius: 0.25rem;
-}
-
-.card>.list-group:last-child .list-group-item:last-child {
-=======
 .card > hr {
 	margin-right: 0;
 	margin-left: 0;
@@ -7002,7 +4422,6 @@ input[type="button"].btn-block {
 	border-top-right-radius: 0.25rem;
 }
 .card > .list-group:last-child .list-group-item:last-child {
->>>>>>> Stashed changes
 	border-bottom-right-radius: 0.25rem;
 	border-bottom-left-radius: 0.25rem;
 }
@@ -7029,11 +4448,7 @@ input[type="button"].btn-block {
 	text-decoration: none;
 }
 
-<<<<<<< Updated upstream
-.card-link+.card-link {
-=======
 .card-link + .card-link {
->>>>>>> Stashed changes
 	margin-left: 1.25rem;
 }
 
@@ -7043,19 +4458,10 @@ input[type="button"].btn-block {
 	background-color: rgba(0, 0, 0, 0.03);
 	border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
-<<<<<<< Updated upstream
-
-.card-header:first-child {
-	border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
-}
-
-.card-header+.list-group .list-group-item:first-child {
-=======
 .card-header:first-child {
 	border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
 }
 .card-header + .list-group .list-group-item:first-child {
->>>>>>> Stashed changes
 	border-top: 0;
 }
 
@@ -7064,10 +4470,6 @@ input[type="button"].btn-block {
 	background-color: rgba(0, 0, 0, 0.03);
 	border-top: 1px solid rgba(0, 0, 0, 0.125);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .card-footer:last-child {
 	border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
 }
@@ -7114,27 +4516,15 @@ input[type="button"].btn-block {
 	display: flex;
 	flex-direction: column;
 }
-<<<<<<< Updated upstream
-
 .card-deck .card {
 	margin-bottom: 15px;
 }
-
-=======
-.card-deck .card {
-	margin-bottom: 15px;
-}
->>>>>>> Stashed changes
 @media (min-width: 576px) {
 	.card-deck {
 		flex-flow: row wrap;
 		margin-right: -15px;
 		margin-left: -15px;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.card-deck .card {
 		display: flex;
 		flex: 1 0 0%;
@@ -7149,88 +4539,13 @@ input[type="button"].btn-block {
 	display: flex;
 	flex-direction: column;
 }
-<<<<<<< Updated upstream
-
-.card-group>.card {
-	margin-bottom: 15px;
-}
-
-=======
 .card-group > .card {
 	margin-bottom: 15px;
 }
->>>>>>> Stashed changes
 @media (min-width: 576px) {
 	.card-group {
 		flex-flow: row wrap;
 	}
-<<<<<<< Updated upstream
-
-	.card-group>.card {
-		flex: 1 0 0%;
-		margin-bottom: 0;
-	}
-
-	.card-group>.card+.card {
-		margin-left: 0;
-		border-left: 0;
-	}
-
-	.card-group>.card:first-child {
-		border-top-right-radius: 0;
-		border-bottom-right-radius: 0;
-	}
-
-	.card-group>.card:first-child .card-img-top,
-	.card-group>.card:first-child .card-header {
-		border-top-right-radius: 0;
-	}
-
-	.card-group>.card:first-child .card-img-bottom,
-	.card-group>.card:first-child .card-footer {
-		border-bottom-right-radius: 0;
-	}
-
-	.card-group>.card:last-child {
-		border-top-left-radius: 0;
-		border-bottom-left-radius: 0;
-	}
-
-	.card-group>.card:last-child .card-img-top,
-	.card-group>.card:last-child .card-header {
-		border-top-left-radius: 0;
-	}
-
-	.card-group>.card:last-child .card-img-bottom,
-	.card-group>.card:last-child .card-footer {
-		border-bottom-left-radius: 0;
-	}
-
-	.card-group>.card:only-child {
-		border-radius: 0.25rem;
-	}
-
-	.card-group>.card:only-child .card-img-top,
-	.card-group>.card:only-child .card-header {
-		border-top-left-radius: 0.25rem;
-		border-top-right-radius: 0.25rem;
-	}
-
-	.card-group>.card:only-child .card-img-bottom,
-	.card-group>.card:only-child .card-footer {
-		border-bottom-right-radius: 0.25rem;
-		border-bottom-left-radius: 0.25rem;
-	}
-
-	.card-group>.card:not(:first-child):not(:last-child):not(:only-child) {
-		border-radius: 0;
-	}
-
-	.card-group>.card:not(:first-child):not(:last-child):not(:only-child) .card-img-top,
-	.card-group>.card:not(:first-child):not(:last-child):not(:only-child) .card-img-bottom,
-	.card-group>.card:not(:first-child):not(:last-child):not(:only-child) .card-header,
-	.card-group>.card:not(:first-child):not(:last-child):not(:only-child) .card-footer {
-=======
 	.card-group > .card {
 		flex: 1 0 0%;
 		margin-bottom: 0;
@@ -7291,7 +4606,6 @@ input[type="button"].btn-block {
 	.card-group
 		> .card:not(:first-child):not(:last-child):not(:only-child)
 		.card-footer {
->>>>>>> Stashed changes
 		border-radius: 0;
 	}
 }
@@ -7307,10 +4621,6 @@ input[type="button"].btn-block {
 		orphans: 1;
 		widows: 1;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.card-columns .card {
 		display: inline-block;
 		width: 100%;
@@ -7347,37 +4657,21 @@ input[type="button"].btn-block {
 	border-radius: 0.25rem;
 }
 
-<<<<<<< Updated upstream
-.breadcrumb-item+.breadcrumb-item {
-	padding-left: 0.5rem;
-}
-
-.breadcrumb-item+.breadcrumb-item::before {
-=======
 .breadcrumb-item + .breadcrumb-item {
 	padding-left: 0.5rem;
 }
 .breadcrumb-item + .breadcrumb-item::before {
->>>>>>> Stashed changes
 	display: inline-block;
 	padding-right: 0.5rem;
 	color: #f7fafc;
 	content: "/";
 }
 
-<<<<<<< Updated upstream
-.breadcrumb-item+.breadcrumb-item:hover::before {
-	text-decoration: underline;
-}
-
-.breadcrumb-item+.breadcrumb-item:hover::before {
-=======
 .breadcrumb-item + .breadcrumb-item:hover::before {
 	text-decoration: underline;
 }
 
 .breadcrumb-item + .breadcrumb-item:hover::before {
->>>>>>> Stashed changes
 	text-decoration: none;
 }
 
@@ -7402,10 +4696,6 @@ input[type="button"].btn-block {
 	background-color: #fff;
 	border: 1px solid #dee2e6;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .page-link:hover {
 	z-index: 2;
 	color: #2e28f6;
@@ -7413,19 +4703,11 @@ input[type="button"].btn-block {
 	background-color: #e9ecef;
 	border-color: #dee2e6;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .page-link:focus {
 	z-index: 2;
 	outline: 0;
 	box-shadow: 0 0 0 0.2rem rgba(117, 113, 249, 0.25);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .page-link:not(:disabled):not(.disabled) {
 	cursor: pointer;
 }
@@ -7499,10 +4781,6 @@ input[type="button"].btn-block {
 	vertical-align: baseline;
 	border-radius: 0.25rem;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .badge:empty {
 	display: none;
 }
@@ -7522,10 +4800,6 @@ input[type="button"].btn-block {
 	color: #fff;
 	background-color: #7571f9;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .badge-primary[href]:hover,
 .badge-primary[href]:focus {
 	color: #fff;
@@ -7537,10 +4811,6 @@ input[type="button"].btn-block {
 	color: #212529;
 	background-color: #9097c4;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .badge-secondary[href]:hover,
 .badge-secondary[href]:focus {
 	color: #212529;
@@ -7552,10 +4822,6 @@ input[type="button"].btn-block {
 	color: #212529;
 	background-color: #6fd96f;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .badge-success[href]:hover,
 .badge-success[href]:focus {
 	color: #212529;
@@ -7567,10 +4833,6 @@ input[type="button"].btn-block {
 	color: #fff;
 	background-color: #4d7cff;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .badge-info[href]:hover,
 .badge-info[href]:focus {
 	color: #fff;
@@ -7582,10 +4844,6 @@ input[type="button"].btn-block {
 	color: #212529;
 	background-color: #f29d56;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .badge-warning[href]:hover,
 .badge-warning[href]:focus {
 	color: #212529;
@@ -7597,10 +4855,6 @@ input[type="button"].btn-block {
 	color: #fff;
 	background-color: #ff5e5e;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .badge-danger[href]:hover,
 .badge-danger[href]:focus {
 	color: #fff;
@@ -7612,10 +4866,6 @@ input[type="button"].btn-block {
 	color: #212529;
 	background-color: #f8f9fa;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .badge-light[href]:hover,
 .badge-light[href]:focus {
 	color: #212529;
@@ -7627,10 +4877,6 @@ input[type="button"].btn-block {
 	color: #fff;
 	background-color: #333333;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .badge-dark[href]:hover,
 .badge-dark[href]:focus {
 	color: #fff;
@@ -7644,10 +4890,6 @@ input[type="button"].btn-block {
 	background-color: #e9ecef;
 	border-radius: 0.3rem;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 @media (min-width: 576px) {
 	.jumbotron {
 		padding: 4rem 2rem;
@@ -7679,10 +4921,6 @@ input[type="button"].btn-block {
 .alert-dismissible {
 	padding-right: 3.8125rem;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .alert-dismissible .close {
 	position: absolute;
 	top: 0;
@@ -7696,17 +4934,9 @@ input[type="button"].btn-block {
 	background-color: #e3e3fe;
 	border-color: #d8d7fd;
 }
-<<<<<<< Updated upstream
-
 .alert-primary hr {
 	border-top-color: #c0bffc;
 }
-
-=======
-.alert-primary hr {
-	border-top-color: #c0bffc;
-}
->>>>>>> Stashed changes
 .alert-primary .alert-link {
 	color: #2c2b5e;
 }
@@ -7716,17 +4946,9 @@ input[type="button"].btn-block {
 	background-color: #e9eaf3;
 	border-color: #e0e2ee;
 }
-<<<<<<< Updated upstream
-
 .alert-secondary hr {
 	border-top-color: #d0d3e5;
 }
-
-=======
-.alert-secondary hr {
-	border-top-color: #d0d3e5;
-}
->>>>>>> Stashed changes
 .alert-secondary .alert-link {
 	color: #353849;
 }
@@ -7736,17 +4958,9 @@ input[type="button"].btn-block {
 	background-color: #e2f7e2;
 	border-color: #d7f4d7;
 }
-<<<<<<< Updated upstream
-
 .alert-success hr {
 	border-top-color: #c3efc3;
 }
-
-=======
-.alert-success hr {
-	border-top-color: #c3efc3;
-}
->>>>>>> Stashed changes
 .alert-success .alert-link {
 	color: #294f29;
 }
@@ -7756,17 +4970,9 @@ input[type="button"].btn-block {
 	background-color: #dbe5ff;
 	border-color: #cddaff;
 }
-<<<<<<< Updated upstream
-
 .alert-info hr {
 	border-top-color: #b4c7ff;
 }
-
-=======
-.alert-info hr {
-	border-top-color: #b4c7ff;
-}
->>>>>>> Stashed changes
 .alert-info .alert-link {
 	color: #1c2d5e;
 }
@@ -7776,17 +4982,9 @@ input[type="button"].btn-block {
 	background-color: #fcebdd;
 	border-color: #fbe4d0;
 }
-<<<<<<< Updated upstream
-
 .alert-warning hr {
 	border-top-color: #f9d7b9;
 }
-
-=======
-.alert-warning hr {
-	border-top-color: #f9d7b9;
-}
->>>>>>> Stashed changes
 .alert-warning .alert-link {
 	color: #583a20;
 }
@@ -7796,17 +4994,9 @@ input[type="button"].btn-block {
 	background-color: #ffdfdf;
 	border-color: #ffd2d2;
 }
-<<<<<<< Updated upstream
-
 .alert-danger hr {
 	border-top-color: #ffb9b9;
 }
-
-=======
-.alert-danger hr {
-	border-top-color: #ffb9b9;
-}
->>>>>>> Stashed changes
 .alert-danger .alert-link {
 	color: #602323;
 }
@@ -7816,17 +5006,9 @@ input[type="button"].btn-block {
 	background-color: #fefefe;
 	border-color: #fdfdfe;
 }
-<<<<<<< Updated upstream
-
 .alert-light hr {
 	border-top-color: #ececf6;
 }
-
-=======
-.alert-light hr {
-	border-top-color: #ececf6;
-}
->>>>>>> Stashed changes
 .alert-light .alert-link {
 	color: #686868;
 }
@@ -7836,17 +5018,9 @@ input[type="button"].btn-block {
 	background-color: #d6d6d6;
 	border-color: #c6c6c6;
 }
-<<<<<<< Updated upstream
-
 .alert-dark hr {
 	border-top-color: #b9b9b9;
 }
-
-=======
-.alert-dark hr {
-	border-top-color: #b9b9b9;
-}
->>>>>>> Stashed changes
 .alert-dark .alert-link {
 	color: #020202;
 }
@@ -7855,10 +5029,6 @@ input[type="button"].btn-block {
 	from {
 		background-position: 1rem 0;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	to {
 		background-position: 0 0;
 	}
@@ -7883,10 +5053,6 @@ input[type="button"].btn-block {
 	background-color: #7571f9;
 	transition: width 0.6s ease;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 @media screen and (prefers-reduced-motion: reduce) {
 	.progress-bar {
 		transition: none;
@@ -7894,9 +5060,6 @@ input[type="button"].btn-block {
 }
 
 .progress-bar-striped {
-<<<<<<< Updated upstream
-	background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-=======
 	background-image: linear-gradient(
 		45deg,
 		rgba(255, 255, 255, 0.15) 25%,
@@ -7907,7 +5070,6 @@ input[type="button"].btn-block {
 		transparent 75%,
 		transparent
 	);
->>>>>>> Stashed changes
 	background-size: 1rem 1rem;
 }
 
@@ -7936,20 +5098,12 @@ input[type="button"].btn-block {
 	color: #495057;
 	text-align: inherit;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .list-group-item-action:hover,
 .list-group-item-action:focus {
 	color: #495057;
 	text-decoration: none;
 	background-color: #f8f9fa;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .list-group-item-action:active {
 	color: #76838f;
 	background-color: #e9ecef;
@@ -7963,45 +5117,25 @@ input[type="button"].btn-block {
 	background-color: #fff;
 	border: 1px solid rgba(0, 0, 0, 0.125);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .list-group-item:first-child {
 	border-top-left-radius: 0.25rem;
 	border-top-right-radius: 0.25rem;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .list-group-item:last-child {
 	margin-bottom: 0;
 	border-bottom-right-radius: 0.25rem;
 	border-bottom-left-radius: 0.25rem;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .list-group-item:hover,
 .list-group-item:focus {
 	z-index: 1;
 	text-decoration: none;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .list-group-item.disabled,
 .list-group-item:disabled {
 	color: #f7fafc;
 	background-color: #fff;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .list-group-item.active {
 	z-index: 2;
 	color: #fff;
@@ -8027,19 +5161,11 @@ input[type="button"].btn-block {
 	color: #3d3b81;
 	background-color: #d8d7fd;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .list-group-item-primary.list-group-item-action:hover,
 .list-group-item-primary.list-group-item-action:focus {
 	color: #3d3b81;
 	background-color: #c0bffc;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .list-group-item-primary.list-group-item-action.active {
 	color: #fff;
 	background-color: #3d3b81;
@@ -8050,19 +5176,11 @@ input[type="button"].btn-block {
 	color: #4b4f66;
 	background-color: #e0e2ee;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .list-group-item-secondary.list-group-item-action:hover,
 .list-group-item-secondary.list-group-item-action:focus {
 	color: #4b4f66;
 	background-color: #d0d3e5;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .list-group-item-secondary.list-group-item-action.active {
 	color: #fff;
 	background-color: #4b4f66;
@@ -8073,19 +5191,11 @@ input[type="button"].btn-block {
 	color: #3a713a;
 	background-color: #d7f4d7;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .list-group-item-success.list-group-item-action:hover,
 .list-group-item-success.list-group-item-action:focus {
 	color: #3a713a;
 	background-color: #c3efc3;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .list-group-item-success.list-group-item-action.active {
 	color: #fff;
 	background-color: #3a713a;
@@ -8096,19 +5206,11 @@ input[type="button"].btn-block {
 	color: #284085;
 	background-color: #cddaff;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .list-group-item-info.list-group-item-action:hover,
 .list-group-item-info.list-group-item-action:focus {
 	color: #284085;
 	background-color: #b4c7ff;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .list-group-item-info.list-group-item-action.active {
 	color: #fff;
 	background-color: #284085;
@@ -8119,19 +5221,11 @@ input[type="button"].btn-block {
 	color: #7e522d;
 	background-color: #fbe4d0;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .list-group-item-warning.list-group-item-action:hover,
 .list-group-item-warning.list-group-item-action:focus {
 	color: #7e522d;
 	background-color: #f9d7b9;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .list-group-item-warning.list-group-item-action.active {
 	color: #fff;
 	background-color: #7e522d;
@@ -8142,19 +5236,11 @@ input[type="button"].btn-block {
 	color: #853131;
 	background-color: #ffd2d2;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .list-group-item-danger.list-group-item-action:hover,
 .list-group-item-danger.list-group-item-action:focus {
 	color: #853131;
 	background-color: #ffb9b9;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .list-group-item-danger.list-group-item-action.active {
 	color: #fff;
 	background-color: #853131;
@@ -8165,19 +5251,11 @@ input[type="button"].btn-block {
 	color: #818182;
 	background-color: #fdfdfe;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .list-group-item-light.list-group-item-action:hover,
 .list-group-item-light.list-group-item-action:focus {
 	color: #818182;
 	background-color: #ececf6;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .list-group-item-light.list-group-item-action.active {
 	color: #fff;
 	background-color: #818182;
@@ -8188,19 +5266,11 @@ input[type="button"].btn-block {
 	color: #1b1b1b;
 	background-color: #c6c6c6;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .list-group-item-dark.list-group-item-action:hover,
 .list-group-item-dark.list-group-item-action:focus {
 	color: #1b1b1b;
 	background-color: #b9b9b9;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .list-group-item-dark.list-group-item-action.active {
 	color: #fff;
 	background-color: #1b1b1b;
@@ -8214,30 +5284,16 @@ input[type="button"].btn-block {
 	line-height: 1;
 	color: #000;
 	text-shadow: 0 1px 0 #fff;
-<<<<<<< Updated upstream
-	opacity: .5;
-}
-
-.close:not(:disabled):not(.disabled) {
-	cursor: pointer;
-}
-
-=======
 	opacity: 0.5;
 }
 .close:not(:disabled):not(.disabled) {
 	cursor: pointer;
 }
->>>>>>> Stashed changes
 .close:not(:disabled):not(.disabled):hover,
 .close:not(:disabled):not(.disabled):focus {
 	color: #000;
 	text-decoration: none;
-<<<<<<< Updated upstream
-	opacity: .75;
-=======
 	opacity: 0.75;
->>>>>>> Stashed changes
 }
 
 button.close {
@@ -8250,10 +5306,6 @@ button.close {
 .modal-open {
 	overflow: hidden;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .modal-open .modal {
 	overflow-x: hidden;
 	overflow-y: auto;
@@ -8277,27 +5329,15 @@ button.close {
 	margin: 0.5rem;
 	pointer-events: none;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .modal.fade .modal-dialog {
 	transition: transform 0.3s ease-out;
 	transform: translate(0, -25%);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 @media screen and (prefers-reduced-motion: reduce) {
 	.modal.fade .modal-dialog {
 		transition: none;
 	}
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .modal.show .modal-dialog {
 	transform: translate(0, 0);
 }
@@ -8307,10 +5347,6 @@ button.close {
 	align-items: center;
 	min-height: calc(100% - (0.5rem * 2));
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .modal-dialog-centered::before {
 	display: block;
 	height: calc(100vh - (0.5rem * 2));
@@ -8339,17 +5375,9 @@ button.close {
 	z-index: 1040;
 	background-color: #000;
 }
-<<<<<<< Updated upstream
-
 .modal-backdrop.fade {
 	opacity: 0;
 }
-
-=======
-.modal-backdrop.fade {
-	opacity: 0;
-}
->>>>>>> Stashed changes
 .modal-backdrop.show {
 	opacity: 0.5;
 }
@@ -8363,10 +5391,6 @@ button.close {
 	border-top-left-radius: 0.3rem;
 	border-top-right-radius: 0.3rem;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .modal-header .close {
 	padding: 1rem;
 	margin: -1rem -1rem -1rem auto;
@@ -8390,21 +5414,11 @@ button.close {
 	padding: 1rem;
 	border-top: 1px solid #e9ecef;
 }
-<<<<<<< Updated upstream
-
-.modal-footer> :not(:first-child) {
-	margin-left: .25rem;
-}
-
-.modal-footer> :not(:last-child) {
-	margin-right: .25rem;
-=======
 .modal-footer > :not(:first-child) {
 	margin-left: 0.25rem;
 }
 .modal-footer > :not(:last-child) {
 	margin-right: 0.25rem;
->>>>>>> Stashed changes
 }
 
 .modal-scrollbar-measure {
@@ -8420,24 +5434,12 @@ button.close {
 		max-width: 500px;
 		margin: 1.75rem auto;
 	}
-<<<<<<< Updated upstream
-
-	.modal-dialog-centered {
-		min-height: calc(100% - (1.75rem * 2));
-	}
-
-	.modal-dialog-centered::before {
-		height: calc(100vh - (1.75rem * 2));
-	}
-
-=======
 	.modal-dialog-centered {
 		min-height: calc(100% - (1.75rem * 2));
 	}
 	.modal-dialog-centered::before {
 		height: calc(100vh - (1.75rem * 2));
 	}
->>>>>>> Stashed changes
 	.modal-sm {
 		max-width: 300px;
 	}
@@ -8472,27 +5474,15 @@ button.close {
 	word-wrap: break-word;
 	opacity: 0;
 }
-<<<<<<< Updated upstream
-
 .tooltip.show {
 	opacity: 0.9;
 }
-
-=======
-.tooltip.show {
-	opacity: 0.9;
-}
->>>>>>> Stashed changes
 .tooltip .arrow {
 	position: absolute;
 	display: block;
 	width: 0.8rem;
 	height: 0.4rem;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .tooltip .arrow::before {
 	position: absolute;
 	content: "";
@@ -8504,18 +5494,10 @@ button.close {
 .bs-tooltip-auto[x-placement^="top"] {
 	padding: 0.4rem 0;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .bs-tooltip-top .arrow,
 .bs-tooltip-auto[x-placement^="top"] .arrow {
 	bottom: 0;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .bs-tooltip-top .arrow::before,
 .bs-tooltip-auto[x-placement^="top"] .arrow::before {
 	top: 0;
@@ -8527,20 +5509,12 @@ button.close {
 .bs-tooltip-auto[x-placement^="right"] {
 	padding: 0 0.4rem;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .bs-tooltip-right .arrow,
 .bs-tooltip-auto[x-placement^="right"] .arrow {
 	left: 0;
 	width: 0.4rem;
 	height: 0.8rem;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .bs-tooltip-right .arrow::before,
 .bs-tooltip-auto[x-placement^="right"] .arrow::before {
 	right: 0;
@@ -8552,18 +5526,10 @@ button.close {
 .bs-tooltip-auto[x-placement^="bottom"] {
 	padding: 0.4rem 0;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .bs-tooltip-bottom .arrow,
 .bs-tooltip-auto[x-placement^="bottom"] .arrow {
 	top: 0;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .bs-tooltip-bottom .arrow::before,
 .bs-tooltip-auto[x-placement^="bottom"] .arrow::before {
 	bottom: 0;
@@ -8575,20 +5541,12 @@ button.close {
 .bs-tooltip-auto[x-placement^="left"] {
 	padding: 0 0.4rem;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .bs-tooltip-left .arrow,
 .bs-tooltip-auto[x-placement^="left"] .arrow {
 	right: 0;
 	width: 0.4rem;
 	height: 0.8rem;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .bs-tooltip-left .arrow::before,
 .bs-tooltip-auto[x-placement^="left"] .arrow::before {
 	left: 0;
@@ -8633,10 +5591,6 @@ button.close {
 	border: 1px solid rgba(0, 0, 0, 0.2);
 	border-radius: 0.3rem;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .popover .arrow {
 	position: absolute;
 	display: block;
@@ -8644,10 +5598,6 @@ button.close {
 	height: 0.5rem;
 	margin: 0 0.3rem;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .popover .arrow::before,
 .popover .arrow::after {
 	position: absolute;
@@ -8661,28 +5611,16 @@ button.close {
 .bs-popover-auto[x-placement^="top"] {
 	margin-bottom: 0.5rem;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .bs-popover-top .arrow,
 .bs-popover-auto[x-placement^="top"] .arrow {
 	bottom: calc((0.5rem + 1px) * -1);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .bs-popover-top .arrow::before,
 .bs-popover-auto[x-placement^="top"] .arrow::before,
 .bs-popover-top .arrow::after,
 .bs-popover-auto[x-placement^="top"] .arrow::after {
 	border-width: 0.5rem 0.5rem 0;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .bs-popover-top .arrow::before,
 .bs-popover-auto[x-placement^="top"] .arrow::before {
 	bottom: 0;
@@ -8699,10 +5637,6 @@ button.close {
 .bs-popover-auto[x-placement^="right"] {
 	margin-left: 0.5rem;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .bs-popover-right .arrow,
 .bs-popover-auto[x-placement^="right"] .arrow {
 	left: calc((0.5rem + 1px) * -1);
@@ -8710,20 +5644,12 @@ button.close {
 	height: 1rem;
 	margin: 0.3rem 0;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .bs-popover-right .arrow::before,
 .bs-popover-auto[x-placement^="right"] .arrow::before,
 .bs-popover-right .arrow::after,
 .bs-popover-auto[x-placement^="right"] .arrow::after {
 	border-width: 0.5rem 0.5rem 0.5rem 0;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .bs-popover-right .arrow::before,
 .bs-popover-auto[x-placement^="right"] .arrow::before {
 	left: 0;
@@ -8740,28 +5666,16 @@ button.close {
 .bs-popover-auto[x-placement^="bottom"] {
 	margin-top: 0.5rem;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .bs-popover-bottom .arrow,
 .bs-popover-auto[x-placement^="bottom"] .arrow {
 	top: calc((0.5rem + 1px) * -1);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .bs-popover-bottom .arrow::before,
 .bs-popover-auto[x-placement^="bottom"] .arrow::before,
 .bs-popover-bottom .arrow::after,
 .bs-popover-auto[x-placement^="bottom"] .arrow::after {
 	border-width: 0 0.5rem 0.5rem 0.5rem;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .bs-popover-bottom .arrow::before,
 .bs-popover-auto[x-placement^="bottom"] .arrow::before {
 	top: 0;
@@ -8773,10 +5687,6 @@ button.close {
 	top: 1px;
 	border-bottom-color: #fff;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .bs-popover-bottom .popover-header::before,
 .bs-popover-auto[x-placement^="bottom"] .popover-header::before {
 	position: absolute;
@@ -8793,10 +5703,6 @@ button.close {
 .bs-popover-auto[x-placement^="left"] {
 	margin-right: 0.5rem;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .bs-popover-left .arrow,
 .bs-popover-auto[x-placement^="left"] .arrow {
 	right: calc((0.5rem + 1px) * -1);
@@ -8804,20 +5710,12 @@ button.close {
 	height: 1rem;
 	margin: 0.3rem 0;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .bs-popover-left .arrow::before,
 .bs-popover-auto[x-placement^="left"] .arrow::before,
 .bs-popover-left .arrow::after,
 .bs-popover-auto[x-placement^="left"] .arrow::after {
 	border-width: 0.5rem 0 0.5rem 0.5rem;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .bs-popover-left .arrow::before,
 .bs-popover-auto[x-placement^="left"] .arrow::before {
 	right: 0;
@@ -8840,10 +5738,6 @@ button.close {
 	border-top-left-radius: calc(0.3rem - 1px);
 	border-top-right-radius: calc(0.3rem - 1px);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .popover-header:empty {
 	display: none;
 }
@@ -8878,13 +5772,7 @@ button.close {
 	display: block;
 	transition: transform 0.6s ease;
 }
-<<<<<<< Updated upstream
-
 @media screen and (prefers-reduced-motion: reduce) {
-
-=======
-@media screen and (prefers-reduced-motion: reduce) {
->>>>>>> Stashed changes
 	.carousel-item.active,
 	.carousel-item-next,
 	.carousel-item-prev {
@@ -8902,13 +5790,7 @@ button.close {
 .carousel-item-prev.carousel-item-right {
 	transform: translateX(0);
 }
-<<<<<<< Updated upstream
-
 @supports (transform-style: preserve-3d) {
-
-=======
-@supports (transform-style: preserve-3d) {
->>>>>>> Stashed changes
 	.carousel-item-next.carousel-item-left,
 	.carousel-item-prev.carousel-item-right {
 		transform: translate3d(0, 0, 0);
@@ -8925,13 +5807,7 @@ button.close {
 
 =======
 @supports (transform-style: preserve-3d) {
->>>>>>> Stashed changes
-	.carousel-item-next,
-	.active.carousel-item-right {
-		transform: translate3d(100%, 0, 0);
-	}
 }
-
 .carousel-item-prev,
 .active.carousel-item-left {
 	transform: translateX(-100%);
@@ -8942,13 +5818,7 @@ button.close {
 
 =======
 @supports (transform-style: preserve-3d) {
->>>>>>> Stashed changes
-	.carousel-item-prev,
-	.active.carousel-item-left {
-		transform: translate3d(-100%, 0, 0);
-	}
 }
-
 .carousel-fade .carousel-item {
 	opacity: 0;
 <<<<<<< Updated upstream
@@ -9062,10 +5932,6 @@ button.close {
 	margin-left: 15%;
 	list-style: none;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .carousel-indicators li {
 	position: relative;
 	flex: 0 1 auto;
@@ -9077,10 +5943,6 @@ button.close {
 	cursor: pointer;
 	background-color: rgba(255, 255, 255, 0.5);
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .carousel-indicators li::before {
 	position: absolute;
 	top: -10px;
@@ -9090,27 +5952,11 @@ button.close {
 	height: 10px;
 	content: "";
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
-.carousel-indicators li::after {
-	position: absolute;
-	bottom: -10px;
-	left: 0;
 	display: inline-block;
 	width: 100%;
 	height: 10px;
 	content: "";
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
-.carousel-indicators .active {
-	background-color: #fff;
-}
-
 .carousel-caption {
 	position: absolute;
 	right: 15%;
@@ -9397,37 +6243,6 @@ button.bg-dark:focus {
 	.d-sm-none {
 		display: none !important;
 	}
-<<<<<<< Updated upstream
-
-	.d-sm-inline {
-		display: inline !important;
-	}
-
-	.d-sm-inline-block {
-		display: inline-block !important;
-	}
-
-	.d-sm-block {
-		display: block !important;
-	}
-
-	.d-sm-table {
-		display: table !important;
-	}
-
-	.d-sm-table-row {
-		display: table-row !important;
-	}
-
-	.d-sm-table-cell {
-		display: table-cell !important;
-	}
-
-	.d-sm-flex {
-		display: flex !important;
-	}
-
-=======
 	.d-sm-inline {
 		display: inline !important;
 	}
@@ -9449,7 +6264,6 @@ button.bg-dark:focus {
 	.d-sm-flex {
 		display: flex !important;
 	}
->>>>>>> Stashed changes
 	.d-sm-inline-flex {
 		display: inline-flex !important;
 	}
@@ -9459,37 +6273,6 @@ button.bg-dark:focus {
 	.d-md-none {
 		display: none !important;
 	}
-<<<<<<< Updated upstream
-
-	.d-md-inline {
-		display: inline !important;
-	}
-
-	.d-md-inline-block {
-		display: inline-block !important;
-	}
-
-	.d-md-block {
-		display: block !important;
-	}
-
-	.d-md-table {
-		display: table !important;
-	}
-
-	.d-md-table-row {
-		display: table-row !important;
-	}
-
-	.d-md-table-cell {
-		display: table-cell !important;
-	}
-
-	.d-md-flex {
-		display: flex !important;
-	}
-
-=======
 	.d-md-inline {
 		display: inline !important;
 	}
@@ -9511,7 +6294,6 @@ button.bg-dark:focus {
 	.d-md-flex {
 		display: flex !important;
 	}
->>>>>>> Stashed changes
 	.d-md-inline-flex {
 		display: inline-flex !important;
 	}
@@ -9521,37 +6303,6 @@ button.bg-dark:focus {
 	.d-lg-none {
 		display: none !important;
 	}
-<<<<<<< Updated upstream
-
-	.d-lg-inline {
-		display: inline !important;
-	}
-
-	.d-lg-inline-block {
-		display: inline-block !important;
-	}
-
-	.d-lg-block {
-		display: block !important;
-	}
-
-	.d-lg-table {
-		display: table !important;
-	}
-
-	.d-lg-table-row {
-		display: table-row !important;
-	}
-
-	.d-lg-table-cell {
-		display: table-cell !important;
-	}
-
-	.d-lg-flex {
-		display: flex !important;
-	}
-
-=======
 	.d-lg-inline {
 		display: inline !important;
 	}
@@ -9573,7 +6324,6 @@ button.bg-dark:focus {
 	.d-lg-flex {
 		display: flex !important;
 	}
->>>>>>> Stashed changes
 	.d-lg-inline-flex {
 		display: inline-flex !important;
 	}
@@ -9583,37 +6333,6 @@ button.bg-dark:focus {
 	.d-xl-none {
 		display: none !important;
 	}
-<<<<<<< Updated upstream
-
-	.d-xl-inline {
-		display: inline !important;
-	}
-
-	.d-xl-inline-block {
-		display: inline-block !important;
-	}
-
-	.d-xl-block {
-		display: block !important;
-	}
-
-	.d-xl-table {
-		display: table !important;
-	}
-
-	.d-xl-table-row {
-		display: table-row !important;
-	}
-
-	.d-xl-table-cell {
-		display: table-cell !important;
-	}
-
-	.d-xl-flex {
-		display: flex !important;
-	}
-
-=======
 	.d-xl-inline {
 		display: inline !important;
 	}
@@ -9635,7 +6354,6 @@ button.bg-dark:focus {
 	.d-xl-flex {
 		display: flex !important;
 	}
->>>>>>> Stashed changes
 	.d-xl-inline-flex {
 		display: inline-flex !important;
 	}
@@ -9645,37 +6363,6 @@ button.bg-dark:focus {
 	.d-xxl-none {
 		display: none !important;
 	}
-<<<<<<< Updated upstream
-
-	.d-xxl-inline {
-		display: inline !important;
-	}
-
-	.d-xxl-inline-block {
-		display: inline-block !important;
-	}
-
-	.d-xxl-block {
-		display: block !important;
-	}
-
-	.d-xxl-table {
-		display: table !important;
-	}
-
-	.d-xxl-table-row {
-		display: table-row !important;
-	}
-
-	.d-xxl-table-cell {
-		display: table-cell !important;
-	}
-
-	.d-xxl-flex {
-		display: flex !important;
-	}
-
-=======
 	.d-xxl-inline {
 		display: inline !important;
 	}
@@ -9697,7 +6384,6 @@ button.bg-dark:focus {
 	.d-xxl-flex {
 		display: flex !important;
 	}
->>>>>>> Stashed changes
 	.d-xxl-inline-flex {
 		display: inline-flex !important;
 	}
@@ -9707,37 +6393,6 @@ button.bg-dark:focus {
 	.d-print-none {
 		display: none !important;
 	}
-<<<<<<< Updated upstream
-
-	.d-print-inline {
-		display: inline !important;
-	}
-
-	.d-print-inline-block {
-		display: inline-block !important;
-	}
-
-	.d-print-block {
-		display: block !important;
-	}
-
-	.d-print-table {
-		display: table !important;
-	}
-
-	.d-print-table-row {
-		display: table-row !important;
-	}
-
-	.d-print-table-cell {
-		display: table-cell !important;
-	}
-
-	.d-print-flex {
-		display: flex !important;
-	}
-
-=======
 	.d-print-inline {
 		display: inline !important;
 	}
@@ -9759,7 +6414,6 @@ button.bg-dark:focus {
 	.d-print-flex {
 		display: flex !important;
 	}
->>>>>>> Stashed changes
 	.d-print-inline-flex {
 		display: inline-flex !important;
 	}
@@ -9954,853 +6608,6 @@ button.bg-dark:focus {
 	.flex-sm-row {
 		flex-direction: row !important;
 	}
-<<<<<<< Updated upstream
-
-	.flex-sm-column {
-		flex-direction: column !important;
-	}
-
-	.flex-sm-row-reverse {
-		flex-direction: row-reverse !important;
-	}
-
-	.flex-sm-column-reverse {
-		flex-direction: column-reverse !important;
-	}
-
-	.flex-sm-wrap {
-		flex-wrap: wrap !important;
-	}
-
-	.flex-sm-nowrap {
-		flex-wrap: nowrap !important;
-	}
-
-	.flex-sm-wrap-reverse {
-		flex-wrap: wrap-reverse !important;
-	}
-
-	.flex-sm-fill {
-		flex: 1 1 auto !important;
-	}
-
-	.flex-sm-grow-0 {
-		flex-grow: 0 !important;
-	}
-
-	.flex-sm-grow-1 {
-		flex-grow: 1 !important;
-	}
-
-	.flex-sm-shrink-0 {
-		flex-shrink: 0 !important;
-	}
-
-	.flex-sm-shrink-1 {
-		flex-shrink: 1 !important;
-	}
-
-	.justify-content-sm-start {
-		justify-content: flex-start !important;
-	}
-
-	.justify-content-sm-end {
-		justify-content: flex-end !important;
-	}
-
-	.justify-content-sm-center {
-		justify-content: center !important;
-	}
-
-	.justify-content-sm-between {
-		justify-content: space-between !important;
-	}
-
-	.justify-content-sm-around {
-		justify-content: space-around !important;
-	}
-
-	.align-items-sm-start {
-		align-items: flex-start !important;
-	}
-
-	.align-items-sm-end {
-		align-items: flex-end !important;
-	}
-
-	.align-items-sm-center {
-		align-items: center !important;
-	}
-
-	.align-items-sm-baseline {
-		align-items: baseline !important;
-	}
-
-	.align-items-sm-stretch {
-		align-items: stretch !important;
-	}
-
-	.align-content-sm-start {
-		align-content: flex-start !important;
-	}
-
-	.align-content-sm-end {
-		align-content: flex-end !important;
-	}
-
-	.align-content-sm-center {
-		align-content: center !important;
-	}
-
-	.align-content-sm-between {
-		align-content: space-between !important;
-	}
-
-	.align-content-sm-around {
-		align-content: space-around !important;
-	}
-
-	.align-content-sm-stretch {
-		align-content: stretch !important;
-	}
-
-	.align-self-sm-auto {
-		align-self: auto !important;
-	}
-
-	.align-self-sm-start {
-		align-self: flex-start !important;
-	}
-
-	.align-self-sm-end {
-		align-self: flex-end !important;
-	}
-
-	.align-self-sm-center {
-		align-self: center !important;
-	}
-
-	.align-self-sm-baseline {
-		align-self: baseline !important;
-	}
-
-	.align-self-sm-stretch {
-		align-self: stretch !important;
-	}
-}
-
-@media (min-width: 768px) {
-	.flex-md-row {
-		flex-direction: row !important;
-	}
-
-	.flex-md-column {
-		flex-direction: column !important;
-	}
-
-	.flex-md-row-reverse {
-		flex-direction: row-reverse !important;
-	}
-
-	.flex-md-column-reverse {
-		flex-direction: column-reverse !important;
-	}
-
-	.flex-md-wrap {
-		flex-wrap: wrap !important;
-	}
-
-	.flex-md-nowrap {
-		flex-wrap: nowrap !important;
-	}
-
-	.flex-md-wrap-reverse {
-		flex-wrap: wrap-reverse !important;
-	}
-
-	.flex-md-fill {
-		flex: 1 1 auto !important;
-	}
-
-	.flex-md-grow-0 {
-		flex-grow: 0 !important;
-	}
-
-	.flex-md-grow-1 {
-		flex-grow: 1 !important;
-	}
-
-	.flex-md-shrink-0 {
-		flex-shrink: 0 !important;
-	}
-
-	.flex-md-shrink-1 {
-		flex-shrink: 1 !important;
-	}
-
-	.justify-content-md-start {
-		justify-content: flex-start !important;
-	}
-
-	.justify-content-md-end {
-		justify-content: flex-end !important;
-	}
-
-	.justify-content-md-center {
-		justify-content: center !important;
-	}
-
-	.justify-content-md-between {
-		justify-content: space-between !important;
-	}
-
-	.justify-content-md-around {
-		justify-content: space-around !important;
-	}
-
-	.align-items-md-start {
-		align-items: flex-start !important;
-	}
-
-	.align-items-md-end {
-		align-items: flex-end !important;
-	}
-
-	.align-items-md-center {
-		align-items: center !important;
-	}
-
-	.align-items-md-baseline {
-		align-items: baseline !important;
-	}
-
-	.align-items-md-stretch {
-		align-items: stretch !important;
-	}
-
-	.align-content-md-start {
-		align-content: flex-start !important;
-	}
-
-	.align-content-md-end {
-		align-content: flex-end !important;
-	}
-
-	.align-content-md-center {
-		align-content: center !important;
-	}
-
-	.align-content-md-between {
-		align-content: space-between !important;
-	}
-
-	.align-content-md-around {
-		align-content: space-around !important;
-	}
-
-	.align-content-md-stretch {
-		align-content: stretch !important;
-	}
-
-	.align-self-md-auto {
-		align-self: auto !important;
-	}
-
-	.align-self-md-start {
-		align-self: flex-start !important;
-	}
-
-	.align-self-md-end {
-		align-self: flex-end !important;
-	}
-
-	.align-self-md-center {
-		align-self: center !important;
-	}
-
-	.align-self-md-baseline {
-		align-self: baseline !important;
-	}
-
-	.align-self-md-stretch {
-		align-self: stretch !important;
-	}
-}
-
-@media (min-width: 992px) {
-	.flex-lg-row {
-		flex-direction: row !important;
-	}
-
-	.flex-lg-column {
-		flex-direction: column !important;
-	}
-
-	.flex-lg-row-reverse {
-		flex-direction: row-reverse !important;
-	}
-
-	.flex-lg-column-reverse {
-		flex-direction: column-reverse !important;
-	}
-
-	.flex-lg-wrap {
-		flex-wrap: wrap !important;
-	}
-
-	.flex-lg-nowrap {
-		flex-wrap: nowrap !important;
-	}
-
-	.flex-lg-wrap-reverse {
-		flex-wrap: wrap-reverse !important;
-	}
-
-	.flex-lg-fill {
-		flex: 1 1 auto !important;
-	}
-
-	.flex-lg-grow-0 {
-		flex-grow: 0 !important;
-	}
-
-	.flex-lg-grow-1 {
-		flex-grow: 1 !important;
-	}
-
-	.flex-lg-shrink-0 {
-		flex-shrink: 0 !important;
-	}
-
-	.flex-lg-shrink-1 {
-		flex-shrink: 1 !important;
-	}
-
-	.justify-content-lg-start {
-		justify-content: flex-start !important;
-	}
-
-	.justify-content-lg-end {
-		justify-content: flex-end !important;
-	}
-
-	.justify-content-lg-center {
-		justify-content: center !important;
-	}
-
-	.justify-content-lg-between {
-		justify-content: space-between !important;
-	}
-
-	.justify-content-lg-around {
-		justify-content: space-around !important;
-	}
-
-	.align-items-lg-start {
-		align-items: flex-start !important;
-	}
-
-	.align-items-lg-end {
-		align-items: flex-end !important;
-	}
-
-	.align-items-lg-center {
-		align-items: center !important;
-	}
-
-	.align-items-lg-baseline {
-		align-items: baseline !important;
-	}
-
-	.align-items-lg-stretch {
-		align-items: stretch !important;
-	}
-
-	.align-content-lg-start {
-		align-content: flex-start !important;
-	}
-
-	.align-content-lg-end {
-		align-content: flex-end !important;
-	}
-
-	.align-content-lg-center {
-		align-content: center !important;
-	}
-
-	.align-content-lg-between {
-		align-content: space-between !important;
-	}
-
-	.align-content-lg-around {
-		align-content: space-around !important;
-	}
-
-	.align-content-lg-stretch {
-		align-content: stretch !important;
-	}
-
-	.align-self-lg-auto {
-		align-self: auto !important;
-	}
-
-	.align-self-lg-start {
-		align-self: flex-start !important;
-	}
-
-	.align-self-lg-end {
-		align-self: flex-end !important;
-	}
-
-	.align-self-lg-center {
-		align-self: center !important;
-	}
-
-	.align-self-lg-baseline {
-		align-self: baseline !important;
-	}
-
-	.align-self-lg-stretch {
-		align-self: stretch !important;
-	}
-}
-
-@media (min-width: 1200px) {
-	.flex-xl-row {
-		flex-direction: row !important;
-	}
-
-	.flex-xl-column {
-		flex-direction: column !important;
-	}
-
-	.flex-xl-row-reverse {
-		flex-direction: row-reverse !important;
-	}
-
-	.flex-xl-column-reverse {
-		flex-direction: column-reverse !important;
-	}
-
-	.flex-xl-wrap {
-		flex-wrap: wrap !important;
-	}
-
-	.flex-xl-nowrap {
-		flex-wrap: nowrap !important;
-	}
-
-	.flex-xl-wrap-reverse {
-		flex-wrap: wrap-reverse !important;
-	}
-
-	.flex-xl-fill {
-		flex: 1 1 auto !important;
-	}
-
-	.flex-xl-grow-0 {
-		flex-grow: 0 !important;
-	}
-
-	.flex-xl-grow-1 {
-		flex-grow: 1 !important;
-	}
-
-	.flex-xl-shrink-0 {
-		flex-shrink: 0 !important;
-	}
-
-	.flex-xl-shrink-1 {
-		flex-shrink: 1 !important;
-	}
-
-	.justify-content-xl-start {
-		justify-content: flex-start !important;
-	}
-
-	.justify-content-xl-end {
-		justify-content: flex-end !important;
-	}
-
-	.justify-content-xl-center {
-		justify-content: center !important;
-	}
-
-	.justify-content-xl-between {
-		justify-content: space-between !important;
-	}
-
-	.justify-content-xl-around {
-		justify-content: space-around !important;
-	}
-
-	.align-items-xl-start {
-		align-items: flex-start !important;
-	}
-
-	.align-items-xl-end {
-		align-items: flex-end !important;
-	}
-
-	.align-items-xl-center {
-		align-items: center !important;
-	}
-
-	.align-items-xl-baseline {
-		align-items: baseline !important;
-	}
-
-	.align-items-xl-stretch {
-		align-items: stretch !important;
-	}
-
-	.align-content-xl-start {
-		align-content: flex-start !important;
-	}
-
-	.align-content-xl-end {
-		align-content: flex-end !important;
-	}
-
-	.align-content-xl-center {
-		align-content: center !important;
-	}
-
-	.align-content-xl-between {
-		align-content: space-between !important;
-	}
-
-	.align-content-xl-around {
-		align-content: space-around !important;
-	}
-
-	.align-content-xl-stretch {
-		align-content: stretch !important;
-	}
-
-	.align-self-xl-auto {
-		align-self: auto !important;
-	}
-
-	.align-self-xl-start {
-		align-self: flex-start !important;
-	}
-
-	.align-self-xl-end {
-		align-self: flex-end !important;
-	}
-
-	.align-self-xl-center {
-		align-self: center !important;
-	}
-
-	.align-self-xl-baseline {
-		align-self: baseline !important;
-	}
-
-	.align-self-xl-stretch {
-		align-self: stretch !important;
-	}
-}
-
-@media (min-width: 1400) {
-	.flex-xxl-row {
-		flex-direction: row !important;
-	}
-
-	.flex-xxl-column {
-		flex-direction: column !important;
-	}
-
-	.flex-xxl-row-reverse {
-		flex-direction: row-reverse !important;
-	}
-
-	.flex-xxl-column-reverse {
-		flex-direction: column-reverse !important;
-	}
-
-	.flex-xxl-wrap {
-		flex-wrap: wrap !important;
-	}
-
-	.flex-xxl-nowrap {
-		flex-wrap: nowrap !important;
-	}
-
-	.flex-xxl-wrap-reverse {
-		flex-wrap: wrap-reverse !important;
-	}
-
-	.flex-xxl-fill {
-		flex: 1 1 auto !important;
-	}
-
-	.flex-xxl-grow-0 {
-		flex-grow: 0 !important;
-	}
-
-	.flex-xxl-grow-1 {
-		flex-grow: 1 !important;
-	}
-
-	.flex-xxl-shrink-0 {
-		flex-shrink: 0 !important;
-	}
-
-	.flex-xxl-shrink-1 {
-		flex-shrink: 1 !important;
-	}
-
-	.justify-content-xxl-start {
-		justify-content: flex-start !important;
-	}
-
-	.justify-content-xxl-end {
-		justify-content: flex-end !important;
-	}
-
-	.justify-content-xxl-center {
-		justify-content: center !important;
-	}
-
-	.justify-content-xxl-between {
-		justify-content: space-between !important;
-	}
-
-	.justify-content-xxl-around {
-		justify-content: space-around !important;
-	}
-
-	.align-items-xxl-start {
-		align-items: flex-start !important;
-	}
-
-	.align-items-xxl-end {
-		align-items: flex-end !important;
-	}
-
-	.align-items-xxl-center {
-		align-items: center !important;
-	}
-
-	.align-items-xxl-baseline {
-		align-items: baseline !important;
-	}
-
-	.align-items-xxl-stretch {
-		align-items: stretch !important;
-	}
-
-	.align-content-xxl-start {
-		align-content: flex-start !important;
-	}
-
-	.align-content-xxl-end {
-		align-content: flex-end !important;
-	}
-
-	.align-content-xxl-center {
-		align-content: center !important;
-	}
-
-	.align-content-xxl-between {
-		align-content: space-between !important;
-	}
-
-	.align-content-xxl-around {
-		align-content: space-around !important;
-	}
-
-	.align-content-xxl-stretch {
-		align-content: stretch !important;
-	}
-
-	.align-self-xxl-auto {
-		align-self: auto !important;
-	}
-
-	.align-self-xxl-start {
-		align-self: flex-start !important;
-	}
-
-	.align-self-xxl-end {
-		align-self: flex-end !important;
-	}
-
-	.align-self-xxl-center {
-		align-self: center !important;
-	}
-
-	.align-self-xxl-baseline {
-		align-self: baseline !important;
-	}
-
-	.align-self-xxl-stretch {
-		align-self: stretch !important;
-	}
-}
-
-.float-left {
-	float: left !important;
-}
-
-.float-right {
-	float: right !important;
-}
-
-.float-none {
-	float: none !important;
-}
-
-@media (min-width: 576px) {
-	.float-sm-left {
-		float: left !important;
-	}
-
-	.float-sm-right {
-		float: right !important;
-	}
-
-	.float-sm-none {
-		float: none !important;
-	}
-}
-
-@media (min-width: 768px) {
-	.float-md-left {
-		float: left !important;
-	}
-
-	.float-md-right {
-		float: right !important;
-	}
-
-	.float-md-none {
-		float: none !important;
-	}
-}
-
-@media (min-width: 992px) {
-	.float-lg-left {
-		float: left !important;
-	}
-
-	.float-lg-right {
-		float: right !important;
-	}
-
-	.float-lg-none {
-		float: none !important;
-	}
-}
-
-@media (min-width: 1200px) {
-	.float-xl-left {
-		float: left !important;
-	}
-
-	.float-xl-right {
-		float: right !important;
-	}
-
-	.float-xl-none {
-		float: none !important;
-	}
-}
-
-@media (min-width: 1400) {
-	.float-xxl-left {
-		float: left !important;
-	}
-
-	.float-xxl-right {
-		float: right !important;
-	}
-
-	.float-xxl-none {
-		float: none !important;
-	}
-}
-
-.position-static {
-	position: static !important;
-}
-
-.position-relative {
-	position: relative !important;
-}
-
-.position-absolute {
-	position: absolute !important;
-}
-
-.position-fixed {
-	position: fixed !important;
-}
-
-.position-sticky {
-	position: sticky !important;
-}
-
-.fixed-top {
-	position: fixed;
-	top: 0;
-	right: 0;
-	left: 0;
-	z-index: 1030;
-}
-
-.fixed-bottom {
-	position: fixed;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: 1030;
-}
-
-@supports (position: sticky) {
-	.sticky-top {
-		position: sticky;
-		top: 0;
-		z-index: 1020;
-	}
-}
-
-.sr-only {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	padding: 0;
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-	white-space: nowrap;
-	border: 0;
-}
-
-.sr-only-focusable:active,
-.sr-only-focusable:focus {
-	position: static;
-	width: auto;
-	height: auto;
-	overflow: visible;
-	clip: auto;
-	white-space: normal;
-}
-
-.shadow-sm {
-	box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
-}
-
-.shadow {
-	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-}
-
-.shadow-lg {
-	box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
-}
-
-=======
 	.flex-sm-column {
 		flex-direction: column !important;
 	}
@@ -11471,7 +7278,6 @@ button.bg-dark:focus {
 	box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
 }
 
->>>>>>> Stashed changes
 .shadow-none {
 	box-shadow: none !important;
 }
@@ -11840,330 +7646,162 @@ button.bg-dark:focus {
 	.m-sm-0 {
 		margin: 0 !important;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.mt-sm-0,
 	.my-sm-0 {
 		margin-top: 0 !important;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.mr-sm-0,
 	.mx-sm-0 {
 		margin-right: 0 !important;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.mb-sm-0,
 	.my-sm-0 {
 		margin-bottom: 0 !important;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.ml-sm-0,
 	.mx-sm-0 {
 		margin-left: 0 !important;
 	}
-<<<<<<< Updated upstream
-
 	.m-sm-1 {
 		margin: 0.25rem !important;
 	}
-
-=======
-	.m-sm-1 {
-		margin: 0.25rem !important;
-	}
->>>>>>> Stashed changes
 	.mt-sm-1,
 	.my-sm-1 {
 		margin-top: 0.25rem !important;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.mr-sm-1,
 	.mx-sm-1 {
 		margin-right: 0.25rem !important;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.mb-sm-1,
 	.my-sm-1 {
 		margin-bottom: 0.25rem !important;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.ml-sm-1,
 	.mx-sm-1 {
 		margin-left: 0.25rem !important;
 	}
-<<<<<<< Updated upstream
-
 	.m-sm-2 {
 		margin: 0.5rem !important;
 	}
-
-=======
-	.m-sm-2 {
-		margin: 0.5rem !important;
-	}
->>>>>>> Stashed changes
 	.mt-sm-2,
 	.my-sm-2 {
 		margin-top: 0.5rem !important;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.mr-sm-2,
 	.mx-sm-2 {
 		margin-right: 0.5rem !important;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.mb-sm-2,
 	.my-sm-2 {
 		margin-bottom: 0.5rem !important;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.ml-sm-2,
 	.mx-sm-2 {
 		margin-left: 0.5rem !important;
 	}
-<<<<<<< Updated upstream
-
 	.m-sm-3 {
 		margin: 1rem !important;
 	}
-
-=======
-	.m-sm-3 {
-		margin: 1rem !important;
-	}
->>>>>>> Stashed changes
 	.mt-sm-3,
 	.my-sm-3 {
 		margin-top: 1rem !important;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.mr-sm-3,
 	.mx-sm-3 {
 		margin-right: 1rem !important;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.mb-sm-3,
 	.my-sm-3 {
 		margin-bottom: 1rem !important;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.ml-sm-3,
 	.mx-sm-3 {
 		margin-left: 1rem !important;
 	}
-<<<<<<< Updated upstream
-
 	.m-sm-4 {
 		margin: 1.5rem !important;
 	}
-
-=======
-	.m-sm-4 {
-		margin: 1.5rem !important;
-	}
->>>>>>> Stashed changes
 	.mt-sm-4,
 	.my-sm-4 {
 		margin-top: 1.5rem !important;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.mr-sm-4,
 	.mx-sm-4 {
 		margin-right: 1.5rem !important;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.mb-sm-4,
 	.my-sm-4 {
 		margin-bottom: 1.5rem !important;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.ml-sm-4,
 	.mx-sm-4 {
 		margin-left: 1.5rem !important;
 	}
-<<<<<<< Updated upstream
-
 	.m-sm-5 {
 		margin: 3rem !important;
 	}
-
-=======
-	.m-sm-5 {
-		margin: 3rem !important;
-	}
->>>>>>> Stashed changes
 	.mt-sm-5,
 	.my-sm-5 {
 		margin-top: 3rem !important;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.mr-sm-5,
 	.mx-sm-5 {
 		margin-right: 3rem !important;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.mb-sm-5,
 	.my-sm-5 {
 		margin-bottom: 3rem !important;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.ml-sm-5,
 	.mx-sm-5 {
 		margin-left: 3rem !important;
 	}
-<<<<<<< Updated upstream
-
 	.p-sm-0 {
 		padding: 0 !important;
 	}
-
-=======
-	.p-sm-0 {
-		padding: 0 !important;
-	}
->>>>>>> Stashed changes
 	.pt-sm-0,
 	.py-sm-0 {
 		padding-top: 0 !important;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.pr-sm-0,
 	.px-sm-0 {
 		padding-right: 0 !important;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.pb-sm-0,
 	.py-sm-0 {
 		padding-bottom: 0 !important;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.pl-sm-0,
 	.px-sm-0 {
 		padding-left: 0 !important;
 	}
-<<<<<<< Updated upstream
-
 	.p-sm-1 {
 		padding: 0.25rem !important;
 	}
-
-=======
-	.p-sm-1 {
-		padding: 0.25rem !important;
-	}
->>>>>>> Stashed changes
 	.pt-sm-1,
 	.py-sm-1 {
 		padding-top: 0.25rem !important;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.pr-sm-1,
 	.px-sm-1 {
 		padding-right: 0.25rem !important;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.pb-sm-1,
 	.py-sm-1 {
 		padding-bottom: 0.25rem !important;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.pl-sm-1,
 	.px-sm-1 {
 		padding-left: 0.25rem !important;
 	}
-<<<<<<< Updated upstream
-
 	.p-sm-2 {
 		padding: 0.5rem !important;
 	}
-
-=======
-	.p-sm-2 {
-		padding: 0.5rem !important;
-	}
->>>>>>> Stashed changes
 	.pt-sm-2,
 	.py-sm-2 {
 		padding-top: 0.5rem !important;
 	}
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.pr-sm-2,
 	.px-sm-2 {
 		padding-right: 0.5rem !important;
