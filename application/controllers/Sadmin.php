@@ -371,6 +371,8 @@ class Sadmin extends CI_Controller
         $this->session->set_flashdata('berhasil', 'Produk Kode '.$id.' Diarsipkan');
         redirect('Sadmin/dataproduk');
     }
+
+    //voucher
     public function datavoucher()
     {
         $data['voucher'] = $this->admin->tampilvoucher();
