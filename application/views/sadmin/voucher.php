@@ -29,7 +29,7 @@
                                         <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                                         </button>
                                     </div>
-                                    <form class="form-valide" action="<?= base_url('Sadmin/addkategori') ?>" method="post">
+                                    <form class="form-valide" action="<?= base_url('Sadmin/addvoucher') ?>" method="post">
                                         <div class="modal-body">
                                             <div class="form-group">
                                                 <label class="col-lg-4 col-form-label" for="val-username">Kode Voucher <span class="text-danger">*</span>
@@ -74,35 +74,62 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <?php foreach ($voucher as $v) { ?>
-                            <div class="modal fade" id="editModal<?= $v->kd_kategori; ?>">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Ubah Data <?= $v->kd_kategori; ?></h5>
-                                            <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
-                                            </button>
-                                        </div>
-                                        <form class="form-valide" action="<?= base_url('Sadmin/editkategori') ?>" method="post">
-                                            <div class="modal-body">
-                                                <div class="form-group">
-                                                    <label class="col-lg-4 col-form-label" for="val-username">Kategori <span class="text-danger">*</span>
-                                                    </label>
-                                                    <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val-username" name="kode" value="<?= $v->kd_kategori; ?>" hidden>
-                                                        <input type="text" class="form-control" id="val-username" name="kategori" placeholder="Enter a kategori.." value="<?= $v->kategori; ?>">
-                                                    </div>
+                        <?php foreach ($voucher as $v) { ?> -->
+                        <div class="modal fade" id="editModal<?= $v->kd_voucher; ?>">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Tambah Data</h5>
+                                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                                        </button>
+                                    </div>
+                                    <form class="form-valide" action="<?= base_url('Sadmin/addvoucher') ?>" method="post">
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <label class="col-lg-4 col-form-label" for="val-username">Kode Voucher <span class="text-danger">*</span>
+                                                </label>
+                                                <div class="col-lg-12">
+                                                    <input type="text" value="<?= $v->kd_voucher; ?>" class="form-control" id="val-username" name="kode" placeholder="Enter a kode..">
                                                 </div>
                                             </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                            <div class="form-group">
+                                                <label class="col-lg-4 col-form-label" for="val-email">Voucher <span class="text-danger">*</span>
+                                                </label>
+                                                <div class="col-lg-12">
+                                                    <input type="text" value="<?= $v->voucher; ?>" class="form-control" id="val-email" name="voucher" placeholder="Enter a voucher..">
+                                                </div>
                                             </div>
-                                        </form>
-                                    </div>
+
+                                            <div class="form-group">
+                                                <label class="col-lg-4 col-form-label" for="val-password">Potongan Voucher<span class="text-danger">*</span>
+                                                </label>
+                                                <div class="col-lg-12">
+                                                    <input type="number" value="<?= $v->potongan_voucher; ?>" class="form-control" id="val-password" name="potongan" placeholder="Enter Potongan..">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-lg-4 col-form-label" for="val-email">Jenis<span class="text-danger">*</span>
+                                                </label>
+                                                <div class="col-lg-12">
+                                                    <select id="inputState" name="jenis" class="form-control">
+                                                        <option selected="selected"><?= $v->potongan_voucher; ?></option>
+                                                        <option disabled>Pilih...</option>
+                                                        <option value="1">Pengurangan</option>
+                                                        <option value="2">Persentase</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary">Tambahkan</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
-                        <?php } ?> -->
+                        </div>
+                        <?php } ?>
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered zero-configuration">
                                 <thead>

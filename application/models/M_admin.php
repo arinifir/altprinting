@@ -58,4 +58,7 @@ class M_admin extends CI_Model
     {
         return $this->db->get('tb_voucher')->result();
     }
+    public function cekVoucher($id){
+        return $this->db->get_where('tb_voucher', ['kd_voucher'=>$id])->num_rows();
+    }
 }

@@ -26,10 +26,10 @@
         <div class="nav-header">
             <div class="brand-logo">
                 <a href="<?= base_url('Sadmin') ?>">
-                    <b class="logo-abbr"><img src="<?= base_url('assets/') ?>images/alt-logo.png" alt=""> </b>
-                    <span class="logo-compact"><img src="<?= base_url('assets/') ?>images/alt-logo.png" alt=""></span>
+                    <b class="logo-abbr"><img src="<?= base_url('assets/') ?>images/alt_logo.png" alt=""> </b>
+                    <span class="logo-compact"><img src="<?= base_url('assets/') ?>images/alt_logo.png" alt=""></span>
                     <span class="brand-title">
-                        <img src="<?= base_url('assets/') ?>images/alt-logo.png" alt="" width=20%><b class="text-white">ALT Printing</b>
+                        <img src="<?= base_url('assets/') ?>images/alt_jember.png" alt="">
                     </span>
                 </a>
             </div>

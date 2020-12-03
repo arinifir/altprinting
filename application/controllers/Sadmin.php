@@ -382,4 +382,39 @@ class Sadmin extends CI_Controller
         $this->load->view('sadmin/voucher', $data);
         $this->load->view('sadmin/footer');
     }
+    public function addvoucher()
+    {
+        $this->form_validation->set_rules('kode', 'Kode', 'required');
+        $this->form_validation->set_rules('voucher', 'Voucher', 'required');
+        $this->form_validation->set_rules('potongan', 'Potongan', 'required');
+        $this->form_validation->set_rules('jenis', 'Jenis', 'required');
+        $this->form_validation->set_message('required', 'Please Enter Data!');
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('gagal', 'Data tidak sesuai atau data kosong!');
+            redirect('Sadmin/datavoucher');
+        } else {
+            $length = 6;
+            $kode = $this->input->post("kode", TRUE);
+            $voucher = $this->input->post("voucher", TRUE);
+            $potongan = $this->input->post("potongan", TRUE);
+            $jenis = $this->input->post("jenis", TRUE);
+            $status = 2;
+            $data = $this->admin->cekVoucher($kode);
+            if ($data == 0) {
+                $data = [
+                    'kd_voucher' => $kode,
+                    'voucher' => $voucher,
+                    'potongan_voucher' => $potongan,
+                    'jenis_voucher' => $jenis,
+                    'status_voucher' => $status
+                ];
+                $this->admin->addData('tb_voucher', $data);
+                $this->session->set_flashdata('berhasil', 'Berhasil Menambahkan Voucher.');
+                redirect('Sadmin/datavoucher');
+            } else {
+                $this->session->set_flashdata('gagal', 'Kode Voucher Sudah Ada!');
+                redirect('Sadmin/datavoucher');
+            }
+        }
+    }
 }
