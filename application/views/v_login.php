@@ -31,7 +31,7 @@
                                 </div>
                                 <button class="btn login-form__btn submit w-100">Masuk</button>
                             </form>
-                            <p class="mt-5 login-form__footer">Belum punya akun? <a href="<?= base_url('regis') ?>" class="text-primary">Daftar</a> sekarang!</p>
+                            <p class="mt-5 login-form__footer">Belum punya akun? <a href="<?= base_url('API/regis') ?>" class="text-primary">Daftar</a> sekarang!</p>
                         </div>
                     </div>
                 </div>

@@ -11,14 +11,20 @@
                             </a>
 
                             <form class="mt-5 mb-5 login-input">
-                                <div class="form-group">
-                                    <input type="text" id="nama" class="form-control" placeholder="Nama" required>
+                            <div class="form-group">
+                                    <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama">
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" id="email" class="form-control" placeholder="email" required>
+                                    <input type="number" id="nohp" name="nohp" class="form-control" placeholder="nohp">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Password" required>
+                                    <input type="email" id="email" name="email" class="form-control" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" id="password" name="password" class="form-control" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" id="password2" name="password2" class="form-control" placeholder="Ulangi Password">
                                 </div>
                                 <button class="btn login-form__btn submit w-100">Daftar</button>
                             </form>
