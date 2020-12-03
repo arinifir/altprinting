@@ -15,7 +15,7 @@
                                     <input type="text" id="nama" class="form-control" placeholder="Nama" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" id="username" class="form-control" placeholder="Username" required>
+                                    <input type="email" id="email" class="form-control" placeholder="email" required>
                                 </div>
                                 <div class="form-group">
                                     <input type="password" class="form-control" placeholder="Password" required>
