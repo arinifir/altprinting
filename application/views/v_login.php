@@ -9,9 +9,22 @@
                                 <h4>Selamat Datang di ALT Printing</h4>
                             </a>
 
+                            <?php if ($this->session->flashdata('logsalah')) : ?>
+                                <div class="row mt-3">
+                                    <div class="col-md-6">
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                            Email atau Password <strong>salah !</strong>
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+
                             <form class="mt-5 mb-5 login-input" action="<?= base_url('login/auth') ?>" method="post">
                                 <div class="form-group">
-                                    <input type="text" id="username" name="email" class="form-control" placeholder="Email">
+                                    <input type="text" id="email" name="email" class="form-control" placeholder="Email">
                                 </div>
                                 <div class="form-group">
                                     <input type="password" id="password" name="password" class="form-control" placeholder="Password">

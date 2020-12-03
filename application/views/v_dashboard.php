@@ -3,11 +3,11 @@
         ***********************************-->
 <div class="nav-header">
   <div class="brand-logo">
-    <a href="index.html">
-      <b class="logo-abbr"><img src="<?= base_url('assets/images/logo.png') ?>"> </b>
-      <span class="logo-compact"><img src="<?= base_url('assets/images/logo-compact.png') ?>" alt=""></span>
+    <a href="<?= base_url('page') ?>">
+      <b class="logo-abbr"><img src="<?= base_url('assets/admin/images/logo.png') ?>"> </b>
+      <span class="logo-compact"><img src="<?= base_url('assets/admin/images/logo-compact.png') ?>" alt=""></span>
       <span class="brand-title">
-        <img src="<?= base_url('assets/images/logo-text.png') ?>">
+        <img src="<?= base_url('assets/alt_jember_rb_120.png') ?>">
       </span>
     </a>
   </div>
