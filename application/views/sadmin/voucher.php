@@ -74,61 +74,59 @@
                                 </div>
                             </div>
                         </div>
-                        <?php foreach ($voucher as $v) { ?> -->
-                        <div class="modal fade" id="editModal<?= $v->kd_voucher; ?>">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title">Tambah Data</h5>
-                                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
-                                        </button>
+                        <?php foreach ($voucher as $v) { ?>
+                            <div class="modal fade" id="editModal<?= $v->kd_voucher; ?>">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Ubah Data</h5>
+                                            <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                                            </button>
+                                        </div>
+                                        <form class="form-valide" action="<?= base_url('Sadmin/editvoucher') ?>" method="post">
+                                            <div class="modal-body">
+                                                <input type="text" hidden value="<?= $v->kd_voucher; ?>" class="form-control" id="val-username" name="kode" placeholder="Enter a kode..">
+                                                <div class="form-group">
+                                                    <label class="col-lg-4 col-form-label" for="val-email">Voucher <span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" value="<?= $v->voucher; ?>" class="form-control" id="val-email" name="voucher" placeholder="Enter a voucher..">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-4 col-form-label" for="val-password">Potongan Voucher<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="number" value="<?= $v->potongan_voucher; ?>" class="form-control" id="val-password" name="potongan" placeholder="Enter Potongan..">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-4 col-form-label" for="val-email">Jenis<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <select id="inputState" name="jenis" class="form-control">
+                                                            <option value="<?= $v->jenis_voucher; ?>" selected="selected">
+                                                                <?php if ($v->jenis_voucher == 1) {
+                                                                    echo 'Pengurangan';
+                                                                } else if ($v->jenis_voucher == 2) {
+                                                                    echo 'Persentase';
+                                                                } ?>
+                                                            </option>
+                                                            <option disabled>Pilih...</option>
+                                                            <option value="1">Pengurangan</option>
+                                                            <option value="2">Persentase</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                            </div>
+                                        </form>
                                     </div>
-                                    <form class="form-valide" action="<?= base_url('Sadmin/addvoucher') ?>" method="post">
-                                        <div class="modal-body">
-                                            <div class="form-group">
-                                                <label class="col-lg-4 col-form-label" for="val-username">Kode Voucher <span class="text-danger">*</span>
-                                                </label>
-                                                <div class="col-lg-12">
-                                                    <input type="text" value="<?= $v->kd_voucher; ?>" class="form-control" id="val-username" name="kode" placeholder="Enter a kode..">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-lg-4 col-form-label" for="val-email">Voucher <span class="text-danger">*</span>
-                                                </label>
-                                                <div class="col-lg-12">
-                                                    <input type="text" value="<?= $v->voucher; ?>" class="form-control" id="val-email" name="voucher" placeholder="Enter a voucher..">
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label class="col-lg-4 col-form-label" for="val-password">Potongan Voucher<span class="text-danger">*</span>
-                                                </label>
-                                                <div class="col-lg-12">
-                                                    <input type="number" value="<?= $v->potongan_voucher; ?>" class="form-control" id="val-password" name="potongan" placeholder="Enter Potongan..">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-lg-4 col-form-label" for="val-email">Jenis<span class="text-danger">*</span>
-                                                </label>
-                                                <div class="col-lg-12">
-                                                    <select id="inputState" name="jenis" class="form-control">
-                                                        <option selected="selected"><?= $v->potongan_voucher; ?></option>
-                                                        <option disabled>Pilih...</option>
-                                                        <option value="1">Pengurangan</option>
-                                                        <option value="2">Persentase</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-primary">Tambahkan</button>
-                                        </div>
-                                    </form>
                                 </div>
                             </div>
-                        </div>
                         <?php } ?>
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered zero-configuration">
@@ -154,7 +152,7 @@
                                                     <button type="button" data-toggle="modal" data-target="#editModal<?= $v->kd_voucher; ?>" data-toggle="tooltip" title="" class="btn mb-1 btn-warning" data-original-title="Edit">
                                                         <i class="fa fa-edit"></i>
                                                     </button>
-                                                    <a href="<?= base_url('Sadmin/delkategori/' . $v->kd_voucher); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Remove">
+                                                    <a href="<?= base_url('Sadmin/delvoucher/' . $v->kd_voucher); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Remove">
                                                         <i class="fa fa-trash"></i>
                                                     </a>
                                                 </div>
@@ -162,7 +160,13 @@
                                             <td><?= $no++; ?></td>
                                             <td><?= $v->kd_voucher; ?></td>
                                             <td><?= $v->voucher; ?></td>
-                                            <td><?= $v->potongan_voucher; ?></td>
+                                            <td>
+                                                <?php if ($v->jenis_voucher == 1) {
+                                                    echo "Rp " . number_format($v->potongan_voucher, 0, ',', '.');
+                                                } else if ($v->jenis_voucher == 2) {
+                                                    echo $v->potongan_voucher . '%';
+                                                } ?>
+                                            </td>
                                             <td>
                                                 <?php if ($v->jenis_voucher == 1) {
                                                     echo 'Pengurangan';
@@ -179,10 +183,10 @@
                                             </td>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="<?= base_url('Sadmin/useractive/' . $v->kd_voucher) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success" data-original-title="Active">
+                                                    <a href="<?= base_url('Sadmin/vaktif/' . $v->kd_voucher) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success" data-original-title="Active">
                                                         <i class="fa fa-check"></i>
                                                     </a>
-                                                    <a href="<?= base_url('Sadmin/usernonactive/' . $v->kd_voucher) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Non-Active">
+                                                    <a href="<?= base_url('Sadmin/vnaktif/' . $v->kd_voucher) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Non-Active">
                                                         <i class="fa fa-times"></i>
                                                     </a>
                                                 </div>

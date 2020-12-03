@@ -129,7 +129,7 @@ class Sadmin extends CI_Controller
         $data = ['status' => 1];
         $where = ['id_user' => $id];
         $this->admin->editData('tb_user', $data, $where);
-        $this->session->set_flashdata('berhasil', 'Akun '.$id.' Diaktifkan');
+        $this->session->set_flashdata('berhasil', 'Akun ' . $id . ' Diaktifkan');
         redirect('Sadmin/datadmin');
     }
     public function adminonactive($id)
@@ -137,7 +137,7 @@ class Sadmin extends CI_Controller
         $data = ['status' => 2];
         $where = ['id_user' => $id];
         $this->admin->editData('tb_user', $data, $where);
-        $this->session->set_flashdata('berhasil', 'Akun ID '.$id.' Dinonaktifkan');
+        $this->session->set_flashdata('berhasil', 'Akun ID ' . $id . ' Dinonaktifkan');
         redirect('Sadmin/datadmin');
     }
 
@@ -248,7 +248,7 @@ class Sadmin extends CI_Controller
         $data = ['status' => 1];
         $where = ['id_user' => $id];
         $this->admin->editData('tb_user', $data, $where);
-        $this->session->set_flashdata('berhasil', 'Akun '.$id.' Diaktifkan');
+        $this->session->set_flashdata('berhasil', 'Akun ' . $id . ' Diaktifkan');
         redirect('Sadmin/datapelanggan');
     }
     public function usernonactive($id)
@@ -256,7 +256,7 @@ class Sadmin extends CI_Controller
         $data = ['status' => 2];
         $where = ['id_user' => $id];
         $this->admin->editData('tb_user', $data, $where);
-        $this->session->set_flashdata('berhasil', 'Akun ID '.$id.' Dinonaktifkan');
+        $this->session->set_flashdata('berhasil', 'Akun ID ' . $id . ' Dinonaktifkan');
         redirect('Sadmin/datapelanggan');
     }
 
@@ -360,7 +360,7 @@ class Sadmin extends CI_Controller
         $data = ['status_produk' => 1];
         $where = ['kd_produk' => $id];
         $this->admin->editData('tb_produk', $data, $where);
-        $this->session->set_flashdata('berhasil', 'Produk Kode '.$id.' Ditampilkan');
+        $this->session->set_flashdata('berhasil', 'Produk Kode ' . $id . ' Ditampilkan');
         redirect('Sadmin/dataproduk');
     }
     public function produkarsip($id)
@@ -368,7 +368,7 @@ class Sadmin extends CI_Controller
         $data = ['status_produk' => 2];
         $where = ['kd_produk' => $id];
         $this->admin->editData('tb_produk', $data, $where);
-        $this->session->set_flashdata('berhasil', 'Produk Kode '.$id.' Diarsipkan');
+        $this->session->set_flashdata('berhasil', 'Produk Kode ' . $id . ' Diarsipkan');
         redirect('Sadmin/dataproduk');
     }
 
@@ -393,7 +393,6 @@ class Sadmin extends CI_Controller
             $this->session->set_flashdata('gagal', 'Data tidak sesuai atau data kosong!');
             redirect('Sadmin/datavoucher');
         } else {
-            $length = 6;
             $kode = $this->input->post("kode", TRUE);
             $voucher = $this->input->post("voucher", TRUE);
             $potongan = $this->input->post("potongan", TRUE);
@@ -416,5 +415,56 @@ class Sadmin extends CI_Controller
                 redirect('Sadmin/datavoucher');
             }
         }
+    }
+    public function editvoucher()
+    {
+        $this->form_validation->set_rules('kode', 'Kode', 'required');
+        $this->form_validation->set_rules('voucher', 'Voucher', 'required');
+        $this->form_validation->set_rules('potongan', 'Potongan', 'required');
+        $this->form_validation->set_rules('jenis', 'Jenis', 'required');
+        $this->form_validation->set_message('required', 'Please Enter Data!');
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('gagal', 'Data tidak sesuai atau data kosong!');
+            redirect('Sadmin/datavoucher');
+        } else {
+            $kode = $this->input->post("kode", TRUE);
+            $voucher = $this->input->post("voucher", TRUE);
+            $potongan = $this->input->post("potongan", TRUE);
+            $jenis = $this->input->post("jenis", TRUE);
+            $data = [
+                'voucher' => $voucher,
+                'potongan_voucher' => $potongan,
+                'jenis_voucher' => $jenis
+            ];
+            $where = ['kd_voucher' => $kode];
+            $this->admin->editData('tb_voucher', $data, $where);
+            $this->session->set_flashdata('berhasil', 'Berhasil Mengubah Data.');
+            redirect('Sadmin/datavoucher');
+        }
+    }
+    public function delvoucher($kode)
+    {
+        $where = [
+            'kd_voucher' => $kode
+        ];
+        $this->admin->delData('tb_voucher', $where);
+        $this->session->set_flashdata('berhasil', 'Berhasil Menghapus Data.');
+        redirect('Sadmin/datavoucher');
+    }
+    public function vaktif($id)
+    {
+        $data = ['status_voucher' => 1];
+        $where = ['kd_voucher' => $id];
+        $this->admin->editData('tb_voucher', $data, $where);
+        $this->session->set_flashdata('berhasil', 'Voucher ' . $id . ' Diaktifkan');
+        redirect('Sadmin/datavoucher');
+    }
+    public function vnaktif($id)
+    {
+        $data = ['status_voucher' => 2];
+        $where = ['kd_voucher' => $id];
+        $this->admin->editData('tb_voucher', $data, $where);
+        $this->session->set_flashdata('berhasil', 'Voucher ' . $id . ' Dinonaktifkan');
+        redirect('Sadmin/datavoucher');
     }
 }

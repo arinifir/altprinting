@@ -7,12 +7,14 @@ class M_admin extends CI_Model
     {
         $this->db->insert($table, $data);
     }
-    public function delData($table, $data){
+    public function delData($table, $data)
+    {
         $this->db->delete($table, $data);
     }
-    public function editData($table, $data, $where){
+    public function editData($table, $data, $where)
+    {
         $this->db->where($where);
-		$this->db->update($table,$data);
+        $this->db->update($table, $data);
     }
     function userbylevel($table, $field1)
     {
@@ -29,20 +31,24 @@ class M_admin extends CI_Model
         }
         return $result;
     }
-    public function cekEmail($id){
-        return $this->db->get_where('tb_user', ['email'=>$id])->num_rows();
+    public function cekEmail($id)
+    {
+        return $this->db->get_where('tb_user', ['email' => $id])->num_rows();
     }
     public function tampilkategori()
     {
         return $this->db->get('tb_kategori')->result();
     }
-    public function cekProduk($id){
-        return $this->db->get_where('tb_produk', ['tb_produk.kategori_produk'=>$id])->num_rows();
+    public function cekProduk($id)
+    {
+        return $this->db->get_where('tb_produk', ['tb_produk.kategori_produk' => $id])->num_rows();
     }
-    public function cekByProduk($id){
-        return $this->db->get_where('tb_produk', ['tb_produk.kategori_produk'=>$id])->num_rows();
+    public function cekByProduk($id)
+    {
+        return $this->db->get_where('tb_produk', ['tb_produk.kategori_produk' => $id])->num_rows();
     }
-    public function cekkode(){ 
+    public function cekkode()
+    {
         $query = $this->db->query("SELECT MAX(kd_kategori) as kd_kategori from tb_kategori");
         $hasil = $query->row();
         return $hasil->kd_kategori;
@@ -58,7 +64,8 @@ class M_admin extends CI_Model
     {
         return $this->db->get('tb_voucher')->result();
     }
-    public function cekVoucher($id){
-        return $this->db->get_where('tb_voucher', ['kd_voucher'=>$id])->num_rows();
+    public function cekVoucher($id)
+    {
+        return $this->db->get_where('tb_voucher', ['kd_voucher' => $id])->num_rows();
     }
 }
