@@ -1,10 +1,8 @@
-<!--**********************************
-            Nav header start
-        ***********************************-->
+
         <div class="nav-header">
   <div class="brand-logo">
     <a href="index.html">
-      <b class="logo-abbr"><img src="<?= base_url('assets/images/logo.png') ?>"> </b>
+      <b class="logo-abbr"><img src="<?= base_url('assets/images/alt_jember.png') ?>"> </b>
       <span class="logo-compact"><img src="<?= base_url('assets/images/logo-compact.png') ?>" alt=""></span>
       <span class="brand-title">
         <img src="<?= base_url('assets/images/logo-text.png') ?>">
@@ -12,107 +10,91 @@
     </a>
   </div>
 </div>
-<!--**********************************
-            Nav header end
-        ***********************************-->
-<!--**********************************
-            Content body start
-        ***********************************-->
+
 <div class="content-body">
 
-  <div class="row page-titles mx-0">
-    <div class="col p-md-0">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-        <li class="breadcrumb-item active"><a href="javascript:void(0)">Home</a></li>
-      </ol>
+    <div class="row page-titles mx-0">
+        <div class="col p-md-0">
+            <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">Pelanggan</a></li>
+            </ol>
+        </div>
     </div>
-  </div>
-  <!-- row -->
+    <!-- row -->
 
-  <div class="container-fluid">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <h4 class="card-title">Data Pelanggan</h4>
+                        </div>
 
-  </div>
-  <div class="container-fluid">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a href="#">Pelanggan</a>
-        </li>
-        <li class="breadcrumb-item active">Data Pelanggan</li>
-    </ol>
-    <div class="card mb-3">
-        
-        <div class="card-body table-responsive">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-  <tr>
-    <th>No.</th>
-    <th>Nama</th>
-    <th>No HP</th>
-    <th>Alamat</th>    
-    <th>Email</th> 
-    <th>Aksi</th>  
-  </tr>
-  <?php 
-  $no=1; 
-  foreach ($join2 as $row) { ?>
-  <tr>
-  <td><?php echo $no++;?></td>
-  <td><?php echo $row->nama_lengkap;?></td>
-  <td><?php echo $row->no_hp;?></td>
-  <td><?php echo $row->alamat;?></td>
-  <td><?php echo $row->email;?></td>
-  <td>
-  <a href="#" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#myModal"
-  style="padding-bottom: 0px; padding-top: 0px;">
-  Detail
-  <span class="btn-label btn-label-right"><i class="fa fa-user-circle"></i></span></a>
- <?php echo form_open('Pelanggan/hapus/'.$row->id_user) ?>
-<button type="submit" class="btn btn-sm btn-outline-danger" style="padding-bottom: 0px; padding-top: 0px;"
- onclick="return confirm('Anda Yakin Ingin Menghapus?');">
-Hapus
-<span class="btn-label btn-label-right"><i class="fa fa-trash"></i></span>
-</button>
-<?php echo form_close() ?>
-</td>
-  </tr>
-    <?php } ?>
-    
-</table>
-              
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered zero-configuration">
+                                <thead>
+                                    <tr>
+                                        <th conspan="2">Action</th>
+                                        <th>No</th>
+                                        <th>ID Pelanggan</th>
+                                        <th>Nama</th>
+                                        <th>Email</th>
+                                        <th>No Telepon</th>
+                                        <th>Status Akun</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $no = 1;
+                                    foreach ($join2 as $p) { ?>
+                                        <tr>
+                                            <td>
+                                            <?php echo form_open('Produk/hapus/'.$p->id_user) ?>
+                                                <div class="form-button-action">
+                                                    <a href="<?= base_url('admin/delpelanggan/' . $p->id_user); ?>" type="button" data-toggle="tooltip" 
+                                                    title="" class="btn mb-1 btn-danger" data-original-title="Remove " onclick="return confirm('Anda Yakin Ingin Menghapus?');">
+                                                        <i class="fa fa-trash"></i>
+                                                    </a>
+                                                    <?php echo form_close() ?>
+                                                </div>
+                                            </td>
+                                            <td><?= $no++; ?></td>
+                                            <td><?= $p->id_user; ?></td>
+                                            <td><?= $p->nama_lengkap; ?></td>
+                                            <td><?= $p->email; ?></td>
+                                            <td><?= $p->no_hp; ?></td>
+                                            <td>
+                                                <?php if ($p->status == 1) { ?>
+                                                    <span class="label label-pill label-success">Active</span>
+                                                <?php } else { ?>
+                                                    <span class="label label-pill label-danger">Non-Active</span>
+                                                <?php } ?>
+                                            
+                                        </tr>
+                                    <?php }
+                                    ?>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th conspan="2">Action</th>
+                                        <th>No</th>
+                                        <th>ID Pelanggan</th>
+                                        <th>Nama</th>
+                                        <th>Email</th>
+                                        <th>No Telepon</th>
+                                        <th>Status Akun</th>
+                                        
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <!-- #/ container -->
 </div>
-
-  <!-- #/ container -->
-</div>
-
-<!-- The Modal -->
-<div class="modal fade" id="myModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-      
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Detail Pelanggan</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        
-        <!-- Modal body -->
-        <div class="modal-body">
- <h2>isi modal</h2>
-              
-        </div>
-        
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-<!--**********************************
-            Content body end
-        ***********************************-->

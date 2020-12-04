@@ -41,7 +41,6 @@ class Admin extends CI_Controller
         $nourut++;
         $char = "KTG";
         $kode = $char . sprintf("%02s", $nourut);
-
         $this->form_validation->set_rules('kategori', 'Kategori', 'required');
         $this->form_validation->set_message('required', 'Isi Data!');
         if ($this->form_validation->run() == FALSE) {
@@ -58,34 +57,75 @@ class Admin extends CI_Controller
             redirect('Admin/datakategori');
         }
     }
-    public function editkategori()
-    {
-        $this->form_validation->set_rules('kategori', 'Kategori', 'required');
-        $this->form_validation->set_message('required', 'Isi Data!');
-        if ($this->form_validation->run() == FALSE) {
-            $this->session->set_flashdata('gagal', 'Data tidak sesuai atau data kosong!');
-            redirect('Admin/datakategori');
-        } else {
-            $kode = $this->input->post("kode", TRUE);
-            $nama = $this->input->post("kategori", TRUE);
-            $data = ['kategori' => $nama];
-            $where = ['kd_kategori' => $kode];
-            $this->admin->editData('tb_kategori', $data, $where);
-            $this->session->set_flashdata('berhasil', 'Berhasil Mengubah Data Kategori.');
-            redirect('Admin/datakategori');
+        public function editkategori()
+        {
+            $this->form_validation->set_rules('kategori', 'Kategori', 'required');
+            $this->form_validation->set_message('required', 'Isi Data!');
+            if ($this->form_validation->run() == FALSE) {
+                $this->session->set_flashdata('gagal', 'Data tidak sesuai atau data kosong!');
+                redirect('Admin/datakategori');
+            } else {
+                $kode = $this->input->post("kode", TRUE);
+                $nama = $this->input->post("kategori", TRUE);
+                $data = ['kategori' => $nama];
+                $where = ['kd_kategori' => $kode];
+                $this->admin->editData('tb_kategori', $data, $where);
+                $this->session->set_flashdata('berhasil', 'Berhasil Mengubah Data Kategori.');
+                redirect('Admin/datakategori');
+            }
         }
+
+        public function delkategori($id)
+            {
+                $data = $this->admin->cekProduk($id);
+                if ($data == 0) {
+                    $this->admin->delData('tb_kategori', ['kd_kategori' => $id]);
+                    $this->session->set_flashdata('berhasil', 'Berhasil Menghapus Data Kategori.');
+                    redirect('Admin/datakategori');
+                } else {
+                    $this->session->set_flashdata('error', 'Tidak Bisa Menghapus Data ini!');
+                    redirect('Admin/datakategori');
+                }
+            }
+
+    public function tampil_pelanggan()
+ {
+
+    // query memanggil function duatable di model
+    $level = 3;
+        $data['join2'] = $this->admin->userbylevel('tb_user', $level);
+        $this->load->view('admin/header');
+        $this->load->view('templates/topbar');
+        $this->load->view('templates/sidebar');
+        $this->load->view('admin/pelanggan', $data);
+        $this->load->view('templates/footer');
+  
+ } 
+
+ public function delpelanggan($kode)
+    {
+        $where = [
+            'id_user' => $kode
+        ];
+        $this->admin->delData('tb_user', $where);
+        $this->session->set_flashdata('berhasil', 'Berhasil Menghapus Data.');
+        redirect('admin/tampil_pelanggan');
     }
-    public function delkategori($id)
+    public function useractive($id)
     {
-        $data = $this->admin->cekProduk($id);
-        if ($data == 0) {
-            $this->admin->delData('tb_kategori', ['kd_kategori' => $id]);
-            $this->session->set_flashdata('berhasil', 'Berhasil Menghapus Data Kategori.');
-            redirect('Admin/datakategori');
-        } else {
-            $this->session->set_flashdata('error', 'Tidak Bisa Menghapus Data ini!');
-            redirect('Admin/datakategori');
-        }
+        $data = ['status' => 1];
+        $where = ['id_user' => $id];
+        $this->admin->editData('tb_user', $data, $where);
+        $this->session->set_flashdata('berhasil', 'Akun ' . $id . ' Diaktifkan');
+        redirect('admin/datapelanggan');
+    }
+    public function usernonactive($id)
+    {
+        $data = ['status' => 2];
+        $where = ['id_user' => $id];
+        $this->admin->editData('tb_user', $data, $where);
+        $this->session->set_flashdata('berhasil', 'Akun ID ' . $id . ' Dinonaktifkan');
+        redirect('admin/datapelanggan');
     }
 
 }
