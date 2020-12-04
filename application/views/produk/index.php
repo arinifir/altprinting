@@ -87,6 +87,7 @@
                             <td><?php echo $item->kategori_produk ?></td>
                             <td><?php echo $item->status_produk ?></td>
                             <td>
+                            
                                 <a href="<?php echo site_url('Produk/edit/'.$item->kd_produk) ?>" class="btn btn-sm btn-outline-secondary"
                                     style="padding-bottom: 0px; padding-top: 0px;">
                                     Edit
@@ -112,6 +113,8 @@
 
   <!-- #/ container -->
 </div>
+
+
 <!--**********************************
             Content body end
         ***********************************-->
