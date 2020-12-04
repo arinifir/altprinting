@@ -345,15 +345,13 @@ class API extends CI_Controller
         $this->form_validation->set_rules(
             'email',
             'Email',
-            'trim|required|valid_email|is_unique[user.email]',
+            'trim|required|valid_email|is_unique[tb_user.email]',
             array(
                 'is_unique' => 'This Email already Exist'
             )
         );
-        $this->form_validation->set_rules('alamat', 'Alamat', 'trim|required|min_length[10]|max_length[64]');
-        $this->form_validation->set_rules('about', 'About', 'trim|required');
         $this->form_validation->set_rules(
-            'notelp',
+            'no_hp',
             'Nomor Telepon',
             'trim|required|numeric|min_length[8]|max_length[14]',
             array(
@@ -367,40 +365,37 @@ class API extends CI_Controller
         } else {
 
             // Function untuk create data + autonumber
-
-            $q_count = $this->db->get('user')->num_rows();
-
-            $id_user = "USR" . ($q_count + 1) . date('Hdyims', time());
+            $length = 6;
             $password_baru = htmlspecialchars($this->input->post('password'));
             $password = password_hash($password_baru, PASSWORD_DEFAULT);
             $data = [
-                'id_user' => htmlspecialchars($id_user),
-                'nama' => htmlspecialchars($this->input->post('nama')),
+                'id_user' => htmlspecialchars($this->admin->randomcode($length)),
+                'nama_lengkap' => htmlspecialchars($this->input->post('nama')),
                 'email' => htmlspecialchars($this->input->post('email')),
-                'notelp' => htmlspecialchars($this->input->post('notelp')),
+                'no_hp' => htmlspecialchars($this->input->post('no_hp')),
                 'password' => $password,
-                'role_id' => 2,
-                'is_active' => 0,
+                'level' => 3,
+                'status' => 2,
                 'date_created' => htmlspecialchars(time()),
-                'update_at' => 0
+                'date_updated' => 0
             ];
 
             // Function untuk send email ketika berhasil registrasi
 
-            $email = $this->input->post('email');
-            $token = base64_encode(random_bytes(32));
-            $user_token = [
-                'email' => $email,
-                'token' => $token,
-                'date_created' => time()
-            ];
+            // $email = $this->input->post('email');
+            // $token = base64_encode(random_bytes(32));
+            // $user_token = [
+            //     'email' => $email,
+            //     'token' => $token,
+            //     'date_created' => time()
+            // ];
 
-            $this->db->insert('token_user', $user_token);
-            $this->_sendEmail($token);
+            // $this->db->insert('token_user', $user_token);
+            // $this->_sendEmail($token);
 
-            $this->db->insert('user', $data);
+            $this->db->insert('tb_user', $data);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Berhasil Disimpan</div>');
-            redirect('auth');
+            redirect('Auth');
         }
     }
 
