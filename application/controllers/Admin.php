@@ -95,10 +95,10 @@ class Admin extends CI_Controller
     $level = 3;
         $data['join2'] = $this->admin->userbylevel('tb_user', $level);
         $this->load->view('admin/header');
-        $this->load->view('templates/topbar');
-        $this->load->view('templates/sidebar');
+        $this->load->view('admin/topbar');
+        $this->load->view('admin/sidebar');
         $this->load->view('admin/pelanggan', $data);
-        $this->load->view('templates/footer');
+        $this->load->view('admin/footer');
   
  } 
 
