@@ -117,7 +117,7 @@ body {
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #76838f;
+  color: #444444;
   text-align: left;
   background-color: #F3F3F9; }
 
@@ -7600,7 +7600,7 @@ sub {
   .nav-header .brand-logo {
     z-index: 999; }
     .nav-header .brand-logo a {
-      padding: 1.607rem 1.8125rem;
+      padding: 1.2rem 1.8125rem;
       display: block; }
       .nav-header .brand-logo a i {
         font-size: 1.375rem; }
@@ -7772,7 +7772,7 @@ sub {
   display: inline-block; }
   .icons > a i {
     font-size: 1.25rem;
-    color: #abafb3; }
+    color: #444444; }
 
 .icons.active .drop-down {
   display: block; }
@@ -8118,7 +8118,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
         padding: 0 0.3125rem; }
 
 .nav-label {
-  padding: 0.8125rem 1.5625rem;
+  padding: 0.95rem 1.6rem;
   text-transform: uppercase;
   font-size: 0.75rem;
   letter-spacing: 0.05rem;
@@ -8196,7 +8196,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
     .nk-sidebar .metismenu a {
       position: relative;
       display: block;
-      padding: 0.8125rem 1.25rem;
+      padding: 0.8125rem 1.6rem;
       outline-width: 0;
       transition: all .3s ease-out;
       color: #464a53; }
@@ -8290,7 +8290,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   [data-sidebar-style="full"][data-layout="vertical"] .menu-toggle .nav-header .brand-logo {
     z-index: 999; }
     [data-sidebar-style="full"][data-layout="vertical"] .menu-toggle .nav-header .brand-logo a {
-      padding: 1.607rem 1.0625rem;
+      padding: 1.2rem 1.0625rem;
       text-align: center; }
       [data-sidebar-style="full"][data-layout="vertical"] .menu-toggle .nav-header .brand-logo a b img {
         margin-top: 0.4375rem; }
@@ -14010,7 +14010,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
   padding-right: 15rem; }
 
 [data-nav-headerbg="color_1"] .nav-header {
-  background-color: #7571f9; }
+  background-color: #fff; }
 
 [data-nav-headerbg="color_2"] .nav-header {
   background-color: #27394F !important; }
