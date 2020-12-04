@@ -68,4 +68,14 @@ class M_admin extends CI_Model
     {
         return $this->db->get_where('tb_voucher', ['kd_voucher' => $id])->num_rows();
     }
+
+    public function duatable() {
+        $this->db->select('*');
+        $this->db->from('tb_user');
+        $this->db->join('tb_alamat','tb_alamat.id_alamat=tb_user.id_user');
+        $query = $this->db->get();
+        return $query->result();
+       }
+       
+         
 }

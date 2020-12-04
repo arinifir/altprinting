@@ -8,14 +8,19 @@ class Admin extends CI_Controller
     {
         parent::__construct();
         //load model admin
-        $this->load->model('m_admin', 'admin');
+        $this->load->model('m_admin', 'admin','M_pelanggan');
         $this->load->helper('auth_helper');
         $this->load->library('user_agent');
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 0484a4e2230df69beb16cd5a72b212835cd0b8a1
         admin_logged_in();
     }
     public function index()
     {
         $data['judul'] = 'ALT | Admin';
+<<<<<<< HEAD
         $this->load->view('admin/header', $data);
         $this->load->view('admin/topbar');
         $this->load->view('admin/sidebar');
@@ -87,5 +92,29 @@ class Admin extends CI_Controller
             redirect('Admin/datakategori');
         }
     }
+=======
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/topbar');
+        $this->load->view('templates/sidebar');
+        $this->load->view('v_dashboard');
+        $this->load->view('templates/footer');
+    }
+
+    public function tampil_pelanggan()
+ {
+    $data['judul'] = 'ALT | Admin';
+
+    // query memanggil function duatable di model
+    $level = 3;
+        $data['join2'] = $this->admin->userbylevel('tb_user', $level);
+        $this->load->view('templates/header');
+        $this->load->view('templates/topbar');
+        $this->load->view('templates/sidebar');
+        $this->load->view('admin/pelanggan', $data);
+        $this->load->view('templates/footer');
+  
+ } 
+
+>>>>>>> 0484a4e2230df69beb16cd5a72b212835cd0b8a1
 
 }
