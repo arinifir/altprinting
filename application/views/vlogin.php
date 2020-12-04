@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html class="h-100" lang="en">
 
@@ -14,7 +13,7 @@
 </head>
 
 <body class="h-100">
-    
+
     <!--*******************
         Preloader start
     ********************-->
@@ -36,7 +35,9 @@
                     <div class="form-input-content">
                         <div class="card login-form mb-0">
                             <div class="card-body pt-5">
-                                <a class="text-center" href="<?= base_url('Auth') ?>"> <h4>Selamat Datang di ALT Printing</h4></a>
+                                <a class="text-center" href="<?= base_url('Auth') ?>">
+                                    <h4>Selamat Datang di ALT Printing</h4>
+                                </a>
                                 <div class="mt-5 mb-5 login-input">
                                     <div class="form-group">
                                         <input type="email" name="email" class="form-control email" placeholder="Email" required>
@@ -46,7 +47,7 @@
                                     </div>
                                     <button class="btn login-form__btn submit w-100 btnlogin">Sign In</button>
                                 </div>
-                                <p class="mt-5 login-form__footer">Dont have account? <a href="page-register.html" class="text-primary">Sign Up</a> now</p>
+                                <p class="mt-5 login-form__footer">Belum Punya Akun? <a href="<?= base_url('API/register') ?>" class="text-primary">Daftar</a> Sekarang</p>
                             </div>
                         </div>
                     </div>
@@ -67,22 +68,18 @@
     <script src="<?= base_url('assets/myjs/') ?>my.js"></script>
 
     <?php
-    if ($this->session->flashdata('message')):
+    if ($this->session->flashdata('message')) :
     ?>
-    <script>
-        $(document).ready(function() {
-            Swal.fire({
-                icon: 'success',
-                title: 'Yey...',
-                text: '<?= $this->session->flashdata('message');?>'
+        <script>
+            $(document).ready(function() {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Yey...',
+                    text: '<?= $this->session->flashdata('message'); ?>'
+                })
             })
-        })
-    </script>
+        </script>
     <?php endif ?>
 </body>
+
 </html>
-
-
-
-
-
