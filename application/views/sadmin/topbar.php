@@ -26,7 +26,7 @@
         <div class="nav-header">
             <div class="brand-logo">
                 <a href="<?= base_url('Sadmin') ?>">
-                    <b class="logo-abbr"><img src="<?= base_url('assets/') ?>images/alt_logo.png" alt=""> </b>
+                    <b class="logo-abbr"><img src="<?= base_url('assets/') ?>images/alt_logo.png" class="center" alt=""> </b>
                     <span class="logo-compact"><img src="<?= base_url('assets/') ?>images/alt_logo.png" alt=""></span>
                     <span class="brand-title">
                         <img src="<?= base_url('assets/') ?>images/alt_jember.png">

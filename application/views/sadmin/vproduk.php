@@ -141,6 +141,17 @@
                             </div>
                         <?php } ?>
                         <?php foreach ($produk as $p) { ?>
+                            <div class="modal" id="gambar<?= $p->kd_produk; ?>">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <img src="<?= base_url('assets/'); ?>images/produk/<?= $p->gambar_produk; ?>" width="100%" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } ?>
+                        <?php foreach ($produk as $p) { ?>
                             <div class="modal fade" id="desk<?= $p->kd_produk; ?>">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
@@ -174,12 +185,13 @@
                                 <thead>
                                     <tr>
                                         <th conspan="2">Action</th>
+                                        <th>Paket</th>
                                         <th>No</th>
                                         <th>Gambar</th>
                                         <th>Kode Produk</th>
                                         <th>Nama Produk</th>
                                         <th>Harga</th>
-                                        <th>Harga Diskon</th>
+                                        <th>Harga Final</th>
                                         <th>Kategori</th>
                                         <th>Tambah Diskon</th>
                                         <th>Deskripsi</th>
@@ -195,15 +207,22 @@
                                             <td>
                                                 <div class="form-button-action">
                                                     <button type="button" data-toggle="modal" data-target="#editModal<?= $p->kd_produk; ?>" data-toggle="tooltip" title="" class="btn mb-1 btn-warning" data-original-title="Edit">
-                                                        <i class="fa fa-edit"></i>
+                                                        <i class="fa fa-edit text-white"></i>
                                                     </button>
                                                     <button id="btnDel" type="button" data-toggle="tooltip" data-id="<?= $p->kd_produk; ?>" title="" class="btn mb-1 btn-danger btnDel" data-original-title="Remove">
                                                         <i class="fa fa-trash"></i>
                                                     </button>
                                                 </div>
                                             </td>
+                                            <td>
+                                                <a href="<?= base_url('Sadmin/lihatpaket/' . $p->kd_produk) ?>" type="button" data-toggle="tooltip" class="btn mb-1 btn-secondary text-white" data-original-title="Lihat Paket">Paket</a>
+                                            </td>
                                             <td><?= $no++; ?></td>
-                                            <td><img src="<?= base_url('assets/'); ?>images/produk/<?= $p->gambar_produk; ?>" width="32" /></td>
+                                            <td>
+                                                <button type="button" data-toggle="modal" data-target="#gambar<?= $p->kd_produk; ?>" data-toggle="tooltip" title="" class="btn" data-original-title="Lihat Gambar">
+                                                    <img src="<?= base_url('assets/'); ?>images/produk/<?= $p->gambar_produk; ?>" width="32" />
+                                                </button>
+                                            </td>
                                             <td><?= $p->kd_produk; ?></td>
                                             <td><?= $p->nama_produk; ?></td>
                                             <td><?= "Rp " . number_format($p->harga_produk, 0, ',', '.') ?></td>
@@ -220,7 +239,7 @@
                                             <td>
                                                 <div class="form-button-action">
                                                     <a href="<?= base_url('Sadmin/produkaktif/' . $p->kd_produk) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success" data-original-title="Aktifkan">
-                                                        <i class="fa fa-check"></i>
+                                                        <i class="fa fa-check text-white"></i>
                                                     </a>
                                                     <a href="<?= base_url('Sadmin/produkarsip/' . $p->kd_produk) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Arsipkan">
                                                         <i class="fa fa-times"></i>
@@ -234,12 +253,13 @@
                                 <tfoot>
                                     <tr>
                                         <th conspan="2">Action</th>
+                                        <th>Paket</th>
                                         <th>No</th>
                                         <th>Gambar</th>
                                         <th>Kode Produk</th>
                                         <th>Nama Produk</th>
                                         <th>Harga</th>
-                                        <th>Harga Diskon</th>
+                                        <th>Harga Final</th>
                                         <th>Kategori</th>
                                         <th>Tambah Diskon</th>
                                         <th>Deskripsi</th>

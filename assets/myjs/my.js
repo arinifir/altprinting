@@ -63,7 +63,7 @@ $(document).on('click','.btnDel', function () {
             }else{
                 Swal.fire({
                     title: 'Apakah Anda Yakin?',
-                    text: "Jika Anda menghapus data ini, Data yang terkait juga akan dihapus permanen!",
+                    text: "Jika Anda menghapus data ini, Data Paket dan Ulasan produk juga akan dihapus permanen!",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',

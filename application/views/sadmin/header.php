@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html"/>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>ALT | Admin</title>
     <!-- Favicon icon -->
@@ -20,6 +21,13 @@
     <link href="<?= base_url('assets/admin/') ?>css/style.css" rel="stylesheet">
     <!-- Icons by MDI -->
     <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
-
-
+    <!-- jquery fancyBox -->
+    <script type="text/javascript" scr="<?= base_url('assets/images/') ?>lib/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" scr="<?= base_url('assets/images/') ?>source/jquery.fancybox.js?v=2.1.5"></script>
+    <link rel="stylesheet" href="<?= base_url('assets/images/') ?>source/jquery.fancybox.css?v=2.1.5" media="screen" type="text/css" />
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".zoom").fancybox();
+        });
+    </script>
 </head>

@@ -1,13 +1,13 @@
 <div class="nav-header">
-  <div class="brand-logo">
-    <a href="index.html">
-      <b class="logo-abbr"><img src="<?= base_url('assets/images/logo.png') ?>"> </b>
-      <span class="logo-compact"><img src="<?= base_url('assets/images/logo-compact.png') ?>" alt=""></span>
-      <span class="brand-title">
-        <img src="<?= base_url('assets/images/logo-text.png') ?>">
-      </span>
-    </a>
-  </div>
+	<div class="brand-logo">
+		<a href="index.html">
+			<b class="logo-abbr"><img src="<?= base_url('assets/images/logo.png') ?>"> </b>
+			<span class="logo-compact"><img src="<?= base_url('assets/images/logo-compact.png') ?>" alt=""></span>
+			<span class="brand-title">
+				<img src="<?= base_url('assets/images/logo-text.png') ?>">
+			</span>
+		</a>
+	</div>
 </div>
 
 <div class="container">
