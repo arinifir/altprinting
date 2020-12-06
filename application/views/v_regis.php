@@ -39,7 +39,7 @@
                                     <h4>Silakan mendaftar!</h4>
                                 </a>
                                 <?= $this->session->flashdata('message'); ?>
-                                <form class="mt-5 mb-5 login-input" method="post" action="<?= base_url('API/register'); ?>">
+                                <form class="mt-5 mb-5 login-input" method="post" action="<?= base_url('Auth/register'); ?>">
                                     <div class="form-group">
                                         <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama">
                                         <?= form_error('nama', '<small class="text-danger">', '</small>'); ?>
