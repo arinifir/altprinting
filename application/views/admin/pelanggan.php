@@ -1,15 +1,4 @@
 
-        <div class="nav-header">
-  <div class="brand-logo">
-    <a href="index.html">
-      <b class="logo-abbr"><img src="<?= base_url('assets/images/alt_jember.png') ?>"> </b>
-      <span class="logo-compact"><img src="<?= base_url('assets/images/logo-compact.png') ?>" alt=""></span>
-      <span class="brand-title">
-        <img src="<?= base_url('assets/images/logo-text.png') ?>">
-      </span>
-    </a>
-  </div>
-</div>
 
 <div class="content-body">
 
@@ -31,18 +20,18 @@
                         <div>
                             <h4 class="card-title">Data Pelanggan</h4>
                         </div>
-
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered zero-configuration">
                                 <thead>
                                     <tr>
-                                        <th conspan="2">Action</th>
+                                        <th>Action</th>
                                         <th>No</th>
                                         <th>ID Pelanggan</th>
                                         <th>Nama</th>
                                         <th>Email</th>
                                         <th>No Telepon</th>
                                         <th>Status Akun</th>
+                                        <th conspan="2">Aktif/Nonaktif</th>
                                         
                                     </tr>
                                 </thead>
@@ -72,21 +61,31 @@
                                                 <?php } else { ?>
                                                     <span class="label label-pill label-danger">Non-Active</span>
                                                 <?php } ?>
-                                            
+                                            </td>
+                                            <td>
+                                                <div class="form-button-action">
+                                                    <a href="<?= base_url('Admin/useractive/'. $p->id_user)?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success" data-original-title="Active">
+                                                        <i class="fa fa-check"></i>
+                                                    </a>
+                                                    <a href="<?= base_url('Admin/usernonactive/'. $p->id_user)?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Non-Active">
+                                                        <i class="fa fa-times"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
                                         </tr>
                                     <?php }
                                     ?>
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th conspan="2">Action</th>
+                                        <th>Action</th>
                                         <th>No</th>
                                         <th>ID Pelanggan</th>
                                         <th>Nama</th>
                                         <th>Email</th>
                                         <th>No Telepon</th>
                                         <th>Status Akun</th>
-                                        
+                                        <th conspan="2">Aktif/Nonaktif</th>
                                     </tr>
                                 </tfoot>
                             </table>

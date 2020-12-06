@@ -7,7 +7,7 @@ class Auth extends CI_Controller
     {
         parent::__construct();
         //load model admin
-        // $this->load->model('m_admin');
+        $this->load->model('m_admin', 'admin');
         //load helper login
         $this->load->helper('auth_helper');
     }
@@ -328,7 +328,7 @@ class Auth extends CI_Controller
             // $this->_sendEmail($token);
 
             $this->db->insert('tb_user', $data);
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Berhasil Disimpan</div>');
+            $this->session->set_flashdata('message', 'Berhasil Mendaftar. Silahkan Lakukan Verifikasi Akun di Email Anda.');
             redirect('Auth');
         }
     }
@@ -357,6 +357,4 @@ class Auth extends CI_Controller
         $this->session->set_flashdata('berhasil', 'Berhasil Menghapus Data Produk.');
         redirect('Sadmin/dataproduk');
     }
-}
-
 }

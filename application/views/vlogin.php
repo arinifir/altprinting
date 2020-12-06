@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>ALT | Login</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('assets/admin/') ?>images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('assets/') ?>images/alt_logo.png">
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"> -->
     <link href="<?= base_url('assets/admin/') ?>css/style.css" rel="stylesheet">
 </head>
@@ -45,9 +45,9 @@
                                     <div class="form-group">
                                         <input type="password" name="password" class="form-control password" placeholder="Password" required>
                                     </div>
-                                    <button class="btn login-form__btn submit w-100 btnlogin">Sign In</button>
+                                    <button class="btn login-form__btn submit w-100 btnlogin">Masuk</button>
                                 </div>
-                                <p class="mt-5 login-form__footer">Belum Punya Akun? <a href="<?= base_url('API/register') ?>" class="text-primary">Daftar</a> Sekarang</p>
+                                <p class="mt-5 login-form__footer">Belum Punya Akun? <a href="<?= base_url('Auth/register') ?>" class="text-primary">Daftar</a> Sekarang</p>
                             </div>
                         </div>
                     </div>
