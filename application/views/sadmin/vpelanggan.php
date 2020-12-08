@@ -61,8 +61,8 @@
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-primary">Tambahkan</button>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
+                                            <button type="submit" class="btn btn-primary">Tambah</button>
                                         </div>
                                     </form>
                                 </div>
@@ -83,7 +83,7 @@
                                                     <label class="col-lg-4 col-form-label" for="val-username">Name <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val-username" name="kode"  value="<?= $p->id_user; ?>" hidden>
+                                                        <input type="text" class="form-control" id="val-username" name="kode" value="<?= $p->id_user; ?>" hidden>
                                                         <input type="text" class="form-control" id="val-username" name="name" placeholder="Enter a name.." value="<?= $p->nama_lengkap; ?>">
                                                     </div>
                                                 </div>
@@ -153,10 +153,10 @@
                                                 <?php } ?>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="<?= base_url('Sadmin/useractive/'. $p->id_user)?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success" data-original-title="Active">
+                                                    <a href="<?= base_url('Sadmin/useractive/' . $p->id_user) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success" data-original-title="Active">
                                                         <i class="fa fa-check"></i>
                                                     </a>
-                                                    <a href="<?= base_url('Sadmin/usernonactive/'. $p->id_user)?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Non-Active">
+                                                    <a href="<?= base_url('Sadmin/usernonactive/' . $p->id_user) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Non-Active">
                                                         <i class="fa fa-times"></i>
                                                     </a>
                                                 </div>

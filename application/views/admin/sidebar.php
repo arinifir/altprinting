@@ -1,4 +1,4 @@
- <!--**********************************
+<!--**********************************
             Sidebar start
         ***********************************-->
         <div class="nk-sidebar">           
@@ -87,8 +87,21 @@
                         </a>
                     </li>
                 </ul>
-            </div>
-        </div>
-        <!--**********************************
+            </li>
+            <li class="nav-label">Keuangan</li>
+            <li>
+                <a href="<?= base_url('Admin/pembelian') ?>" aria-expanded="false">
+                    <i class="mdi mdi-cart"></i><span class="nav-text pl-2">Pembelian</span>
+                </a>
+            </li>
+            <li>
+                <a href="<?= base_url('Admin/riwayatpembelian') ?>" aria-expanded="false">
+                    <i class="mdi mdi-history"></i><span class="nav-text pl-2">Riwayat Pembelian</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--**********************************
             Sidebar end
         ***********************************-->

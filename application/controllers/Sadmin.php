@@ -11,6 +11,7 @@ class Sadmin extends CI_Controller
         $this->load->model('m_admin', 'admin');
         $this->load->helper('auth_helper');
         $this->load->library('user_agent');
+        $this->load->library('primslib');
         sadmin_logged_in();
     }
     public function index()
@@ -35,10 +36,10 @@ class Sadmin extends CI_Controller
     }
     public function addadmin()
     {
-        $this->form_validation->set_rules('name', 'Name', 'required');
-        $this->form_validation->set_rules('email', 'Email', 'required');
-        $this->form_validation->set_rules('no', 'Number', 'required');
-        $this->form_validation->set_rules('password', 'Password', 'required');
+        $this->form_validation->set_rules('name', 'Name', 'required|trim');
+        $this->form_validation->set_rules('email', 'Email', 'required|trim');
+        $this->form_validation->set_rules('no', 'Number', 'required|trim');
+        $this->form_validation->set_rules('password', 'Password', 'required|trim');
         $this->form_validation->set_message('required', 'Please Enter Data!');
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata('gagal', 'Data tidak sesuai atau data kosong!');
@@ -72,6 +73,7 @@ class Sadmin extends CI_Controller
             }
         }
     }
+
     public function editadmin()
     {
         $this->form_validation->set_rules('name', 'Name', 'required');
@@ -115,6 +117,7 @@ class Sadmin extends CI_Controller
             }
         }
     }
+
     public function deladmin($kode)
     {
         $where = [
@@ -124,6 +127,7 @@ class Sadmin extends CI_Controller
         $this->session->set_flashdata('berhasil', 'Berhasil Menghapus Data Admin.');
         redirect('Sadmin/datadmin');
     }
+
     public function adminactive($id)
     {
         $data = ['status' => 1];
@@ -132,6 +136,7 @@ class Sadmin extends CI_Controller
         $this->session->set_flashdata('berhasil', 'Akun ' . $id . ' Diaktifkan');
         redirect('Sadmin/datadmin');
     }
+
     public function adminonactive($id)
     {
         $data = ['status' => 2];
@@ -152,6 +157,7 @@ class Sadmin extends CI_Controller
         $this->load->view('sadmin/vpelanggan', $data);
         $this->load->view('sadmin/footer');
     }
+
     public function addpelanggan()
     {
         $this->form_validation->set_rules('name', 'Name', 'required');
@@ -191,6 +197,7 @@ class Sadmin extends CI_Controller
             }
         }
     }
+
     public function editpelanggan()
     {
         $this->form_validation->set_rules('name', 'Name', 'required');
@@ -234,6 +241,7 @@ class Sadmin extends CI_Controller
             }
         }
     }
+
     public function delpelanggan($kode)
     {
         $where = [
@@ -243,6 +251,7 @@ class Sadmin extends CI_Controller
         $this->session->set_flashdata('berhasil', 'Berhasil Menghapus Data.');
         redirect('Sadmin/datapelanggan');
     }
+
     public function useractive($id)
     {
         $data = ['status' => 1];
@@ -251,6 +260,7 @@ class Sadmin extends CI_Controller
         $this->session->set_flashdata('berhasil', 'Akun ' . $id . ' Diaktifkan');
         redirect('Sadmin/datapelanggan');
     }
+
     public function usernonactive($id)
     {
         $data = ['status' => 2];
@@ -260,7 +270,7 @@ class Sadmin extends CI_Controller
         redirect('Sadmin/datapelanggan');
     }
 
-    //kategori
+    //Kategori
     public function datakategori()
     {
         $data['kategori'] = $this->admin->tampilkategori();
@@ -270,6 +280,7 @@ class Sadmin extends CI_Controller
         $this->load->view('sadmin/vkategori', $data);
         $this->load->view('sadmin/footer');
     }
+
     public function addkategori()
     {
         $cekkode = $this->admin->cekkode();
@@ -295,6 +306,7 @@ class Sadmin extends CI_Controller
             redirect('Sadmin/datakategori');
         }
     }
+
     public function editkategori()
     {
         $this->form_validation->set_rules('kategori', 'Kategori', 'required');
@@ -312,6 +324,7 @@ class Sadmin extends CI_Controller
             redirect('Sadmin/datakategori');
         }
     }
+
     public function delkategori($id)
     {
         $data = $this->admin->cekProduk($id);
@@ -325,16 +338,64 @@ class Sadmin extends CI_Controller
         }
     }
 
-    //produk
+    //Produk
     public function dataproduk()
     {
+        $data['kategori'] = $this->admin->tampilkategori();
         $data['produk'] = $this->admin->tampilproduk();
+        // var_dump($data['produk']);
+        // die;
         $this->load->view('sadmin/header');
         $this->load->view('sadmin/topbar');
         $this->load->view('sadmin/sidebar');
         $this->load->view('sadmin/vproduk', $data);
         $this->load->view('sadmin/footer');
     }
+
+    public function addproduk()
+    {
+        $this->form_validation->set_rules('namaproduk', 'Nama Produk', 'required|trim');
+        $this->form_validation->set_rules('harga', 'Harga', 'required|trim');
+        $this->form_validation->set_rules('hargadiskon', 'Harga Diskon', 'required|trim');
+        $this->form_validation->set_rules('kategori', 'Kategori', 'required');
+        $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required');
+        // Input gambar belum !!!
+        // $this->form_validation->set_rules('gambar', 'Gambar', 'required');
+        $this->form_validation->set_message('required', 'Please Enter Data!');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('gagal', 'Data tidak sesuai atau data kosong!');
+            redirect('Sadmin/dataproduk');
+        } else {
+            $length = 4;
+            $kode = $this->admin->productCode($length);
+            $nama = $this->input->post("namaproduk", TRUE);
+            $harga = $this->input->post("harga", TRUE);
+            $diskon = $this->input->post("hargadiskon", TRUE);
+            $kategori = $this->input->post("kategori", TRUE);
+            $deskripsi = $this->input->post("deskripsi", TRUE);
+            // $gambar = $this->input->post("gambar_produk", TRUE);
+            $gambar = $_FILES['gambar_produk']['name'];
+            $format = 'jpg|png|jpeg';
+            $this->primslib->upload_image('gambar_produk', $gambar, $format, 10000);
+
+            $status = 1;
+            $data = [
+                'kd_produk' => $kode,
+                'nama_produk' => $nama,
+                'harga_produk' => $harga,
+                'diskon_produk' => $diskon,
+                'kategori_produk' => $kategori,
+                'desk_produk' => $deskripsi,
+                'gambar_produk' => $gambar,
+                'status_produk' => $status
+            ];
+            $this->admin->addData('tb_produk', $data);
+            $this->session->set_flashdata('berhasil', 'Berhasil menambahkan data');
+            redirect('Sadmin/dataproduk');
+        }
+    }
+
     public function editdesk()
     {
         $kode = $this->input->post("kode", TRUE);
@@ -345,6 +406,7 @@ class Sadmin extends CI_Controller
         $this->session->set_flashdata('berhasil', 'Berhasil Mengubah Data.');
         redirect('Sadmin/dataproduk');
     }
+
     public function editdiskon()
     {
         $kode = $this->input->post("kode", TRUE);
@@ -355,6 +417,7 @@ class Sadmin extends CI_Controller
         $this->session->set_flashdata('berhasil', 'Berhasil Mengubah Diskon.');
         redirect('Sadmin/dataproduk');
     }
+
     public function produkaktif($id)
     {
         $data = ['status_produk' => 1];
@@ -363,6 +426,7 @@ class Sadmin extends CI_Controller
         $this->session->set_flashdata('berhasil', 'Produk Kode ' . $id . ' Ditampilkan');
         redirect('Sadmin/dataproduk');
     }
+
     public function produkarsip($id)
     {
         $data = ['status_produk' => 2];
@@ -382,6 +446,7 @@ class Sadmin extends CI_Controller
         $this->load->view('sadmin/voucher', $data);
         $this->load->view('sadmin/footer');
     }
+
     public function addvoucher()
     {
         $this->form_validation->set_rules('kode', 'Kode', 'required');
@@ -389,6 +454,7 @@ class Sadmin extends CI_Controller
         $this->form_validation->set_rules('potongan', 'Potongan', 'required');
         $this->form_validation->set_rules('jenis', 'Jenis', 'required');
         $this->form_validation->set_message('required', 'Please Enter Data!');
+
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata('gagal', 'Data tidak sesuai atau data kosong!');
             redirect('Sadmin/datavoucher');
@@ -408,7 +474,7 @@ class Sadmin extends CI_Controller
                     'status_voucher' => $status
                 ];
                 $this->admin->addData('tb_voucher', $data);
-                $this->session->set_flashdata('berhasil', 'Berhasil Menambahkan Voucher.');
+                $this->session->set_flashdata('berhasil', 'Berhasil menambahkan Voucher');
                 redirect('Sadmin/datavoucher');
             } else {
                 $this->session->set_flashdata('gagal', 'Kode Voucher Sudah Ada!');
@@ -416,6 +482,7 @@ class Sadmin extends CI_Controller
             }
         }
     }
+
     public function editvoucher()
     {
         $this->form_validation->set_rules('kode', 'Kode', 'required');
@@ -442,6 +509,7 @@ class Sadmin extends CI_Controller
             redirect('Sadmin/datavoucher');
         }
     }
+
     public function delvoucher($kode)
     {
         $where = [
@@ -451,6 +519,7 @@ class Sadmin extends CI_Controller
         $this->session->set_flashdata('berhasil', 'Berhasil Menghapus Data.');
         redirect('Sadmin/datavoucher');
     }
+
     public function vaktif($id)
     {
         $data = ['status_voucher' => 1];
@@ -459,6 +528,7 @@ class Sadmin extends CI_Controller
         $this->session->set_flashdata('berhasil', 'Voucher ' . $id . ' Diaktifkan');
         redirect('Sadmin/datavoucher');
     }
+
     public function vnaktif($id)
     {
         $data = ['status_voucher' => 2];
