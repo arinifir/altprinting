@@ -88,28 +88,6 @@ class Admin extends CI_Controller
         }
     }
 
-    public function tampil_pelanggan()
-    {
-
-        // query memanggil function duatable di model
-        $level = 3;
-        $data['join2'] = $this->admin->userbylevel('tb_user', $level);
-        $this->load->view('admin/header');
-        $this->load->view('admin/topbar');
-        $this->load->view('admin/sidebar');
-        $this->load->view('admin/pelanggan', $data);
-        $this->load->view('admin/footer');
-    }
-
-    public function delpelanggan($kode)
-    {
-        $where = [
-            'id_user' => $kode
-        ];
-        $this->admin->delData('tb_user', $where);
-        $this->session->set_flashdata('berhasil', 'Berhasil Menghapus Data.');
-        redirect('admin/tampil_pelanggan');
-    }
     public function useractive($id)
     {
         $data = ['status' => 1];

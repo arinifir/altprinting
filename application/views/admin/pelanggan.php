@@ -41,9 +41,9 @@
                                     foreach ($join2 as $p) { ?>
                                         <tr>
                                             <td>
-                                            <?php echo form_open('Produk/hapus/'.$p->id_user) ?>
+                                            <?php echo form_open('Pelanggan/hapus/'.$p->id_user) ?>
                                                 <div class="form-button-action">
-                                                    <a href="<?= base_url('admin/delpelanggan/' . $p->id_user); ?>" type="button" data-toggle="tooltip" 
+                                                    <a href="<?= base_url('Pelanggan/delpelanggan/' . $p->id_user); ?>" type="button" data-toggle="tooltip" 
                                                     title="" class="btn mb-1 btn-danger" data-original-title="Remove " onclick="return confirm('Anda Yakin Ingin Menghapus?');">
                                                         <i class="fa fa-trash"></i>
                                                     </a>
