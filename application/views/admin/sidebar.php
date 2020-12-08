@@ -12,7 +12,7 @@
                     </li>
                     <li class="nav-label">Data Master</li>
                     <li>
-                        <a href="<?= base_url('Admin/tampil_pelanggan') ?>" aria-expanded="false">
+                        <a href="<?= base_url('admin/Pelanggan/tampil_pelanggan') ?>" aria-expanded="false">
                             <i class="fa fa-users menu-icon"></i><span class="nav-text">Pelanggan</span>
                         </a>
                     </li>
