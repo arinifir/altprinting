@@ -11439,8 +11439,8 @@ sub {
 
 .nav-header .brand-logo a {
 	padding: 1.2rem 1.8125rem;
-  display: block;
-  background: #A70201;
+	display: block;
+	background: #A70201;
 }
 
 .nav-header .brand-logo a i {
@@ -14438,6 +14438,13 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 	border-bottom: 1px solid #f5f5f5;
 	padding-left: 0;
 	color: #7A88A1;
+}
+
+.login .show-password {
+	top: 65%;
+	transform: translateY(-100%);
+	font-size: 20px;
+	cursor: pointer;
 }
 
 .form-control:focus {

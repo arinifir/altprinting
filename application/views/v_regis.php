@@ -12,7 +12,7 @@
     <link href="<?= base_url('assets/admin/') ?>css/style.css" rel="stylesheet">
 </head>
 
-<body class="h-100">
+<body class="login">
 
     <!--*******************
         Preloader start
@@ -54,6 +54,9 @@
                                     </div>
                                     <div class="form-group">
                                         <input type="password" id="password" name="password" class="form-control" placeholder="Password">
+                                        <div class="show-password">
+                                            <i class="icon-eye"></i>
+                                        </div>
                                         <?= form_error('password', '<small class="text-danger">', '</small>'); ?>
                                     </div>
                                     <button class="btn login-form__btn submit w-100">Daftar</button>
@@ -78,7 +81,22 @@
     <script src="<?= base_url('assets/admin/') ?>js/styleSwitcher.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="<?= base_url('assets/myjs/') ?>my.js"></script>
+    <script>
+        // Show Password
 
+        function showPassword(button) {
+            var inputPassword = $(button).parent().find('input');
+            if (inputPassword.attr('type') === "password") {
+                inputPassword.attr('type', 'text');
+            } else {
+                inputPassword.attr('type', 'password');
+            }
+        }
+
+        $('.show-password').on('click', function() {
+            showPassword(this);
+        })
+    </script>
     <?php
     if ($this->session->flashdata('message')) :
     ?>
