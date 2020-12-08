@@ -26,6 +26,6 @@ Class Pelanggan extends CI_Controller{
         ];
         $this->admin->delData('tb_user', $where);
         $this->session->set_flashdata('berhasil', 'Berhasil Menghapus Data.');
-        redirect('admin/tampil_pelanggan');
+        redirect('admin/Pelanggan/tampil_pelanggan');
     }
 }
