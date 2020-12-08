@@ -14441,6 +14441,8 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 }
 
 .login .show-password {
+	position: absolute;
+	right: 20px;
 	top: 65%;
 	transform: translateY(-100%);
 	font-size: 20px;
