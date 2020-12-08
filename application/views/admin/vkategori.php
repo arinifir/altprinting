@@ -29,7 +29,7 @@
                                         <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                                         </button>
                                     </div>
-                                    <form class="form-valide" action="<?= base_url('Admin/addkategori') ?>" method="post">
+                                    <form class="form-valide" action="<?= base_url('admin/Admin/addkategori') ?>" method="post">
                                         <div class="modal-body">
                                             <div class="form-group">
                                                 <label class="col-lg-4 col-form-label" for="val-username">Kategori <span class="text-danger">*</span>
@@ -56,7 +56,7 @@
                                             <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                                             </button>
                                         </div>
-                                        <form class="form-valide" action="<?= base_url('Admin/editkategori') ?>" method="post">
+                                        <form class="form-valide" action="<?= base_url('admin/Admin/editkategori') ?>" method="post">
                                             <div class="modal-body">
                                                 <div class="form-group">
                                                     <label class="col-lg-4 col-form-label" for="val-username">Kategori <span class="text-danger">*</span>
@@ -96,7 +96,7 @@
                                                     <button type="button" data-toggle="modal" data-target="#editModal<?= $k->kd_kategori; ?>" data-toggle="tooltip" title="" class="btn mb-1 btn-warning" data-original-title="Edit">
                                                         <i class="fa fa-edit"></i>
                                                     </button>
-                                                    <a href="<?= base_url('Admin/delkategori/' . $k->kd_kategori); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Remove">
+                                                    <a href="<?= base_url('admin/Admin/delkategori/' . $k->kd_kategori); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Remove">
                                                         <i class="fa fa-trash"></i>
                                                     </a>
                                                 </div>

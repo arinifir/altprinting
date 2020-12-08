@@ -17,48 +17,48 @@
                         </a>
                     </li>
                     <li>
-                        <a href="<?= base_url('Admin/dataproduk') ?>" aria-expanded="false">
+                        <a href="<?= base_url('admin/Admin/dataproduk') ?>" aria-expanded="false">
                             <i class="fa fa-dropbox menu-icon"></i><span class="nav-text">Produk</span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?= base_url('Admin/datakategori') ?>" aria-expanded="false">
+                        <a href="<?= base_url('admin/Admin/datakategori') ?>" aria-expanded="false">
                             <i class="fa fa-list menu-icon"></i><span class="nav-text">Kategori</span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?= base_url('Admin/datavoucher') ?>" aria-expanded="false">
+                        <a href="<?= base_url('admin/Admin/datavoucher') ?>" aria-expanded="false">
                             <i class="fa fa-money menu-icon"></i><span class="nav-text">Voucher</span>
                         </a>
                     </li>
                     <li class="nav-label">Transaksi</li>
                     <li>
-                        <a href="<?= base_url('Admin/datatransaksi') ?>" aria-expanded="false">
+                        <a href="<?= base_url('admin/Admin/datatransaksi') ?>" aria-expanded="false">
                             <i class="fa fa-cart-arrow-down menu-icon"></i><span class="nav-text">Data Transaksi</span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?= base_url('Admin/confirmbayar') ?>" aria-expanded="false">
+                        <a href="<?= base_url('admin/Admin/confirmbayar') ?>" aria-expanded="false">
                             <i class="fa fa-credit-card-alt menu-icon"></i><span class="nav-text">Konfirmasi Pembayaran</span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?= base_url('Admin/antriankirim') ?>" aria-expanded="false">
+                        <a href="<?= base_url('admin/Admin/antriankirim') ?>" aria-expanded="false">
                             <i class="fa fa-cubes menu-icon"></i><span class="nav-text">Menunggu Pengiriman</span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?= base_url('Admin/resikirim') ?>" aria-expanded="false">
+                        <a href="<?= base_url('admin/Admin/resikirim') ?>" aria-expanded="false">
                             <i class="fa fa-truck menu-icon"></i><span class="nav-text">Resi Pengiriman</span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?= base_url('Admin/transelesai') ?>" aria-expanded="false">
+                        <a href="<?= base_url('admin/Admin/transelesai') ?>" aria-expanded="false">
                             <i class="fa fa-shopping-bag menu-icon"></i><span class="nav-text">Selesai</span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?= base_url('Admin/dataulasan') ?>" aria-expanded="false">
+                        <a href="<?= base_url('admin/Admin/dataulasan') ?>" aria-expanded="false">
                             <i class="fa fa-star menu-icon"></i><span class="nav-text">Ulasan</span>
                         </a>
                     </li>
