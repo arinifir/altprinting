@@ -88,7 +88,7 @@ class Primslib
 
         $select_tugas = $ci->m_crud->selectforarraysort('tugas', $kode_golongan, $nim);
         $tugas = $select_tugas->result_array();
-        
+
         $select_quiz = $ci->m_crud->selectforarraysort('quiz', $kode_golongan, $nim);
         $quiz = $select_quiz->result_array();
 
@@ -96,21 +96,21 @@ class Primslib
         $materi = $select_materi->result_array();
 
         $select_matkul = $ci->m_matkul->getMatkulByProdi();
-        for ($m=0; $m < count($select_matkul); $m++) { 
+        for ($m = 0; $m < count($select_matkul); $m++) {
             $select_pertemuan = $ci->m_matkul->getPertemuanByMatkul($select_matkul[$m]['kode_mk']);
-            for ($k=0; $k < count($select_pertemuan); $k++) { 
+            for ($k = 0; $k < count($select_pertemuan); $k++) {
                 // Validasi apakah bisa diakses pada pertemuan atau tidak
                 if ($k > 0) {
-                    $validasi_ptm = $ci->m_crud->edit(array('nim' => $nim, 'kode_pertemuan' => $select_pertemuan[$k-1]['kode_pertemuan']), 'detail_pertemuan')->result_array();
+                    $validasi_ptm = $ci->m_crud->edit(array('nim' => $nim, 'kode_pertemuan' => $select_pertemuan[$k - 1]['kode_pertemuan']), 'detail_pertemuan')->result_array();
                 }
 
-                if($k>0){ 
-                    if(count($validasi_ptm) > 0){ 
+                if ($k > 0) {
+                    if (count($validasi_ptm) > 0) {
                         $valid_ptm = "0";
-                    }else{ 
+                    } else {
                         $valid_ptm = "1";
-                    } 
-                }else{
+                    }
+                } else {
                     $valid_ptm = "0";
                 }
                 // End of validasi
@@ -118,9 +118,9 @@ class Primslib
                 if ($select_presensi->num_rows() > 0) {
                     $batas_presensi = $select_presensi->num_rows() + count($arraysort);
                     $penanda_presensi = 0;
-                    for($i = 0; $i < count($presensi); $i++){
+                    for ($i = 0; $i < count($presensi); $i++) {
                         $kode_pertemuan = $ci->m_crud->edit(array('kode_presensi' => $presensi[$i]['kode_presensi']), 'presensi')->row()->kode_pertemuan;
-                        if($select_pertemuan[$k]['kode_pertemuan'] == $kode_pertemuan){
+                        if ($select_pertemuan[$k]['kode_pertemuan'] == $kode_pertemuan) {
                             $arr = count($arraysort);
                             $arraysort[$arr]['pertemuan'] = $kode_pertemuan;
                             $arraysort[$arr]['kode'] = $presensi[$i]['kode_presensi'];
@@ -136,11 +136,11 @@ class Primslib
                                 // var_dump($awal);
                                 // die;
                                 $arraysort[$arr]['status'] = '1';
-                            }else{
+                            } else {
                                 $arraysort[$arr]['status'] = '0';
                             }
                         }
-                        
+
                         $penanda_presensi++;
                     }
                 }
@@ -149,7 +149,7 @@ class Primslib
                 if ($select_tugas->num_rows() > 0) {
                     $batas_tugas = $select_tugas->num_rows() + count($arraysort);
                     $penanda_tugas = 0;
-                    for($i = 0; $i < count($tugas); $i++){
+                    for ($i = 0; $i < count($tugas); $i++) {
                         $kode_pertemuan = $ci->m_crud->edit(array('kode_tugas' => $tugas[$i]['kode_tugas']), 'tugas')->row()->kode_pertemuan;
                         if ($select_pertemuan[$k]['kode_pertemuan'] == $kode_pertemuan) {
                             $arr = count($arraysort);
@@ -164,23 +164,23 @@ class Primslib
                             $awal = new DateTime($tugas[$i]['mulai_tugas']);
                             if ($today > $awal) {
                                 $arraysort[$arr]['status'] = '1';
-                            }else{
+                            } else {
                                 $arraysort[$arr]['status'] = '0';
                             }
-                            
+
                             // echo $select_matkul[$m]['kode_mk'] . ' - ' . $select_pertemuan[$k]['kode_pertemuan'] . ' - ' . $tugas[$penanda_tugas]['kode_tugas'] . 
                             // ' - ' . $kode_pertemuan . ' - ' . $tugas[$penanda_tugas]['judul_tugas'] .'<br>';
                         }
-                        
+
                         $penanda_tugas++;
                     }
                 }
-                
+
 
                 if ($select_quiz->num_rows() > 0) {
                     $batas_quiz = $select_quiz->num_rows() + count($arraysort);
                     $penanda_quiz = 0;
-                    for($i = 0; $i < count($quiz); $i++){
+                    for ($i = 0; $i < count($quiz); $i++) {
                         $kode_pertemuan = $ci->m_crud->edit(array('kode_quiz' => $quiz[$i]['kode_quiz']), 'quiz')->row()->kode_pertemuan;
                         if ($select_pertemuan[$k]['kode_pertemuan'] == $kode_pertemuan) {
                             $arr = count($arraysort);
@@ -195,11 +195,11 @@ class Primslib
                             $awal = new DateTime($quiz[$i]['mulai_quiz']);
                             if ($today > $awal) {
                                 $arraysort[$arr]['status'] = '1';
-                            }else{
+                            } else {
                                 $arraysort[$arr]['status'] = '0';
                             }
                         }
-                        
+
                         $penanda_quiz++;
                     }
                 }
@@ -207,7 +207,7 @@ class Primslib
                 if ($select_materi->num_rows() > 0) {
                     $batas_materi = $select_materi->num_rows() + count($arraysort);
                     $penanda_materi = 0;
-                    for($i = 0; $i < count($materi); $i++){
+                    for ($i = 0; $i < count($materi); $i++) {
                         $kode_pertemuan = $ci->m_crud->edit(array('kode_materi' => $materi[$i]['kode_materi']), 'materi')->row()->kode_pertemuan;
                         if ($select_pertemuan[$k]['kode_pertemuan'] == $kode_pertemuan) {
                             $arr = count($arraysort);
@@ -222,22 +222,21 @@ class Primslib
                             $awal = new DateTime($materi[$i]['mulai_materi']);
                             if ($today > $awal) {
                                 $arraysort[$arr]['status'] = '1';
-                            }else{
+                            } else {
                                 $arraysort[$arr]['status'] = '0';
                             }
                         }
-                        
+
                         $penanda_materi++;
                     }
                 }
-
             }
         }
 
-        usort($arraysort, function($element1, $element2){ 
-            $datetime1 = strtotime($element1['akhir']); 
-            $datetime2 = strtotime($element2['akhir']); 
-            return $datetime1 - $datetime2; 
+        usort($arraysort, function ($element1, $element2) {
+            $datetime1 = strtotime($element1['akhir']);
+            $datetime2 = strtotime($element2['akhir']);
+            return $datetime1 - $datetime2;
         });
         // print_r($arraysort);
 
@@ -261,7 +260,7 @@ class Primslib
         if ($select_detpresensi->num_rows() > 0) {
             $batas_detpresensi = $select_detpresensi->num_rows() + count($arrayvalidasi);
             $penanda_detpresensi = 0;
-            for($i = count($arrayvalidasi); $i < $batas_detpresensi; $i++){
+            for ($i = count($arrayvalidasi); $i < $batas_detpresensi; $i++) {
                 $arrayvalidasi[$i]['kode'] = $det_presensi[$penanda_detpresensi]['kode_presensi'];
                 $penanda_detpresensi++;
             }
@@ -273,7 +272,7 @@ class Primslib
         if ($select_dettugas->num_rows() > 0) {
             $batas_dettugas = $select_dettugas->num_rows() + count($arrayvalidasi);
             $penanda_dettugas = 0;
-            for($i = count($arrayvalidasi); $i < $batas_dettugas; $i++){
+            for ($i = count($arrayvalidasi); $i < $batas_dettugas; $i++) {
                 $arrayvalidasi[$i]['kode'] = $det_tugas[$penanda_dettugas]['kode_tugas'];
                 $penanda_dettugas++;
             }
@@ -285,7 +284,7 @@ class Primslib
         if ($select_detmateri->num_rows() > 0) {
             $batas_detmateri = $select_detmateri->num_rows() + count($arrayvalidasi);
             $penanda_detmateri = 0;
-            for($i = count($arrayvalidasi); $i < $batas_detmateri; $i++){
+            for ($i = count($arrayvalidasi); $i < $batas_detmateri; $i++) {
                 $arrayvalidasi[$i]['kode'] = $det_materi[$penanda_detmateri]['kode_materi'];
                 $penanda_detmateri++;
             }
@@ -297,7 +296,7 @@ class Primslib
         if ($select_detquiz->num_rows() > 0) {
             $batas_detquiz = $select_detquiz->num_rows() + count($arrayvalidasi);
             $penanda_detquiz = 0;
-            for($i = count($arrayvalidasi); $i < $batas_detquiz; $i++){
+            for ($i = count($arrayvalidasi); $i < $batas_detquiz; $i++) {
                 $arrayvalidasi[$i]['kode'] = $det_quiz[$penanda_detquiz]['kode_quiz'];
                 $penanda_detquiz++;
             }
@@ -340,12 +339,12 @@ class Primslib
     {
         $ci = &get_instance();
         if ($name != '') {
-            $config['upload_path'] = './assets/files/' . $file;
+            $config['upload_path'] = './assets/files/';
             $config['allowed_types'] = $format;
             $config['max_size'] = $size;
             // $config['max_width']  = '2048';
             // $config['max_height']  = '2048';
-            $config['encrypt_name'] = TRUE;
+            // $config['encrypt_name'] = TRUE;
 
             $ci->load->library('upload', $config);
 
@@ -355,16 +354,12 @@ class Primslib
                     'paket' => $ci->m_data_paket->getAll('paket')->result(),
                     'custom' => $ci->lang->line('Pengunggahan file' . $file . 'Gagal!')
                 );
-                echo $ci->load->view('admin/templates/header', array(), TRUE);
-                echo $ci->load->view('admin/templates/sidebar', array(), TRUE);
-                echo $ci->load->view('admin/paket/v_paket', $error, TRUE);
-                echo $ci->load->view('admin/templates/footer', array(), TRUE);
+                var_dump($error);
+                die;
                 exit;
             } else {
                 return $file = $ci->upload->data('file_name');
             }
         }
     }
-
-    
 }

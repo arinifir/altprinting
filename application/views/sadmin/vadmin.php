@@ -32,37 +32,37 @@
                                     <form class="form-valide" action="<?= base_url('Sadmin/addadmin') ?>" method="post">
                                         <div class="modal-body">
                                             <div class="form-group">
-                                                <label class="col-lg-4 col-form-label" for="val-username">Name <span class="text-danger">*</span>
+                                                <label class="col-lg-4 col-form-label" for="val-username">Nama <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-12">
-                                                    <input type="text" class="form-control" id="val-username" name="name" placeholder="Enter a name..">
+                                                    <input type="text" class="form-control" id="val-username" name="name" placeholder="Masukkan nama">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-lg-4 col-form-label" for="val-email">Email <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-12">
-                                                    <input type="text" class="form-control" id="val-email" name="email" placeholder="Your valid email..">
+                                                    <input type="text" class="form-control" id="val-email" name="email" placeholder="Masukkan email yang valid">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-lg-4 col-form-label" for="val-email">No Telepon <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-12">
-                                                    <input type="text" class="form-control" id="val-username" name="no" placeholder="Your active number..">
+                                                    <input type="text" class="form-control" id="val-username" name="no" placeholder="Masukkan nomer telepon">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-lg-4 col-form-label" for="val-password">Password <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-12">
-                                                    <input type="text" class="form-control" id="val-password" name="password" placeholder="Choose a safe one..">
+                                                    <input type="text" class="form-control" id="val-password" name="password" placeholder="Masukkan password minimal 8 digit">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-primary">Tambahkan</button>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
+                                            <button type="submit" class="btn btn-primary">Tambah</button>
                                         </div>
                                     </form>
                                 </div>
@@ -83,7 +83,7 @@
                                                     <label class="col-lg-4 col-form-label" for="val-username">Name <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val-username" name="kode"  value="<?= $a->id_user; ?>" hidden>
+                                                        <input type="text" class="form-control" id="val-username" name="kode" value="<?= $a->id_user; ?>" hidden>
                                                         <input type="text" class="form-control" id="val-username" name="name" placeholder="Enter a name.." value="<?= $a->nama_lengkap; ?>">
                                                     </div>
                                                 </div>
@@ -153,10 +153,10 @@
                                                 <?php } ?>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="<?= base_url('Sadmin/adminactive/'. $a->id_user)?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success" data-original-title="Active">
+                                                    <a href="<?= base_url('Sadmin/adminactive/' . $a->id_user) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success" data-original-title="Active">
                                                         <i class="fa fa-check"></i>
                                                     </a>
-                                                    <a href="<?= base_url('Sadmin/adminonactive/'. $a->id_user)?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Non-Active">
+                                                    <a href="<?= base_url('Sadmin/adminonactive/' . $a->id_user) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Non-Active">
                                                         <i class="fa fa-times"></i>
                                                     </a>
                                                 </div>

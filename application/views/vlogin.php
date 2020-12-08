@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>ALT | Login</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('assets/') ?>images/alt_logo.png">
-    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"> -->
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('assets/') ?>alt_rectangle_120.png">
+    <!-- CSS -->
     <link href="<?= base_url('assets/admin/') ?>css/style.css" rel="stylesheet">
 </head>
 
@@ -32,9 +32,12 @@
         <div class="container h-100">
             <div class="row justify-content-center h-100">
                 <div class="col-xl-6">
+
+                    <!-- <div class="banner-img"> -->
+
                     <div class="form-input-content">
                         <div class="card login-form mb-0">
-                            <div class="card-body pt-5">
+                            <div class="card-body pt-5 shadow">
                                 <a class="text-center" href="<?= base_url('Auth') ?>">
                                     <h4>Selamat Datang di ALT Printing</h4>
                                 </a>
@@ -47,13 +50,15 @@
                                     </div>
                                     <button class="btn login-form__btn submit w-100 btnlogin">Masuk</button>
                                 </div>
-                                <p class="mt-5 login-form__footer">Belum Punya Akun? <a href="<?= base_url('Auth/register') ?>" class="text-primary">Daftar</a> Sekarang</p>
+                                <p class="mt-5 login-form__footer">Belum punya akun? <a href="<?= base_url('API/register') ?>" class="text-primary">Daftar sekarang !</a></p>
                             </div>
                         </div>
                     </div>
+                    <!-- </div> -->
                 </div>
             </div>
         </div>
+        <!-- </div> -->
     </div>
 
     <!--**********************************

@@ -47,14 +47,14 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-lg-4 col-form-label" for="val-password">Potongan Voucher<span class="text-danger">*</span>
+                                                <label class="col-lg-4 col-form-label" for="val-password">Potongan Voucher <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-12">
                                                     <input type="number" class="form-control" id="val-password" name="potongan" placeholder="Enter Potongan..">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-lg-4 col-form-label" for="val-email">Jenis<span class="text-danger">*</span>
+                                                <label class="col-lg-4 col-form-label" for="val-email">Jenis <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-12">
                                                     <select id="inputState" name="jenis" class="form-control">
@@ -67,8 +67,8 @@
                                         </div>
 
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-primary">Tambahkan</button>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
+                                            <button type="submit" class="btn btn-primary">Tambah</button>
                                         </div>
                                     </form>
                                 </div>

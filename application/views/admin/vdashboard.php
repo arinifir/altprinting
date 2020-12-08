@@ -99,76 +99,76 @@
                     </div>
                 </div>
 
-                
+
 
                 <div class="row">
-                        <div class="col-lg-6 col-md-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title">Order Summary</h4>
-                                    <div id="morris-bar-chart"></div>
-                                </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Order Summary</h4>
+                                <div id="morris-bar-chart"></div>
                             </div>
-                            
-                        </div>    
-                        <div class="col-lg-3 col-md-6">
-                            <div class="card card-widget">
-                                <div class="card-body">
-                                    <h5 class="text-muted">Order Overview </h5>
-                                    <h2 class="mt-4">5680</h2>
-                                    <span>Total Revenue</span>
-                                    <div class="mt-4">
-                                        <h4>30</h4>
-                                        <h6>Online Order <span class="pull-right">30%</span></h6>
-                                        <div class="progress mb-3" style="height: 7px">
-                                            <div class="progress-bar bg-primary" style="width: 30%;" role="progressbar"><span class="sr-only">30% Order</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="mt-4">
-                                        <h4>50</h4>
-                                        <h6 class="m-t-10 text-muted">Offline Order <span class="pull-right">50%</span></h6>
-                                        <div class="progress mb-3" style="height: 7px">
-                                            <div class="progress-bar bg-success" style="width: 50%;" role="progressbar"><span class="sr-only">50% Order</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="mt-4">
-                                        <h4>20</h4>
-                                        <h6 class="m-t-10 text-muted">Cash On Develery <span class="pull-right">20%</span></h6>
-                                        <div class="progress mb-3" style="height: 7px">
-                                            <div class="progress-bar bg-warning" style="width: 20%;" role="progressbar"><span class="sr-only">20% Order</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
                         </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="card">
-                                <div class="card-body px-0">
-                                    <h4 class="card-title px-4 mb-3">Todo</h4>
-                                    <div class="todo-list">
-                                        <div class="tdl-holder">
-                                            <div class="tdl-content">
-                                                <ul id="todo_list">
-                                                    <li><label><input type="checkbox"><i></i><span>Get up</span><a href='#' class="ti-trash"></a></label></li>
-                                                    <li><label><input type="checkbox" checked><i></i><span>Stand up</span><a href='#' class="ti-trash"></a></label></li>
-                                                    <li><label><input type="checkbox"><i></i><span>Don't give up the fight.</span><a href='#' class="ti-trash"></a></label></li>
-                                                    <li><label><input type="checkbox" checked><i></i><span>Do something else</span><a href='#' class="ti-trash"></a></label></li>
-                                                </ul>
-                                            </div>
-                                            <div class="px-4">
-                                                <input type="text" class="tdl-new form-control" placeholder="Write new item and hit 'Enter'...">
-                                            </div>
+
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card card-widget">
+                            <div class="card-body">
+                                <h5 class="text-muted">Order Overview </h5>
+                                <h2 class="mt-4">5680</h2>
+                                <span>Total Revenue</span>
+                                <div class="mt-4">
+                                    <h4>30</h4>
+                                    <h6>Online Order <span class="pull-right">30%</span></h6>
+                                    <div class="progress mb-3" style="height: 7px">
+                                        <div class="progress-bar bg-primary" style="width: 30%;" role="progressbar"><span class="sr-only">30% Order</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <h4>50</h4>
+                                    <h6 class="m-t-10 text-muted">Offline Order <span class="pull-right">50%</span></h6>
+                                    <div class="progress mb-3" style="height: 7px">
+                                        <div class="progress-bar bg-success" style="width: 50%;" role="progressbar"><span class="sr-only">50% Order</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <h4>20</h4>
+                                    <h6 class="m-t-10 text-muted">Cash On Develery <span class="pull-right">20%</span></h6>
+                                    <div class="progress mb-3" style="height: 7px">
+                                        <div class="progress-bar bg-warning" style="width: 20%;" role="progressbar"><span class="sr-only">20% Order</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body px-0">
+                                <h4 class="card-title px-4 mb-3">Todo</h4>
+                                <div class="todo-list">
+                                    <div class="tdl-holder">
+                                        <div class="tdl-content">
+                                            <ul id="todo_list">
+                                                <li><label><input type="checkbox"><i></i><span>Get up</span><a href='#' class="ti-trash"></a></label></li>
+                                                <li><label><input type="checkbox" checked><i></i><span>Stand up</span><a href='#' class="ti-trash"></a></label></li>
+                                                <li><label><input type="checkbox"><i></i><span>Don't give up the fight.</span><a href='#' class="ti-trash"></a></label></li>
+                                                <li><label><input type="checkbox" checked><i></i><span>Do something else</span><a href='#' class="ti-trash"></a></label></li>
+                                            </ul>
+                                        </div>
+                                        <div class="px-4">
+                                            <input type="text" class="tdl-new form-control" placeholder="Write new item and hit 'Enter'...">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                
+                </div>
+
                 <div class="row">
                     <div class="col-lg-3 col-sm-6">
                         <div class="card">
@@ -348,7 +348,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>                        
+                        </div>
                     </div>
                 </div>
 
@@ -369,7 +369,7 @@
                                     </div>
                                 </div>
                                 <div>
-                                        <canvas id="chart_widget_3"></canvas>
+                                    <canvas id="chart_widget_3"></canvas>
                                 </div>
                             </div>
                             <div class="card-body border-top pt-4">
@@ -452,105 +452,104 @@
                     <div class="col-xl-6 col-lg-12 col-sm-12 col-xxl-12">
                         <div class="card">
                             <div class="card-body">
-                                    <h4 class="card-title mb-0">Store Location</h4>
+                                <h4 class="card-title mb-0">Store Location</h4>
                                 <div id="world-map" style="height: 470px;"></div>
-                            </div>        
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                
+
 
                 <div class="row">
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="card">
-                                <div class="social-graph-wrapper widget-facebook">
-                                    <span class="s-icon"><i class="fa fa-facebook"></i></span>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6 border-right">
-                                        <div class="pt-3 pb-3 pl-0 pr-0 text-center">
-                                            <h4 class="m-1">89k</h4>
-                                            <p class="m-0">Friends</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="pt-3 pb-3 pl-0 pr-0 text-center">
-                                            <h4 class="m-1">119k</h4>
-                                            <p class="m-0">Followers</p>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="social-graph-wrapper widget-facebook">
+                                <span class="s-icon"><i class="fa fa-facebook"></i></span>
                             </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="card">
-                                <div class="social-graph-wrapper widget-linkedin">
-                                    <span class="s-icon"><i class="fa fa-linkedin"></i></span>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6 border-right">
-                                        <div class="pt-3 pb-3 pl-0 pr-0 text-center">
-                                            <h4 class="m-1">89k</h4>
-                                            <p class="m-0">Friends</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="pt-3 pb-3 pl-0 pr-0 text-center">
-                                            <h4 class="m-1">119k</h4>
-                                            <p class="m-0">Followers</p>
-                                        </div>
+                            <div class="row">
+                                <div class="col-6 border-right">
+                                    <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                                        <h4 class="m-1">89k</h4>
+                                        <p class="m-0">Friends</p>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="card">
-                                <div class="social-graph-wrapper widget-googleplus">
-                                    <span class="s-icon"><i class="fa fa-google-plus"></i></span>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6 border-right">
-                                        <div class="pt-3 pb-3 pl-0 pr-0 text-center">
-                                            <h4 class="m-1">89k</h4>
-                                            <p class="m-0">Friends</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="pt-3 pb-3 pl-0 pr-0 text-center">
-                                            <h4 class="m-1">119k</h4>
-                                            <p class="m-0">Followers</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="card">
-                                <div class="social-graph-wrapper widget-twitter">
-                                    <span class="s-icon"><i class="fa fa-twitter"></i></span>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6 border-right">
-                                        <div class="pt-3 pb-3 pl-0 pr-0 text-center">
-                                            <h4 class="m-1">89k</h4>
-                                            <p class="m-0">Friends</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="pt-3 pb-3 pl-0 pr-0 text-center">
-                                            <h4 class="m-1">119k</h4>
-                                            <p class="m-0">Followers</p>
-                                        </div>
+                                <div class="col-6">
+                                    <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                                        <h4 class="m-1">119k</h4>
+                                        <p class="m-0">Followers</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="social-graph-wrapper widget-linkedin">
+                                <span class="s-icon"><i class="fa fa-linkedin"></i></span>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 border-right">
+                                    <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                                        <h4 class="m-1">89k</h4>
+                                        <p class="m-0">Friends</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                                        <h4 class="m-1">119k</h4>
+                                        <p class="m-0">Followers</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="social-graph-wrapper widget-googleplus">
+                                <span class="s-icon"><i class="fa fa-google-plus"></i></span>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 border-right">
+                                    <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                                        <h4 class="m-1">89k</h4>
+                                        <p class="m-0">Friends</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                                        <h4 class="m-1">119k</h4>
+                                        <p class="m-0">Followers</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="social-graph-wrapper widget-twitter">
+                                <span class="s-icon"><i class="fa fa-twitter"></i></span>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 border-right">
+                                    <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                                        <h4 class="m-1">89k</h4>
+                                        <p class="m-0">Friends</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                                        <h4 class="m-1">119k</h4>
+                                        <p class="m-0">Followers</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- #/ container -->
         </div>
         <!--**********************************
             Content body end
         ***********************************-->
-        

@@ -29,40 +29,57 @@
                                         <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                                         </button>
                                     </div>
-                                    <form class="form-valide" action="<?= base_url('Sadmin/addproduk') ?>" method="post">
+                                    <form class="form-valide" action="<?= base_url('Sadmin/addproduk') ?>" method="post" enctype="multipart/form-data">
                                         <div class="modal-body">
                                             <div class="form-group">
-                                                <label class="col-lg-4 col-form-label" for="val-username">Nama Produk <span class="text-danger">*</span>
+                                                <label class="col-lg-4 col-form-label" for="">Nama Produk <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-12">
-                                                    <input type="text" class="form-control" id="val-username" name="name" placeholder="Enter a name..">
+                                                    <input type="text" class="form-control" id="" name="namaproduk" placeholder="Masukkan nama produk">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-lg-4 col-form-label" for="val-email">Email <span class="text-danger">*</span>
+                                                <label class="col-lg-4 col-form-label" for="">Harga <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-12">
-                                                    <input type="text" class="form-control" id="val-email" name="email" placeholder="Your valid email..">
+                                                    <input type="text" class="form-control" id="" name="harga" placeholder="Masukkan harga produk">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-lg-4 col-form-label" for="val-email">No Telepon <span class="text-danger">*</span>
+                                                <label class="col-lg-4 col-form-label" for="">Harga Diskon <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-12">
-                                                    <input type="text" class="form-control" id="val-username" name="no" placeholder="Your active number..">
+                                                    <input type="text" class="form-control" id="" name="hargadiskon" placeholder="Masukkan harga diskon produk">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-lg-4 col-form-label" for="val-password">Password <span class="text-danger">*</span>
+                                                <label class="col-lg-4 col-form-label" for="">Kategori <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-12">
-                                                    <input type="text" class="form-control" id="val-password" name="password" placeholder="Choose a safe one..">
+                                                    <select id="inputState" name="kategori" class="form-control">
+                                                        <option selected="selected" disabled>Pilih...</option>
+                                                        <?php foreach ($kategori as $k) : ?>
+                                                            <option value="<?= $k->kd_kategori; ?>"><?= $k->kategori; ?></option>
+                                                        <?php endforeach; ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-lg-4 col-form-label" for="">Deskripsi <span class="text-danger">*</span></label>
+                                                <div class="col-lg-12">
+                                                    <textarea type="text" class="form-control" id="deskripsi" name="deskripsi" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-lg-4 col-form-label" for="">Gambar <span class="text-danger">*</span></label>
+                                                <div class="col-lg-12">
+                                                    <input type="file" name="gambar_produk" class="form-control-file" id="gambar">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-primary">Tambahkan</button>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
+                                            <button type="submit" class="btn btn-primary">Tambah</button>
                                         </div>
                                     </form>
                                 </div>
@@ -184,19 +201,18 @@
                             <table class="table table-striped table-bordered zero-configuration">
                                 <thead>
                                     <tr>
-                                        <th conspan="2">Action</th>
-                                        <th>Paket</th>
+                                        <th>Action</th>
                                         <th>No</th>
-                                        <th>Gambar</th>
                                         <th>Kode Produk</th>
+                                        <th>Gambar</th>
                                         <th>Nama Produk</th>
                                         <th>Harga</th>
+                                        <th>Diskon</th>
                                         <th>Harga Final</th>
                                         <th>Kategori</th>
-                                        <th>Tambah Diskon</th>
                                         <th>Deskripsi</th>
                                         <th>Status Produk</th>
-                                        <th conspan="2">Aktif/Nonaktif</th>
+                                        <th>Aktif/Nonaktif</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -218,17 +234,13 @@
                                                 <a href="<?= base_url('Sadmin/lihatpaket/' . $p->kd_produk) ?>" type="button" data-toggle="tooltip" class="btn mb-1 btn-secondary text-white" data-original-title="Lihat Paket">Paket</a>
                                             </td>
                                             <td><?= $no++; ?></td>
-                                            <td>
-                                                <button type="button" data-toggle="modal" data-target="#gambar<?= $p->kd_produk; ?>" data-toggle="tooltip" title="" class="btn" data-original-title="Lihat Gambar">
-                                                    <img src="<?= base_url('assets/'); ?>images/produk/<?= $p->gambar_produk; ?>" width="32" />
-                                                </button>
-                                            </td>
                                             <td><?= $p->kd_produk; ?></td>
+                                            <td><img src="<?= base_url('assets/'); ?>files/<?= $p->gambar_produk; ?>" width="32" /></td>
                                             <td><?= $p->nama_produk; ?></td>
                                             <td><?= "Rp " . number_format($p->harga_produk, 0, ',', '.') ?></td>
+                                            <td><?= $p->diskon_produk; ?>% <a title="Edit Diskon" href="#" type="button" class="fa fa-edit fa-lg text-warning" data-toggle="modal" data-target="#diskon<?= $p->kd_produk ?>"></a></td>
                                             <td><?= "Rp " . number_format(($p->harga_produk - ($p->harga_produk * ($p->diskon_produk / 100))), 0, ',', '.') ?></td>
                                             <td><?= $p->kategori; ?></td>
-                                            <td><?= $p->diskon_produk; ?>% <a title="Edit Diskon" href="#" type="button" class="fa fa-edit fa-lg text-warning" data-toggle="modal" data-target="#diskon<?= $p->kd_produk ?>"></a></td>
                                             <td><a type="button" href="#" data-toggle="modal" data-target="#desk<?= $p->kd_produk; ?>" class="fa fa-eye fa-lg text-info" data-original-title="Lihat Deskripsi"></td>
                                             <td>
                                                 <?php if ($p->status_produk == 1) { ?>
@@ -252,19 +264,18 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th conspan="2">Action</th>
-                                        <th>Paket</th>
+                                        <th>Action</th>
                                         <th>No</th>
-                                        <th>Gambar</th>
                                         <th>Kode Produk</th>
+                                        <th>Gambar</th>
                                         <th>Nama Produk</th>
                                         <th>Harga</th>
+                                        <th>Diskon</th>
                                         <th>Harga Final</th>
                                         <th>Kategori</th>
-                                        <th>Tambah Diskon</th>
                                         <th>Deskripsi</th>
                                         <th>Status Produk</th>
-                                        <th conspan="2">Aktif/Nonaktif</th>
+                                        <th>Aktif/Nonaktif</th>
                                     </tr>
                                 </tfoot>
                             </table>
