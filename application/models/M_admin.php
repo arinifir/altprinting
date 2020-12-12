@@ -19,6 +19,11 @@ class M_admin extends CI_Model
         $this->db->update($table, $data);
     }
 
+    public function edit($where, $table)
+    {
+        return $this->db->get_where($table, $where);
+    }
+
     function userbylevel($table, $field1)
     {
         return $this->db->get_where($table, ['level' => $field1])->result();
