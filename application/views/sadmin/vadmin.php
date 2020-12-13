@@ -133,10 +133,10 @@
                                             <td>
                                                 <div class="form-button-action">
                                                     <button type="button" data-toggle="modal" data-target="#editModal<?= $a->id_user; ?>" data-toggle="tooltip" title="" class="btn mb-1 btn-warning" data-original-title="Edit">
-                                                        <i class="fa fa-edit"></i>
+                                                        <i class="mdi mdi-pencil text-white"></i>
                                                     </button>
-                                                    <a href="<?= base_url('Sadmin/deladmin/' . $a->id_user); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Remove">
-                                                        <i class="fa fa-trash"></i>
+                                                    <a href="<?= base_url('Sadmin/deladmin/' . $a->id_user); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Hapus">
+                                                        <i class="mdi mdi-delete"></i>
                                                     </a>
                                                 </div>
                                             </td>
@@ -147,16 +147,16 @@
                                             <td><?= $a->no_hp; ?></td>
                                             <td>
                                                 <?php if ($a->status == 1) { ?>
-                                                    <span class="label label-pill label-success">Active</span>
+                                                    <span class="label label-pill label-success">Aktif</span>
                                                 <?php } else { ?>
-                                                    <span class="label label-pill label-danger">Non-Active</span>
+                                                    <span class="label label-pill label-danger">Non-Aktif</span>
                                                 <?php } ?>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="<?= base_url('Sadmin/adminactive/' . $a->id_user) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success" data-original-title="Active">
+                                                    <a href="<?= base_url('Sadmin/adminactive/' . $a->id_user) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success" data-original-title="Aktif">
                                                         <i class="fa fa-check"></i>
                                                     </a>
-                                                    <a href="<?= base_url('Sadmin/adminonactive/' . $a->id_user) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Non-Active">
+                                                    <a href="<?= base_url('Sadmin/adminonactive/' . $a->id_user) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Non-Aktif">
                                                         <i class="fa fa-times"></i>
                                                     </a>
                                                 </div>

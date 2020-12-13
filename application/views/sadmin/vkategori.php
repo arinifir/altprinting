@@ -62,7 +62,7 @@
                                                     <label class="col-lg-4 col-form-label" for="val-username">Kategori <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val-username" name="kode"  value="<?= $k->kd_kategori; ?>" hidden>
+                                                        <input type="text" class="form-control" id="val-username" name="kode" value="<?= $k->kd_kategori; ?>" hidden>
                                                         <input type="text" class="form-control" id="val-username" name="kategori" placeholder="Enter a kategori.." value="<?= $k->kategori; ?>">
                                                     </div>
                                                 </div>
@@ -94,10 +94,10 @@
                                             <td>
                                                 <div class="form-button-action">
                                                     <button type="button" data-toggle="modal" data-target="#editModal<?= $k->kd_kategori; ?>" data-toggle="tooltip" title="" class="btn mb-1 btn-warning" data-original-title="Edit">
-                                                        <i class="fa fa-edit"></i>
+                                                        <i class="mdi mdi-pencil text-white"></i>
                                                     </button>
-                                                    <a href="<?= base_url('Sadmin/delkategori/' . $k->kd_kategori); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Remove">
-                                                        <i class="fa fa-trash"></i>
+                                                    <a href="<?= base_url('Sadmin/delkategori/' . $k->kd_kategori); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Hapus">
+                                                        <i class="mdi mdi-delete"></i>
                                                     </a>
                                                 </div>
                                             </td>

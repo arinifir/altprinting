@@ -35,28 +35,28 @@
                                                 <label class="col-lg-4 col-form-label" for="val-username">Name <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-12">
-                                                    <input type="text" class="form-control" id="val-username" name="name" placeholder="Enter a name..">
+                                                    <input type="text" class="form-control" id="val-username" name="name" placeholder="Masukkan nama Admin">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-lg-4 col-form-label" for="val-email">Email <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-12">
-                                                    <input type="text" class="form-control" id="val-email" name="email" placeholder="Your valid email..">
+                                                    <input type="text" class="form-control" id="val-email" name="email" placeholder="Masukkan email">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-lg-4 col-form-label" for="val-email">No Telepon <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-12">
-                                                    <input type="text" class="form-control" id="val-username" name="no" placeholder="Your active number..">
+                                                    <input type="text" class="form-control" id="val-username" name="no" placeholder="Masukkan nomer telepon">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-lg-4 col-form-label" for="val-password">Password <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-12">
-                                                    <input type="text" class="form-control" id="val-password" name="password" placeholder="Choose a safe one..">
+                                                    <input type="text" class="form-control" id="val-password" name="password" placeholder="Masukkan password">
                                                 </div>
                                             </div>
                                         </div>
@@ -84,7 +84,7 @@
                                                     </label>
                                                     <div class="col-lg-12">
                                                         <input type="text" class="form-control" id="val-username" name="kode" value="<?= $p->id_user; ?>" hidden>
-                                                        <input type="text" class="form-control" id="val-username" name="name" placeholder="Enter a name.." value="<?= $p->nama_lengkap; ?>">
+                                                        <input type="text" class="form-control" id="val-username" name="name" placeholder="Masukkan nama pelanggan" value="<?= $p->nama_lengkap; ?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -133,10 +133,10 @@
                                             <td>
                                                 <div class="form-button-action">
                                                     <button type="button" data-toggle="modal" data-target="#editModal<?= $p->id_user; ?>" data-toggle="tooltip" title="" class="btn mb-1 btn-warning" data-original-title="Edit">
-                                                        <i class="fa fa-edit"></i>
+                                                        <i class="mdi mdi-pencil text-white"></i>
                                                     </button>
-                                                    <a href="<?= base_url('Sadmin/delpelanggan/' . $p->id_user); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Remove">
-                                                        <i class="fa fa-trash"></i>
+                                                    <a href="<?= base_url('Sadmin/delpelanggan/' . $p->id_user); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Hapus">
+                                                        <i class="mdi mdi-delete"></i>
                                                     </a>
                                                 </div>
                                             </td>
@@ -147,16 +147,16 @@
                                             <td><?= $p->no_hp; ?></td>
                                             <td>
                                                 <?php if ($p->status == 1) { ?>
-                                                    <span class="label label-pill label-success">Active</span>
+                                                    <span class="label label-pill label-success">Aktif</span>
                                                 <?php } else { ?>
-                                                    <span class="label label-pill label-danger">Non-Active</span>
+                                                    <span class="label label-pill label-danger">Non-Aktif</span>
                                                 <?php } ?>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="<?= base_url('Sadmin/useractive/' . $p->id_user) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success" data-original-title="Active">
+                                                    <a href="<?= base_url('Sadmin/useractive/' . $p->id_user) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success" data-original-title="Aktif">
                                                         <i class="fa fa-check"></i>
                                                     </a>
-                                                    <a href="<?= base_url('Sadmin/usernonactive/' . $p->id_user) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Non-Active">
+                                                    <a href="<?= base_url('Sadmin/usernonactive/' . $p->id_user) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Non-Aktif">
                                                         <i class="fa fa-times"></i>
                                                     </a>
                                                 </div>
