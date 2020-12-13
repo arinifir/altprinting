@@ -99,21 +99,21 @@
                                             <div class="modal-body">
                                                 <input type="text" value="<?= $pr->kd_produk; ?>" class="form-control" id="" name="kode" hidden>
                                                 <div class="form-group">
-                                                    <label class="col-lg-4 col-form-label" for="" >Nama Produk <span class="text-danger">*</span>
+                                                    <label class="col-lg-4 col-form-label" for="">Nama Produk <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
                                                         <input type="text" class="form-control" id="" value="<?= $pr->nama_produk; ?>" name="namaproduk" placeholder="Masukkan nama produk">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label class="col-lg-4 col-form-label" for="" >Harga <span class="text-danger">*</span>
+                                                    <label class="col-lg-4 col-form-label" for="">Harga <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
                                                         <input type="text" class="form-control" id="" value="<?= $pr->harga_produk; ?>" name="harga" placeholder="Masukkan harga produk">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label class="col-lg-4 col-form-label" for="" >Harga Diskon <span class="text-danger">persen *</span>
+                                                    <label class="col-lg-4 col-form-label" for="">Harga Diskon <span class="text-danger">persen *</span>
                                                     </label>
                                                     <div class="col-lg-12">
                                                         <input type="text" class="form-control" id="" value="<?= $pr->diskon_produk; ?>" name="hargadiskon" placeholder="Masukkan diskon produk">
@@ -125,7 +125,7 @@
                                                     <div class="col-lg-12">
                                                         <select id="inputState" name="kategori" class="form-control">
                                                             <option value="<?= $pr->kategori_produk; ?>" selected="selected">
-                                                                <?= $this->db->get_where('tb_kategori',['kd_kategori' => $pr->kategori_produk])->row()->kategori; ?>
+                                                                <?= $this->db->get_where('tb_kategori', ['kd_kategori' => $pr->kategori_produk])->row()->kategori; ?>
                                                             </option>
                                                             <option disabled>Pilih</option>
                                                             <?php foreach ($kategori as $k) : ?>
@@ -187,15 +187,10 @@
                             </div>
                         <?php } ?>
                         <?php foreach ($produk as $pr) { ?>
-                            <div class="modal" id="gambar<?= $pr->kd_produk; ?>">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <img src="<?= base_url('assets/'); ?>images/produk/<?= $pr->gambar_produk; ?>" width="100%" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="popup" id="myGambar<?=$pr->kd_produk?>">
+                            <span class="tutup">&times;</span>
+                            <img class="popup-content" id="img<?= $pr->kd_produk ?>">
+                        </div>
                         <?php } ?>
                         <?php foreach ($produk as $pr) { ?>
                             <div class="modal fade" id="desk<?= $pr->kd_produk; ?>">
@@ -230,7 +225,8 @@
                             <table class="table table-striped table-bordered zero-configuration">
                                 <thead>
                                     <tr>
-                                        <th>Action</th>
+                                        <th>Aksi</th>
+                                        <th>Paket</th>
                                         <th>No</th>
                                         <th>Kode Produk</th>
                                         <th>Gambar</th>
@@ -259,9 +255,13 @@
                                                     </a>
                                                 </div>
                                             </td>
+                                            <td>
+                                                <a href="<?= base_url('Sadmin/lihatpaket/' . $pr->kd_produk); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-secondary text-white" data-original-title="Lihat Paket">Paket
+                                                </a>
+                                            </td>
                                             <td><?= $no++; ?></td>
                                             <td><?= $pr->kd_produk; ?></td>
-                                            <td><img src="<?= base_url('assets/'); ?>files/<?= $pr->gambar_produk; ?>" width="32" /></td>
+                                            <td><img id="myImg" data-id="<?= $pr->kd_produk?>" src="<?= base_url('assets/'); ?>images/produk/<?= $pr->gambar_produk; ?>" alt="<?= $pr->nama_produk?>" width="32" /></td>
                                             <td><?= $pr->nama_produk; ?></td>
                                             <td><?= "Rp " . number_format($pr->harga_produk, 0, ',', '.') ?></td>
                                             <td><?= $pr->diskon_produk; ?>% <a title="Edit Diskon" href="#" type="button" class="mdi mdi-pencil fa-lg text-warning" data-toggle="modal" data-target="#diskon<?= $pr->kd_produk ?>"></a></td>
@@ -290,7 +290,8 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>Action</th>
+                                        <th>Aksi</th>
+                                        <th>Paket</th>
                                         <th>No</th>
                                         <th>Kode Produk</th>
                                         <th>Gambar</th>

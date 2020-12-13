@@ -39,7 +39,7 @@
             <li class="nav-label">Transaksi</li>
             <li>
                 <a href="<?= base_url('Sadmin/datatransaksi') ?>" aria-expanded="false">
-                    <i class="mdi mdi-view-list"></i><span class="nav-text pl-2">Data Transaksi</span>
+                    <i class="mdi mdi-view-list"></i><span class="nav-text pl-2">Menunggu Pembayaran</span>
                 </a>
             </li>
             <li>
@@ -48,8 +48,13 @@
                 </a>
             </li>
             <li>
-                <a href="<?= base_url('Sadmin/antriankirim') ?>" aria-expanded="false">
-                    <i class="mdi mdi-truck-fast"></i><span class="nav-text pl-2">Menunggu Pengiriman</span>
+                <a href="<?= base_url('Sadmin/pengemasan') ?>" aria-expanded="false">
+                    <i class="mdi mdi-truck-fast"></i><span class="nav-text pl-2">Pengemasan</span>
+                </a>
+            </li>
+            <li>
+                <a href="<?= base_url('Sadmin/kemascod') ?>" aria-expanded="false">
+                    <i class="mdi mdi-package"></i><span class="nav-text pl-2">Pengemasan(COD)</span>
                 </a>
             </li>
             <li>
@@ -58,8 +63,18 @@
                 </a>
             </li>
             <li>
+                <a href="<?= base_url('Sadmin/datacod') ?>" aria-expanded="false">
+                    <i class="mdi mdi-run-fast"></i><span class="nav-text pl-2">COD</span>
+                </a>
+            </li>
+            <li>
                 <a href="<?= base_url('Sadmin/transelesai') ?>" aria-expanded="false">
                     <i class="mdi mdi-check"></i><span class="nav-text pl-2">Selesai</span>
+                </a>
+            </li>
+            <li>
+                <a href="<?= base_url('Sadmin/tidakvalid') ?>" aria-expanded="false">
+                    <i class="mdi mdi-close"></i><span class="nav-text pl-2">Tidak Valid</span>
                 </a>
             </li>
             <li>
