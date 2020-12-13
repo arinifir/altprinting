@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Admin extends CI_Controller
+class Kategori extends CI_Controller
 {
 
     public function __construct()
@@ -14,16 +14,6 @@ class Admin extends CI_Controller
         admin_logged_in();
     }
 
-    public function index()
-    {
-        $data['judul'] = 'ALT | Admin';
-        $this->load->view('admin/header', $data);
-        $this->load->view('admin/topbar');
-        $this->load->view('admin/sidebar');
-        $this->load->view('admin/vdashboard');
-        $this->load->view('admin/footer');
-    }
-
     //kategori
     public function datakategori()
     {
@@ -34,7 +24,6 @@ class Admin extends CI_Controller
         $this->load->view('admin/vkategori', $data);
         $this->load->view('admin/footer');
     }
-
     public function addkategori()
     {
         $cekkode = $this->admin->cekkode();
@@ -43,10 +32,8 @@ class Admin extends CI_Controller
         $nourut++;
         $char = "KTG";
         $kode = $char . sprintf("%02s", $nourut);
-
         $this->form_validation->set_rules('kategori', 'Kategori', 'required');
         $this->form_validation->set_message('required', 'Isi Data!');
-
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata('gagal', 'Data tidak sesuai atau data kosong!');
             redirect('Admin/datakategori');
@@ -56,13 +43,11 @@ class Admin extends CI_Controller
                 'kd_kategori' => $kode,
                 'kategori' => $nama
             ];
-
             $this->admin->addData('tb_kategori', $data);
             $this->session->set_flashdata('berhasil', 'Berhasil Menambahkan Data.');
             redirect('Admin/datakategori');
         }
     }
-
     public function editkategori()
     {
         $this->form_validation->set_rules('kategori', 'Kategori', 'required');
@@ -93,4 +78,5 @@ class Admin extends CI_Controller
             redirect('Admin/datakategori');
         }
     }
+
 }
