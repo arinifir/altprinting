@@ -12,11 +12,12 @@ class Profiladm extends CI_Controller
     function index()
     {
         $id = $this->session->userdata('id_admin');
-        // $data['admin'] = $this->m_admin->edit(array('id_admin' => $id), 'tb_user')->result();
+        $data['admin'] = $this->m_admin->edit(array('id_user' => $id), 'tb_user')->row();
+        
         $this->load->view('admin/header');
         $this->load->view('admin/topbar');
         $this->load->view('admin/sidebar');
-        $this->load->view('admin/vprofil');
+        $this->load->view('admin/vprofil', $data);
         $this->load->view('admin/footer');
     }
 
