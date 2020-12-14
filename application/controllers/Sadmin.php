@@ -396,6 +396,80 @@ class Sadmin extends CI_Controller
         }
     }
 
+    public function editproduk()
+    {
+        $this->form_validation->set_rules('kode', 'Kode', 'required');
+        $this->form_validation->set_rules('namaproduk', 'Nama Produk', 'required|trim');
+        $this->form_validation->set_rules('harga', 'Harga', 'required|trim');
+        $this->form_validation->set_rules('hargadiskon', 'Harga Diskon', 'required|trim');
+        $this->form_validation->set_rules('kategori', 'Kategori', 'required');
+        $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required');
+        
+        $this->form_validation->set_message('required', 'Tolong masukkan data!');
+        
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('gagal', 'Data tidak sesuai atau data kosong!');
+            redirect('Sadmin/dataproduk');
+        } else {
+            // $length = 4;
+            // $kode = $this->admin->productCode($length);
+            $kode = $this->input->post("kode", TRUE);
+            $nama = $this->input->post("namaproduk", TRUE);
+            $harga = $this->input->post("harga", TRUE);
+            $diskon = $this->input->post("hargadiskon", TRUE);
+            $kategori = $this->input->post("kategori", TRUE);
+            $deskripsi = $this->input->post("deskripsi", TRUE);
+            $gambar = $_FILES['gambar_produk']['name'];
+            $format = 'jpg|png|jpeg';
+            if($gambar){
+                $this->primslib->upload_image('gambar_produk', $gambar, $format, 10000);
+                $this->db->set('gambar_produk', $gambar);
+            }
+
+            $status = 1;
+            $data = [
+                'kd_produk' => $kode,
+                'nama_produk' => $nama,
+                'harga_produk' => $harga,
+                'diskon_produk' => $diskon,  
+                'kategori_produk' => $kategori,   
+                'desk_produk' => $deskripsi,
+                'status_produk' => $status
+            ];
+            $where = ['kd_produk' => $kode];
+            $this->admin->editData('tb_produk', $data, $where);
+            $this->session->set_flashdata('berhasil', 'Berhasil mengubah data');
+            redirect('Sadmin/dataproduk');
+        }
+    }
+
+    public function delproduk($id)
+    {
+        $this->admin->delData('tb_produk', ['kd_produk' => $id]);
+        $this->session->set_flashdata('berhasil', 'Berhasil Menghapus Data Produk.');
+        redirect('Sadmin/dataproduk');
+    }
+
+    public function deleteproduk($id)
+    {
+        $paket = $this->db->get_where('tb_paket', ['tb_paket.kd_produk' => $id])->num_rows();
+        $ulasan = $this->db->get_where('tb_ulasan', ['tb_ulasan.kd_produk' => $id])->num_rows();
+        if ($paket == 0 && $ulasan == 0) {
+            echo 'berhasil';
+        } else {
+            echo 'gagal';
+        }
+    }
+
+    public function delbyproduk($id)
+    {
+        $this->admin->delData('tb_paket', ['kd_produk' => $id]);
+        $this->admin->delData('tb_ulasan', ['kd_produk' => $id]);
+        $this->admin->delData('tb_produk', ['kd_produk' => $id]);
+        $this->session->set_flashdata('berhasil', 'Berhasil Menghapus Data Produk.');
+        redirect('Sadmin/dataproduk');
+    }
+
     public function editdesk()
     {
         $kode = $this->input->post("kode", TRUE);
@@ -434,6 +508,18 @@ class Sadmin extends CI_Controller
         $this->admin->editData('tb_produk', $data, $where);
         $this->session->set_flashdata('berhasil', 'Produk Kode ' . $id . ' Diarsipkan');
         redirect('Sadmin/dataproduk');
+    }
+    
+    //Paket
+    public function lihatpaket($kode)
+    {
+        $data['produk']= $this->admin->produkbykode($kode);
+        $data['paket']= $this->admin->paketbykode($kode);
+        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/topbar');
+        $this->load->view('sadmin/sidebar');
+        $this->load->view('sadmin/vpaket', $data);
+        $this->load->view('sadmin/footer');
     }
 
     //voucher
@@ -489,7 +575,9 @@ class Sadmin extends CI_Controller
         $this->form_validation->set_rules('voucher', 'Voucher', 'required');
         $this->form_validation->set_rules('potongan', 'Potongan', 'required');
         $this->form_validation->set_rules('jenis', 'Jenis', 'required');
-        $this->form_validation->set_message('required', 'Please Enter Data!');
+
+        $this->form_validation->set_message('required', 'Tolong masukkan data!');
+
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata('gagal', 'Data tidak sesuai atau data kosong!');
             redirect('Sadmin/datavoucher');
@@ -505,7 +593,7 @@ class Sadmin extends CI_Controller
             ];
             $where = ['kd_voucher' => $kode];
             $this->admin->editData('tb_voucher', $data, $where);
-            $this->session->set_flashdata('berhasil', 'Berhasil Mengubah Data.');
+            $this->session->set_flashdata('berhasil', 'Berhasil mengubah data.');
             redirect('Sadmin/datavoucher');
         }
     }
@@ -536,5 +624,92 @@ class Sadmin extends CI_Controller
         $this->admin->editData('tb_voucher', $data, $where);
         $this->session->set_flashdata('berhasil', 'Voucher ' . $id . ' Dinonaktifkan');
         redirect('Sadmin/datavoucher');
+    }
+
+    //Transaksi
+    public function datatransaksi()
+    {
+        $status = 1;
+        $data['transaksi'] = $this->admin->transtatus($status);
+        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/topbar');
+        $this->load->view('sadmin/sidebar');
+        $this->load->view('sadmin/vdatatrans', $data);
+        $this->load->view('sadmin/footer');
+    }
+    public function confirmbayar()
+    {
+        $status = 2;
+        $jenis = 1;
+        $data['transaksi'] = $this->admin->transbystatus($status, $jenis);
+        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/topbar');
+        $this->load->view('sadmin/sidebar');
+        $this->load->view('sadmin/vkonfirm', $data);
+        $this->load->view('sadmin/footer');
+    }
+    public function pengemasan()
+    {
+        $status = 3;
+        $jenis = 1;
+        $data['transaksi'] = $this->admin->transbystatus($status, $jenis);
+        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/topbar');
+        $this->load->view('sadmin/sidebar');
+        $this->load->view('sadmin/vkemas', $data);
+        $this->load->view('sadmin/footer');
+    }
+    public function kemascod()
+    {
+        $status = 3;
+        $jenis = 2;
+        $data['transaksi'] = $this->admin->transbystatus($status, $jenis);
+        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/topbar');
+        $this->load->view('sadmin/sidebar');
+        $this->load->view('sadmin/vkemascod', $data);
+        $this->load->view('sadmin/footer');
+    }
+    public function resikirim()
+    {
+        $status = 4;
+        $jenis = 1;
+        $data['transaksi'] = $this->admin->transbystatus($status, $jenis);
+        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/topbar');
+        $this->load->view('sadmin/sidebar');
+        $this->load->view('sadmin/vresi', $data);
+        $this->load->view('sadmin/footer');
+    }
+    public function datacod()
+    {
+        $status = 4;
+        $jenis = 2;
+        $data['transaksi'] = $this->admin->transbystatus($status, $jenis);
+        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/topbar');
+        $this->load->view('sadmin/sidebar');
+        $this->load->view('sadmin/vcod', $data);
+        $this->load->view('sadmin/footer');
+    }
+    public function transelesai()
+    {
+        $status = 5;
+        $data['transaksi'] = $this->admin->transtatus($status);
+        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/topbar');
+        $this->load->view('sadmin/sidebar');
+        $this->load->view('sadmin/vselesai', $data);
+        $this->load->view('sadmin/footer');
+    }
+    public function tidakvalid()
+    {
+        $status = 6;
+        $data['transaksi'] = $this->admin->transtatus($status);
+        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/topbar');
+        $this->load->view('sadmin/sidebar');
+        $this->load->view('sadmin/vnvalid', $data);
+        $this->load->view('sadmin/footer');
     }
 }

@@ -11,7 +11,7 @@ Class Pelanggan extends CI_Controller{
 
         // query memanggil function duatable di model
         $level = 3;
-        $data['join2'] = $this->admin->userbylevel('tb_user', $level);
+        $data['join2'] = $this->M_admin->userbylevel('tb_user', $level);
         $this->load->view('admin/header');
         $this->load->view('admin/topbar');
         $this->load->view('admin/sidebar');
@@ -19,12 +19,13 @@ Class Pelanggan extends CI_Controller{
         $this->load->view('admin/footer');
     }
 
+
     public function delpelanggan($kode)
     {
         $where = [
             'id_user' => $kode
         ];
-        $this->admin->delData('tb_user', $where);
+        $this->M_admin->delData('tb_user', $where);
         $this->session->set_flashdata('berhasil', 'Berhasil Menghapus Data.');
         redirect('admin/Pelanggan/tampil_pelanggan');
     }

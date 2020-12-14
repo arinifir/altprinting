@@ -46,10 +46,10 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-lg-4 col-form-label" for="">Harga Diskon <span class="text-danger">*</span>
+                                                <label class="col-lg-4 col-form-label" for="">Harga Diskon <span class="text-danger">persen *</span>
                                                 </label>
                                                 <div class="col-lg-12">
-                                                    <input type="text" class="form-control" id="" name="hargadiskon" placeholder="Masukkan harga diskon produk">
+                                                    <input type="text" class="form-control" id="" name="hargadiskon" placeholder="Masukkan diskon produk">
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -57,7 +57,7 @@
                                                 </label>
                                                 <div class="col-lg-12">
                                                     <select id="inputState" name="kategori" class="form-control">
-                                                        <option selected="selected" disabled>Pilih...</option>
+                                                        <option selected="selected" disabled>Pilih</option>
                                                         <?php foreach ($kategori as $k) : ?>
                                                             <option value="<?= $k->kd_kategori; ?>"><?= $k->kategori; ?></option>
                                                         <?php endforeach; ?>
@@ -67,7 +67,7 @@
                                             <div class="form-group">
                                                 <label class="col-lg-4 col-form-label" for="">Deskripsi <span class="text-danger">*</span></label>
                                                 <div class="col-lg-12">
-                                                    <textarea type="text" class="form-control" id="deskripsi" name="deskripsi" rows="3"></textarea>
+                                                    <textarea type="text" class="form-control" id="" name="deskripsi" rows="3"></textarea>
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -85,55 +85,84 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <?php foreach ($produk as $p) { ?>
-                            <div class="modal fade" id="editModal<?= $p->kd_produk; ?>">
+
+                        <?php foreach ($produk as $pr) { ?>
+                            <div class="modal fade" id="editModal<?= $pr->kd_produk; ?>">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title">Ubah Data <?= $p->kd_produk; ?></h5>
+                                            <h5 class="modal-title">Ubah Data <?= $pr->kd_produk; ?></h5>
                                             <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                                             </button>
                                         </div>
-                                        <form class="form-valide" action="<?= base_url('Sadmin/editadmin') ?>" method="post">
+                                        <form class="form-valide" action="<?= base_url('Sadmin/editproduk') ?>" method="post" enctype="multipart/form-data">
                                             <div class="modal-body">
+                                                <input type="text" value="<?= $pr->kd_produk; ?>" class="form-control" id="" name="kode" hidden>
                                                 <div class="form-group">
-                                                    <label class="col-lg-4 col-form-label" for="val-username">Name <span class="text-danger">*</span>
+                                                    <label class="col-lg-4 col-form-label" for="">Nama Produk <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val-username" name="kode" value="<?= $p->kd_produk; ?>" hidden>
-                                                        <input type="text" class="form-control" id="val-username" name="name" placeholder="Enter a name.." value="<?= $p->nama_lengkap; ?>">
+                                                        <input type="text" class="form-control" id="" value="<?= $pr->nama_produk; ?>" name="namaproduk" placeholder="Masukkan nama produk">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label class="col-lg-4 col-form-label" for="val-email">Email <span class="text-danger">*</span>
+                                                    <label class="col-lg-4 col-form-label" for="">Harga <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val-email" name="email" value="<?= $p->email; ?>" placeholder="Your valid email..">
+                                                        <input type="text" class="form-control" id="" value="<?= $pr->harga_produk; ?>" name="harga" placeholder="Masukkan harga produk">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label class="col-lg-4 col-form-label" for="val-email">No Telepon <span class="text-danger">*</span>
+                                                    <label class="col-lg-4 col-form-label" for="">Harga Diskon <span class="text-danger">persen *</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val-username" name="no" value="<?= $p->no_hp; ?>" placeholder="Your active number..">
+                                                        <input type="text" class="form-control" id="" value="<?= $pr->diskon_produk; ?>" name="hargadiskon" placeholder="Masukkan diskon produk">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-4 col-form-label" for="">Kategori <span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <select id="inputState" name="kategori" class="form-control">
+                                                            <option value="<?= $pr->kategori_produk; ?>" selected="selected">
+                                                                <?= $this->db->get_where('tb_kategori', ['kd_kategori' => $pr->kategori_produk])->row()->kategori; ?>
+                                                            </option>
+                                                            <option disabled>Pilih</option>
+                                                            <?php foreach ($kategori as $k) : ?>
+                                                                <option value="<?= $k->kd_kategori; ?>"><?= $k->kategori; ?></option>
+                                                            <?php endforeach; ?>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-4 col-form-label" for="">Deskripsi <span class="text-danger">*</span></label>
+                                                    <div class="col-lg-12">
+                                                        <textarea type="text" class="form-control" id="deskripsi" name="deskripsi" rows="3"><?= $pr->desk_produk; ?></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-4 col-form-label" for="">Gambar <span class="text-danger">*</span></label>
+                                                    <div class="col-lg-12">
+                                                        <input type="file" name="gambar_produk" class="form-control-file" id="gambar" value="<?= $pr->gambar_produk; ?>">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
+                                                <button type="submit" class="btn btn-primary">Ubah</button>
                                             </div>
                                         </form>
                                     </div>
                                 </div>
                             </div>
-                        <?php } ?> -->
-                        <?php foreach ($produk as $p) { ?>
-                            <div class="modal fade" id="diskon<?= $p->kd_produk; ?>">
+                        <?php } ?>
+
+                        <?php foreach ($produk as $pr) { ?>
+                            <div class="modal fade" id="diskon<?= $pr->kd_produk; ?>">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title">Tambah Diskon <?= $p->kd_produk; ?></h5>
+                                            <h5 class="modal-title">Ubah Diskon <?= $pr->kd_produk; ?></h5>
                                             <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                                             </button>
                                         </div>
@@ -143,37 +172,32 @@
                                                     <label class="col-lg-4 col-form-label" for="val-username">Diskon <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val-username" name="kode" value="<?= $p->kd_produk; ?>" hidden>
-                                                        <input type="number" class="form-control" id="val-username" name="diskon" placeholder="Enter a diskon.." value="<?= $p->diskon_produk; ?>">
+                                                        <input type="text" class="form-control" id="val-username" name="kode" value="<?= $pr->kd_produk; ?>" hidden>
+                                                        <input type="number" class="form-control" id="val-username" name="diskon" placeholder="Masukkan diskon" value="<?= $pr->diskon_produk; ?>">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
+                                                <button type="submit" class="btn btn-primary">Ubah</button>
                                             </div>
                                         </form>
                                     </div>
                                 </div>
                             </div>
                         <?php } ?>
-                        <?php foreach ($produk as $p) { ?>
-                            <div class="modal" id="gambar<?= $p->kd_produk; ?>">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <img src="<?= base_url('assets/'); ?>images/produk/<?= $p->gambar_produk; ?>" width="100%" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <?php foreach ($produk as $pr) { ?>
+                        <div class="popup" id="myGambar<?=$pr->kd_produk?>">
+                            <span class="tutup">&times;</span>
+                            <img class="popup-content" id="img<?= $pr->kd_produk ?>">
+                        </div>
                         <?php } ?>
-                        <?php foreach ($produk as $p) { ?>
-                            <div class="modal fade" id="desk<?= $p->kd_produk; ?>">
+                        <?php foreach ($produk as $pr) { ?>
+                            <div class="modal fade" id="desk<?= $pr->kd_produk; ?>">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title">Deskripsi <?= $p->kd_produk; ?></h5>
+                                            <h5 class="modal-title">Deskripsi <?= $pr->kd_produk; ?></h5>
                                             <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                                             </button>
                                         </div>
@@ -183,13 +207,13 @@
                                                     <label class="col-lg-4 col-form-label" for="val-username">Deskripsi <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input name="kode" hidden value="<?= $p->kd_produk; ?>">
-                                                        <textarea name="desk" class="summernote"><?= $p->desk_produk; ?></textarea>
+                                                        <input name="kode" hidden value="<?= $pr->kd_produk; ?>">
+                                                        <textarea name="desk" class="summernote"><?= $pr->desk_produk; ?></textarea>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
                                                 <button type="submit" class="btn btn-primary">Simpan</button>
                                             </div>
                                         </form>
@@ -201,7 +225,8 @@
                             <table class="table table-striped table-bordered zero-configuration">
                                 <thead>
                                     <tr>
-                                        <th>Action</th>
+                                        <th>Aksi</th>
+                                        <th>Paket</th>
                                         <th>No</th>
                                         <th>Kode Produk</th>
                                         <th>Gambar</th>
@@ -218,42 +243,43 @@
                                 <tbody>
                                     <?php
                                     $no = 1;
-                                    foreach ($produk as $p) { ?>
+                                    foreach ($produk as $pr) { ?>
                                         <tr>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <button type="button" data-toggle="modal" data-target="#editModal<?= $p->kd_produk; ?>" data-toggle="tooltip" title="" class="btn mb-1 btn-warning" data-original-title="Edit">
-                                                        <i class="fa fa-edit text-white"></i>
+                                                    <button type="button" data-toggle="modal" data-target="#editModal<?= $pr->kd_produk; ?>" data-toggle="tooltip" title="" class="btn mb-1 btn-warning" data-original-title="Edit">
+                                                        <i class="mdi mdi-pencil text-white"></i>
                                                     </button>
-                                                    <button id="btnDel" type="button" data-toggle="tooltip" data-id="<?= $p->kd_produk; ?>" title="" class="btn mb-1 btn-danger btnDel" data-original-title="Remove">
-                                                        <i class="fa fa-trash"></i>
-                                                    </button>
+                                                    <a href="<?= base_url('Sadmin/delproduk/' . $pr->kd_produk); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Hapus">
+                                                        <i class="mdi mdi-delete"></i>
+                                                    </a>
                                                 </div>
                                             </td>
                                             <td>
-                                                <a href="<?= base_url('Sadmin/lihatpaket/' . $p->kd_produk) ?>" type="button" data-toggle="tooltip" class="btn mb-1 btn-secondary text-white" data-original-title="Lihat Paket">Paket</a>
+                                                <a href="<?= base_url('Sadmin/lihatpaket/' . $pr->kd_produk); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-secondary text-white" data-original-title="Lihat Paket">Paket
+                                                </a>
                                             </td>
                                             <td><?= $no++; ?></td>
-                                            <td><?= $p->kd_produk; ?></td>
-                                            <td><img src="<?= base_url('assets/'); ?>files/<?= $p->gambar_produk; ?>" width="32" /></td>
-                                            <td><?= $p->nama_produk; ?></td>
-                                            <td><?= "Rp " . number_format($p->harga_produk, 0, ',', '.') ?></td>
-                                            <td><?= $p->diskon_produk; ?>% <a title="Edit Diskon" href="#" type="button" class="fa fa-edit fa-lg text-warning" data-toggle="modal" data-target="#diskon<?= $p->kd_produk ?>"></a></td>
-                                            <td><?= "Rp " . number_format(($p->harga_produk - ($p->harga_produk * ($p->diskon_produk / 100))), 0, ',', '.') ?></td>
-                                            <td><?= $p->kategori; ?></td>
-                                            <td><a type="button" href="#" data-toggle="modal" data-target="#desk<?= $p->kd_produk; ?>" class="fa fa-eye fa-lg text-info" data-original-title="Lihat Deskripsi"></td>
+                                            <td><?= $pr->kd_produk; ?></td>
+                                            <td><img id="myImg" data-id="<?= $pr->kd_produk?>" src="<?= base_url('assets/'); ?>images/produk/<?= $pr->gambar_produk; ?>" alt="<?= $pr->nama_produk?>" width="32" /></td>
+                                            <td><?= $pr->nama_produk; ?></td>
+                                            <td><?= "Rp " . number_format($pr->harga_produk, 0, ',', '.') ?></td>
+                                            <td><?= $pr->diskon_produk; ?>% <a title="Edit Diskon" href="#" type="button" class="mdi mdi-pencil fa-lg text-warning" data-toggle="modal" data-target="#diskon<?= $pr->kd_produk ?>"></a></td>
+                                            <td><?= "Rp " . number_format(($pr->harga_produk - ($pr->harga_produk * ($pr->diskon_produk / 100))), 0, ',', '.') ?></td>
+                                            <td><?= $pr->kategori; ?></td>
+                                            <td><a type="button" href="#" data-toggle="modal" data-target="#desk<?= $pr->kd_produk; ?>" class="mdi mdi-eye fa-lg text-info" data-original-title="Lihat Deskripsi"></td>
                                             <td>
-                                                <?php if ($p->status_produk == 1) { ?>
+                                                <?php if ($pr->status_produk == 1) { ?>
                                                     <span class="label label-pill label-success">Aktif</span>
                                                 <?php } else { ?>
-                                                    <span class="label label-pill label-danger">Diarsipkan</span>
+                                                    <span class="label label-pill label-danger">Arsip</span>
                                                 <?php } ?>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="<?= base_url('Sadmin/produkaktif/' . $p->kd_produk) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success" data-original-title="Aktifkan">
+                                                    <a href="<?= base_url('Sadmin/produkaktif/' . $pr->kd_produk) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success" data-original-title="Aktifkan">
                                                         <i class="fa fa-check text-white"></i>
                                                     </a>
-                                                    <a href="<?= base_url('Sadmin/produkarsip/' . $p->kd_produk) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Arsipkan">
+                                                    <a href="<?= base_url('Sadmin/produkarsip/' . $pr->kd_produk) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Arsipkan">
                                                         <i class="fa fa-times"></i>
                                                     </a>
                                                 </div>
@@ -264,7 +290,8 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>Action</th>
+                                        <th>Aksi</th>
+                                        <th>Paket</th>
                                         <th>No</th>
                                         <th>Kode Produk</th>
                                         <th>Gambar</th>

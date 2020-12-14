@@ -22,6 +22,7 @@
     <!-- Icons by MDI -->
     <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
     <!-- jquery fancyBox -->
+    <link href="<?= base_url('assets/mycss/') ?>my.css" rel="stylesheet">
     <script type="text/javascript" scr="<?= base_url('assets/images/') ?>lib/jquery-1.10.1.min.js"></script>
     <script type="text/javascript" scr="<?= base_url('assets/images/') ?>source/jquery.fancybox.js?v=2.1.5"></script>
     <link rel="stylesheet" href="<?= base_url('assets/images/') ?>source/jquery.fancybox.css?v=2.1.5" media="screen" type="text/css" />

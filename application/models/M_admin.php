@@ -97,7 +97,19 @@ class M_admin extends CI_Model
     {
         return $this->db->get_where('tb_voucher', ['kd_voucher' => $id])->num_rows();
     }
+    public function paketbykode($kode)
+    {
+        $this->db->select('*');
+        $this->db->from('tb_paket');
+        $this->db->join('tb_produk', 'tb_produk.kd_produk = tb_paket.kd_produk');
+        $this->db->where(['tb_paket.kd_produk' => $kode]);
+        return $this->db->get()->result();
+    }
+    public function produkbykode($kode)
+    {
+        return $this->db->get_where('tb_produk', ['kd_produk' => $kode])->row();
 
+    }
     public function duatable()
     {
         $this->db->select('*');
@@ -105,5 +117,13 @@ class M_admin extends CI_Model
         $this->db->join('tb_alamat', 'tb_alamat.id_alamat=tb_user.id_user');
         $query = $this->db->get();
         return $query->result();
+    }
+    public function transbystatus($status, $jenis)
+    {
+        return $this->db->get_where('tb_transaksi', ['status_transaksi' => $status, 'jenis_pembayaran' => $jenis])->result();
+    }
+    public function transtatus($status)
+    {
+        return $this->db->get_where('tb_transaksi', ['status_transaksi' => $status])->result();
     }
 }

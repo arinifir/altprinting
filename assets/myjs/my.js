@@ -79,3 +79,15 @@ $(document).on('click','.btnDel', function () {
     });
     
 })
+
+$(document).on('click', '#myImg', function () {
+    var dataid = $(this).data('id');
+    var selector = '#myGambar' + dataid;
+    var modalImg = $('#img' + dataid);
+    var modal = $(selector);
+    modal.css("display", "block");
+    modalImg.attr('src', this.src);
+    $(document).on('click', '.popup .tutup', () => {
+        modal.css("display", "none");
+    })
+})
