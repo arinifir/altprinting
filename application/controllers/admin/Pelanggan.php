@@ -3,7 +3,7 @@ Class Pelanggan extends CI_Controller{
 
     function __construct() {
         parent::__construct();
-        $this->load->Model('M_admin','admin');
+        $this->load->Model('M_admin');
     }
 
     public function tampil_pelanggan()
