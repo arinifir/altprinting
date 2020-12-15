@@ -92,13 +92,16 @@
                                     foreach ($kategori as $k) { ?>
                                         <tr>
                                             <td>
+                                            <?php echo form_open('admin/Pelanggan/hapus/'.$k->kd_kategori) ?>
                                                 <div class="form-button-action">
                                                     <button type="button" data-toggle="modal" data-target="#editModal<?= $k->kd_kategori; ?>" data-toggle="tooltip" title="" class="btn mb-1 btn-warning" data-original-title="Edit">
                                                         <i class="fa fa-edit"></i>
                                                     </button>
-                                                    <a href="<?= base_url('admin/Admin/delkategori/' . $k->kd_kategori); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Remove">
+                                                    <a href="<?= base_url('admin/Admin/delkategori/' . $k->kd_kategori); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Remove " onclick="return confirm('Anda yakin ingin menghapus?');">
                                                         <i class="fa fa-trash"></i>
                                                     </a>
+                                                    <?php echo form_close() ?>
+
                                                 </div>
                                             </td>
                                             <td><?= $no++; ?></td>
