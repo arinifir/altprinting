@@ -45,7 +45,7 @@ class Admin extends CI_Controller
         $this->form_validation->set_message('required', 'Isi Data!');
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata('gagal', 'Data tidak sesuai atau data kosong!');
-            redirect('Admin/datakategori');
+            redirect('admin/Admin/datakategorii');
         } else {
             $nama = $this->input->post("kategori", TRUE);
             $data = [
@@ -54,7 +54,7 @@ class Admin extends CI_Controller
             ];
             $this->admin->addData('tb_kategori', $data);
             $this->session->set_flashdata('berhasil', 'Berhasil Menambahkan Data.');
-            redirect('Admin/datakategori');
+            redirect('admin/Admin/datakategori');
         }
     }
     public function editkategori()
@@ -63,7 +63,7 @@ class Admin extends CI_Controller
         $this->form_validation->set_message('required', 'Isi Data!');
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata('gagal', 'Data tidak sesuai atau data kosong!');
-            redirect('Admin/datakategori');
+            redirect('admin/Admin/datakategorii');
         } else {
             $kode = $this->input->post("kode", TRUE);
             $nama = $this->input->post("kategori", TRUE);
@@ -71,7 +71,7 @@ class Admin extends CI_Controller
             $where = ['kd_kategori' => $kode];
             $this->admin->editData('tb_kategori', $data, $where);
             $this->session->set_flashdata('berhasil', 'Berhasil Mengubah Data Kategori.');
-            redirect('Admin/datakategori');
+            redirect('admin/Admin/datakategori');
         }
     }
 
@@ -81,10 +81,10 @@ class Admin extends CI_Controller
         if ($data == 0) {
             $this->admin->delData('tb_kategori', ['kd_kategori' => $id]);
             $this->session->set_flashdata('berhasil', 'Berhasil Menghapus Data Kategori.');
-            redirect('Admin/datakategori');
+            redirect('admin/Admin/datakategori');
         } else {
             $this->session->set_flashdata('error', 'Tidak Bisa Menghapus Data ini!');
-            redirect('Admin/datakategori');
+            redirect('admin/Admin/datakategori');
         }
     }
 
