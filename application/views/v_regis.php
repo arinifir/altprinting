@@ -33,7 +33,7 @@
                 <div class="col-xl-6">
                     <div class="form-input-content">
                         <div class="card login-form mb-0">
-                            <div class="card-body pt-5">
+                            <div class="card-body pt-5 shadow">
 
                                 <a class="text-center" href="index.html">
                                     <h4>Silakan mendaftar!</h4>
@@ -55,7 +55,7 @@
                                     <div class="form-group">
                                         <input type="password" id="password" name="password" class="form-control" placeholder="Password">
                                         <div class="show-password">
-                                            <i class="icon-eye"></i>
+                                            <i class="mdi mdi-eye pr-4"></i>
                                         </div>
                                         <?= form_error('password', '<small class="text-danger">', '</small>'); ?>
                                     </div>

@@ -339,7 +339,7 @@ class Primslib
     {
         $ci = &get_instance();
         if ($name != '') {
-            $config['upload_path'] = './assets/files/';
+            $config['upload_path'] = './assets/images/produk/';
             $config['allowed_types'] = $format;
             $config['max_size'] = $size;
             // $config['max_width']  = '2048';

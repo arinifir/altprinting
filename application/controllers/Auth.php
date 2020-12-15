@@ -290,29 +290,4 @@ class Auth extends CI_Controller
             redirect('Auth');
         }
     }
-
-    public function deleteproduk($id)
-    {
-        $paket = $this->db->get_where('tb_paket', ['tb_paket.kd_produk' => $id])->num_rows();
-        $ulasan = $this->db->get_where('tb_ulasan', ['tb_ulasan.kd_produk' => $id])->num_rows();
-        if ($paket == 0 && $ulasan == 0) {
-            echo 'berhasil';
-        } else {
-            echo 'gagal';
-        }
-    }
-    public function delbyproduk($id)
-    {
-        $this->admin->delData('tb_paket', ['kd_produk' => $id]);
-        $this->admin->delData('tb_ulasan', ['kd_produk' => $id]);
-        $this->admin->delData('tb_produk', ['kd_produk' => $id]);
-        $this->session->set_flashdata('berhasil', 'Berhasil Menghapus Data Produk.');
-        redirect('Sadmin/dataproduk');
-    }
-    public function delproduk($id)
-    {
-        $this->admin->delData('tb_produk', ['kd_produk' => $id]);
-        $this->session->set_flashdata('berhasil', 'Berhasil Menghapus Data Produk.');
-        redirect('Sadmin/dataproduk');
-    }
 }

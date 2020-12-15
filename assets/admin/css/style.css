@@ -12226,7 +12226,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 	padding: 0.95rem 1.6rem;
 	text-transform: uppercase;
 	font-size: 0.75rem;
-	letter-spacing: 0.05rem;
+	letter-spacing: 0.2rem;
 	color: #abafb3;
 }
 

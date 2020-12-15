@@ -261,7 +261,7 @@
                                             </td>
                                             <td><?= $no++; ?></td>
                                             <td><?= $pr->kd_produk; ?></td>
-                                            <td><img id="myImg" data-id="<?= $pr->kd_produk?>" src="<?= base_url('assets/'); ?>images/produk/<?= $pr->gambar_produk; ?>" alt="<?= $pr->nama_produk?>" width="32" /></td>
+                                            <td><img src="<?= base_url('assets/'); ?>images/produk/<?= $pr->gambar_produk; ?>" width="32" /></td>
                                             <td><?= $pr->nama_produk; ?></td>
                                             <td><?= "Rp " . number_format($pr->harga_produk, 0, ',', '.') ?></td>
                                             <td><?= $pr->diskon_produk; ?>% <a title="Edit Diskon" href="#" type="button" class="mdi mdi-pencil fa-lg text-warning" data-toggle="modal" data-target="#diskon<?= $pr->kd_produk ?>"></a></td>

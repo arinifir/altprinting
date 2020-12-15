@@ -17,4 +17,3 @@ function is_logged_in() {
         redirect('Auth');
     }
 }
-?>

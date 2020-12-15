@@ -48,14 +48,18 @@
                 </a>
             </li>
             <li>
-                <a href="<?= base_url('Sadmin/pengemasan') ?>" aria-expanded="false">
+                <<<<<<< Updated upstream <a href="<?= base_url('Sadmin/pengemasan') ?>" aria-expanded="false">
                     <i class="mdi mdi-truck-fast"></i><span class="nav-text pl-2">Pengemasan</span>
-                </a>
+                    </a>
             </li>
             <li>
                 <a href="<?= base_url('Sadmin/kemascod') ?>" aria-expanded="false">
                     <i class="mdi mdi-package"></i><span class="nav-text pl-2">Pengemasan(COD)</span>
-                </a>
+                    =======
+                    <a href="<?= base_url('Sadmin/antriankirim') ?>" aria-expanded="false">
+                        <i class="mdi mdi-package-variant"></i><span class="nav-text pl-2">Pengemasan</span>
+                        >>>>>>> Stashed changes
+                    </a>
             </li>
             <li>
                 <a href="<?= base_url('Sadmin/resikirim') ?>" aria-expanded="false">
