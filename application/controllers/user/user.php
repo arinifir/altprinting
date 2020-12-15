@@ -7,6 +7,7 @@ class User extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->load->model("M_produk");
         //load model admin
         $this->load->helper('auth_helper');
         $this->load->library('user_agent');
@@ -16,9 +17,10 @@ class User extends CI_Controller
 
     public function index()
     {
+        $data["produk"] = $this->M_produk->getAll();
+        $this->load->view("user/vberanda", $data);
         $this->load->view('user/header');
         $this->load->view('user/topbar');
-        $this->load->view('user/vberanda');
         $this->load->view('user/footer');
     }
 }
