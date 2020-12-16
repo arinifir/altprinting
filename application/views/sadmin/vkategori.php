@@ -35,7 +35,7 @@
                                                 <label class="col-lg-4 col-form-label" for="val-username">Kategori <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-12">
-                                                    <input type="text" class="form-control" id="val-username" name="kategori" placeholder="Enter a kategori..">
+                                                    <input type="text" class="form-control" id="val-username" name="kategori" placeholder="Masukkan kategori">
                                                 </div>
                                             </div>
                                         </div>
@@ -63,7 +63,7 @@
                                                     </label>
                                                     <div class="col-lg-12">
                                                         <input type="text" class="form-control" id="val-username" name="kode" value="<?= $k->kd_kategori; ?>" hidden>
-                                                        <input type="text" class="form-control" id="val-username" name="kategori" placeholder="Enter a kategori.." value="<?= $k->kategori; ?>">
+                                                        <input type="text" class="form-control" id="val-username" name="kategori" placeholder="Masukkan kategori" value="<?= $k->kategori; ?>">
                                                     </div>
                                                 </div>
                                             </div>
@@ -77,7 +77,7 @@
                             </div>
                         <?php } ?>
                         <div class="table-responsive">
-                            <table class="table table-striped table-bordered zero-configuration">
+                            <table class="table table-hover table-bordered zero-configuration">
                                 <thead>
                                     <tr>
                                         <th conspan="2">Action</th>

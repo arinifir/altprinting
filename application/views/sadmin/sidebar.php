@@ -39,7 +39,7 @@
             <li class="nav-label">Transaksi</li>
             <li>
                 <a href="<?= base_url('Sadmin/datatransaksi') ?>" aria-expanded="false">
-                    <i class="mdi mdi-view-list"></i><span class="nav-text pl-2">Menunggu Pembayaran</span>
+                    <i class="mdi mdi-credit-card-remove"></i><span class="nav-text pl-2">Menunggu Pembayaran</span>
                 </a>
             </li>
             <li>
@@ -48,17 +48,15 @@
                 </a>
             </li>
             <li>
-                <<<<<<< Updated upstream <a href="<?= base_url('Sadmin/pengemasan') ?>" aria-expanded="false">
+                <a href="<?= base_url('Sadmin/pengemasan') ?>" aria-expanded="false">
                     <i class="mdi mdi-truck-fast"></i><span class="nav-text pl-2">Pengemasan</span>
-                    </a>
+                </a>
             </li>
             <li>
                 <a href="<?= base_url('Sadmin/kemascod') ?>" aria-expanded="false">
                     <i class="mdi mdi-package"></i><span class="nav-text pl-2">Pengemasan(COD)</span>
-                    =======
                     <a href="<?= base_url('Sadmin/antriankirim') ?>" aria-expanded="false">
                         <i class="mdi mdi-package-variant"></i><span class="nav-text pl-2">Pengemasan</span>
-                        >>>>>>> Stashed changes
                     </a>
             </li>
             <li>

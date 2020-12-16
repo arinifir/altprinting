@@ -29,7 +29,7 @@
                                         <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                                         </button>
                                     </div>
-                                    <form class="form-valide" action="<?= base_url('Sadmin/addvoucher') ?>" method="post">
+                                    <form class="form-valide" action="<?= base_url('admin/voucher/addvoucher') ?>" method="post">
                                         <div class="modal-body">
                                             <div class="form-group">
                                                 <label class="col-lg-4 col-form-label" for="val-username">Kode Voucher <span class="text-danger">*</span>
@@ -83,7 +83,7 @@
                                             <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                                             </button>
                                         </div>
-                                        <form class="form-valide" action="<?= base_url('Sadmin/editvoucher') ?>" method="post">
+                                        <form class="form-valide" action="<?= base_url('admin/voucher/editvoucher') ?>" method="post">
                                             <div class="modal-body">
                                                 <input type="text" value="<?= $v->kd_voucher; ?>" class="form-control" id="val-username" name="kode" hidden>
                                                 <div class="form-group">
@@ -120,8 +120,8 @@
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
+                                                <button type="submit" class="btn btn-primary">Ubah</button>
                                             </div>
                                         </form>
                                     </div>
@@ -152,7 +152,7 @@
                                                     <button type="button" data-toggle="modal" data-target="#editModal<?= $v->kd_voucher; ?>" data-toggle="tooltip" title="" class="btn mb-1 btn-warning" data-original-title="Edit">
                                                         <i class="mdi mdi-pencil text-white"></i>
                                                     </button>
-                                                    <a href="<?= base_url('Sadmin/delvoucher/' . $v->kd_voucher); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Hapus" onclick="return confirm('Anda yakin ingin menghapus?');">
+                                                    <a href="<?= base_url('admin/voucher/delvoucher/' . $v->kd_voucher); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Hapus" onclick="return confirm('Anda yakin ingin menghapus?');">
                                                         <i class="mdi mdi-delete"></i>
                                                     </a>
                                                 </div>
@@ -183,10 +183,10 @@
                                             </td>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="<?= base_url('Sadmin/vaktif/' . $v->kd_voucher) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success" data-original-title="Aktif">
+                                                    <a href="<?= base_url('admin/voucher/vaktif/' . $v->kd_voucher) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success" data-original-title="Aktif">
                                                         <i class="fa fa-check"></i>
                                                     </a>
-                                                    <a href="<?= base_url('Sadmin/vnaktif/' . $v->kd_voucher) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Non-Aktif">
+                                                    <a href="<?= base_url('admin/voucher/vnaktif/' . $v->kd_voucher) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Non-Aktif">
                                                         <i class="fa fa-times"></i>
                                                     </a>
                                                 </div>

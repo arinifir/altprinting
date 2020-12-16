@@ -50,7 +50,7 @@
                                     </div>
                                     <button class="btn login-form__btn submit w-100 btnlogin">Masuk</button>
                                 </div>
-                                <p class="mt-5 login-form__footer">Belum punya akun? <a href="<?= base_url('API/register') ?>" class="text-primary">Daftar sekarang !</a></p>
+                                <p class="mt-5 login-form__footer">Belum punya akun? <a href="<?= base_url('auth/register') ?>" class="text-primary">Daftar sekarang !</a></p>
                                 <p><a href="<?= base_url('auth/lupapassword') ?>" class="text-primary">Lupa Password</a></p>
                             </div>
                         </div>

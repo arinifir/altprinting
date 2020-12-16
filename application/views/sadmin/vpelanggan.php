@@ -112,7 +112,7 @@
                             </div>
                         <?php } ?>
                         <div class="table-responsive">
-                            <table class="table table-striped table-bordered zero-configuration">
+                            <table class="table table-hover table-bordered zero-configuration">
                                 <thead>
                                     <tr>
                                         <th conspan="2">Action</th>

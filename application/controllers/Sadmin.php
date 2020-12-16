@@ -170,21 +170,22 @@ class Sadmin extends CI_Controller
             redirect('Sadmin/datapelanggan');
         } else {
             $length = 6;
-            $kode = $this->admin->randomcode($length);
-            $nama = $this->input->post("name", TRUE);
-            $email = $this->input->post("email", TRUE);
-            $data = $this->admin->cekEmail($email);
+            $kode   = $this->admin->randomcode($length);
+            $nama   = $this->input->post("name", TRUE);
+            $email  = $this->input->post("email", TRUE);
+            $data   = $this->admin->cekEmail($email);
             if ($data == 0) {
-                $no = $this->input->post("no", TRUE);
-                $password = md5($this->input->post("password", TRUE));
-                $level = 3;
-                $status = 1;
+                $no         = $this->input->post("no", TRUE);
+                $password   = ($this->input->post("password", TRUE));
+                $pass       = hash('sha256', $password);
+                $level      = 3;
+                $status     = 1;
                 $data = [
                     'id_user' => $kode,
                     'nama_lengkap' => $nama,
                     'email' => $email,
                     'no_hp' => $no,
-                    'password' => $password,
+                    'password' => $pass,
                     'level' => $level,
                     'status' => $status
                 ];
@@ -374,7 +375,6 @@ class Sadmin extends CI_Controller
             $diskon = $this->input->post("hargadiskon", TRUE);
             $kategori = $this->input->post("kategori", TRUE);
             $deskripsi = $this->input->post("deskripsi", TRUE);
-            // $gambar = $this->input->post("gambar_produk", TRUE);
             $gambar = $_FILES['gambar_produk']['name'];
             $format = 'jpg|png|jpeg';
             $this->primslib->upload_image('gambar_produk', $gambar, $format, 10000);
@@ -404,9 +404,9 @@ class Sadmin extends CI_Controller
         $this->form_validation->set_rules('hargadiskon', 'Harga Diskon', 'required|trim');
         $this->form_validation->set_rules('kategori', 'Kategori', 'required');
         $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required');
-        
+
         $this->form_validation->set_message('required', 'Tolong masukkan data!');
-        
+
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata('gagal', 'Data tidak sesuai atau data kosong!');
             redirect('Sadmin/dataproduk');
@@ -421,7 +421,7 @@ class Sadmin extends CI_Controller
             $deskripsi = $this->input->post("deskripsi", TRUE);
             $gambar = $_FILES['gambar_produk']['name'];
             $format = 'jpg|png|jpeg';
-            if($gambar){
+            if ($gambar) {
                 $this->primslib->upload_image('gambar_produk', $gambar, $format, 10000);
                 $this->db->set('gambar_produk', $gambar);
             }
@@ -431,8 +431,8 @@ class Sadmin extends CI_Controller
                 'kd_produk' => $kode,
                 'nama_produk' => $nama,
                 'harga_produk' => $harga,
-                'diskon_produk' => $diskon,  
-                'kategori_produk' => $kategori,   
+                'diskon_produk' => $diskon,
+                'kategori_produk' => $kategori,
                 'desk_produk' => $deskripsi,
                 'status_produk' => $status
             ];
@@ -509,12 +509,12 @@ class Sadmin extends CI_Controller
         $this->session->set_flashdata('berhasil', 'Produk Kode ' . $id . ' Diarsipkan');
         redirect('Sadmin/dataproduk');
     }
-    
+
     //Paket
     public function lihatpaket($kode)
     {
-        $data['produk']= $this->admin->produkbykode($kode);
-        $data['paket']= $this->admin->paketbykode($kode);
+        $data['produk'] = $this->admin->produkbykode($kode);
+        $data['paket'] = $this->admin->paketbykode($kode);
         $this->load->view('sadmin/header');
         $this->load->view('sadmin/topbar');
         $this->load->view('sadmin/sidebar');
