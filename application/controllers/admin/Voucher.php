@@ -1,5 +1,4 @@
 <?php
-
 class Voucher extends CI_Controller
 {
 

@@ -154,7 +154,7 @@
                                             <td>
                                                 <div class="form-button-action">
                                                     <a href="<?= base_url('Sadmin/adminactive/' . $a->id_user) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success" data-original-title="Aktif">
-                                                        <i class="fa fa-check"></i>
+                                                        <i class="fa fa-check text-white"></i>
                                                     </a>
                                                     <a href="<?= base_url('Sadmin/adminonactive/' . $a->id_user) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Non-Aktif">
                                                         <i class="fa fa-times"></i>

@@ -17,100 +17,7 @@
                     <div class="card-body">
                         <div>
                             <h4 class="card-title">Data Pelanggan</h4>
-                            <button type="button" class="btn mb-1 btn-primary" data-toggle="modal" data-target="#addModal">Tambah Data
-                                <span class="btn-icon-right"><i class="fa fa-plus"></i></span>
-                            </button>
                         </div>
-                        <div class="modal fade" id="addModal">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title">Tambah Data</h5>
-                                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
-                                        </button>
-                                    </div>
-                                    <form class="form-valide" action="<?= base_url('Sadmin/addpelanggan') ?>" method="post">
-                                        <div class="modal-body">
-                                            <div class="form-group">
-                                                <label class="col-lg-4 col-form-label" for="val-username">Name <span class="text-danger">*</span>
-                                                </label>
-                                                <div class="col-lg-12">
-                                                    <input type="text" class="form-control" id="val-username" name="name" placeholder="Masukkan nama Admin">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-lg-4 col-form-label" for="val-email">Email <span class="text-danger">*</span>
-                                                </label>
-                                                <div class="col-lg-12">
-                                                    <input type="text" class="form-control" id="val-email" name="email" placeholder="Masukkan email">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-lg-4 col-form-label" for="val-email">No Telepon <span class="text-danger">*</span>
-                                                </label>
-                                                <div class="col-lg-12">
-                                                    <input type="text" class="form-control" id="val-username" name="no" placeholder="Masukkan nomer telepon">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-lg-4 col-form-label" for="val-password">Password <span class="text-danger">*</span>
-                                                </label>
-                                                <div class="col-lg-12">
-                                                    <input type="text" class="form-control" id="val-password" name="password" placeholder="Masukkan password">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
-                                            <button type="submit" class="btn btn-primary">Tambah</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <?php foreach ($pelanggan as $p) { ?>
-                            <div class="modal fade" id="editModal<?= $p->id_user; ?>">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Ubah Data <?= $p->id_user; ?></h5>
-                                            <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
-                                            </button>
-                                        </div>
-                                        <form class="form-valide" action="<?= base_url('Sadmin/editpelanggan') ?>" method="post">
-                                            <div class="modal-body">
-                                                <div class="form-group">
-                                                    <label class="col-lg-4 col-form-label" for="val-username">Name <span class="text-danger">*</span>
-                                                    </label>
-                                                    <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val-username" name="kode" value="<?= $p->id_user; ?>" hidden>
-                                                        <input type="text" class="form-control" id="val-username" name="name" placeholder="Masukkan nama pelanggan" value="<?= $p->nama_lengkap; ?>">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-lg-4 col-form-label" for="val-email">Email <span class="text-danger">*</span>
-                                                    </label>
-                                                    <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val-email" name="email" value="<?= $p->email; ?>" placeholder="Your valid email..">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-lg-4 col-form-label" for="val-email">No Telepon <span class="text-danger">*</span>
-                                                    </label>
-                                                    <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val-username" name="no" value="<?= $p->no_hp; ?>" placeholder="Your active number..">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-primary">Simpan</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php } ?>
                         <div class="table-responsive">
                             <table class="table table-hover table-bordered zero-configuration">
                                 <thead>
@@ -132,9 +39,6 @@
                                         <tr>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <button type="button" data-toggle="modal" data-target="#editModal<?= $p->id_user; ?>" data-toggle="tooltip" title="" class="btn mb-1 btn-warning" data-original-title="Edit">
-                                                        <i class="mdi mdi-pencil text-white"></i>
-                                                    </button>
                                                     <a href="<?= base_url('Sadmin/delpelanggan/' . $p->id_user); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Hapus">
                                                         <i class="mdi mdi-delete"></i>
                                                     </a>
@@ -154,7 +58,7 @@
                                             <td>
                                                 <div class="form-button-action">
                                                     <a href="<?= base_url('Sadmin/useractive/' . $p->id_user) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success" data-original-title="Aktif">
-                                                        <i class="fa fa-check"></i>
+                                                        <i class="fa fa-check text-white"></i>
                                                     </a>
                                                     <a href="<?= base_url('Sadmin/usernonactive/' . $p->id_user) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Non-Aktif">
                                                         <i class="fa fa-times"></i>

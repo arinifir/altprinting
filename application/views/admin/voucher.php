@@ -184,7 +184,7 @@
                                             <td>
                                                 <div class="form-button-action">
                                                     <a href="<?= base_url('admin/voucher/vaktif/' . $v->kd_voucher) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success" data-original-title="Aktif">
-                                                        <i class="fa fa-check"></i>
+                                                        <i class="fa fa-check text-white"></i>
                                                     </a>
                                                     <a href="<?= base_url('admin/voucher/vnaktif/' . $v->kd_voucher) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Non-Aktif">
                                                         <i class="fa fa-times"></i>
