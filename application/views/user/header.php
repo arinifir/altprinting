@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ALT Printing - Home</title>
-    <link rel="icon" href="<?= base_url('assets/user/') ?>img/Fevicon.png" type="image/png">
+    <title><?= $judul ?></title>
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('assets/') ?>alt_rectangle_120.png">
     <link rel="stylesheet" href="<?= base_url('assets/user/') ?>vendors/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="<?= base_url('assets/user/') ?>vendors/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="<?= base_url('assets/user/') ?>vendors/themify-icons/themify-icons.css">
@@ -18,6 +18,9 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,600" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+
+    <!-- Icons by MDI -->
+    <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
 
 </head>
 

@@ -94,14 +94,14 @@
                         </li>
                         <li class="icons dropdown">
                             <div class="user-img c-pointer position-relative" data-toggle="dropdown">
-                                <span class="activity active"></span>Hello, <strong><?= $this->session->userdata("nama") ?></strong>
-                                <img src="<?= base_url('assets/admin/') ?>images/user/1.png" height="40" width="40" alt="">
+                                <span class="activity active"></span>Hello, <strong class="pr-2"><?= $this->session->userdata("nama") ?></strong>
+                                <img src="<?= base_url('assets/admin/') ?>images/user/form-user.png" height="40" width="40" alt="">
                             </div>
                             <div class="drop-down dropdown-profile animated fadeIn dropdown-menu">
                                 <div class="dropdown-content-body">
                                     <ul>
                                         <li>
-                                            <a href="app-profile.html"><i class="icon-user"></i> <span>Profile</span></a>
+                                            <a href="app-profile.html"><i class="icon-user"></i> <span>Profil</span></a>
                                         </li>
                                         <li>
                                             <a href="javascript:void()">
@@ -110,9 +110,6 @@
                                             </a>
                                         </li>
                                         <hr class="my-2">
-                                        <li>
-                                            <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock Screen</span></a>
-                                        </li>
                                         <li><a href="<?= base_url('Auth/logout') ?>"><i class="icon-key"></i> <span>Logout</span></a></li>
                                     </ul>
                                 </div>

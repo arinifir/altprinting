@@ -3,7 +3,7 @@
 	background: #002347;
 	padding: 50px 0px 50px;
 
-	@media(min-width: 1000px){
+	@media (min-width: 1000px) {
 		padding: 195px 0px 120px;
 	}
 }
@@ -54,7 +54,7 @@
 				color: #7b838a;
 				font-family: $text-font;
 
-				&:hover{
+				&:hover {
 					color: $primary-color;
 				}
 			}
@@ -62,11 +62,11 @@
 				margin-bottom: 0px;
 			}
 		}
-  }
-  
-  p{
-    color: #7b838a;
-  }
+	}
+
+	p {
+		color: #7b838a;
+	}
 }
 .footer_title {
 	font-size: 18px;
@@ -100,11 +100,11 @@
 	}
 }
 
-.footer-only{
+.footer-only {
 	padding-top: 60px !important;
 	padding-bottom: 60px !important;
 
-	@media(min-width: 1000px){
+	@media (min-width: 1000px) {
 		padding-top: 115px !important;
 		padding-bottom: 115px !important;
 	}

@@ -32,9 +32,6 @@
         <div class="container h-100">
             <div class="row justify-content-center h-100">
                 <div class="col-xl-6">
-
-                    <!-- <div class="banner-img"> -->
-
                     <div class="form-input-content">
                         <div class="card login-form mb-0">
                             <div class="card-body pt-5 shadow">
@@ -55,11 +52,9 @@
                             </div>
                         </div>
                     </div>
-                    <!-- </div> -->
                 </div>
             </div>
         </div>
-        <!-- </div> -->
     </div>
 
     <!--**********************************

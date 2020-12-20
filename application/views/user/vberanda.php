@@ -11,10 +11,10 @@
                 </div>
                 <div class="col-sm-7 col-lg-6 offset-lg-1 pl-4 pl-md-5 pl-lg-0">
                     <div class="hero-banner__content">
-                        <h4>Shop is fun</h4>
-                        <h1>Browse Our Premium Product</h1>
+                        <h4>Belanja itu menyenangkan</h4>
+                        <h1>Dapatkan produk premium kami</h1>
                         <p>Us which over of signs divide dominion deep fill bring they're meat beho upon own earth without morning over third. Their male dry. They are great appear whose land fly grass.</p>
-                        <a class="button button-hero" href="#">Browse Now</a>
+                        <a class="button button-hero" href="#">Cek sekarang</a>
                     </div>
                 </div>
             </div>
@@ -51,7 +51,7 @@
     <!--================ Hero Carousel end =================-->
 
     <!-- ================ trending product section start ================= -->
-    <section class="section-margin calc-60px">
+    <!-- <section class="section-margin calc-60px">
         <div class="container">
             <div class="section-intro pb-60px">
                 <p>Popular Item in the market</p>
@@ -71,7 +71,7 @@
                             </div>
                             <div class="card-body">
                                 <p>Kategori</p>
-                                <h4 class="card-product__title"><a href="single-product.html"><?= $p->nama_produk ?></a></h4>
+                                <h4 class="card-product__title"><a href="<?= base_url('assets/user/') ?>page/single-product.html"><?= $p->nama_produk ?></a></h4>
                                 <p class="card-product__price">Rp. <?= $p->harga_produk ?></p>
                             </div>
                         </div>
@@ -80,7 +80,7 @@
             </div>
         </div>
 
-    </section>
+    </section> -->
     <!-- ================ trending product section end ================= -->
 
 
