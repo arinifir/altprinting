@@ -9,13 +9,11 @@ class User extends CI_Controller
         parent::__construct();
         $this->load->model("M_produk");
         //load model admin
-        $this->load->helper('auth_helper');
-        $this->load->library('user_agent');
-        $this->load->library('primslib');
-        is_logged_in();
+    
+      
     }
 
-    public function index()
+    public function tampilp()
     {
         $data["produk"] = $this->M_produk->getAll();
         $this->load->view("user/vberanda", $data);

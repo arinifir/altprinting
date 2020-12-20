@@ -50,8 +50,8 @@
     </section>
     <!--================ Hero Carousel end =================-->
 
-    <!-- ================ trending product section start ================= -->  
-    <section class="section-margin calc-60px">
+   <!-- ================ trending product section start ================= -->  
+   <section class="section-margin calc-60px">
       <div class="container">
         <div class="section-intro pb-60px">
           <p>Popular Item in the market</p>
@@ -71,7 +71,7 @@
               </div>
               <div class="card-body">
                 <p>Kategori</p>
-                <h4 class="card-product__title"><a href="single-product.html"><?=$p->nama_produk?></a></h4>
+                <h4 class="card-product__title"><a href="#"><?=$p->nama_produk?></a></h4>
                 <p class="card-product__price">Rp. <?=$p->harga_produk?></p>
               </div>
             </div>
@@ -82,5 +82,6 @@
       
     </section>
     <!-- ================ trending product section end ================= -->  
+   
 
   </main>
