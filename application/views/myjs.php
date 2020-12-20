@@ -20,9 +20,9 @@
                     if (role == "super admin") {
                         window.location.href = '<?= base_url('Sadmin') ?>';
                     } else if (role == "admin") {
-                        window.location.href = '<?= base_url('admin/Admin') ?>';
+                        window.location.href = '<?= base_url('Admin') ?>';
                     } else if (role == "pelanggan") {
-                        window.location.href = '<?= base_url('Pelanggan') ?>';
+                        window.location.href = '<?= base_url('User') ?>';
                     }
                 } else if (status == "wrong_password") {
                     Swal.fire({
