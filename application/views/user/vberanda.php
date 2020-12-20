@@ -75,8 +75,11 @@
                 <p class="card-product__price">Rp. <?=$p->harga_produk?></p>
               </div>
             </div>
+          </div>
+          <?php endforeach; ?>
         </div>
-
+      </div>
+      
     </section>
     <!-- ================ trending product section end ================= -->
 
