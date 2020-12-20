@@ -15,7 +15,7 @@ class User extends CI_Controller
         // is_logged_in();
     }
 
-    public function index()
+    public function tampilp()
     {
         $data['produk'] = $this->M_produk->getAll();
         $data['judul'] = "ALT Printing - Home";

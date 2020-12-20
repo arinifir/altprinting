@@ -22,6 +22,13 @@
                 </a>
             </li>
             <li>
+                <a href="<?= base_url('user/User/tampilp') ?>" aria-expanded="false">
+                    <i class="fa fa-dropbox menu-icon"></i><span class="nav-text">Produk User</span>
+                </a>
+            </li>
+            <li>
+                <a href="<?= base_url('admin/Admin/datakategori') ?>" aria-expanded="false">
+                    <i class="fa fa-list menu-icon"></i><span class="nav-text">Kategori</span>
                 <a href="<?= base_url('admin/Kategori/datakategori') ?>" aria-expanded="false">
                     <i class="mdi mdi-shape"></i><span class="nav-text pl-2">Kategori</span>
                 </a>
