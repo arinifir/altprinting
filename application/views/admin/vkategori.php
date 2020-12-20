@@ -29,19 +29,19 @@
                                         <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                                         </button>
                                     </div>
-                                    <form class="form-valide" action="<?= base_url('admin/Admin/addkategori') ?>" method="post">
+                                    <form class="form-valide" action="<?= base_url('admin/Kategori/addkategori') ?>" method="post">
                                         <div class="modal-body">
                                             <div class="form-group">
                                                 <label class="col-lg-4 col-form-label" for="val-username">Kategori <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-12">
-                                                    <input type="text" class="form-control" id="val-username" name="kategori" placeholder="Enter a kategori..">
+                                                    <input type="text" class="form-control" id="val-username" name="kategori" placeholder="Masukkan kategori">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-primary">Tambahkan</button>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
+                                            <button type="submit" class="btn btn-primary">Tambah</button>
                                         </div>
                                     </form>
                                 </div>
@@ -56,20 +56,20 @@
                                             <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                                             </button>
                                         </div>
-                                        <form class="form-valide" action="<?= base_url('admin/Admin/editkategori') ?>" method="post">
+                                        <form class="form-valide" action="<?= base_url('admin/Kategori/editkategori') ?>" method="post">
                                             <div class="modal-body">
                                                 <div class="form-group">
                                                     <label class="col-lg-4 col-form-label" for="val-username">Kategori <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val-username" name="kode"  value="<?= $k->kd_kategori; ?>" hidden>
-                                                        <input type="text" class="form-control" id="val-username" name="kategori" placeholder="Enter a kategori.." value="<?= $k->kategori; ?>">
+                                                        <input type="text" class="form-control" id="val-username" name="kode" value="<?= $k->kd_kategori; ?>" hidden>
+                                                        <input type="text" class="form-control" id="val-username" name="kategori" placeholder="Masukkan kategori" value="<?= $k->kategori; ?>">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
+                                                <button type="submit" class="btn btn-primary">Ubah</button>
                                             </div>
                                         </form>
                                     </div>
@@ -77,7 +77,7 @@
                             </div>
                         <?php } ?>
                         <div class="table-responsive">
-                            <table class="table table-striped table-bordered zero-configuration">
+                            <table class="table table-hover table-bordered zero-configuration">
                                 <thead>
                                     <tr>
                                         <th conspan="2">Action</th>
@@ -92,13 +92,12 @@
                                     foreach ($kategori as $k) { ?>
                                         <tr>
                                             <td>
-                                            <?php echo form_open('admin/Pelanggan/hapus/'.$k->kd_kategori) ?>
                                                 <div class="form-button-action">
                                                     <button type="button" data-toggle="modal" data-target="#editModal<?= $k->kd_kategori; ?>" data-toggle="tooltip" title="" class="btn mb-1 btn-warning" data-original-title="Edit">
-                                                        <i class="fa fa-edit"></i>
+                                                        <i class="mdi mdi-pencil text-white"></i>
                                                     </button>
-                                                    <a href="<?= base_url('admin/Admin/delkategori/' . $k->kd_kategori); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Remove " onclick="return confirm('Anda yakin ingin menghapus?');">
-                                                        <i class="fa fa-trash"></i>
+                                                    <a href="<?= base_url('admin/Kategori/delkategori/' . $k->kd_kategori); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Hapus" onclick="return confirm('Anda yakin ingin menghapus?');">
+                                                        <i class="mdi mdi-delete"></i>
                                                     </a>
                                                     <?php echo form_close() ?>
 

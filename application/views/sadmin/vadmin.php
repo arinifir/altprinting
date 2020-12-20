@@ -112,7 +112,7 @@
                             </div>
                         <?php } ?>
                         <div class="table-responsive">
-                            <table class="table table-striped table-bordered zero-configuration">
+                            <table class="table table-hover table-bordered zero-configuration">
                                 <thead>
                                     <tr>
                                         <th conspan="2">Action</th>
@@ -154,7 +154,7 @@
                                             <td>
                                                 <div class="form-button-action">
                                                     <a href="<?= base_url('Sadmin/adminactive/' . $a->id_user) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success" data-original-title="Aktif">
-                                                        <i class="fa fa-check"></i>
+                                                        <i class="fa fa-check text-white"></i>
                                                     </a>
                                                     <a href="<?= base_url('Sadmin/adminonactive/' . $a->id_user) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Non-Aktif">
                                                         <i class="fa fa-times"></i>

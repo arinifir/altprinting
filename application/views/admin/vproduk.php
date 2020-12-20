@@ -29,7 +29,7 @@
                                         <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                                         </button>
                                     </div>
-                                    <form class="form-valide" action="<?= base_url('Sadmin/addproduk') ?>" method="post" enctype="multipart/form-data">
+                                    <form class="form-valide" action="<?= base_url('admin/Produk/addproduk') ?>" method="post" enctype="multipart/form-data">
                                         <div class="modal-body">
                                             <div class="form-group">
                                                 <label class="col-lg-4 col-form-label" for="">Nama Produk <span class="text-danger">*</span>
@@ -95,7 +95,7 @@
                                             <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                                             </button>
                                         </div>
-                                        <form class="form-valide" action="<?= base_url('Sadmin/editproduk') ?>" method="post" enctype="multipart/form-data">
+                                        <form class="form-valide" action="<?= base_url('admin/Produk/editproduk') ?>" method="post" enctype="multipart/form-data">
                                             <div class="modal-body">
                                                 <input type="text" value="<?= $pr->kd_produk; ?>" class="form-control" id="" name="kode" hidden>
                                                 <div class="form-group">
@@ -166,7 +166,7 @@
                                             <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                                             </button>
                                         </div>
-                                        <form class="form-valide" action="<?= base_url('Sadmin/editdiskon') ?>" method="post">
+                                        <form class="form-valide" action="<?= base_url('admin/Produk/editdiskon') ?>" method="post">
                                             <div class="modal-body">
                                                 <div class="form-group">
                                                     <label class="col-lg-4 col-form-label" for="val-username">Diskon <span class="text-danger">*</span>
@@ -200,7 +200,7 @@
                                             <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                                             </button>
                                         </div>
-                                        <form class="form-valide" action="<?= base_url('Sadmin/editdesk') ?>" method="post">
+                                        <form class="form-valide" action="<?= base_url('admin/Produk/editdesk') ?>" method="post">
                                             <div class="modal-body">
                                                 <div class="form-group">
                                                     <label class="col-lg-4 col-form-label" for="val-username">Deskripsi <span class="text-danger">*</span>
@@ -249,13 +249,13 @@
                                                     <button type="button" data-toggle="modal" data-target="#editModal<?= $pr->kd_produk; ?>" data-toggle="tooltip" title="" class="btn mb-1 btn-warning" data-original-title="Edit">
                                                         <i class="mdi mdi-pencil text-white"></i>
                                                     </button>
-                                                    <a href="<?= base_url('Sadmin/delproduk/' . $pr->kd_produk); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Hapus">
+                                                    <a href="<?= base_url('admin/Produk/delproduk/' . $pr->kd_produk); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Hapus" onclick="return confirm('Anda yakin ingin menghapus?');">
                                                         <i class="mdi mdi-delete"></i>
                                                     </a>
                                                 </div>
                                             </td>
                                             <td>
-                                                <a href="<?= base_url('Sadmin/lihatpaket/' . $pr->kd_produk); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-secondary text-white" data-original-title="Lihat Paket">Paket
+                                                <a href="<?= base_url('admin/Produk/lihatpaket/' . $pr->kd_produk); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-secondary text-white" data-original-title="Lihat Paket">Paket
                                                 </a>
                                             </td>
                                             <td><?= $no++; ?></td>
@@ -275,10 +275,10 @@
                                                 <?php } ?>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="<?= base_url('Sadmin/produkaktif/' . $pr->kd_produk) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success" data-original-title="Aktifkan">
+                                                    <a href="<?= base_url('admin/Produk/produkaktif/' . $pr->kd_produk) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success" data-original-title="Aktifkan">
                                                         <i class="fa fa-check text-white"></i>
                                                     </a>
-                                                    <a href="<?= base_url('Sadmin/produkarsip/' . $pr->kd_produk) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Arsipkan">
+                                                    <a href="<?= base_url('admin/Produk/produkarsip/' . $pr->kd_produk) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Arsipkan">
                                                         <i class="fa fa-times"></i>
                                                     </a>
                                                 </div>

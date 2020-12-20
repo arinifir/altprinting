@@ -8,7 +8,7 @@ class Kategori extends CI_Controller
     {
         parent::__construct();
         //load model admin
-        $this->load->model('m_admin', 'admin', 'M_pelanggan');
+        $this->load->model('m_admin', 'admin');
         $this->load->helper('auth_helper');
         $this->load->library('user_agent');
         admin_logged_in();
@@ -24,6 +24,7 @@ class Kategori extends CI_Controller
         $this->load->view('admin/vkategori', $data);
         $this->load->view('admin/footer');
     }
+
     public function addkategori()
     {
         $cekkode = $this->admin->cekkode();
@@ -36,7 +37,7 @@ class Kategori extends CI_Controller
         $this->form_validation->set_message('required', 'Isi Data!');
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata('gagal', 'Data tidak sesuai atau data kosong!');
-            redirect('Admin/datakategori');
+            redirect('admin/Kategori/datakategori');
         } else {
             $nama = $this->input->post("kategori", TRUE);
             $data = [
@@ -45,16 +46,17 @@ class Kategori extends CI_Controller
             ];
             $this->admin->addData('tb_kategori', $data);
             $this->session->set_flashdata('berhasil', 'Berhasil Menambahkan Data.');
-            redirect('Admin/datakategori');
+            redirect('admin/Kategori/datakategori');
         }
     }
+
     public function editkategori()
     {
         $this->form_validation->set_rules('kategori', 'Kategori', 'required');
         $this->form_validation->set_message('required', 'Isi Data!');
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata('gagal', 'Data tidak sesuai atau data kosong!');
-            redirect('Admin/datakategori');
+            redirect('admin/Kategori/datakategori');
         } else {
             $kode = $this->input->post("kode", TRUE);
             $nama = $this->input->post("kategori", TRUE);
@@ -62,7 +64,7 @@ class Kategori extends CI_Controller
             $where = ['kd_kategori' => $kode];
             $this->admin->editData('tb_kategori', $data, $where);
             $this->session->set_flashdata('berhasil', 'Berhasil Mengubah Data Kategori.');
-            redirect('Admin/datakategori');
+            redirect('admin/Kategori/datakategori');
         }
     }
 
@@ -72,11 +74,10 @@ class Kategori extends CI_Controller
         if ($data == 0) {
             $this->admin->delData('tb_kategori', ['kd_kategori' => $id]);
             $this->session->set_flashdata('berhasil', 'Berhasil Menghapus Data Kategori.');
-            redirect('Admin/datakategori');
+            redirect('admin/Kategori/datakategori');
         } else {
             $this->session->set_flashdata('error', 'Tidak Bisa Menghapus Data ini!');
-            redirect('Admin/datakategori');
+            redirect('admin/Kategori/datakategori');
         }
     }
-
 }

@@ -158,90 +158,6 @@ class Sadmin extends CI_Controller
         $this->load->view('sadmin/footer');
     }
 
-    public function addpelanggan()
-    {
-        $this->form_validation->set_rules('name', 'Name', 'required');
-        $this->form_validation->set_rules('email', 'Email', 'required');
-        $this->form_validation->set_rules('no', 'Number', 'required');
-        $this->form_validation->set_rules('password', 'Password', 'required');
-        $this->form_validation->set_message('required', 'Please Enter Data!');
-        if ($this->form_validation->run() == FALSE) {
-            $this->session->set_flashdata('gagal', 'Data tidak sesuai atau data kosong!');
-            redirect('Sadmin/datapelanggan');
-        } else {
-            $length = 6;
-            $kode = $this->admin->randomcode($length);
-            $nama = $this->input->post("name", TRUE);
-            $email = $this->input->post("email", TRUE);
-            $data = $this->admin->cekEmail($email);
-            if ($data == 0) {
-                $no = $this->input->post("no", TRUE);
-                $password = md5($this->input->post("password", TRUE));
-                $level = 3;
-                $status = 1;
-                $data = [
-                    'id_user' => $kode,
-                    'nama_lengkap' => $nama,
-                    'email' => $email,
-                    'no_hp' => $no,
-                    'password' => $password,
-                    'level' => $level,
-                    'status' => $status
-                ];
-                $this->admin->addData('tb_user', $data);
-                $this->session->set_flashdata('berhasil', 'Berhasil Menambahkan Data Admin.');
-                redirect('Sadmin/datapelanggan');
-            } else {
-                $this->session->set_flashdata('gagal', 'Email Sudah Terdaftar');
-                redirect('Sadmin/datapelanggan');
-            }
-        }
-    }
-
-    public function editpelanggan()
-    {
-        $this->form_validation->set_rules('name', 'Name', 'required');
-        $this->form_validation->set_rules('email', 'Email', 'required');
-        $this->form_validation->set_rules('no', 'Number', 'required');
-        $this->form_validation->set_message('required', 'Please Enter Data!');
-        if ($this->form_validation->run() == FALSE) {
-            $this->session->set_flashdata('gagal', 'Data tidak sesuai atau data kosong!');
-            redirect('Sadmin/datapelanggan');
-        } else {
-            $kode = $this->input->post("kode", TRUE);
-            $nama = $this->input->post("name", TRUE);
-            $email = $this->input->post("email", TRUE);
-            $no = $this->input->post("no", TRUE);
-            $data1 = $this->db->get_where('tb_user',  ['id_user' => $kode, 'email' => $email])->num_rows();
-            if ($data1 == 1) {
-                $data = [
-                    'nama_lengkap' => $nama,
-                    'no_hp' => $no
-                ];
-                $where = ['id_user' => $kode];
-                $this->admin->editData('tb_user', $data, $where);
-                $this->session->set_flashdata('berhasil', 'Berhasil Mengubah Data.');
-                redirect('Sadmin/datapelanggan');
-            } else {
-                $data = $this->admin->cekEmail($email);
-                if ($data == 0) {
-                    $data = [
-                        'nama_lengkap' => $nama,
-                        'email' => $email,
-                        'no_hp' => $no
-                    ];
-                    $where = ['id_user' => $kode];
-                    $this->admin->editData('tb_user', $data, $where);
-                    $this->session->set_flashdata('berhasil', 'Berhasil Mengubah Data.');
-                    redirect('Sadmin/datapelanggan');
-                } else {
-                    $this->session->set_flashdata('gagal', 'Email Sudah Terdaftar');
-                    redirect('Sadmin/datapelanggan');
-                }
-            }
-        }
-    }
-
     public function delpelanggan($kode)
     {
         $where = [
@@ -374,7 +290,6 @@ class Sadmin extends CI_Controller
             $diskon = $this->input->post("hargadiskon", TRUE);
             $kategori = $this->input->post("kategori", TRUE);
             $deskripsi = $this->input->post("deskripsi", TRUE);
-            // $gambar = $this->input->post("gambar_produk", TRUE);
             $gambar = $_FILES['gambar_produk']['name'];
             $format = 'jpg|png|jpeg';
             $this->primslib->upload_image('gambar_produk', $gambar, $format, 10000);
@@ -404,9 +319,9 @@ class Sadmin extends CI_Controller
         $this->form_validation->set_rules('hargadiskon', 'Harga Diskon', 'required|trim');
         $this->form_validation->set_rules('kategori', 'Kategori', 'required');
         $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required');
-        
+
         $this->form_validation->set_message('required', 'Tolong masukkan data!');
-        
+
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata('gagal', 'Data tidak sesuai atau data kosong!');
             redirect('Sadmin/dataproduk');
@@ -421,7 +336,7 @@ class Sadmin extends CI_Controller
             $deskripsi = $this->input->post("deskripsi", TRUE);
             $gambar = $_FILES['gambar_produk']['name'];
             $format = 'jpg|png|jpeg';
-            if($gambar){
+            if ($gambar) {
                 $this->primslib->upload_image('gambar_produk', $gambar, $format, 10000);
                 $this->db->set('gambar_produk', $gambar);
             }
@@ -431,8 +346,8 @@ class Sadmin extends CI_Controller
                 'kd_produk' => $kode,
                 'nama_produk' => $nama,
                 'harga_produk' => $harga,
-                'diskon_produk' => $diskon,  
-                'kategori_produk' => $kategori,   
+                'diskon_produk' => $diskon,
+                'kategori_produk' => $kategori,
                 'desk_produk' => $deskripsi,
                 'status_produk' => $status
             ];
@@ -509,12 +424,12 @@ class Sadmin extends CI_Controller
         $this->session->set_flashdata('berhasil', 'Produk Kode ' . $id . ' Diarsipkan');
         redirect('Sadmin/dataproduk');
     }
-    
+
     //Paket
     public function lihatpaket($kode)
     {
-        $data['produk']= $this->admin->produkbykode($kode);
-        $data['paket']= $this->admin->paketbykode($kode);
+        $data['produk'] = $this->admin->produkbykode($kode);
+        $data['paket'] = $this->admin->paketbykode($kode);
         $this->load->view('sadmin/header');
         $this->load->view('sadmin/topbar');
         $this->load->view('sadmin/sidebar');
