@@ -55,11 +55,11 @@ $(document).on('click','.btnDel', function () {
     const id = $(this).data('id')
     console.log(id);
     $.ajax({
-        url: base_url+"API/deleteproduk/"+id,
+        url: base_url+"Sadmin/deleteproduk/"+id,
         dataType: "text",
         success: function (response) {
             if (response=="berhasil") {
-                window.location.href = base_url+'API/delproduk/'+id;
+                window.location.href = base_url+'Sadmin/delproduk/'+id;
             }else{
                 Swal.fire({
                     title: 'Apakah Anda Yakin?',
@@ -71,7 +71,7 @@ $(document).on('click','.btnDel', function () {
                     confirmButtonText: 'Yes, delete it!'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location.href = base_url+'API/delbyproduk/'+id;
+                        window.location.href = base_url+'Sadmin/delbyproduk/'+id;
                     }
                 })
             }
