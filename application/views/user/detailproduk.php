@@ -26,7 +26,7 @@
                         <li><span>Paket</span> : </a></li>
                     </ul>
                     <div class="row card_area d-flex align-items-center mx-1">
-                        <a class="icon_btn active mt-1">Custom</a>
+                        <a class="icon_btn mt-1">Custom</a>
                         <?php
                         $i = 1;
                         foreach ($paket as $p) { ?>

@@ -213,69 +213,7 @@
     </section>
     <!-- ================ Best Selling item  carousel end ================= -->
 
-    <!-- ================ Blog section start ================= -->
-    <section class="blog">
-        <div class="container">
-            <div class="section-intro pb-60px">
-                <!-- <p>Trend Item</p> -->
-                <h2>Berita <span class="section-intro__style">Terbaru</span></h2>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-                    <div class="card card-blog">
-                        <div class="card-blog__img">
-                            <img class="card-img rounded-0" src="<?= base_url('assets/user/') ?>img/blog/blog1.png" alt="">
-                        </div>
-                        <div class="card-body">
-                            <ul class="card-blog__info">
-                                <li><a href="#">Oleh Admin</a></li>
-                                <li><a href="#"><i class="mdi mdi-comment-multiple-outline"></i> 2 komentar</a></li>
-                            </ul>
-                            <h4 class="card-blog__title"><a href="<?= base_url('assets/user/') ?>page/single-blog.html">The Richland Center Shooping News and weekly shooper</a></h4>
-                            <p>Let one fifth i bring fly to divided face for bearing divide unto seed. Winged divided light Forth.</p>
-                            <a class="card-blog__link" href="#">Lebih lanjut <i class="ti-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-                    <div class="card card-blog">
-                        <div class="card-blog__img">
-                            <img class="card-img rounded-0" src="<?= base_url('assets/user/') ?>img/blog/blog2.png" alt="">
-                        </div>
-                        <div class="card-body">
-                            <ul class="card-blog__info">
-                                <li><a href="#">Oleh Admin</a></li>
-                                <li><a href="#"><i class="mdi mdi-comment-multiple-outline"></i> 2 komentar</a></li>
-                            </ul>
-                            <h4 class="card-blog__title"><a href="<?= base_url('assets/user/') ?>page/single-blog.html">The Shopping News also offers top-quality printing services</a></h4>
-                            <p>Let one fifth i bring fly to divided face for bearing divide unto seed. Winged divided light Forth.</p>
-                            <a class="card-blog__link" href="#">Lebih lanjut <i class="ti-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-                    <div class="card card-blog">
-                        <div class="card-blog__img">
-                            <img class="card-img rounded-0" src="<?= base_url('assets/user/') ?>img/blog/blog3.png" alt="">
-                        </div>
-                        <div class="card-body">
-                            <ul class="card-blog__info">
-                                <li><a href="#">Oleh Admin</a></li>
-                                <li><a href="#"><i class="mdi mdi-comment-multiple-outline"></i> 2 komentar</a></li>
-                            </ul>
-                            <h4 class="card-blog__title"><a href="<?= base_url('assets/user/') ?>page/single-blog.html">Professional design staff and efficient equipment you’ll find we offer</a></h4>
-                            <p>Let one fifth i bring fly to divided face for bearing divide unto seed. Winged divided light Forth.</p>
-                            <a class="card-blog__link" href="#">Lebih lanjut <i class="ti-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ================ Blog section end ================= -->
+    
 
     <!-- ================ Subscribe section start ================= -->
     <section class="subscribe-position">
