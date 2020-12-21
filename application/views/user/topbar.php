@@ -19,8 +19,8 @@
                                 <li class="nav-item"><a class="nav-link" href="<?= base_url('assets/user/') ?>page/single-product.html">Figura Desain</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item submenu dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+                        <li class="nav-item submenu">
+                            <a href="<?= base_url('pelanggan/Kategori') ?>" class="nav-link dropdown-toggle" data-toggle="" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
                         </li>
                         <li class="nav-item submenu dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Panduan</a>
