@@ -51,7 +51,7 @@
     <!--================ Hero Carousel end =================-->
 
     <!-- ================ trending product section start ================= -->
-    <!-- <section class="section-margin calc-60px">
+   <section class="section-margin calc-60px">
         <div class="container">
             <div class="section-intro pb-60px">
                 <p>Popular Item in the market</p>
@@ -79,9 +79,7 @@
                 <?php endforeach; ?>
             </div>
           </div>
-      
-
-    </section> -->
+    </section> 
     <!-- ================ trending product section end ================= -->
 
 
