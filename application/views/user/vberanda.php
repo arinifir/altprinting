@@ -29,21 +29,21 @@
                 <img src="<?= base_url('assets/user/') ?>img/home/hero-slide1.png" alt="" class="img-fluid">
                 <a href="#" class="hero-carousel__slideOverlay">
                     <h3>Wireless Headphone</h3>
-                    <p>Accessories Item</p>
+                    <p>Polaroid</p>
                 </a>
             </div>
             <div class="hero-carousel__slide">
                 <img src="<?= base_url('assets/user/') ?>img/home/hero-slide2.png" alt="" class="img-fluid">
                 <a href="#" class="hero-carousel__slideOverlay">
                     <h3>Wireless Headphone</h3>
-                    <p>Accessories Item</p>
+                    <p>Polaroid</p>
                 </a>
             </div>
             <div class="hero-carousel__slide">
                 <img src="<?= base_url('assets/user/') ?>img/home/hero-slide3.png" alt="" class="img-fluid">
                 <a href="#" class="hero-carousel__slideOverlay">
                     <h3>Wireless Headphone</h3>
-                    <p>Accessories Item</p>
+                    <p>Polaroid</p>
                 </a>
             </div>
         </div>
@@ -51,35 +51,8 @@
     <!--================ Hero Carousel end =================-->
 
     <!-- ================ trending product section start ================= -->
-   <section class="section-margin calc-60px">
-        <div class="container">
-            <div class="section-intro pb-60px">
-                <p>Popular Item in the market</p>
-                <h2>Trending <span class="section-intro__style">Product</span></h2>
-            </div>
-            <div class="row">
-                <?php foreach ($produk as $p) : ?>
-                    <div class="col-md-6 col-lg-4 col-xl-3">
-                        <div class="card text-center card-product">
-                            <div class="card-product__img">
-                                <img class="card-img" src="<?php echo base_url('assets/images/' . $p->gambar_produk) ?>" alt="">
-                                <ul class="card-product__imgOverlay">
-                                    <li><button><i class="ti-search"></i></button></li>
-                                    <li><button><i class="ti-shopping-cart"></i></button></li>
-                                    <li><button><i class="ti-heart"></i></button></li>
-                                </ul>
-                            </div>
-                            <div class="card-body">
-                                <p>Kategori</p>
-                                <h4 class="card-product__title"><a href="<?= base_url('assets/user/') ?>page/single-product.html"><?= $p->nama_produk ?></a></h4>
-                                <p class="card-product__price">Rp. <?= $p->harga_produk ?></p>
-                            </div>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-          </div>
-    </section> 
+
+    </section>
     <!-- ================ trending product section end ================= -->
 
 
@@ -89,9 +62,9 @@
             <div class="row">
                 <div class="col-xl-5">
                     <div class="offer__content text-center">
-                        <h3>Up To 50% Off</h3>
-                        <h4>Winter Sale</h4>
-                        <p>Him she'd let them sixth saw light</p>
+                        <h3 style="color: #F4FAFF">Up To 50% Off</h3>
+                        <h4 style="color: #F4FAFF">Winter Sale</h4>
+                        <p style="color: #F4FAFF">Him she'd let them sixth saw light</p>
                         <a class="button button--active mt-3 mt-xl-4" href="#">Shop Now</a>
                     </div>
                 </div>
@@ -104,8 +77,8 @@
     <section class="section-margin calc-60px">
         <div class="container">
             <div class="section-intro pb-60px">
-                <p>Popular Item in the market</p>
-                <h2>Best <span class="section-intro__style">Sellers</span></h2>
+                <!-- <p>Popular Item in the market</p> -->
+                <h2>Paling <span class="section-intro__style">Laku</span></h2>
             </div>
             <div class="owl-carousel owl-theme" id="bestSellerCarousel">
                 <div class="card text-center card-product">
@@ -118,7 +91,7 @@
                         </ul>
                     </div>
                     <div class="card-body">
-                        <p>Accessories</p>
+                        <p>Polaroid</p>
                         <h4 class="card-product__title"><a href="<?= base_url('assets/user/') ?>page/single-product.html">Quartz Belt Watch</a></h4>
                         <p class="card-product__price">$150.00</p>
                     </div>
@@ -134,7 +107,7 @@
                         </ul>
                     </div>
                     <div class="card-body">
-                        <p>Beauty</p>
+                        <p>Polaroid</p>
                         <h4 class="card-product__title"><a href="<?= base_url('assets/user/') ?>page/single-product.html">Women Freshwash</a></h4>
                         <p class="card-product__price">$150.00</p>
                     </div>
@@ -150,7 +123,7 @@
                         </ul>
                     </div>
                     <div class="card-body">
-                        <p>Decor</p>
+                        <p>Figura</p>
                         <h4 class="card-product__title"><a href="<?= base_url('assets/user/') ?>page/single-product.html">Room Flash Light</a></h4>
                         <p class="card-product__price">$150.00</p>
                     </div>
@@ -166,7 +139,7 @@
                         </ul>
                     </div>
                     <div class="card-body">
-                        <p>Decor</p>
+                        <p>Figura</p>
                         <h4 class="card-product__title"><a href="<?= base_url('assets/user/') ?>page/single-product.html">Room Flash Light</a></h4>
                         <p class="card-product__price">$150.00</p>
                     </div>
@@ -182,7 +155,7 @@
                         </ul>
                     </div>
                     <div class="card-body">
-                        <p>Accessories</p>
+                        <p>Polaroid</p>
                         <h4 class="card-product__title"><a href="<?= base_url('assets/user/') ?>page/single-product.html">Quartz Belt Watch</a></h4>
                         <p class="card-product__price">$150.00</p>
                     </div>
@@ -198,7 +171,7 @@
                         </ul>
                     </div>
                     <div class="card-body">
-                        <p>Beauty</p>
+                        <p>Polaroid</p>
                         <h4 class="card-product__title"><a href="<?= base_url('assets/user/') ?>page/single-product.html">Women Freshwash</a></h4>
                         <p class="card-product__price">$150.00</p>
                     </div>
@@ -214,7 +187,7 @@
                         </ul>
                     </div>
                     <div class="card-body">
-                        <p>Decor</p>
+                        <p>Figura</p>
                         <h4 class="card-product__title"><a href="<?= base_url('assets/user/') ?>page/single-product.html">Room Flash Light</a></h4>
                         <p class="card-product__price">$150.00</p>
                     </div>
@@ -230,7 +203,7 @@
                         </ul>
                     </div>
                     <div class="card-body">
-                        <p>Decor</p>
+                        <p>Figura</p>
                         <h4 class="card-product__title"><a href="<?= base_url('assets/user/') ?>page/single-product.html">Room Flash Light</a></h4>
                         <p class="card-product__price">$150.00</p>
                     </div>
@@ -244,8 +217,8 @@
     <section class="blog">
         <div class="container">
             <div class="section-intro pb-60px">
-                <p>Popular Item in the market</p>
-                <h2>Latest <span class="section-intro__style">News</span></h2>
+                <!-- <p>Trend Item</p> -->
+                <h2>Berita <span class="section-intro__style">Terbaru</span></h2>
             </div>
 
             <div class="row">
@@ -256,12 +229,12 @@
                         </div>
                         <div class="card-body">
                             <ul class="card-blog__info">
-                                <li><a href="#">By Admin</a></li>
-                                <li><a href="#"><i class="ti-comments-smiley"></i> 2 Comments</a></li>
+                                <li><a href="#">Oleh Admin</a></li>
+                                <li><a href="#"><i class="mdi mdi-comment-multiple-outline"></i> 2 komentar</a></li>
                             </ul>
                             <h4 class="card-blog__title"><a href="<?= base_url('assets/user/') ?>page/single-blog.html">The Richland Center Shooping News and weekly shooper</a></h4>
                             <p>Let one fifth i bring fly to divided face for bearing divide unto seed. Winged divided light Forth.</p>
-                            <a class="card-blog__link" href="#">Read More <i class="ti-arrow-right"></i></a>
+                            <a class="card-blog__link" href="#">Lebih lanjut <i class="ti-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -273,12 +246,12 @@
                         </div>
                         <div class="card-body">
                             <ul class="card-blog__info">
-                                <li><a href="#">By Admin</a></li>
-                                <li><a href="#"><i class="ti-comments-smiley"></i> 2 Comments</a></li>
+                                <li><a href="#">Oleh Admin</a></li>
+                                <li><a href="#"><i class="mdi mdi-comment-multiple-outline"></i> 2 komentar</a></li>
                             </ul>
                             <h4 class="card-blog__title"><a href="<?= base_url('assets/user/') ?>page/single-blog.html">The Shopping News also offers top-quality printing services</a></h4>
                             <p>Let one fifth i bring fly to divided face for bearing divide unto seed. Winged divided light Forth.</p>
-                            <a class="card-blog__link" href="#">Read More <i class="ti-arrow-right"></i></a>
+                            <a class="card-blog__link" href="#">Lebih lanjut <i class="ti-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -290,12 +263,12 @@
                         </div>
                         <div class="card-body">
                             <ul class="card-blog__info">
-                                <li><a href="#">By Admin</a></li>
-                                <li><a href="#"><i class="ti-comments-smiley"></i> 2 Comments</a></li>
+                                <li><a href="#">Oleh Admin</a></li>
+                                <li><a href="#"><i class="mdi mdi-comment-multiple-outline"></i> 2 komentar</a></li>
                             </ul>
                             <h4 class="card-blog__title"><a href="<?= base_url('assets/user/') ?>page/single-blog.html">Professional design staff and efficient equipment you’ll find we offer</a></h4>
                             <p>Let one fifth i bring fly to divided face for bearing divide unto seed. Winged divided light Forth.</p>
-                            <a class="card-blog__link" href="#">Read More <i class="ti-arrow-right"></i></a>
+                            <a class="card-blog__link" href="#">Lebih lanjut <i class="ti-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -307,19 +280,16 @@
     <!-- ================ Subscribe section start ================= -->
     <section class="subscribe-position">
         <div class="container">
-            <div class="subscribe text-center">
-                <h3 class="subscribe__title">Get Update From Anywhere</h3>
-                <p>Bearing Void gathering light light his eavening unto dont afraid</p>
+            <div class="subscribe text-center shadow">
+                <h4 class="subscribe__title">Dapatkan update kapanpun</h4>
+                <p>Anda akan mendapatkan info promo dan diskon melalui email</p>
                 <div id="mc_embed_signup">
-                    <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe-form form-inline mt-5 pt-1">
+                    <form target="_blank" class="subscribe-form form-inline mt-5 pt-1">
                         <div class="form-group ml-sm-auto">
-                            <input class="form-control mb-1" type="email" name="EMAIL" placeholder="Enter your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '">
+                            <input class="form-control mb-1" type="email" name="email" placeholder="Masukkan email Anda">
                             <div class="info"></div>
                         </div>
-                        <button class="button button-subscribe mr-auto mb-1" type="submit">Subscribe Now</button>
-                        <div style="position: absolute; left: -5000px;">
-                            <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-                        </div>
+                        <button class="button button-subscribe mr-auto mb-1" type="submit">Langganan Sekarang</button>
 
                     </form>
                 </div>

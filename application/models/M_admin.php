@@ -87,6 +87,12 @@ class M_admin extends CI_Model
         $this->db->join('tb_kategori', 'tb_produk.kategori_produk = tb_kategori.kd_kategori');
         return $this->db->get()->result();
     }
+    public function tampilpaket()
+    {
+        $this->db->select('*');
+        $this->db->from('tb_paket');
+        return $this->db->get()->result();
+    }
 
     public function tampilvoucher()
     {
@@ -108,7 +114,6 @@ class M_admin extends CI_Model
     public function produkbykode($kode)
     {
         return $this->db->get_where('tb_produk', ['kd_produk' => $kode])->row();
-
     }
     public function duatable()
     {
