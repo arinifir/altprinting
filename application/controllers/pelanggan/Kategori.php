@@ -18,6 +18,15 @@ class Kategori extends CI_Controller
 
     public function index()
     {
+        $kategori = $this->input->get('ktg');
+        $harga_min = $this->input->get('min');
+        $harga_max = $this->input->get('max');
+        if ($kategori || $harga_min || $harga_max) {
+            $data['produk'] = $this->M_produk->getByFilter($harga_min, $harga_max, $kategori)->result();
+        } else {
+            $data['produk'] = $this->M_produk->getAll();
+        }
+        // var_dump($data['produk']);die;
         $data['produk'] = $this->M_pelanggan->getAll('tb_produk');
         $data['kategori'] = $this->M_pelanggan->getAll('tb_kategori');
         $data['judul'] = "ALT Printing - Kategori";

@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="<?= base_url('assets/user/') ?>vendors/owl-carousel/owl.theme.default.min.css">
     <link rel="stylesheet" href="<?= base_url('assets/user/') ?>vendors/owl-carousel/owl.carousel.min.css">
     <link rel="stylesheet" href="<?= base_url('assets/user/') ?>css/style.css">
+    <link rel="stylesheet" href="<?= base_url('assets/user/') ?>vendors/nouislider/nouislider.min.css">
+
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,600" rel="stylesheet">

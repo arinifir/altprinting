@@ -43,6 +43,18 @@ class M_produk extends CI_Model
         return $this->db->get_where($this->_table, ["kd_produk" => $id])->row();
     }
 
+    public function getByFilter($min = null, $max = null, $ktg = null)
+    {
+        if ($ktg != null) {
+            $this->db->where('kategori_produk', $ktg);
+        }
+        if ($min != null && $max != null) {
+            $this->db->where("harga_produk BETWEEN $min AND $max");
+            // $this->db->where("harga_produk <='$max'");
+        }
+        return $this->db->get('tb_produk');
+    }
+
     public function save()
     {
         $post = $this->input->post();

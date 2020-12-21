@@ -78,3 +78,13 @@ $(document).on('click', '#myImg', function () {
         modal.css("display", "none");
     })
 })
+
+$(document).on('click', '#btn_harga', function(){
+    let min = $('#lower-value').html();
+    let max = $('#upper-value').html();
+    var url = window.location.href+'?filter';
+    var url1 = `&min=${min}&max=${max}`;
+    var url2 = url.concat(url1);
+    console.log(url2);
+    // window.location.href = url
+})

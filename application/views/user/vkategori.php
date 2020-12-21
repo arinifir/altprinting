@@ -10,7 +10,7 @@
                             <form action="#">
                                 <ul>
                                     <?php foreach ($kategori as $ktg) : ?>
-                                        <li class="filter-list"><input class="pixel-radio" type="radio" id="men" name="brand"><label for="men"><?= $ktg->kategori ?><span> (3600)</span></label></li>
+                                        <li class="filter-list" onclick="filter('<?= $ktg->kd_kategori ?>')"><input class="pixel-radio" type="radio" id="men" name="brand"><label for="men"><?= $ktg->kategori ?><span> (3600)</span></label></li>
                                     <?php endforeach; ?>
                                 </ul>
                             </form>
@@ -25,13 +25,14 @@
                             <div id="price-range"></div>
                             <div class="value-wrapper d-flex">
                                 <div class="price">Price:</div>
-                                <span>$</span>
+                                <span>Rp </span>
                                 <div id="lower-value"></div>
                                 <div class="to">to</div>
-                                <span>$</span>
+                                <span>Rp </span>
                                 <div id="upper-value"></div>
                             </div>
                         </div>
+                        <div class="text-center col-md-12 mt-1"><button id="btn_harga" class="btn btn-primary button_merah btn-block" href="">Terapkan</button></div>
                     </div>
                 </div>
             </div>

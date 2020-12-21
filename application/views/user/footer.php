@@ -108,6 +108,7 @@
 <script src="<?= base_url('assets/user/') ?>vendors/skrollr.min.js"></script>
 <script src="<?= base_url('assets/user/') ?>vendors/owl-carousel/owl.carousel.min.js"></script>
 <script src="<?= base_url('assets/user/') ?>vendors/nice-select/jquery.nice-select.min.js"></script>
+<script src="<?= base_url('assets/user/') ?>vendors/nouislider/nouislider.min.js"></script>
 <script src="<?= base_url('assets/user/') ?>vendors/jquery.ajaxchimp.min.js"></script>
 <script src="<?= base_url('assets/user/') ?>vendors/mail-script.js"></script>
 <script src="<?= base_url('assets/user/') ?>js/main.js"></script>
