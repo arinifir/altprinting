@@ -32,6 +32,7 @@
                         <li class="nav-item"><button><i class="mdi mdi-magnify fa-lg"></i></button></li>
                         <li class="nav-item">
                             <button><i class="mdi mdi-cart-outline fa-lg"></i></button> </li>
+                        <li class="nav-item"><button><i class="ti-shopping-cart"></i><span class="nav-shop__circle">3</span></button> </li>
                         <!-- <span class="nav-shop__circle">3</span> -->
                         <li class="nav-item"><a class="button button-header" href="<?= base_url('Auth') ?>">Masuk</a></li>
                     </ul>

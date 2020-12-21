@@ -111,6 +111,8 @@
 <script src="<?= base_url('assets/user/') ?>vendors/jquery.ajaxchimp.min.js"></script>
 <script src="<?= base_url('assets/user/') ?>vendors/mail-script.js"></script>
 <script src="<?= base_url('assets/user/') ?>js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="<?= base_url('assets/myjs/') ?>my.js"></script>
 
 </body>
 

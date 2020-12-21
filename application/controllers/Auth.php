@@ -13,7 +13,11 @@ class Auth extends CI_Controller
     }
     public function index()
     {
-        $this->load->view('vlogin');
+        $data['judul'] = "ALT Printing - Login";
+        $this->load->view('user/header', $data);
+        $this->load->view('user/topbar');
+        $this->load->view('user/v_login');
+        $this->load->view('user/footer');
     }
     public function logout()
     {
@@ -259,7 +263,11 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('password', 'Password Baru', 'required|trim|min_length[8]');
 
         if ($this->form_validation->run() == false) {
-            $this->load->view('v_regis');
+            $data['judul'] = "ALT Printing - Register";
+            $this->load->view('user/header', $data);
+            $this->load->view('user/topbar');
+            $this->load->view('user/v_regis');
+            $this->load->view('user/footer');
         } else {
 
             // Function untuk create data + autonumber

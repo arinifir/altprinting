@@ -22,31 +22,18 @@ $('.btnlogin').on('click', function() {
                     window.location.href = base_url+'User';
                 }
             } else if (status == "wrong_password") {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Password Salah!'
-                })
-                $('.password').val('')
+                $("#login_error").addClass("alert alert-danger");
+                $("#login_error").html("Password Salah!");
             } else if (status == "not_active") {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Akun Belum Terverifikasi!'
-                })
+                $("#login_error").addClass("alert alert-danger");
+                $("#login_error").html("Akun Anda Belum Terverifikasi!");
             } else if (status == "empty") {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'User Tidak Terdaftar!'
-                })
+                $("#login_error").addClass("alert alert-danger");
+                $("#login_error").html("Akun Tidak Terdaftar!");
             }
             if (email == '' || password == '') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Oops...',
-                    text: 'Email atau Password Kosong!'
-                })
+                $("#login_error").addClass("alert alert-danger");
+                $("#login_error").html("Silahkan Isi Data Login!");
             }
         }
     });
