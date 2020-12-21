@@ -79,8 +79,7 @@
                 <?php endforeach; ?>
             </div>
           </div>
-          <?php endforeach; ?>
-        </div>
+      
 
     </section> -->
     <!-- ================ trending product section end ================= -->
