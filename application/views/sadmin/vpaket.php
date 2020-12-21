@@ -18,14 +18,12 @@
                 <div class="card">
                     <div class="card-body">
                         <div>
-                            
-                                <h4 class="card-title">Data Paket <?= $produk->nama_produk; ?></h4>
-                            
+                            <h4 class="card-title">Data Paket <?= $produk->nama_produk; ?></h4>
                             <button type="button" class="btn mb-1 btn-primary" data-toggle="modal" data-target="#addModal">Tambah Data
                                 <span class="btn-icon-right"><i class="fa fa-plus"></i></span>
                             </button>
                         </div>
-                        <!-- <div class="modal fade" id="addModal">
+                        <div class="modal fade" id="addModal">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -33,34 +31,33 @@
                                         <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                                         </button>
                                     </div>
-                                    <form class="form-valide" action="<?= base_url('Sadmin/addadmin') ?>" method="post">
+                                    <form class="form-valide" action="<?= base_url('Sadmin/addpaket') ?>" method="post" enctype="multipart/form-data">
                                         <div class="modal-body">
                                             <div class="form-group">
-                                                <label class="col-lg-4 col-form-label" for="val-username">Nama <span class="text-danger">*</span>
+                                                <label class="col-lg-4 col-form-label" for="">Nama Paket <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-12">
-                                                    <input type="text" class="form-control" id="val-username" name="name" placeholder="Masukkan nama">
+                                                    <input type="text" class="form-control" id="" name="kodeproduk" hidden value="<?= $produk->kd_produk; ?>">
+                                                    <input type="text" class="form-control" id="" name="namapaket" placeholder="Masukkan nama paket">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-lg-4 col-form-label" for="val-email">Email <span class="text-danger">*</span>
+                                                <label class="col-lg-4 col-form-label" for="">Harga <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-12">
-                                                    <input type="text" class="form-control" id="val-email" name="email" placeholder="Masukkan email yang valid">
+                                                    <input type="text" class="form-control" id="" name="harga" placeholder="Masukkan harga paket">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-lg-4 col-form-label" for="val-email">No Telepon <span class="text-danger">*</span>
-                                                </label>
+                                                <label class="col-lg-4 col-form-label" for="">Isi <span class="text-danger">*</span></label>
                                                 <div class="col-lg-12">
-                                                    <input type="text" class="form-control" id="val-username" name="no" placeholder="Masukkan nomer telepon">
+                                                    <textarea type="text" class="form-control" id="" name="isi" rows="3"></textarea>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-lg-4 col-form-label" for="val-password">Password <span class="text-danger">*</span>
-                                                </label>
+                                                <label class="col-lg-4 col-form-label" for="">Gambar <span class="text-danger">*</span></label>
                                                 <div class="col-lg-12">
-                                                    <input type="text" class="form-control" id="val-password" name="password" placeholder="Masukkan password minimal 8 digit">
+                                                    <input type="file" name="gambar_paket" class="form-control-file" id="gambar">
                                                 </div>
                                             </div>
                                         </div>
@@ -72,49 +69,6 @@
                                 </div>
                             </div>
                         </div>
-                        <?php foreach ($pdmin as $p) { ?>
-                            <div class="modal fade" id="editModal<?= $p->id_user; ?>">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Ubah Data <?= $p->id_user; ?></h5>
-                                            <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
-                                            </button>
-                                        </div>
-                                        <form class="form-valide" action="<?= base_url('Sadmin/editadmin') ?>" method="post">
-                                            <div class="modal-body">
-                                                <div class="form-group">
-                                                    <label class="col-lg-4 col-form-label" for="val-username">Name <span class="text-danger">*</span>
-                                                    </label>
-                                                    <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val-username" name="kode" value="<?= $p->id_user; ?>" hidden>
-                                                        <input type="text" class="form-control" id="val-username" name="name" placeholder="Enter a name.." value="<?= $p->nama_lengkap; ?>">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-lg-4 col-form-label" for="val-email">Email <span class="text-danger">*</span>
-                                                    </label>
-                                                    <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val-email" name="email" value="<?= $p->email; ?>" placeholder="Your valid email..">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-lg-4 col-form-label" for="val-email">No Telepon <span class="text-danger">*</span>
-                                                    </label>
-                                                    <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val-username" name="no" value="<?= $p->no_hp; ?>" placeholder="Your active number..">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-primary">Simpan</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php } ?> -->
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered zero-configuration">
                                 <thead>

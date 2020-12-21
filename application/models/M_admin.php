@@ -43,7 +43,7 @@ class M_admin extends CI_Model
 
     function productCode($length)
     {
-        $text = 'PR1234567890';
+        $text = '1234567890';
         $panj = $length;
         $txtl = strlen($text) - 1;
         $result = '';
@@ -78,6 +78,12 @@ class M_admin extends CI_Model
         $query = $this->db->query("SELECT MAX(kd_kategori) as kd_kategori from tb_kategori");
         $hasil = $query->row();
         return $hasil->kd_kategori;
+    }
+    public function cekodepaket()
+    {
+        $query = $this->db->query("SELECT MAX(kd_paket) as kd_paket from tb_paket");
+        $hasil = $query->row();
+        return $hasil->kd_paket;
     }
 
     public function tampilproduk()
