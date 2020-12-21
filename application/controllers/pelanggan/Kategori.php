@@ -7,8 +7,8 @@ class Kategori extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model("M_produk","produk");
-        $this->load->model("M_admin","admin");
+        $this->load->model('M_produk', 'produk');
+        $this->load->model('M_admin', 'admin');
         $this->load->model("M_pelanggan");
         //load model admin
         $this->load->helper('auth_helper');
@@ -34,6 +34,17 @@ class Kategori extends CI_Controller
         $this->load->view('user/header', $data);
         $this->load->view('user/topbar');
         $this->load->view('user/vkategori');
+        $this->load->view('user/footer');
+    }
+    public function detail_produk()
+    {
+        $kode = "00012782";
+        $data['produk'] = $this->produk->getProduk($kode);
+        $data['paket'] = $this->admin->paketbykode($kode);
+        $data['judul'] = "ALT Printing - Detail Produk";
+        $this->load->view('user/header', $data);
+        $this->load->view('user/topbar');
+        $this->load->view('user/detailproduk');
         $this->load->view('user/footer');
     }
 }

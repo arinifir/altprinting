@@ -23,6 +23,7 @@
 
     <!-- Icons by MDI -->
     <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+    <!-- <script src="<?= base_url('assets/user/myjs/') ?>quantity.js"></script> -->
 
 </head>
 

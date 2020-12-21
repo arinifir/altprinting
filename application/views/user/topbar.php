@@ -15,7 +15,7 @@
                         <li class="nav-item submenu dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Produk</a>
                             <ul class="dropdown-menu">
-                                <li class="nav-item"><a class="nav-link" href="<?= base_url('assets/user/') ?>page/category.html">Foto Polaroid</a></li>
+                                <li class="nav-item"><a class="nav-link" href="<?= base_url('pelanggan/Kategori/') ?>detail_produk">Foto Polaroid</a></li>
                                 <li class="nav-item"><a class="nav-link" href="<?= base_url('assets/user/') ?>page/single-product.html">Figura Desain</a></li>
                             </ul>
                         </li>

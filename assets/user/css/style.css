@@ -4348,7 +4348,9 @@ a {
 }
 
 .s_product_text .card_area {
-	margin-top: 25px;
+	margin-top: 15px;
+	padding-bottom: 25px;
+	border-bottom: 1px dotted #eeeeee;
 }
 
 .s_product_text .card_area .primary-btn {
@@ -4361,8 +4363,34 @@ a {
 
 .s_product_text .card_area .icon_btn {
 	position: relative;
-	height: 40px;
-	width: 40px;
+	cursor: pointer;
+	max-width: 7rem;
+	width: 7rem;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: center;
+	background: #ffffff;
+	border-color: #A80201;
+	border-style: solid;
+    border-width: 1px;
+	display: inline-block;
+	color: #222;
+	-webkit-transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+	margin-right: 10px;
+	z-index: 1;
+}
+
+.s_product_text .card_area .paket_btn {
+	position: relative;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
 	text-align: center;
 	background: #e8f0f2;
 	border-radius: 3px;
@@ -4395,7 +4423,14 @@ a {
 }
 
 .s_product_text .card_area .icon_btn:hover {
-	background: #fff;
+	background: #A80201;
+	color: #ffffff;
+	box-shadow: 0px 10px 20px 0px rgba(153, 153, 153, 0.3);
+}
+
+.s_product_text .card_area .icon_btn.active{
+	background: #A80201;
+	color: #ffffff;
 	box-shadow: 0px 10px 20px 0px rgba(153, 153, 153, 0.3);
 }
 
@@ -4415,6 +4450,8 @@ a {
 	color: #777;
 	font-weight: normal;
 	padding-right: 10px;
+	padding-bottom: 20px;
+	padding-top: 20px;
 }
 
 .product_count input {
