@@ -8,6 +8,7 @@ class User extends CI_Controller
     {
         parent::__construct();
         $this->load->model("M_produk");
+        $this->load->model("M_pelanggan");
         //load model admin
         $this->load->helper('auth_helper');
         $this->load->library('user_agent');
@@ -19,9 +20,11 @@ class User extends CI_Controller
     {
 
         $data['judul'] = "ALT Printing - Home";
+        $data['produk'] = $this->M_pelanggan->getAll('tb_produk');
+        $data['kategori'] = $this->M_pelanggan->getAll('tb_kategori');
         $this->load->view('user/header', $data);
         $this->load->view('user/topbar');
-        $this->load->view('user/vberanda');
+        $this->load->view('user/vberanda', $data);
         $this->load->view('user/footer');
     }
 }

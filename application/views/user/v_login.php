@@ -22,6 +22,7 @@
                         </div>
                         <div class="col-md-12 form-group">
                             <input type="password" class="form-control password" id="password" name="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
+                            <div class="show-password"><i class="ti-eye"></i></div>
                         </div>
                         &nbsp;
                         <div class="col-md-12 form-group">

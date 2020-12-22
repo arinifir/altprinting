@@ -3774,6 +3774,13 @@ a {
 	margin-bottom: 70px;
 }
 
+.login_form_inner .show-password {
+	float: right;
+	transform: translateY(-100%);
+	font-size: 20px;
+	cursor: pointer;
+}
+
 .login_form .form-group {
 	margin-bottom: 22px;
 }
@@ -4374,7 +4381,7 @@ a {
 	background: #ffffff;
 	border-color: #A80201;
 	border-style: solid;
-    border-width: 1px;
+	border-width: 1px;
 	display: inline-block;
 	color: #222;
 	-webkit-transition: all 0.3s ease 0s;
@@ -4428,7 +4435,7 @@ a {
 	box-shadow: 0px 10px 20px 0px rgba(153, 153, 153, 0.3);
 }
 
-.s_product_text .card_area .icon_btn.active{
+.s_product_text .card_area .icon_btn.active {
 	background: #A80201;
 	color: #ffffff;
 	box-shadow: 0px 10px 20px 0px rgba(153, 153, 153, 0.3);
