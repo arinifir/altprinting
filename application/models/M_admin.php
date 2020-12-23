@@ -43,7 +43,7 @@ class M_admin extends CI_Model
 
     function productCode($length)
     {
-        $text = 'PR1234567890';
+        $text = '1234567890';
         $panj = $length;
         $txtl = strlen($text) - 1;
         $result = '';
@@ -79,12 +79,24 @@ class M_admin extends CI_Model
         $hasil = $query->row();
         return $hasil->kd_kategori;
     }
+    public function cekodepaket()
+    {
+        $query = $this->db->query("SELECT MAX(kd_paket) as kd_paket from tb_paket");
+        $hasil = $query->row();
+        return $hasil->kd_paket;
+    }
 
     public function tampilproduk()
     {
         $this->db->select('*');
         $this->db->from('tb_produk');
         $this->db->join('tb_kategori', 'tb_produk.kategori_produk = tb_kategori.kd_kategori');
+        return $this->db->get()->result();
+    }
+    public function tampilpaket()
+    {
+        $this->db->select('*');
+        $this->db->from('tb_paket');
         return $this->db->get()->result();
     }
 
@@ -108,7 +120,6 @@ class M_admin extends CI_Model
     public function produkbykode($kode)
     {
         return $this->db->get_where('tb_produk', ['kd_produk' => $kode])->row();
-
     }
     public function duatable()
     {

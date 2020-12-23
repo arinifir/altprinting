@@ -31,7 +31,7 @@
                                         <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                                         </button>
                                     </div>
-                                    <form class="form-valide" action="<?= base_url('Sadmin/addpaket') ?>" method="post" enctype="multipart/form-data">
+                                    <form class="form-valide" action="<?= base_url('admin/paket/addpaket') ?>" method="post" enctype="multipart/form-data">
                                         <div class="modal-body">
                                             <div class="form-group">
                                                 <label class="col-lg-4 col-form-label" for="">Nama Paket <span class="text-danger">*</span>
@@ -69,6 +69,57 @@
                                 </div>
                             </div>
                         </div>
+
+                        <?php foreach ($paket as $p) { ?>
+                            <div class="modal fade" id="editModal<?= $p->kd_paket; ?>">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Ubah Data <?= $p->kd_paket; ?></h5>
+                                            <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                                            </button>
+                                        </div>
+                                        <form class="form-valide" action="<?= base_url('admin/paket/editpaket') ?>" method="post" enctype="multipart/form-data">
+                                            <div class="modal-body">
+                                                <input type="text" value="<?= $p->kd_paket; ?>" class="form-control" id="" name="kode" hidden>
+                                                <input type="text" value="<?= $p->kd_produk; ?>" class="form-control" id="" name="kodeproduk" hidden>
+                                                <div class="form-group">
+                                                    <label class="col-lg-4 col-form-label" for="">Nama Paket <span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" id="" value="<?= $p->nama_paket; ?>" name="namapaket" placeholder="Masukkan nama paket">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-4 col-form-label" for="">Harga <span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" id="" value="<?= $p->harga_paket; ?>" name="harga" placeholder="Masukkan harga paket">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-4 col-form-label" for="">Isi <span class="text-danger">*</span></label>
+                                                    <div class="col-lg-12">
+                                                        <textarea type="text" class="form-control" id="isi" name="isi" rows="3"><?= $p->isi_paket; ?></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-4 col-form-label" for="">Gambar <span class="text-danger">*</span></label>
+                                                    <div class="col-lg-12">
+                                                        <input type="file" name="gambar_paket" class="form-control-file" id="gambar" value="<?= $p->gambar_paket; ?>">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
+                                                <button type="submit" class="btn btn-primary">Ubah</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } ?>
+
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered zero-configuration">
                                 <thead>
@@ -94,7 +145,7 @@
                                                     <button type="button" data-toggle="modal" data-target="#editModal<?= $p->kd_paket; ?>" data-toggle="tooltip" title="" class="btn mb-1 btn-warning" data-original-title="Edit">
                                                         <i class="mdi mdi-pencil text-white"></i>
                                                     </button>
-                                                    <a href="<?= base_url('Sadmin/delpaket/' . $p->kd_paket); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Hapus">
+                                                    <a href="<?= base_url('admin/paket/delpaket/' . $p->kd_paket); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Hapus">
                                                         <i class="mdi mdi-delete"></i>
                                                     </a>
                                                 </div>
@@ -113,10 +164,10 @@
                                                 <?php } ?>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="<?= base_url('Sadmin/paketaktif/' . $p->kd_paket) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success" data-original-title="Aktif">
+                                                    <a href="<?= base_url('admin/paket/paketaktif/' . $p->kd_paket) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success" data-original-title="Aktif">
                                                         <i class="mdi mdi-check-bold text-white"></i>
                                                     </a>
-                                                    <a href="<?= base_url('Sadmin/paketarsip/' . $p->kd_paket) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Arsip">
+                                                    <a href="<?= base_url('admin/paket/paketarsip/' . $p->kd_paket) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Arsip">
                                                         <i class="mdi mdi-close-thick"></i>
                                                     </a>
                                                 </div>
