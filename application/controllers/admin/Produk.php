@@ -33,8 +33,6 @@ class Produk extends CI_Controller
         $this->form_validation->set_rules('hargadiskon', 'Harga Diskon', 'required|trim');
         $this->form_validation->set_rules('kategori', 'Kategori', 'required');
         $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required');
-        // Input gambar belum !!!
-        // $this->form_validation->set_rules('gambar', 'Gambar', 'required');
         $this->form_validation->set_message('required', 'Please Enter Data!');
 
         if ($this->form_validation->run() == FALSE) {

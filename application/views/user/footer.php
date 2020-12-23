@@ -108,10 +108,54 @@
 <script src="<?= base_url('assets/user/') ?>vendors/skrollr.min.js"></script>
 <script src="<?= base_url('assets/user/') ?>vendors/owl-carousel/owl.carousel.min.js"></script>
 <script src="<?= base_url('assets/user/') ?>vendors/nice-select/jquery.nice-select.min.js"></script>
+<script src="<?= base_url('assets/user/') ?>vendors/nouislider/nouislider.min.js"></script>
 <script src="<?= base_url('assets/user/') ?>vendors/jquery.ajaxchimp.min.js"></script>
 <script src="<?= base_url('assets/user/') ?>vendors/mail-script.js"></script>
 <script src="<?= base_url('assets/user/') ?>js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="<?= base_url('assets/myjs/') ?>my.js"></script>
+<script>
+    // Show Password
+    function showPassword(button) {
+        var inputPassword = $(button).parent().find('input');
+        if (inputPassword.attr('type') === "password") {
+            inputPassword.attr('type', 'text');
+        } else {
+            inputPassword.attr('type', 'password');
+        }
+    }
 
+    $('.show-password').on('click', function() {
+        showPassword(this);
+    })
+</script>
+<?php
+if ($this->session->flashdata('message')) :
+?>
+    <script>
+        $(document).ready(function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Yey...',
+                text: '<?= $this->session->flashdata('message'); ?>'
+            })
+        })
+    </script>
+<?php endif ?>
+
+<?php
+if ($this->session->flashdata('verified')) :
+?>
+    <script>
+        $(document).ready(function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Selamat',
+                text: '<?= $this->session->flashdata('verified'); ?>'
+            })
+        })
+    </script>
+<?php endif ?>
 </body>
 
 </html>

@@ -17,36 +17,23 @@ $('.btnlogin').on('click', function() {
                 if (role == "super admin") {
                     window.location.href = base_url+'Sadmin';
                 } else if (role == "admin") {
-                    window.location.href = base_url+'Admin';
+                    window.location.href = base_url+'admin/Admin';
                 } else if (role == "pelanggan") {
                     window.location.href = base_url+'User';
                 }
             } else if (status == "wrong_password") {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Password Salah!'
-                })
-                $('.password').val('')
+                $("#login_error").addClass("alert alert-danger");
+                $("#login_error").html("Password Salah!");
             } else if (status == "not_active") {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Akun Belum Terverifikasi!'
-                })
+                $("#login_error").addClass("alert alert-danger");
+                $("#login_error").html("Akun Anda Belum Terverifikasi!");
             } else if (status == "empty") {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'User Tidak Terdaftar!'
-                })
+                $("#login_error").addClass("alert alert-danger");
+                $("#login_error").html("Akun Tidak Terdaftar!");
             }
             if (email == '' || password == '') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Oops...',
-                    text: 'Email atau Password Kosong!'
-                })
+                $("#login_error").addClass("alert alert-danger");
+                $("#login_error").html("Silahkan Isi Data Login!");
             }
         }
     });
@@ -55,11 +42,11 @@ $(document).on('click','.btnDel', function () {
     const id = $(this).data('id')
     console.log(id);
     $.ajax({
-        url: base_url+"API/deleteproduk/"+id,
+        url: base_url+"Sadmin/deleteproduk/"+id,
         dataType: "text",
         success: function (response) {
             if (response=="berhasil") {
-                window.location.href = base_url+'API/delproduk/'+id;
+                window.location.href = base_url+'Sadmin/delproduk/'+id;
             }else{
                 Swal.fire({
                     title: 'Apakah Anda Yakin?',
@@ -71,7 +58,7 @@ $(document).on('click','.btnDel', function () {
                     confirmButtonText: 'Yes, delete it!'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location.href = base_url+'API/delbyproduk/'+id;
+                        window.location.href = base_url+'Sadmin/delbyproduk/'+id;
                     }
                 })
             }
@@ -90,4 +77,20 @@ $(document).on('click', '#myImg', function () {
     $(document).on('click', '.popup .tutup', () => {
         modal.css("display", "none");
     })
+})
+
+$(document).on('click', '#btn_harga', function(){
+    let min = $('#lower-value').html();
+    let max = $('#upper-value').html();
+    var url = window.location.href;
+    var check = url.includes('?filter=true');
+    if(check == true){
+        var url1 = `&min=${min}&max=${max}`;
+    } else {
+        var url1 = `?filter=true&min=${min}&max=${max}`;
+    }
+    var url2 = url.concat(url1);
+    console.log(url,url1);
+    
+    // window.location.href = url
 })

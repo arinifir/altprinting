@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class User extends CI_Controller
+class Detail extends CI_Controller
 {
 
     public function __construct()
@@ -18,13 +18,12 @@ class User extends CI_Controller
 
     public function index()
     {
-
-        $data['judul'] = "ALT Printing - Home";
         $data['produk'] = $this->M_pelanggan->getAll('tb_produk');
         $data['kategori'] = $this->M_pelanggan->getAll('tb_kategori');
+        $data['judul'] = "ALT Printing - Kategori";
         $this->load->view('user/header', $data);
         $this->load->view('user/topbar');
-        $this->load->view('user/vberanda', $data);
+        $this->load->view('user/vkategori');
         $this->load->view('user/footer');
     }
 }
