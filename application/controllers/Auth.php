@@ -64,7 +64,11 @@ class Auth extends CI_Controller
     {
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
         if ($this->form_validation->run() == false) {
+            $data['judul'] = "ALT Printing - Login";
+            $this->load->view('user/header', $data);
+            $this->load->view('user/topbar');
             $this->load->view('resetpass');
+            $this->load->view('user/footer');
         } else {
             $email = $this->input->post('email');
             $user = $this->db->get_where('tb_user', ['email' => $email, 'status' => 1])->row_array();

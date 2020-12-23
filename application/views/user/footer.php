@@ -142,6 +142,20 @@ if ($this->session->flashdata('message')) :
         })
     </script>
 <?php endif ?>
+
+<?php
+if ($this->session->flashdata('verified')) :
+?>
+    <script>
+        $(document).ready(function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Selamat',
+                text: '<?= $this->session->flashdata('verified'); ?>'
+            })
+        })
+    </script>
+<?php endif ?>
 </body>
 
 </html>

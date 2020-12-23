@@ -101,7 +101,7 @@
                                 <div class="dropdown-content-body">
                                     <ul>
                                         <li>
-                                            <a href="app-profile.html"><i class="icon-user"></i> <span>Profil</span></a>
+                                            <a href="<?= base_url('admin/Profiladm') ?>"><i class="icon-user"></i> <span>Profil</span></a>
                                         </li>
                                         <li>
                                             <a href="javascript:void()">

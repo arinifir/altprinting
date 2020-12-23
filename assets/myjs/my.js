@@ -82,9 +82,15 @@ $(document).on('click', '#myImg', function () {
 $(document).on('click', '#btn_harga', function(){
     let min = $('#lower-value').html();
     let max = $('#upper-value').html();
-    var url = window.location.href+'?filter';
-    var url1 = `&min=${min}&max=${max}`;
+    var url = window.location.href;
+    var check = url.includes('?filter=true');
+    if(check == true){
+        var url1 = `&min=${min}&max=${max}`;
+    } else {
+        var url1 = `?filter=true&min=${min}&max=${max}`;
+    }
     var url2 = url.concat(url1);
-    console.log(url2);
+    console.log(url,url1);
+    
     // window.location.href = url
 })
