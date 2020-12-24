@@ -22,7 +22,7 @@
                         <ul class="list">
                             <li><a href="#">Beranda</a></li>
                             <li><a href="#">Produk</a></li>
-                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Konfirmasi Pembayaran</a></li>
                             <li><a href="#">Panduan</a></li>
                             <li><a href="#">Kontak</a></li>
                         </ul>
