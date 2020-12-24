@@ -362,6 +362,7 @@ class Primslib
             }
         }
     }
+    
     function upload_image_paket($file, $name, $format, $size)
     {
         $ci = &get_instance();

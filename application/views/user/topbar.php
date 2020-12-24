@@ -27,11 +27,9 @@
                     </ul>
 
                     <ul class="nav-shop">
+                        <li class="nav-item"><a type="button" href="<?= base_url('pelanggan/Keranjang') ?>"><i class="mdi mdi-cart-outline fa-lg"></i><span class="nav-shop__circle">3</span></a></li>
                         <li class="nav-item"><button><i class="mdi mdi-magnify fa-lg"></i></button></li>
-                        <li class="nav-item">
-                            <button><i class="mdi mdi-cart-outline fa-lg"></i></button> </li>
-                        <li class="nav-item"><a type="button" href="<?= base_url('pelanggan/Keranjang') ?>"><i class="ti-shopping-cart"></i><span class="nav-shop__circle">3</span></a></li>
-                        <!-- <span class="nav-shop__circle">3</span> -->
+                        <li class="nav-item"><a type="button" href="<?= base_url('pelanggan/Profil')?>"><i class="mdi mdi-account fa-lg"></i></a></li>
                         <li class="nav-item"><a class="button button-header" href="<?= base_url('Auth') ?>">Masuk</a></li>
                     </ul>
                 </div>

@@ -21,6 +21,9 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,600" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
 
+    <!-- Google Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <!-- Icons by MDI -->
     <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
     <!-- <script src="<?= base_url('assets/user/myjs/') ?>quantity.js"></script> -->

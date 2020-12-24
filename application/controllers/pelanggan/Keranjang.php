@@ -9,7 +9,7 @@ class Keranjang extends CI_Controller
         parent::__construct();
         $this->load->model('M_produk','produk');
         $this->load->model("M_pelanggan");
-        //load model admin
+        //load model pelanggan
         $this->load->helper('auth_helper');
         $this->load->library('user_agent');
         $this->load->library('primslib');

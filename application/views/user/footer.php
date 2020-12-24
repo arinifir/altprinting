@@ -57,8 +57,8 @@
                                 Nomer Telepon
                             </p>
                             <p>
-                                (+62) 82233123326 (Admin 1)<br>
-                                (+62) 82257845010 (Admin 2)
+                                (+62)822 3312 3326 Admin 1<br>
+                                (+62)822 5784 5010 Admin 2
                             </p>
 
                             <p class="sm-head">

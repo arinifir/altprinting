@@ -22,11 +22,6 @@
                 </a>
             </li>
             <li>
-                <a href="<?= base_url('admin/Paket/datapaket') ?>" aria-expanded="false">
-                    <i class="mdi mdi-package"></i><span class="nav-text pl-2">Paket</span>
-                </a>
-            </li>
-            <li>
                 <a href="<?= base_url('admin/Kategori/datakategori') ?>" aria-expanded="false">
                     <i class="mdi mdi-shape"></i><span class="nav-text pl-2">Kategori</span>
                 </a>

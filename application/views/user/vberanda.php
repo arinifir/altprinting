@@ -6,7 +6,7 @@
             <div class="row no-gutters align-items-center pt-60px">
                 <div class="col-5 d-none d-sm-block">
                     <div class="hero-banner__img">
-                        <img class="img-fluid" src="<?= base_url('assets/user/') ?>img/home/hero-banner.png" alt="">
+                        <img class="img-fluid" src="<?= base_url('assets/user/') ?>img/home/1.jpg" alt="">
                     </div>
                 </div>
                 <div class="col-sm-7 col-lg-6 offset-lg-1 pl-4 pl-md-5 pl-lg-0">
@@ -26,24 +26,24 @@
     <section class="section-margin mt-0">
         <div class="owl-carousel owl-theme hero-carousel">
             <div class="hero-carousel__slide">
-                <img src="<?= base_url('assets/user/') ?>img/home/hero-slide1.png" alt="" class="img-fluid">
+                <img src="<?= base_url('assets/user/') ?>img/alt/1.jpg" alt="" class="img-fluid">
                 <a href="#" class="hero-carousel__slideOverlay">
-                    <h3>Wireless Headphone</h3>
-                    <p>Polaroid</p>
+                    <!-- <h3>Wireless Headphone</h3> -->
+                    <h3>Foto Polaroid</h3>
                 </a>
             </div>
             <div class="hero-carousel__slide">
-                <img src="<?= base_url('assets/user/') ?>img/home/hero-slide2.png" alt="" class="img-fluid">
+                <img src="<?= base_url('assets/user/') ?>img/alt/2.jpg" alt="" class="img-fluid">
                 <a href="#" class="hero-carousel__slideOverlay">
-                    <h3>Wireless Headphone</h3>
-                    <p>Polaroid</p>
+                    <!-- <h3>Wireless Headphone</h3> -->
+                    <h3>Foto Polaroid</h3>
                 </a>
             </div>
             <div class="hero-carousel__slide">
-                <img src="<?= base_url('assets/user/') ?>img/home/hero-slide3.png" alt="" class="img-fluid">
+                <img src="<?= base_url('assets/user/') ?>img/alt/3.jpg" alt="" class="img-fluid">
                 <a href="#" class="hero-carousel__slideOverlay">
-                    <h3>Wireless Headphone</h3>
-                    <p>Polaroid</p>
+                    <!-- <h3>Wireless Headphone</h3> -->
+                    <h3>Figura Desain</h3>
                 </a>
             </div>
         </div>
@@ -68,7 +68,7 @@
                         <h3 style="color: #F4FAFF">Up To 50% Off</h3>
                         <h4 style="color: #F4FAFF">Winter Sale</h4>
                         <p style="color: #F4FAFF">Him she'd let them sixth saw light</p>
-                        <a class="button button--active mt-3 mt-xl-4" href="#">Shop Now</a>
+                        <a class="buttonforsale button--active mt-3 mt-xl-4" href="#">Shop Now</a>
                     </div>
                 </div>
             </div>
