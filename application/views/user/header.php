@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/user/') ?>vendors/owl-carousel/owl.theme.default.min.css">
     <link rel="stylesheet" href="<?= base_url('assets/user/') ?>vendors/owl-carousel/owl.carousel.min.css">
     <link rel="stylesheet" href="<?= base_url('assets/user/') ?>css/style.css">
+    <link rel="stylesheet" href="<?= base_url('assets/') ?>mycss/my.css">
     <link rel="stylesheet" href="<?= base_url('assets/user/') ?>vendors/nouislider/nouislider.min.css">
 
 

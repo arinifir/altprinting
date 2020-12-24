@@ -156,6 +156,35 @@ if ($this->session->flashdata('verified')) :
         })
     </script>
 <?php endif ?>
+<?php
+if ($this->session->flashdata('gagal')) :
+?>
+    <script>
+        $(document).ready(function() {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Oops..',
+                confirmButtonColor: '#A80201',
+                text: '<?= $this->session->flashdata('gagal'); ?>',
+            })
+        })
+    </script>
+<?php endif ?>
+
+<?php
+if ($this->session->flashdata('berhasil')) :
+?>
+    <script>
+        $(document).ready(function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Hore..',
+                confirmButtonColor: '#A80201',
+                text: '<?= $this->session->flashdata('berhasil'); ?>',
+            })
+        })
+    </script>
+<?php endif ?>
 </body>
 
 </html>
