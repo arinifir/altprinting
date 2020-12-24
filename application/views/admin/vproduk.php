@@ -255,7 +255,7 @@
                                                 </div>
                                             </td>
                                             <td>
-                                                <a href="<?= base_url('admin/Produk/lihatpaket/' . $pr->kd_produk); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-secondary text-white" data-original-title="Lihat Paket">Paket
+                                                <a href="<?= base_url('admin/Paket/lihatpaket/' . $pr->kd_produk); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-secondary text-white" data-original-title="Lihat Paket">Paket
                                                 </a>
                                             </td>
                                             <td><?= $no++; ?></td>

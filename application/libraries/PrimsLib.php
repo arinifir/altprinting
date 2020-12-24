@@ -362,4 +362,31 @@ class Primslib
             }
         }
     }
+    function upload_image_paket($file, $name, $format, $size)
+    {
+        $ci = &get_instance();
+        if ($name != '') {
+            $config['upload_path'] = './assets/images/paket/';
+            $config['allowed_types'] = $format;
+            $config['max_size'] = $size;
+            // $config['max_width']  = '2048';
+            // $config['max_height']  = '2048';
+            // $config['encrypt_name'] = TRUE;
+
+            $ci->load->library('upload', $config);
+
+            if (!$ci->upload->do_upload($file)) {
+                $error = array(
+                    'error' => $ci->upload->display_errors(),
+                    'paket' => $ci->m_data_paket->getAll('paket')->result(),
+                    'custom' => $ci->lang->line('Pengunggahan file' . $file . 'Gagal!')
+                );
+                var_dump($error);
+                die;
+                exit;
+            } else {
+                return $file = $ci->upload->data('file_name');
+            }
+        }
+    }
 }

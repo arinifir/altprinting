@@ -435,46 +435,6 @@ class Sadmin extends CI_Controller
         $this->load->view('sadmin/vpaket', $data);
         $this->load->view('sadmin/footer');
     }
-    public function addpaket()
-    {
-        $this->form_validation->set_rules('namapaket', 'Nama Paket', 'required|trim');
-        $this->form_validation->set_rules('harga', 'Harga', 'required|trim');
-        $this->form_validation->set_rules('isi', 'Isi', 'required');
-        $this->form_validation->set_message('required', 'Please Enter Data!');
-
-        if ($this->form_validation->run() == FALSE) {
-            $this->session->set_flashdata('gagal', 'Data tidak sesuai atau data kosong!');
-            redirect('Sadmin/lihatpaket');
-        } else {
-            $produk = $this->input->post("kodeproduk", TRUE);
-            $cekkode = $this->admin->cekodepaket();
-            // contoh JRD0004, angka 3 adalah awal pengambilan angka, dan 4 jumlah angka yang diambil
-            $nourut = substr($cekkode, 4, 4);
-            $nourut++;
-            $char = substr($produk, 4, 4);
-            $kode = $char . sprintf("%04s", $nourut);
-            $nama = $this->input->post("namapaket", TRUE);
-            $harga = $this->input->post("harga", TRUE);
-            $isi = $this->input->post("isi", TRUE);
-            $gambar = $_FILES['gambar_paket']['name'];
-            $format = 'jpg|png|jpeg';
-            $this->primslib->upload_image('gambar_paket', $gambar, $format, 10000);
-
-            $status = 1;
-            $data = [
-                'kd_paket' => $kode,
-                'kd_produk' => $produk,
-                'nama_paket' => $nama,
-                'harga_paket' => $harga,
-                'isi_paket' => $isi,
-                'gambar_paket' => $gambar,
-                'status_paket' => $status
-            ];
-            $this->admin->addData('tb_paket', $data);
-            $this->session->set_flashdata('berhasil', 'Berhasil menambahkan data');
-            redirect('Sadmin/lihatpaket/'.$produk);
-        }
-    }
 
     public function addpaket()
     {

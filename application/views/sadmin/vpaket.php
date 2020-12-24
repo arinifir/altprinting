@@ -69,6 +69,57 @@
                                 </div>
                             </div>
                         </div>
+
+                        <?php foreach ($paket as $p) { ?>
+                            <div class="modal fade" id="editModal<?= $p->kd_paket; ?>">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Ubah Data <?= $p->kd_paket; ?></h5>
+                                            <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                                            </button>
+                                        </div>
+                                        <form class="form-valide" action="<?= base_url('sadmin/editpaket') ?>" method="post" enctype="multipart/form-data">
+                                            <div class="modal-body">
+                                                <input type="text" value="<?= $p->kd_paket; ?>" class="form-control" id="" name="kode" hidden>
+                                                <input type="text" value="<?= $p->kd_produk; ?>" class="form-control" id="" name="kodeproduk" hidden>
+                                                <div class="form-group">
+                                                    <label class="col-lg-4 col-form-label" for="">Nama Paket <span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" id="" value="<?= $p->nama_paket; ?>" name="namapaket" placeholder="Masukkan nama paket">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-4 col-form-label" for="">Harga <span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" id="" value="<?= $p->harga_paket; ?>" name="harga" placeholder="Masukkan harga paket">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-4 col-form-label" for="">Isi <span class="text-danger">*</span></label>
+                                                    <div class="col-lg-12">
+                                                        <textarea type="text" class="form-control" id="isi" name="isi" rows="3"><?= $p->isi_paket; ?></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-4 col-form-label" for="">Gambar <span class="text-danger">*</span></label>
+                                                    <div class="col-lg-12">
+                                                        <input type="file" name="gambar_paket" class="form-control-file" id="gambar" value="<?= $p->gambar_paket; ?>">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
+                                                <button type="submit" class="btn btn-primary">Ubah</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } ?>
+
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered zero-configuration">
                                 <thead>
