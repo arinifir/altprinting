@@ -5,9 +5,9 @@
             <div class="col-lg-6">
                 <div class="login_box_img">
                     <div class="hover">
-                        <h4>Already have an account?</h4>
-                        <p>There are advances being made in science and technology everyday, and a good example of this is the</p>
-                        <a class="button button-account" href="<?= base_url('Auth'); ?>">Login Now</a>
+                        <h4>Sudah Punya Akun?</h4>
+                        <p>Silahkan Login dengan akun anda. Tekan Tombol di bawah ini untuk masuk ke halaman Login</p>
+                        <a class="button button-account" href="<?= base_url('Auth'); ?>">Login Sekarang</a>
                     </div>
                 </div>
             </div>
