@@ -40,7 +40,7 @@
                     <ul class="nav-shop">
                         <!-- <li class="nav-item"><button><i class="mdi mdi-magnify fa-lg"></i></button></li> -->
                         <li class="nav-item">
-                            <a class="keranjang" href="<?= base_url('pelanggan/Keranjang') ?>"><i class="ti-shopping-cart"></i><span class="nav-shop__circle">3</span></a>
+                            <a class="keranjang" href="<?= base_url('pelanggan/Keranjang') ?>"><i class="ti-shopping-cart"></i><span class="nav-shop__circle"><?= $this->cart->total_items(); ?></span></a>
                         </li>
                         <?php if (!$this->session->userdata('id_user')) { ?>
                             <li class="nav-item"><a class="button button-header" href="<?= base_url('Auth') ?>">Masuk</a></li>
