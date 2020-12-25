@@ -30,12 +30,12 @@ class Konfirmasi extends CI_Controller
         $this->form_validation->set_rules('email', 'Email', 'required|trim');
         $nomor = $this->input->post('nomor',true);
         $email = $this->input->post('email',true);
-        $status = 1;
+        // $status = 1;
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata('failed', '<div class="alert alert-danger" role="alert">Silahkan isi Nomor Pesanan dan Email yang valid!</div>');
             redirect('pelanggan/Konfirmasi');
         }
-        $cekdata = $this->transaksi->cekTrans($nomor,$email, $status);
+        $cekdata = $this->transaksi->cekTrans($nomor,$email);
         if($cekdata == 0){
             $this->session->set_flashdata('failed', '<div class="alert alert-danger" role="alert">Tidak ada data pesanan yang sesuai!</div>');
             redirect('pelanggan/Konfirmasi');
@@ -46,6 +46,15 @@ class Konfirmasi extends CI_Controller
     public function upload($no)
     {
         $data['nomor'] = $no;
+        $data['order'] = $this->transaksi->orderbyid($no);
+        $cek = $data['order']->status_transaksi;
+        if($cek==0 || $cek==5){
+            $this->session->set_flashdata('gagal','Pesanan Anda telah selesai atau dibatalkan');
+            redirect($this->agent->referrer());
+        }else if($cek >= 2){
+            $this->session->set_flashdata('gagal','Anda sudah melakukan pembayaran. Silahkan cek email Anda.');
+            redirect($this->agent->referrer());
+        }
         $data['judul'] = "ALT Printing - Konfirmasi Pembayaran";
         $this->load->view('user/header',$data);
         $this->load->view('user/topbar');
@@ -70,6 +79,6 @@ class Konfirmasi extends CI_Controller
         $where = ['no_transaksi' => $nomor];
         $this->admin->editData('tb_transaksi', $data, $where);
         $this->session->set_flashdata('berhasil', 'Berhasil Upload Bukti Pembayaran');
-        redirect('User');
+        redirect('pelanggan/Order/notapesanan/'.$nomor);
     }
 }

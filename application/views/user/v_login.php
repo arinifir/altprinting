@@ -28,7 +28,7 @@
                         </div>
                         &nbsp;
                         <div class="col-md-12 form-group">
-                            <button class="button button-login w-100">Masuk</button>
+                            <button class="button button-login w-100 btnlogin">Masuk</button>
                             <a href="<?= base_url('Auth/lupapassword') ?>">Lupa Password?</a>
                         </div>
                     </div>
