@@ -30,7 +30,7 @@
                         </div>
                         <div class="col-md-12 form-group">
                             <input type="password" id="password" name="password" class="form-control" placeholder="Password">
-                            <div class="show-password"><i class="ti-eye mx-2"></i>
+                            <div class="show-password"><i class="mdi mdi-eye mx-2"></i>
                             </div>
                             <?= form_error('password', '<small class="text-danger">', '</small>'); ?>
                         </div>

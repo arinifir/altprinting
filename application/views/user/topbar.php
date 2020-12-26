@@ -1,4 +1,3 @@
-<!--================ Start Header Menu Area =================-->
 <header class="header_area">
     <div class="main_menu">
         <nav class="navbar navbar-expand-lg navbar-light">
@@ -24,17 +23,29 @@
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Panduan</a>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="<?= base_url('assets/user/') ?>page/contact.html">Kontak</a></li>
+                        <li class="nav-item submenu dropdown">
+                            <?php if ($this->session->userdata('nama')) : ?>
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hai, <strong><?= $this->session->userdata("nama") ?></strong></a>
+                            <?php endif ;?>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a class="nav-link" href="<?= base_url('pelanggan/Profil') ?>">Profil Saya</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Alamat Saya</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Pesanan Saya</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Riwayat Pesanan</a></li>
+                            </ul>
+                        </li>
                     </ul>
 
                     <ul class="nav-shop">
                         <li class="nav-item"><a type="button" href="<?= base_url('pelanggan/Keranjang') ?>"><i class="mdi mdi-cart-outline fa-lg"></i><span class="nav-shop__circle">3</span></a></li>
-                        <li class="nav-item"><button><i class="mdi mdi-magnify fa-lg"></i></button></li>
-                        <li class="nav-item"><a type="button" href="<?= base_url('pelanggan/Profil')?>"><i class="mdi mdi-account fa-lg"></i></a></li>
-                        <li class="nav-item"><a class="button button-header" href="<?= base_url('Auth') ?>">Masuk</a></li>
+                        <?php if ($this->session->userdata('id_user')) : ?>
+                            <li class="nav-item"><a class="button button-header" href="javascript:void(0)" onclick="logout()" id="btnkeluar">Keluar</a></li>
+                        <?php else : ?>
+                            <li class="nav-item"><a class="button button-header" href="<?= base_url('Auth') ?>">Masuk</a></li>
+                        <?php endif ; ?>
                     </ul>
                 </div>
             </div>
         </nav>
     </div>
 </header>
-<!--================ End Header Menu Area =================-->
