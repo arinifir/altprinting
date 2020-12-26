@@ -1,4 +1,3 @@
-<!--================ Start Header Menu Area =================-->
 <header class="header_area">
     <div class="main_menu">
         <nav class="navbar navbar-expand-lg navbar-light">
@@ -30,8 +29,8 @@
                                 <ul class="dropdown-menu">
                                     <li class="nav-item"><a class="nav-link" href="<?= base_url('pelanggan/Profil/') ?>">Profil Saya</a></li>
                                     <li class="nav-item"><a class="nav-link" href="<?= base_url('assets/user/') ?>page/single-product.html">Alamat Saya</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="<?= base_url('assets/user/') ?>page/single-product.html">Pesanan Saya</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="<?= base_url('assets/user/') ?>page/single-product.html">Riwayat Pesanan</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="<?= base_url('pelanggan/Profil/pesanansaya') ?>">Pesanan Saya</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="<?= base_url('pelanggan/Profil/riwayatpesanan') ?>">Riwayat Pesanan</a></li>
                                     <li class="nav-item"><a class="nav-link" href="<?= base_url('Auth/logout') ?>">Keluar</a></li>
                                 </ul>
                             </li>
@@ -40,7 +39,7 @@
                     <ul class="nav-shop">
                         <!-- <li class="nav-item"><button><i class="mdi mdi-magnify fa-lg"></i></button></li> -->
                         <li class="nav-item">
-                            <a class="keranjang" href="<?= base_url('pelanggan/Keranjang') ?>"><i class="ti-shopping-cart"></i><span class="nav-shop__circle">3</span></a>
+                            <a class="keranjang" href="<?= base_url('pelanggan/Keranjang') ?>"><i class="ti-shopping-cart"></i><span class="nav-shop__circle"><?= $this->cart->total_items(); ?></span></a>
                         </li>
                         <?php if (!$this->session->userdata('id_user')) { ?>
                             <li class="nav-item"><a class="button button-header" href="<?= base_url('Auth') ?>">Masuk</a></li>
@@ -51,4 +50,3 @@
         </nav>
     </div>
 </header>
-<!--================ End Header Menu Area =================-->

@@ -115,6 +115,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
 <script src="<?= base_url('assets/myjs/') ?>my.js"></script>
+<script src="<?= base_url('assets/myjs/') ?>paket.js"></script>
 <script>
     // Show Password
     function showPassword(button) {

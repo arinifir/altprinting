@@ -110,7 +110,7 @@
                                             </a>
                                         </li>
                                         <hr class="my-2">
-                                        <li><a href="<?= base_url('Auth/logout') ?>"><i class="icon-key"></i> <span>Logout</span></a></li>
+                                        <li><a href="javascript:void(0)" onclick="logout()"><i class="icon-key"></i> <span>Logout</span></a></li>
                                     </ul>
                                 </div>
                             </div>

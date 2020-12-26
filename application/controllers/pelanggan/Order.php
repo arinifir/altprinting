@@ -27,11 +27,6 @@ class Order extends CI_Controller
     public function notapesanan($no)
     {
         $data['order'] = $this->transaksi->orderbyid($no);
-        $cek = $data['order']->status_transaksi;
-        if($cek >= 2){
-            $this->session->set_flashdata('gagal','Anda sudah melakukan pembayaran. Silahkan cek email Anda.');
-            redirect('User');
-        }
         $data['detail'] = $this->transaksi->detailbyid($no);
         $data['judul'] = "ALT Printing - Nota Pesanan";
         $this->load->view('user/header', $data);

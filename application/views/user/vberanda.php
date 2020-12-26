@@ -50,12 +50,6 @@
     </section>
     <!--================ Hero Carousel end =================-->
 
-<<<<<<< Updated upstream
-    <!-- ================ trending product section start ================= -->
-
-    </section>
-=======
->>>>>>> Stashed changes
     <!-- ================ trending product section end ================= -->
 
 

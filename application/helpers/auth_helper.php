@@ -6,6 +6,7 @@ function admin_logged_in()
         redirect('Auth');
     }
 }
+
 function sadmin_logged_in()
 {
     $ci = get_instance();
@@ -13,6 +14,7 @@ function sadmin_logged_in()
         redirect('Auth');
     }
 }
+
 function is_logged_in()
 {
     $ci = get_instance();

@@ -5,7 +5,7 @@
             <div class="col-lg-6">
                 <div class="login_box_img">
                     <div class="hover">
-                        <h4>Belum punya akun?</h4>
+                        <h4>Belum Punya Akun?</h4>
                         <p>Dapatkan berbagai keuntungan dengan mendaftar akun di ALT Jember</p>
                         <a class="button button-account" href="<?= base_url('Auth/register') ?>">Daftar</a>
                     </div>
@@ -13,9 +13,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="login_form_inner justify-content-center">
-                    <a href="<?= base_url('Auth') ?>">
-                        <h3 class="mb-5">Selamat datang di ALT Jember</h3>
-                    </a>
+                    <h3 class="mb-5">Selamat datang di ALT Jember</h3>
                     <div id="login_error" class="col-md-8 login_form mb-4" role="alert">
                     </div>
                     <div class="row login_form" id="contactForm">
@@ -24,7 +22,7 @@
                         </div>
                         <div class="col-md-12 form-group">
                             <input type="password" class="form-control password" id="password" name="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
-                            <div class="show-password"><i class="ti-eye mx-2"></i></div>
+                            <div class="show-password"><i class="mdi mdi-eye mx-2"></i></div>
                         </div>
                         &nbsp;
                         <div class="col-md-12 form-group">

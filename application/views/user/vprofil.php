@@ -13,34 +13,37 @@
             <div class="billing_details">
                 <div class="row">
                     <div class="col-lg-8">
-                        <form class="row contact_form" action="<?= base_url('pelanggan/Profil')?>">
+                        <form class="row contact_form ml-4" action="<?= base_url('pelanggan/Profil/editprofil'); ?>" method="post">
                             <div class="col-md-12 form-group">
-                                <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama">
+                                <input type="text" value="<?= $pelanggan->id_user; ?>" class="form-control" name="kode" hidden>
+                                <input type="text" class="form-control" name="nama" placeholder="Nama" value="<?= $pelanggan->nama_lengkap ?>">
                             </div>
                             <div class="col-md-12 form-group">
-                                <input type="text" class="form-control" id="nomerhp" name="nomerhp" placeholder="Nomer HP">
+                                <input type="text" class="form-control" name="nomer" placeholder="Nomer HP" value="<?= $pelanggan->no_hp ?>">
                             </div>
                             <div class="col-md-12 form-group">
-                                <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+                                <input type="text" class="form-control" name="email" placeholder="Email" value="<?= $pelanggan->email ?>">
                             </div>
-                            <div class="col-md-12 form-group">
-                                <input type="text" class="form-control" id="password" name="password" placeholder="Password">
+                            <div class="col-lg-4 text-center mr-4 ml-auto p-2 bd-highlight">
+                                <button class="button button-paypal" type="submit">Simpan</button>
                             </div>
                         </form>
                     </div>
                     <!--================ End form area =================-->
+                    <!-- Start Button Area -->
                     <div class="col-lg-4">
                         <div class="order_box">
                             <br>
                             <div class="payment_item active text-center">
-                                <h3>Mau ganti profil? Klik tombol dibawah ya</h3>
+                                <h3>Mau ganti password? Klik tombol dibawah ya</h3>
                             </div>
                             <br>
-                            <div class="text-center">
-                                <a class="button button-paypal" href="#">Edit Profil</a>
+                            <div class="text-center mx-4">
+                                <a class="button button-paypal" href="<?= base_url('pelanggan/Profil/resetpassword') ?>">Reset Password</a>
                             </div>
                         </div>
                     </div>
+                    <!-- End Button Area -->
                 </div>
             </div>
         </div>

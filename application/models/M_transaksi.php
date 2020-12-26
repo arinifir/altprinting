@@ -3,9 +3,9 @@
 class M_transaksi extends CI_Model
 {
     //untuk menampilkan seluruh data pasa tabel admin
-    public function cekTrans($no,$email,$status)
+    public function cekTrans($no,$email)
     {
-        return $this->db->get_where('tb_transaksi', ['no_transaksi' => $no, 'email_pembeli' => $email, 'status_transaksi' => $status])->num_rows();
+        return $this->db->get_where('tb_transaksi', ['no_transaksi' => $no, 'email_pembeli' => $email])->num_rows();
     }
     public function orderbyid($no)
     {
@@ -14,6 +14,20 @@ class M_transaksi extends CI_Model
     public function detailbyid($no)
     {
         return $this->db->get_where('tb_dtrans', ['no_transaksi' => $no])->result();
+    }
+    public function getOrderUser($id)
+    {
+        $this->db->where('user',$id);
+        $this->db->where('status_transaksi != 0');
+        $this->db->where('status_transaksi != 5');
+        return $this->db->get('tb_transaksi')->result();
+    }
+    public function getOrderDone($id)
+    {
+        $this->db->where('user',$id);
+        $this->db->where('status_transaksi', 0);
+        $this->db->or_where('status_transaksi', 5);
+        return $this->db->get('tb_transaksi')->result();
     }
 }
 ?>

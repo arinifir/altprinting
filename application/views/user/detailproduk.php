@@ -16,9 +16,12 @@
                 </div>
             </div>
             <div class="col-lg-5 offset-lg-1">
-                <div class="s_product_text">
-                    <h3><?= $produk->nama_produk; ?></h3>
-                    <h2>Rp <?= $produk->harga_produk; ?></h2>
+                <div class="s_product_text mt-1">
+                    <div id="alert_paket">
+                        
+                    </div>
+                    <h3 id="nama_produk"><?= $produk->nama_produk; ?></h3>
+                    <h2 id="harga_produk">Rp <?= $produk->harga_produk; ?></h2>
                     <ul class="list">
                         <li><span>Kategori</span> : <?= $produk->kategori; ?></a></li>
                         <li><span>Stok</span> :
@@ -26,11 +29,10 @@
                         <li><span>Paket</span> : </a></li>
                     </ul>
                     <div class="row card_area d-flex align-items-center mx-1">
-                        <a class="icon_btn mt-1">Custom</a>
                         <?php
                         $i = 1;
                         foreach ($paket as $p) { ?>
-                            <a class="icon_btn mt-1 <?= $i == 1 ? 'active' : ''; ?>"><?= $p->nama_paket, ' ', $p->isi_paket; ?></a>
+                            <a class="icon_btn card_paket mt-1" data-kode="<?= $p->kd_paket; ?>"><?= $p->nama_paket, ' ', $p->isi_paket; ?></a>
                         <?php
                             $i++;
                         } ?>
@@ -39,15 +41,18 @@
                         <label for="qty">Jumlah :</label>
                         <div class="quantity buttons_added">
                             <!-- <input type="button" value="-" class="minus"> -->
-                            <input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
-                            <!-- <input type="button" value="+" class="plus"> -->
+                            <form action="" method="post">
+                                <input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
                         </div>
-                        <!-- <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;" class="increase items-count" type="button"><i class="ti-angle-left"></i></button>
-                        <input type="text" name="qty" id="sst" size="2" maxlength="12" value="1" title="Quantity:" class="input-text qty">
-                        <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;" class="reduced items-count" type="button"><i class="ti-angle-right"></i></button> -->
                     </div>
                     <div>
-                        <a class="button primary-btn" href="#">Tambah ke Keranjang</a>
+                        <input type="hidden" name="kode_produk" id="input_kodeproduk" value="<?= $produk->kd_produk; ?>">
+                        <input type="hidden" name="kode_paket" id="input_kodepaket" value="">
+                        <input type="hidden" name="nama_produk" id="input_namaproduk" value="<?= $produk->nama_produk; ?>">
+                        <input type="hidden" name="harga" id="input_harga" value="<?= $produk->harga_produk; ?>">
+
+                        <button type="button" id="tambah_keranjang" class="button primary-btn">Tambah ke Keranjang</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -142,7 +147,7 @@
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
+        $                                <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                     </div>
                                 </div>

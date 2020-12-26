@@ -736,7 +736,7 @@ class Sadmin extends CI_Controller
     }
     public function tidakvalid()
     {
-        $status = 6;
+        $status = 0;
         $data['transaksi'] = $this->admin->transtatus($status);
         $this->load->view('sadmin/header');
         $this->load->view('sadmin/topbar');

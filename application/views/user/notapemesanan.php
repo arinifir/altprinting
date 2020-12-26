@@ -32,6 +32,25 @@
 							<td>: <?= $order->jenis_pembayaran == 1 ? 'Transfer Bank' : 'Cash On Delivery' ?>
 							</td>
 						</tr>
+						<tr>
+							<td>Status Pesanan</td>
+							<td>: 
+								<?php if($order->status_transaksi == 0) { 
+									echo '<span class="text-danger">Pesanan Dibatalkan</span>';
+								}else if($order->status_transaksi == 1) {
+									echo '<span class="text-danger">Menunggu Pembayaran</span>';
+								}else if($order->status_transaksi == 2) {
+									echo '<span class="text-danger">Konfirmasi Pembayaran</span>';
+								}else if($order->status_transaksi == 3) {
+									echo '<span class="text-danger">Dikemas</span>';
+								}else if($order->status_transaksi == 4) {
+									echo '<span class="text-danger">Sedang Dikirim <br/>(No resi : '.$order->no_resi.') </span>';
+								}else{
+									echo '<span class="text-success">Selesai</span>';
+								}	
+								?>
+							</td>
+						</tr>
 					</table>
 				</div>
 			</div>

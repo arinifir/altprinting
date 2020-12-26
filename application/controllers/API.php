@@ -10,7 +10,9 @@ class API extends CI_Controller
         //load model admin
         $this->load->model('m_api', 'api');
         $this->load->model('m_admin', 'admin');
+        $this->load->model('m_produk', 'produk');
     }
+
     public function login()
     {
         //cek user ada atau tidak
@@ -85,5 +87,27 @@ class API extends CI_Controller
             ];
             echo json_encode($output);
         }
+    }
+
+    public function getPaketById($id_paket)
+    {
+            $paket = $this->produk->getPaketById($id_paket);
+            $data = [
+                'status' => 'success',
+                'data' => $paket
+            ];
+
+            echo json_encode($data);
+    }
+
+    public function checkProduk($id_produk)
+    {
+        $paket = $this->produk->getPaketByProduk($id_produk);
+        $data = [
+            'status' => 'success',
+            'data' => $paket
+        ];
+        
+        echo json_encode($data);
     }
 }
