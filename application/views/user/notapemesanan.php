@@ -1,178 +1,215 @@
-	<!-- ================ start banner area ================= -->
-	<section class="blog-banner-area" id="category">
-	    <div class="container h-100">
-	        <div class="blog-banner">
-	            <div class="text-center">
-	                <h1>Order Confirmation</h1>
-	                <nav aria-label="breadcrumb" class="banner-breadcrumb">
-	                    <ol class="breadcrumb">
-	                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-	                        <li class="breadcrumb-item active" aria-current="page">Shop Category</li>
-	                    </ol>
-	                </nav>
-	            </div>
-	        </div>
-	    </div>
-	</section>
-	<!-- ================ end banner area ================= -->
-
-	<!--================Order Details Area =================-->
-	<section class="order_details section-margin--small">
-	    <div class="container">
-	        <p class="text-center billing-alert">Thank you. Your order has been received.</p>
-	        <div class="row mb-5">
-	            <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
-	                <div class="confirmation-card">
-	                    <h3 class="billing-title">Order Info</h3>
-	                    <table class="order-rable">
-	                        <tr>
-	                            <td>Order number</td>
-	                            <td>: 60235</td>
-	                        </tr>
-	                        <tr>
-	                            <td>Date</td>
-	                            <td>: Oct 03, 2017</td>
-	                        </tr>
-	                        <tr>
-	                            <td>Total</td>
-	                            <td>: USD 2210</td>
-	                        </tr>
-	                        <tr>
-	                            <td>Payment method</td>
-	                            <td>: Check payments</td>
-	                        </tr>
-	                    </table>
-	                </div>
-	            </div>
-	            <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
-	                <div class="confirmation-card">
-	                    <h3 class="billing-title">Billing Address</h3>
-	                    <table class="order-rable">
-	                        <tr>
-	                            <td>Street</td>
-	                            <td>: 56/8 panthapath</td>
-	                        </tr>
-	                        <tr>
-	                            <td>City</td>
-	                            <td>: Dhaka</td>
-	                        </tr>
-	                        <tr>
-	                            <td>Country</td>
-	                            <td>: Bangladesh</td>
-	                        </tr>
-	                        <tr>
-	                            <td>Postcode</td>
-	                            <td>: 1205</td>
-	                        </tr>
-	                    </table>
-	                </div>
-	            </div>
-	            <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
-	                <div class="confirmation-card">
-	                    <h3 class="billing-title">Shipping Address</h3>
-	                    <table class="order-rable">
-	                        <tr>
-	                            <td>Street</td>
-	                            <td>: 56/8 panthapath</td>
-	                        </tr>
-	                        <tr>
-	                            <td>City</td>
-	                            <td>: Dhaka</td>
-	                        </tr>
-	                        <tr>
-	                            <td>Country</td>
-	                            <td>: Bangladesh</td>
-	                        </tr>
-	                        <tr>
-	                            <td>Postcode</td>
-	                            <td>: 1205</td>
-	                        </tr>
-	                    </table>
-	                </div>
-	            </div>
-	        </div>
-	        <div class="order_details_table">
-	            <h2>Order Details</h2>
-	            <div class="table-responsive">
-	                <table class="table">
-	                    <thead>
-	                        <tr>
-	                            <th scope="col">Product</th>
-	                            <th scope="col">Quantity</th>
-	                            <th scope="col">Total</th>
-	                        </tr>
-	                    </thead>
-	                    <tbody>
-	                        <tr>
-	                            <td>
-	                                <p>Pixelstore fresh Blackberry</p>
-	                            </td>
-	                            <td>
-	                                <h5>x 02</h5>
-	                            </td>
-	                            <td>
-	                                <p>$720.00</p>
-	                            </td>
-	                        </tr>
-	                        <tr>
-	                            <td>
-	                                <p>Pixelstore fresh Blackberry</p>
-	                            </td>
-	                            <td>
-	                                <h5>x 02</h5>
-	                            </td>
-	                            <td>
-	                                <p>$720.00</p>
-	                            </td>
-	                        </tr>
-	                        <tr>
-	                            <td>
-	                                <p>Pixelstore fresh Blackberry</p>
-	                            </td>
-	                            <td>
-	                                <h5>x 02</h5>
-	                            </td>
-	                            <td>
-	                                <p>$720.00</p>
-	                            </td>
-	                        </tr>
-	                        <tr>
-	                            <td>
-	                                <h4>Subtotal</h4>
-	                            </td>
-	                            <td>
-	                                <h5></h5>
-	                            </td>
-	                            <td>
-	                                <p>$2160.00</p>
-	                            </td>
-	                        </tr>
-	                        <tr>
-	                            <td>
-	                                <h4>Shipping</h4>
-	                            </td>
-	                            <td>
-	                                <h5></h5>
-	                            </td>
-	                            <td>
-	                                <p>Flat rate: $50.00</p>
-	                            </td>
-	                        </tr>
-	                        <tr>
-	                            <td>
-	                                <h4>Total</h4>
-	                            </td>
-	                            <td>
-	                                <h5></h5>
-	                            </td>
-	                            <td>
-	                                <h4>$2210.00</h4>
-	                            </td>
-	                        </tr>
-	                    </tbody>
-	                </table>
-	            </div>
-	        </div>
-	    </div>
-	</section>
-	<!--================End Order Details Area =================-->
+<!--================Order Details Area =================-->
+<section class="order_details section-margin--small">
+	<div class="container">
+		<p class="text-center billing-alert">Thank you. Your order has been received.</p>
+		<div class="row mb-5">
+			<div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
+				<div class="confirmation-card">
+					<h3 class="billing-title">Info Pesanan</h3>
+					<table class="order-rable">
+						<tr>
+							<td>Nomor Pesanan</td>
+							<td>: <?= $order->no_transaksi; ?></td>
+						</tr>
+						<tr>
+							<td>Tanggal</td>
+							<td>:
+								<?php
+								$date = date_create($order->tanggal_transaksi);
+								echo date_format($date, 'd M Y'); ?></td>
+						</tr>
+						<tr>
+							<td>Jam</td>
+							<td>:
+								<?= date_format($date, 'H:i'); ?></td>
+						</tr>
+						<tr>
+							<td>Total</td>
+							<td>: <?= "Rp " . number_format($order->total_bayar, 0, ',', '.'); ?></td>
+						</tr>
+						<tr>
+							<td>Pembayaran Via</td>
+							<td>: <?= $order->jenis_pembayaran == 1 ? 'Transfer Bank' : 'Cash On Delivery' ?>
+							</td>
+						</tr>
+						<tr>
+							<td>Status Pesanan</td>
+							<td>: 
+								<?php if($order->status_transaksi == 0) { 
+									echo '<span class="text-danger">Pesanan Dibatalkan</span>';
+								}else if($order->status_transaksi == 1) {
+									echo '<span class="text-danger">Menunggu Pembayaran</span>';
+								}else if($order->status_transaksi == 2) {
+									echo '<span class="text-danger">Konfirmasi Pembayaran</span>';
+								}else if($order->status_transaksi == 3) {
+									echo '<span class="text-danger">Dikemas</span>';
+								}else if($order->status_transaksi == 4) {
+									echo '<span class="text-danger">Sedang Dikirim <br/>(No resi : '.$order->no_resi.') </span>';
+								}else{
+									echo '<span class="text-success">Selesai</span>';
+								}	
+								?>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
+				<div class="confirmation-card">
+					<h3 class="billing-title">Info Pelanggan</h3>
+					<table class="order-rable">
+						<tr>
+							<td>Nama</td>
+							<td>: <?= $order->nama_pembeli; ?></td>
+						</tr>
+						<tr>
+							<td>Email</td>
+							<td>: <?= $order->email_pembeli; ?></td>
+						</tr>
+						<tr>
+							<td>Nomor Telepon</td>
+							<td>: <?= $order->no_pembeli; ?></td>
+						</tr>
+						<tr>
+							<td>Catatan</td>
+							<td>: <?= $order->desk_transaksi; ?></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
+				<div class="confirmation-card">
+					<h3 class="billing-title">Alamat Pengiriman</h3>
+					<table class="order-rable">
+						<?php if ($order->jenis_pembayaran == 1) { ?>
+							<tr>
+								<td>Alamat</td>
+								<td>: <?= $order->alamat_pembeli; ?></td>
+							</tr>
+							<tr>
+								<td>Kecamatan</td>
+								<td>: <?= $order->kec_pembeli; ?></td>
+							</tr>
+							<tr>
+								<td>Kota/Kabupaten</td>
+								<td>: <?= $order->kab_pembeli; ?></td>
+							</tr>
+							<tr>
+								<td>Provinsi</td>
+								<td>: <?= $order->prov_pembeli; ?></td>
+							</tr>
+							<tr>
+								<td>Kode Pos</td>
+								<td>: <?= $order->kpos_pembeli; ?></td>
+							</tr>
+						<?php } else { ?>
+							<tr>
+								<td>Tempat COD</td>
+								<td>: <?= $order->detail_cod; ?></td>
+							</tr>
+						<?php } ?>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="order_details_table">
+			<h2>Detail Pesanan</h2>
+			<div class="table-responsive">
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">Produk</th>
+							<th scope="col">Harga</th>
+							<th scope="col">Jumlah</th>
+							<th scope="col" style="text-align:right;">Total</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php
+						$subtotal = 0;
+						foreach ($detail as $d) { ?>
+							<tr>
+								<td>
+									<p><?= $d->produk_paket; ?></p>
+								</td>
+								<td>
+									<p><?= "Rp " . number_format($d->harga_produk_paket, 0, ',', '.') ?></p>
+								</td>
+								<td>
+									<h5>x <?= $d->jumlah_produk; ?></h5>
+								</td>
+								<td align="right">
+									<p><?= "Rp " . number_format($d->subtotal, 0, ',', '.'); ?></p>
+								</td>
+							</tr>
+						<?php
+							$subtotal += $d->subtotal;
+						} ?>
+						<tr>
+							<td>
+								<h4>Subtotal</h4>
+							</td>
+							<td>
+								<h5></h5>
+							</td>
+							<td>
+								<h5></h5>
+							</td>
+							<td align="right">
+								<p><?= "Rp " . number_format($subtotal, 0, ',', '.'); ?></p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<h4>Biaya Ongkir</h4>
+							</td>
+							<td>
+								<h5></h5>
+							</td>
+							<td>
+								<h5></h5>
+							</td>
+							<td align="right">
+								<p><?= "Rp " . number_format($order->biaya_ongkir, 0, ',', '.'); ?></p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<h4>Voucher</h4>
+							</td>
+							<td>
+								<h5></h5>
+							</td>
+							<td>
+								<h5></h5>
+							</td>
+							<td align="right">
+								<p class="text-danger"><i><?= "- Rp " . number_format($order->pot_voucher, 0, ',', '.'); ?></i></p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<h4>Total</h4>
+							</td>
+							<td>
+								<h5></h5>
+							</td>
+							<td>
+								<h5></h5>
+							</td>
+							<td align="right">
+								<h4><?= "Rp " . number_format($order->total_bayar, 2, ',', '.'); ?></h4>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>&nbsp;
+		<?php if ($order->jenis_pembayaran == 1) { ?>
+			<div class="col-md-12 form-group">
+				<a type="button" href="<?= base_url('pelanggan/Konfirmasi/upload/'.$order->no_transaksi); ?>" class="button button-tracking float-right">Lanjutkan</a>
+			</div>
+		<?php } ?>
+	</div>
+</section>
+<!--================End Order Details Area =================-->

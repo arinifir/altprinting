@@ -79,35 +79,65 @@ $(document).on("click", "#myImg", function () {
 	});
 });
 
-$(document).on("click", "#btn_harga", function () {
-	let min = $("#lower-value").html();
-	let max = $("#upper-value").html();
-	var url = window.location.href;
-	var check = url.includes("?filter=true");
-	if (check == true) {
-		var url1 = `&min=${min}&max=${max}`;
-	} else {
-		var url1 = `?filter=true&min=${min}&max=${max}`;
-	}
-	var url2 = url.concat(url1);
-	console.log(url, url1);
+$(document).on('click', '#btn_harga', function(){
+    let min = $('#lower-value').html();
+    let max = $('#upper-value').html();
+    var url = window.location.href;
+    var check = url.includes('?filter=true');
+    if(check == true){
+        var url1 = `&min=${min}&max=${max}`;
+    } else {
+        var url1 = `?filter=true&min=${min}&max=${max}`;
+    }
+    var url2 = url.concat(url1);
+    console.log(url,url1);
+    
+    // window.location.href = url
+})
 
-	// window.location.href = url
-});
-
-function logout() {
-	Swal.fire({
-		title: "Mau keluar?",
-		text: "Apakah Anda yakin?",
-		icon: "warning",
-		showCancelButton: true,
-		confirmButtonColor: "#3085d6",
-		cancelButtonColor: "#d33",
-		confirmButtonText: "Iya",
-		cancelButtonText: "Tidak",
-	}).then((result) => {
-		if (result.isConfirmed) {
-			window.location.href = base_url + "Auth/logout";
-		}
-	});
+function readFile(input) {
+    if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    
+    reader.onload = function (e) {
+    var htmlPreview = 
+    '<img width="200" src="' + e.target.result + '" />'+
+    '<center><p>' + input.files[0].name + '</p></center>';
+    var wrapperZone = $(input).parent();
+    var previewZone = $(input).parent().parent().find('.preview-zone');
+    var boxZone = $(input).parent().parent().find('.preview-zone').find('.kotak').find('.kotak-body');
+    
+    wrapperZone.removeClass('dragover');
+    previewZone.removeClass('hidden');
+    boxZone.empty();
+    boxZone.append(htmlPreview);
+    };
+    
+    reader.readAsDataURL(input.files[0]);
+    }
 }
+function reset(e) {
+    e.wrap('<form>').closest('form').get(0).reset();
+    e.unwrap();
+}
+$(".dropzone").change(function(){
+    readFile(this);
+});
+$('.dropzone-wrapper').on('dragover', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $(this).addClass('dragover');
+});
+$('.dropzone-wrapper').on('dragleave', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $(this).removeClass('dragover');
+});
+$('.remove-preview').on('click', function() {
+    var boxZone = $(this).parents('.preview-zone').find('.kotak-body');
+    var previewZone = $(this).parents('.preview-zone');
+    var dropzone = $(this).parents('.form-group').find('.dropzone');
+    boxZone.empty();
+    previewZone.addClass('hidden');
+    reset(dropzone);
+});

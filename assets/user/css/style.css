@@ -435,8 +435,14 @@ a {
 	background: transparent;
 	position: relative;
 }
+.nav-shop li .keranjang {
+	padding: 0;
+	border: 0;
+	background: transparent;
+	position: relative;
+}
 
-.nav-shop li button .nav-shop__circle {
+.nav-shop li a .nav-shop__circle {
 	font-size: 9px;
 	display: inline-block;
 	background: #A80201;
@@ -3082,21 +3088,21 @@ a {
 }
 
 .tracking_box_area .tracking_box_inner p {
-	max-width: 870px;
+	/* max-width: 870px; */
 	color: #555555;
 	margin-bottom: 25px;
 }
 
-.tracking_box_area .tracking_box_inner .tracking_form {
+/* .tracking_box_area .tracking_box_inner .tracking_form {
 	max-width: 645px;
-}
+} */
 
 .tracking_box_area .tracking_box_inner .tracking_form .form-group {
 	margin-bottom: 1.2rem;
 }
 
 .tracking_box_area .tracking_box_inner .tracking_form .form-group input {
-	height: 40px;
+	height: 3.5rem;
 	border: 1px solid #eee;
 	padding: 0px 15px;
 	outline: none;
@@ -4773,7 +4779,7 @@ a {
 
 @media (min-width: 1000px) {
 	.footer-area {
-		padding: 195px 0px 120px;
+		padding: 170px 0px 100px;
 	}
 }
 

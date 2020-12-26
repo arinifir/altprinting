@@ -22,7 +22,7 @@
                         <ul class="list">
                             <li><a href="#">Beranda</a></li>
                             <li><a href="#">Produk</a></li>
-                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Konfirmasi Pembayaran</a></li>
                             <li><a href="#">Panduan</a></li>
                             <li><a href="#">Kontak</a></li>
                         </ul>
@@ -114,6 +114,7 @@
 <script src="<?= base_url('assets/user/') ?>js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="<?= base_url('assets/myjs/') ?>my.js"></script>
+<script src="<?= base_url('assets/myjs/') ?>paket.js"></script>
 <script>
     // Show Password
     function showPassword(button) {
@@ -156,16 +157,31 @@ if ($this->session->flashdata('verified')) :
         })
     </script>
 <?php endif ?>
+<?php
+if ($this->session->flashdata('gagal')) :
+?>
+    <script>
+        $(document).ready(function() {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Oops..',
+                confirmButtonColor: '#A80201',
+                text: '<?= $this->session->flashdata('gagal'); ?>',
+            })
+        })
+    </script>
+<?php endif ?>
 
 <?php
-if ($this->session->flashdata('simpan')) :
+if ($this->session->flashdata('berhasil')) :
 ?>
     <script>
         $(document).ready(function() {
             Swal.fire({
                 icon: 'success',
-                title: 'Selamat',
-                text: '<?= $this->session->flashdata('simpan'); ?>'
+                title: 'Hore..',
+                confirmButtonColor: '#A80201',
+                text: '<?= $this->session->flashdata('berhasil'); ?>',
             })
         })
     </script>

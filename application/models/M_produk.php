@@ -125,4 +125,14 @@ class M_produk extends CI_Model
         $this->db->where('kd_produk = '.$kode);
         return $this->db->get()->row();
     }
+
+    public function getPaketById($id)
+    {
+        return $this->db->get_where('tb_paket', ['kd_paket' => $id])->row_array();
+    }
+    
+    public function getPaketByProduk($id)
+    {
+        return $this->db->get_where('tb_paket', ['kd_produk' => $id])->num_rows();
+    }
 }

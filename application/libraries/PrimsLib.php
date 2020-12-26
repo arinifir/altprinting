@@ -362,7 +362,29 @@ class Primslib
             }
         }
     }
-    
+    function upload_bukti($file, $name, $format, $size)
+    {
+        $ci = &get_instance();
+        if ($name != '') {
+            $config['upload_path'] = './assets/images/bukti/';
+            $config['allowed_types'] = $format;
+            $config['max_size'] = $size;
+
+            $ci->load->library('upload', $config);
+
+            if (!$ci->upload->do_upload($file)) {
+                $error = array(
+                    'error' => $ci->upload->display_errors(),
+                    'custom' => $ci->lang->line('Pengunggahan file' . $file . 'Gagal!')
+                );
+                var_dump($error);
+                die;
+                exit;
+            } else {
+                return $file = $ci->upload->data('file_name');
+            }
+        }
+    }
     function upload_image_paket($file, $name, $format, $size)
     {
         $ci = &get_instance();
