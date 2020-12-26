@@ -19,6 +19,22 @@ $(document).ready(() => {
     });
 })
 
+$(document).on('change','#input_qty', function () {
+    console.log('ok')
+    var qty = $(this).val();
+    var rowid = $(this).data('rowid');
+    console.log(rowid);
+    $.ajax({
+        method: 'POST',
+        url: base_url + `API/updatecart/${rowid}/${qty}`,
+        dataType: "text",
+        success: function (response) {
+            console.log(response);
+            location.reload();
+        }
+    });
+})
+
 /* ==================================================================================================== */
 
 function adaPaket(){

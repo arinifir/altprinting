@@ -110,4 +110,14 @@ class API extends CI_Controller
         
         echo json_encode($data);
     }
+
+    public function updatecart($rowid, $qty)
+    {
+        $data = [
+            'rowid' => $rowid,
+            'qty' => $qty
+        ];
+        $this->cart->update($data);
+        echo 'sukses diubah';
+    }
 }

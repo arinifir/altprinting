@@ -152,3 +152,41 @@ function filter(kategori){
     window.location.href = base_url+`pelanggan/kategori?filter=true&ktg=${kategori}`;
 }
 
+$(document).ready(function(){
+	$("#cuponslide").hide();
+	$("#transfer").hide();
+	$("#transfercard").hide();
+	$("#cod").hide();
+	$("#codcard").hide();
+})
+
+$(document).on('click', '#slidecupon', function(){
+	var tampil = $(this).attr('class');
+	if (tampil == 'hide') {
+		$("#cuponslide").slideDown();
+		$("#slidecupon").removeClass("hide");
+		$("#slidecupon").addClass("show");
+	} else {
+		$("#cuponslide").slideUp();
+		$("#slidecupon").removeClass("show");
+		$("#slidecupon").addClass("hide");
+	}
+})
+
+$(document).on('change', 'input[name="selector"]', function(){
+	var radio = $(this).data('radio');
+	console.log(radio);
+	if(radio == 'transfer'){
+		$("#transfer").slideDown();
+		$("#transfercard").show();
+		$('#cod').slideUp();
+		$('#codcard').hide();
+		$('#input_bayar').val('1');
+	} else if(radio == 'cod') {
+		$('#cod').slideDown();
+		$('#codcard').show();
+		$("#transfer").slideUp();
+		$("#transfercard").hide();
+		$('#input_bayar').val('2');
+	}
+})
