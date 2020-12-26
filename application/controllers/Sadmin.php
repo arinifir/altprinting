@@ -726,6 +726,14 @@ class Sadmin extends CI_Controller
         $this->load->view('sadmin/vselesai', $data);
         $this->load->view('sadmin/footer');
     }
+    public function dataulasan()
+    {
+        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/topbar');
+        $this->load->view('sadmin/sidebar');
+        $this->load->view('sadmin/vulasan');
+        $this->load->view('sadmin/footer');
+    }
     public function tidakvalid()
     {
         $status = 6;

@@ -28,4 +28,9 @@ class M_pelanggan extends CI_Model
     {
         return $this->db->get($table)->result();
     }
+
+    public function getIds($table, $order)
+    {
+        return $this->db->query("SELECT * FROM $table ORDER BY $order DESC LIMIT 1");
+    }
 }

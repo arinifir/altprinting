@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/user/') ?>css/style.css">
     <link rel="stylesheet" href="<?= base_url('assets/') ?>mycss/my.css">
     <link rel="stylesheet" href="<?= base_url('assets/user/') ?>vendors/nouislider/nouislider.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
 
 
     <!-- Google Font -->

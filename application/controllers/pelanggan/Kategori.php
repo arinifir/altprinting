@@ -20,15 +20,17 @@ class Kategori extends CI_Controller
     public function index()
     {
         $kategori = $this->input->get('ktg');
+        // $harga_min = explode('.',$this->input->get('min'));
+        // $harga_max = explode('.',$this->input->get('max'));
         $harga_min = $this->input->get('min');
         $harga_max = $this->input->get('max');
+        // var_dump($harga_min);die;
         if ($kategori || $harga_min || $harga_max) {
             $data['produk'] = $this->produk->getByFilter($harga_min, $harga_max, $kategori)->result();
         } else {
             $data['produk'] = $this->produk->getAll();
         }
         // var_dump($data['produk']);die;
-        $data['produk'] = $this->M_pelanggan->getAll('tb_produk');
         $data['kategori'] = $this->M_pelanggan->getAll('tb_kategori');
         $data['judul'] = "ALT Printing - Kategori";
         $this->load->view('user/header', $data);
@@ -36,6 +38,7 @@ class Kategori extends CI_Controller
         $this->load->view('user/vkategori');
         $this->load->view('user/footer');
     }
+
     public function detail_produk()
     {
         $kode = "00012782";

@@ -10,7 +10,7 @@
                             <form action="#">
                                 <ul>
                                     <?php foreach ($kategori as $ktg) : ?>
-                                        <li class="filter-list" onclick="filter('<?= $ktg->kd_kategori ?>')"><input class="pixel-radio" type="radio" id="men" name="brand"><label for="men"><?= $ktg->kategori ?><span> (3600)</span></label></li>
+                                        <li class="filter-list " onclick="filter('<?= $ktg->kd_kategori ?>')"><input class="pixel-radio" type="radio" id="men" name="brand" <?= $this->input->get('ktg') == $ktg->kd_kategori ? 'checked="checked"' : '' ?>><label for="men"><?= $ktg->kategori ?><span> (3600)</span></label></li>
                                     <?php endforeach; ?>
                                 </ul>
                             </form>
@@ -67,7 +67,9 @@
                 <section class="lattest-product-area pb-40 category-list">
 
                     <div class="row">
-                        <?php foreach ($produk as $prd) : ?>
+                        <?php 
+                        if ($produk) {
+                        foreach ($produk as $prd) : ?>
                             <div class="col-md-6 col-lg-4">
                                 <div class="card text-center card-product">
                                     <div class="card-product__img">
@@ -79,7 +81,8 @@
                                         </ul>
                                     </div>
                                     <div class="card-body">
-                                        <p><?= $ktg->kategori ?></p>
+                                    <?php $kategori = $this->db->get_where('tb_kategori',['kd_kategori' => $prd->kategori_produk])->row(); ?>
+                                        <p><?= $kategori->kategori ?></p>
                                         <h4 class="card-product__title"><a href="#"><?= $prd->nama_produk ?></a></h4>
                                         <p class="card-product__price">Rp. <?= $prd->harga_produk ?></p>
                                     </div>
@@ -87,6 +90,11 @@
                             </div>
                         <?php
                         endforeach;
+                    } else {
+                        echo '<div class="alert alert-danger col-md-11 mx-auto text-center" role="alert">
+                        HABES
+                        </div>';
+                    }
                         ?>
                     </div>
                 </section>

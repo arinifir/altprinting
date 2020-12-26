@@ -82,16 +82,20 @@ $(document).on('click', '#myImg', function () {
 $(document).on('click', '#btn_harga', function(){
     let min = $('#lower-value').html();
     let max = $('#upper-value').html();
+    console.log(min,max);
     var url = window.location.href;
     var check = url.includes('?filter=true');
-    if(check == true){
+    var check2 = url.includes('?filter=true&min=');
+    if(check == true && check2 == false){
         var url1 = `&min=${min}&max=${max}`;
-    } else {
+    } else if(check2 == true) {
         var url1 = `?filter=true&min=${min}&max=${max}`;
-    }
+        var url = url.split("?",1);
+    } 
     var url2 = url.concat(url1);
     console.log(url,url1);
-    
+    console.log('hasilnya',url2);
+    // window.location.href = url2;
     // window.location.href = url
 })
 
@@ -141,3 +145,9 @@ $('.remove-preview').on('click', function() {
     previewZone.addClass('hidden');
     reset(dropzone);
 });
+
+function filter(kategori){
+    console.log('kepencet')
+    window.location.href = base_url+`pelanggan/kategori?filter=true&ktg=${kategori}`;
+}
+

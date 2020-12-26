@@ -113,6 +113,7 @@
 <script src="<?= base_url('assets/user/') ?>vendors/mail-script.js"></script>
 <script src="<?= base_url('assets/user/') ?>js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
 <script src="<?= base_url('assets/myjs/') ?>my.js"></script>
 <script>
     // Show Password
@@ -129,6 +130,12 @@
         showPassword(this);
     })
 </script>
+<script>
+    $(document).ready(function() {
+        $('#dtuser').DataTable();
+    });
+</script>
+
 <?php
 if ($this->session->flashdata('message')) :
 ?>

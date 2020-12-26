@@ -435,6 +435,7 @@ a {
 	background: transparent;
 	position: relative;
 }
+
 .nav-shop li .keranjang {
 	padding: 0;
 	border: 0;
@@ -1378,6 +1379,80 @@ a {
 	border-color: #a80201;
 	background: transparent;
 	color: #222;
+}
+
+.accordion .card {
+	margin-bottom: 7px;
+}
+
+.accordion .card-header {
+	cursor: pointer;
+	background: #fff;
+	border: 1px solid #eeeeee;
+}
+
+.accordion .card-body {
+	box-shadow: 0px;
+}
+
+.accordion .card:not(:first-of-type):not(:last-of-type) {
+	border-bottom: 0;
+	border-radius: 0;
+}
+
+.accordion .card:not(:first-of-type) .card-header:first-child {
+	border-radius: 0;
+}
+
+.accordion .card:first-of-type {
+	border-bottom: 0;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.accordion .card:last-of-type {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+#accordion-one .fa {
+	float: right;
+}
+
+#accordion-one [data-toggle="collapse"] .fa:before {
+	content: "\f068";
+}
+
+#accordion-one [data-toggle="collapse"].collapsed .fa:before {
+	content: "\f067";
+}
+
+#accordion-two .fa {
+	float: right;
+}
+
+#accordion-two [data-toggle="collapse"] .fa:before {
+	content: "\f106";
+}
+
+#accordion-two [data-toggle="collapse"].collapsed .fa:before {
+	content: "\f107";
+}
+
+#accordion-three .fa {
+	float: right;
+}
+
+#accordion-three [data-toggle="collapse"] .fa:before {
+	content: "\f107";
+}
+
+#accordion-three [data-toggle="collapse"].collapsed .fa:before {
+	content: "\f105";
+}
+
+html[dir="rtl"] .default-accordion-style .card .card-header h5 i {
+	margin-left: 1.5rem;
 }
 
 .blog-banner {
