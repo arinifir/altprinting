@@ -120,6 +120,7 @@ function readFile(input) {
     reader.readAsDataURL(input.files[0]);
     }
 }
+
 function reset(e) {
     e.wrap('<form>').closest('form').get(0).reset();
     e.unwrap();

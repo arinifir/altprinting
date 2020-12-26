@@ -10,7 +10,8 @@ class Profil extends CI_Controller
 
         $this->load->model('M_transaksi', 'transaksi');
         $this->load->model('M_produk', 'produk');
-        $this->load->model("M_pelanggan");
+        $this->load->model('M_pelanggan');
+        $this->load->model('M_admin', 'admin');
         //load model pelanggan
         $this->load->helper('auth_helper');
         $this->load->library('user_agent');
@@ -31,9 +32,15 @@ class Profil extends CI_Controller
 
     public function editprofil()
     {
-        $this->form_validation->set_rules('nama', 'Nama', 'required');
-        $this->form_validation->set_rules('nomer', 'Nomer', 'required');
-        $this->form_validation->set_rules('email', 'Email', 'required');
+        $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+        $this->form_validation->set_rules('nomer', 'Nomer', 'required|max_length[13]|min_length[11]|numeric|trim', [
+            'max_length[13]'    => 'Maksimal 13 angka!',
+            'min_length[11]'    => 'Minimal 11 angka!',
+            'numeric'           => 'Hanya diperbolehkan input angka!'
+        ]);
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email|trim', [
+            'valid_email' => 'Mohon gunakan email yang valid'
+        ]);
         $this->form_validation->set_message('required', 'Please Enter Data!');
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata('gagal', 'Data tidak sesuai atau data kosong!');
@@ -51,7 +58,7 @@ class Profil extends CI_Controller
                 ];
                 $where = ['id_user' => $kode];
                 $this->admin->editData('tb_user', $data, $where);
-                $this->session->set_flashdata('simpan', 'Berhasil Mengubah Data.');
+                $this->session->set_flashdata('simpan', 'Data berhasil diubah!');
                 redirect('pelanggan/Profil');
             } else {
                 $data = $this->admin->cekEmail($email);
@@ -63,10 +70,10 @@ class Profil extends CI_Controller
                     ];
                     $where = ['id_user' => $kode];
                     $this->admin->editData('tb_user', $data, $where);
-                    $this->session->set_flashdata('simpan', 'Berhasil Mengubah Data.');
+                    $this->session->set_flashdata('simpan', 'Data berhasil diubah!');
                     redirect('pelanggan/Profil');
                 } else {
-                    $this->session->set_flashdata('gagal', 'Email Sudah Terdaftar');
+                    $this->session->set_flashdata('gagal', 'Email sudah terdaftar!');
                     redirect('pelanggan/Profil');
                 }
             }

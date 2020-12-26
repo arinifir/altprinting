@@ -31,7 +31,7 @@
                                     <li class="nav-item"><a class="nav-link" href="<?= base_url('assets/user/') ?>page/single-product.html">Alamat Saya</a></li>
                                     <li class="nav-item"><a class="nav-link" href="<?= base_url('pelanggan/Profil/pesanansaya') ?>">Pesanan Saya</a></li>
                                     <li class="nav-item"><a class="nav-link" href="<?= base_url('pelanggan/Profil/riwayatpesanan') ?>">Riwayat Pesanan</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="<?= base_url('Auth/logout') ?>">Keluar</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="logout()" id="btnkeluar">Keluar</a></li>
                                 </ul>
                             </li>
                         <?php } ?>

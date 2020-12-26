@@ -164,6 +164,7 @@ if ($this->session->flashdata('verified')) :
         })
     </script>
 <?php endif ?>
+
 <?php
 if ($this->session->flashdata('gagal')) :
 ?>
@@ -193,6 +194,40 @@ if ($this->session->flashdata('berhasil')) :
         })
     </script>
 <?php endif ?>
+
+<script>
+    function logout() {
+        Swal.fire({
+            title: "Apakah Anda yakin?",
+            text: "Anda ingin keluar?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Ya",
+            cancelButtonText: "Tidak",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = base_url + "Auth/logout";
+            }
+        });
+    }
+</script>
+
+<?php
+if ($this->session->flashdata('simpan')) :
+?>
+    <script>
+        $(document).ready(function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Selamat',
+                text: '<?= $this->session->flashdata('simpan'); ?>'
+            })
+        })
+    </script>
+<?php endif ?>
+
 </body>
 
 </html>
