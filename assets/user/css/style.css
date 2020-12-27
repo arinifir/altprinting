@@ -1236,6 +1236,7 @@ a {
 	transition: all 0.4s ease;
 }
 
+
 .button_cupon {
 	display: inline-block;
 	border: 1px solid #A80201;
@@ -1249,8 +1250,8 @@ a {
 	transition: all 0.4s ease;
 }
 
-@media(max-width:767px){
-	.button_cupon{
+@media(max-width:767px) {
+	.button_cupon {
 		float: right;
 	}
 }
@@ -1280,6 +1281,12 @@ a {
 
 @media (max-width: 767px) {
 	.button {
+		padding: 8px 25px !important;
+	}
+}
+
+@media (max-width: 767px) {
+	.tombol {
 		padding: 8px 25px !important;
 	}
 }
@@ -1360,6 +1367,7 @@ a {
 	border-color: #eeeeee;
 }
 
+
 .button-hero {
 	padding: 12px 41px;
 }
@@ -1400,6 +1408,7 @@ a {
 	background: transparent;
 	color: #222;
 }
+
 
 .accordion .card {
 	margin-bottom: 7px;

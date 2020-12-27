@@ -190,3 +190,41 @@ $(document).on('change', 'input[name="selector"]', function(){
 		$('#input_bayar').val('2');
 	}
 })
+
+$(document).on('change', '#provinsi', function(){
+	$('#kabupaten').attr('disabled',true);
+	$('#kabupaten').html('<option selected>Pilih Kabupaten</option>');
+	var id_provinsi = $(this).val();
+	$.ajax({
+		method: "GET",
+		url: base_url + `API/getKabKota/${id_provinsi}`,
+		dataType: "JSON",
+		success: function (response) {
+			$('#kabupaten').removeAttr('disabled');
+			var kabkota = response.data;
+			$.each(kabkota, function(i,value) {
+				$('#kabupaten').append(`<option value="${value.id}">${value.name}</option>`);
+				$('#kabupaten').niceSelect('update');
+			})
+		}
+	})
+})
+
+$(document).on('change', '#kabupaten', function(){
+	$('#kecamatan').attr('disabled',true);
+	$('#kecamatan').html('<option selected>Pilih Kecamatan</option>');
+	var id_kabkota = $(this).val();
+	$.ajax({
+		method: "GET",
+		url: base_url + `API/getKecamatan/${id_kabkota}`,
+		dataType: "JSON",
+		success: function (response) {
+			$('#kecamatan').removeAttr('disabled');
+			var kabkota = response.data;
+			$.each(kabkota, function(i,value) {
+				$('#kecamatan').append(`<option value="${value.id}">${value.name}</option>`);
+				$('#kecamatan').niceSelect('update');
+			})
+		}
+	})
+})

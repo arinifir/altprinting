@@ -207,16 +207,26 @@ class Auth extends CI_Controller
     private function _sendEmail($token, $email, $href)
     {
         // Config Setting 
-        $config = [
-            'protocol' => 'smtp',
-            'smtp_host' => 'ssl://smtp.googlemail.com',
-            'smtp_user' => 'altprinting3@gmail.com',
-            'smtp_pass' => 'avenger12345678',
-            'smtp_port' => 587,
-            'mailtype' => 'html',
-            'charset' => 'utf-8',
-            'newline' => "\r\n"
-        ];
+        $this->load->library('email');
+        $config = array();
+            $config['protocol'] = 'smtp';
+            $config['smtp_host'] = 'ssl://smtp.googlemail.com';
+            $config['smtp_user'] = 'altprinting3@gmail.com';
+            $config['smtp_pass'] = 'avenger12345678';
+            $config['smtp_port'] = 587;
+            $config['mailtype'] = 'html';
+            $config['charset'] = 'utf-8';
+            $config['newline'] = "\r\n";
+        $this->email->initialize($config);
+        $this->email->set_newline("\r\n");
+
+        $from = "no_reply@altprinting.com";
+        $subject = "Aktivasi Akun";
+
+        $this->email->from($from, 'ALT Printing');
+        $this->email->to($email);
+        $this->email->subject($subject);
+        
         // Send Token Password
         $aktivasi_akun = "
                                 <html>
