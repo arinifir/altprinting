@@ -20,7 +20,7 @@ class Detail extends CI_Controller
     {
         $data['produk'] = $this->M_pelanggan->getAll('tb_produk');
         $data['kategori'] = $this->M_pelanggan->getAll('tb_kategori');
-        $data['judul'] = "ALT Printing - Kategori";
+        $data['judul'] = "ALT Jember - Kategori";
         $this->load->view('user/header', $data);
         $this->load->view('user/topbar');
         $this->load->view('user/vkategori');

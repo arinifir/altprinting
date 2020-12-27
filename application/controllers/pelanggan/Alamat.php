@@ -17,7 +17,7 @@ class Alamat extends CI_Controller
 
     public function index()
     {
-        $data['judul'] = "ALT Printing - Alamat";
+        $data['judul'] = "ALT Jember - Alamat";
         $this->load->view('user/header', $data);
         $this->load->view('user/topbar');
         $this->load->view('user/valamat', $data);

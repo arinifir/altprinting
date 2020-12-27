@@ -100,6 +100,7 @@
                 })
             </script>
         <?php endif ?>
+
         <?php
         if ($this->session->flashdata('error')) :
         ?>
@@ -124,6 +125,25 @@
             </script>
         <?php endif ?>
 
+        <script>
+            function logout() {
+                Swal.fire({
+                    title: "Apakah Anda yakin?",
+                    text: "Anda ingin keluar?",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Ya",
+                    cancelButtonText: "Tidak",
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = base_url + "Auth/logout";
+                    }
+                });
+            }
+        </script>
+        
         </body>
 
         </html>

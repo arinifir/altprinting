@@ -32,7 +32,7 @@ class Kategori extends CI_Controller
         }
         // var_dump($data['produk']);die;
         $data['kategori'] = $this->M_pelanggan->getAll('tb_kategori');
-        $data['judul'] = "ALT Printing - Kategori";
+        $data['judul'] = "ALT Jember - Kategori";
         $this->load->view('user/header', $data);
         $this->load->view('user/topbar');
         $this->load->view('user/vkategori');
@@ -44,7 +44,7 @@ class Kategori extends CI_Controller
         $kode = "00012782";
         $data['produk'] = $this->produk->getProduk($kode);
         $data['paket'] = $this->admin->paketbykode($kode);
-        $data['judul'] = "ALT Printing - Detail Produk";
+        $data['judul'] = "ALT Jember - Detail Produk";
         $this->load->view('user/header', $data);
         $this->load->view('user/topbar');
         $this->load->view('user/detailproduk');

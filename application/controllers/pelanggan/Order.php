@@ -18,7 +18,7 @@ class Order extends CI_Controller
 
     public function index()
     {
-        $data['judul'] = "ALT Printing - Kategori";
+        $data['judul'] = "ALT Jember - Kategori";
         $this->load->view('user/header', $data);
         $this->load->view('user/topbar');
         $this->load->view('user/vkategori');
@@ -28,7 +28,7 @@ class Order extends CI_Controller
     {
         $data['order'] = $this->transaksi->orderbyid($no);
         $data['detail'] = $this->transaksi->detailbyid($no);
-        $data['judul'] = "ALT Printing - Nota Pesanan";
+        $data['judul'] = "ALT Jember - Nota Pesanan";
         $this->load->view('user/header', $data);
         $this->load->view('user/topbar');
         $this->load->view('user/notapemesanan');

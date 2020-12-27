@@ -18,7 +18,7 @@ class Konfirmasi extends CI_Controller
 
     public function index()
     {
-        $data['judul'] = "ALT Printing - Konfirmasi Pembayaran";
+        $data['judul'] = "ALT Jember - Konfirmasi Pembayaran";
         $this->load->view('user/header',$data);
         $this->load->view('user/topbar');
         $this->load->view('user/vkonfirmasi');
@@ -55,7 +55,7 @@ class Konfirmasi extends CI_Controller
             $this->session->set_flashdata('gagal','Anda sudah melakukan pembayaran. Silahkan cek email Anda.');
             redirect($this->agent->referrer());
         }
-        $data['judul'] = "ALT Printing - Konfirmasi Pembayaran";
+        $data['judul'] = "ALT Jember - Konfirmasi Pembayaran";
         $this->load->view('user/header',$data);
         $this->load->view('user/topbar');
         $this->load->view('user/vuploadbukti');

@@ -18,7 +18,7 @@ class Keranjang extends CI_Controller
 
     public function index()
     {
-        $data['judul'] = "ALT Printing - Keranjang";
+        $data['judul'] = "ALT Jember - Keranjang";
         $this->load->view('user/header',$data);
         $this->load->view('user/topbar');
         $this->load->view('user/vkeranjang');

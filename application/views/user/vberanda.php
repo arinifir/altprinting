@@ -13,7 +13,7 @@
                     <div class="hero-banner__content">
                         <h4>Belanja itu menyenangkan</h4>
                         <h1>Dapatkan produk premium kami</h1>
-                        <p>Us which over of signs divide dominion deep fill bring they're meat beho upon own earth without morning over third. Their male dry. They are great appear whose land fly grass.</p>
+                        <p>Bergabunglah dengan ALT Jember, dapatkan berbagai promo dan diskon bagi Anda yang mendaftar langsung di website ALT Jember.</p>
                         <a class="button button-hero" href="#">Cek sekarang</a>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
         <div class="container">
             <div class="section-intro pb-60px">
                 <!-- <p>Popular Item in the market</p> -->
-                <h2>Paling <span class="section-intro__style">Laku</span></h2>
+                <h2><span class="section-intro__style">Produk</span></h2>
             </div>
             <div class="owl-carousel owl-theme" id="bestSellerCarousel">
                 <div class="card text-center card-product">
@@ -89,7 +89,7 @@
                     </div>
                     <div class="card-body">
                         <p>Polaroid</p>
-                        <h4 class="card-product__title"><a href="<?= base_url('assets/user/') ?>page/single-product.html">Quartz Belt Watch</a></h4>
+                        <h4 class="card-product__title"><a href="<?= base_url('assets/user/') ?>">Quartz Belt Watch</a></h4>
                         <p class="card-product__price">$150.00</p>
                     </div>
                 </div>
@@ -210,7 +210,7 @@
     </section>
     <!-- ================ Best Selling item  carousel end ================= -->
 
-    
+
 
     <!-- ================ Subscribe section start ================= -->
     <section class="subscribe-position">

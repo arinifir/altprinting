@@ -14,6 +14,7 @@ class Sadmin extends CI_Controller
         $this->load->library('primslib');
         sadmin_logged_in();
     }
+    
     public function index()
     {
         $this->load->view('sadmin/header');
@@ -450,7 +451,7 @@ class Sadmin extends CI_Controller
             $produk = $this->input->post("kodeproduk", TRUE);
             $cekkode = $this->admin->cekodepaket();
             // contoh JRD0004, angka 3 adalah awal pengambilan angka, dan 4 jumlah angka yang diambil
-            $nourut = substr($cekkode, 0, 4);
+            $nourut = substr($cekkode, 4, 4);
             $nourut++;
             $char = substr($produk, 4, 4);
             $kode = $char . sprintf("%04s", $nourut);
@@ -742,6 +743,18 @@ class Sadmin extends CI_Controller
         $this->load->view('sadmin/topbar');
         $this->load->view('sadmin/sidebar');
         $this->load->view('sadmin/vnvalid', $data);
+        $this->load->view('sadmin/footer');
+    }
+
+    public function profilsadm()
+    {
+        $id = $this->session->userdata('id_sadmin');
+        $data['admin'] = $this->admin->edit(array('id_user' => $id), 'tb_user')->row();
+
+        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/topbar');
+        $this->load->view('sadmin/sidebar');
+        $this->load->view('sadmin/vprofil', $data);
         $this->load->view('sadmin/footer');
     }
 }

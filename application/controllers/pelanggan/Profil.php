@@ -23,7 +23,7 @@ class Profil extends CI_Controller
     {
         $id = $this->session->userdata('id_user');
         $data['pelanggan'] = $this->admin->edit(array('id_user' => $id), 'tb_user')->row();
-        $judul['judul'] = "ALT Printing - Profil";
+        $judul['judul'] = "ALT Jember - Profil";
         $this->load->view('user/header', $judul);
         $this->load->view('user/topbar');
         $this->load->view('user/vprofil', $data);
@@ -85,7 +85,7 @@ class Profil extends CI_Controller
         $id= $this->session->userdata('id_user');
         if($id){
             $data['order'] = $this->transaksi->getOrderUser($id);
-            $data['judul'] = "ALT Printing - Pesanan Saya";
+            $data['judul'] = "ALT Jember - Pesanan Saya";
             $this->load->view('user/header', $data);
             $this->load->view('user/topbar');
             $this->load->view('user/vpesanansaya');
@@ -99,7 +99,7 @@ class Profil extends CI_Controller
         $id= $this->session->userdata('id_user');
         if($id){
             $data['order'] = $this->transaksi->getOrderDone($id);
-            $data['judul'] = "ALT Printing - Riwayat Pesanan";
+            $data['judul'] = "ALT Jember - Riwayat Pesanan";
             $this->load->view('user/header', $data);
             $this->load->view('user/topbar');
             $this->load->view('user/vriwayatpesanan');

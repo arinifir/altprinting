@@ -1,5 +1,5 @@
 <!--================ Start title area =================-->
-<div class="container mx-auto">
+<div class="container">
     <div class="section-intro pt-5">
         <h2>Profil <span class="section-intro__style">Pelanggan</span></h2>
     </div>

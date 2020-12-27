@@ -19,7 +19,7 @@ class User extends CI_Controller
     public function index()
     {
 
-        $data['judul'] = "ALT Printing - Home";
+        $data['judul'] = "ALT Jember - Home";
         $data['produk'] = $this->M_pelanggan->getAll('tb_produk');
         $data['kategori'] = $this->M_pelanggan->getAll('tb_kategori');
         $this->load->view('user/header', $data);

@@ -39,7 +39,7 @@ class Produk extends CI_Controller
             $this->session->set_flashdata('gagal', 'Data tidak sesuai atau data kosong!');
             redirect('admin/produk/dataproduk');
         } else {
-            $length = 4;
+            $length = 8;
             $kode = $this->admin->productCode($length);
             $nama = $this->input->post("namaproduk", TRUE);
             $harga = $this->input->post("harga", TRUE);

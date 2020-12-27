@@ -15,7 +15,7 @@ class Kontak extends CI_Controller
 
     public function index()
     {
-        $data['judul'] = "ALT Printing - Kontak";
+        $data['judul'] = "ALT Jember - Kontak";
         $this->load->view('user/header', $data);
         $this->load->view('user/topbar');
         $this->load->view('user/vkontak');

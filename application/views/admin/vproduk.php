@@ -249,7 +249,7 @@
                                                     <button type="button" data-toggle="modal" data-target="#editModal<?= $pr->kd_produk; ?>" data-toggle="tooltip" title="" class="btn mb-1 btn-warning" data-original-title="Edit">
                                                         <i class="mdi mdi-pencil text-white"></i>
                                                     </button>
-                                                    <a href="<?= base_url('admin/Produk/delproduk/' . $pr->kd_produk); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Hapus" onclick="return confirm('Anda yakin ingin menghapus?');">
+                                                    <a href="<?= base_url('admin/Produk/delproduk/' . $pr->kd_produk); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Hapus">
                                                         <i class="mdi mdi-delete"></i>
                                                     </a>
                                                 </div>

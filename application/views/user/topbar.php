@@ -19,9 +19,7 @@
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="<?= base_url('pelanggan/Konfirmasi') ?>">Konfirmasi Pembayaran</a></li>
-                        <li class="nav-item submenu dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Panduan</a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="<?= base_url('pelanggan/Panduan') ?>">Panduan</a></li>
                         <li class="nav-item"><a class="nav-link" href="<?= base_url('pelanggan/Kontak') ?>">Kontak</a></li>
                         <?php if ($this->session->userdata('id_user')) { ?>
                             <li class="nav-item submenu dropdown">

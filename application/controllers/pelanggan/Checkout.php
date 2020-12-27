@@ -18,7 +18,7 @@ class Checkout extends CI_Controller
 
     public function index()
     {
-        $data['judul'] = "ALT Printing - Keranjang";
+        $data['judul'] = "ALT Jember - Keranjang";
         $this->load->view('user/header',$data);
         $this->load->view('user/topbar');
         $this->load->view('user/vpemesanan');
@@ -26,7 +26,7 @@ class Checkout extends CI_Controller
     }
     public function konfirmasi_pemesanan()
     {
-        $data['judul'] = "ALT Printing - Konfirmasi Pemesanan";
+        $data['judul'] = "ALT Jember - Konfirmasi Pemesanan";
         $this->load->view('user/header',$data);
         $this->load->view('user/topbar');
         $this->load->view('user/notapemesanan');

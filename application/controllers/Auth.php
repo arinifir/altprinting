@@ -13,7 +13,7 @@ class Auth extends CI_Controller
     }
     public function index()
     {
-        $data['judul'] = "ALT Printing - Login";
+        $data['judul'] = "ALT Jember - Login";
         $this->load->view('user/header', $data);
         $this->load->view('user/topbar');
         $this->load->view('user/v_login');
@@ -64,7 +64,7 @@ class Auth extends CI_Controller
     {
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
         if ($this->form_validation->run() == false) {
-            $data['judul'] = "ALT Printing - Login";
+            $data['judul'] = "ALT Jember - Login";
             $this->load->view('user/header', $data);
             $this->load->view('user/topbar');
             $this->load->view('resetpass');
@@ -115,7 +115,7 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('password1', 'Password', 'trim|required|min_length[8]|matches[password2]');
         $this->form_validation->set_rules('password2', 'Ulangi Password', 'trim|required|min_length[8]|matches[password1]');
         if ($this->form_validation->run() == false) {
-            $data['judul'] = "ALT Printing - Login";
+            $data['judul'] = "ALT Jember - Login";
             $this->load->view('user/header', $data);
             $this->load->view('user/topbar');
             $this->load->view('lupapass');
@@ -271,7 +271,7 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('password', 'Password Baru', 'required|trim|min_length[8]');
 
         if ($this->form_validation->run() == false) {
-            $data['judul'] = "ALT Printing - Register";
+            $data['judul'] = "ALT Jember - Register";
             $this->load->view('user/header', $data);
             $this->load->view('user/topbar');
             $this->load->view('user/v_regis');
