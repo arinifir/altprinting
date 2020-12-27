@@ -100,7 +100,7 @@
                 </a>
             </li>
             <li>
-                <a href="<?= base_url('Sadmin/laporankeluar') ?>" aria-expanded="false">
+                <a href="<?= base_url('Laporan/pengeluaran') ?>" aria-expanded="false">
                     <i class="mdi mdi-text-box-minus"></i><span class="nav-text pl-2">Laporan Pengeluaran</span>
                 </a>
             </li>

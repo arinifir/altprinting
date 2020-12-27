@@ -29,5 +29,13 @@ class M_transaksi extends CI_Model
         $this->db->or_where('status_transaksi', 5);
         return $this->db->get('tb_transaksi')->result();
     }
+    public function getBeli()
+    {
+        $this->db->select('*');
+        $this->db->from('tb_dbeli');
+        $this->db->join('tb_pembelian', 'tb_dbeli.no_beli=tb_pembelian.no_beli');
+        $query = $this->db->get();
+        return $query->result();
+    }
 }
 ?>

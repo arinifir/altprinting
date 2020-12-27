@@ -50,7 +50,7 @@
                                                 </a>
                                             </td>
                                             <td>
-                                                <a href="<?= base_url('Sadmin/lihatpaket/' . $t->no_transaksi) ?>" type="button" data-toggle="tooltip" class="btn mb-1 btn-info text-white" data-original-title="Detail Transaksi">Detail</a>
+                                                <a href="<?= base_url('Sadmin/detailtransaksi/' . $t->no_transaksi) ?>" type="button" data-toggle="tooltip" class="btn mb-1 btn-info text-white" data-original-title="Detail Transaksi">Detail</a>
                                             </td>
                                             <td><?= $t->no_transaksi; ?></td>
                                             <td><?= $t->tanggal_transaksi; ?></td>
