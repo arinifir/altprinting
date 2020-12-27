@@ -9,7 +9,7 @@
 				<p class="mb-2">Jika Anda memiliki kupon, masukkan dibawah ini</p>
 				<form class="row contact_form" action="#" method="post" novalidate="novalidate">
 					<div class="col-md-6 form-group p_star">
-						<input type="text" class="form-control" value="<?= $voucher ? $voucher->kd_voucher : '' ?>" placeholder="Masukkan Kode Voucher" onfocus="this.placeholder=''" onblur="this.placeholder = 'Masukkan Kode Voucher'" id="name" name="name">
+						<input type="text" class="form-control" value="<?= isset($voucher) ? $voucher['kd_voucher'] : '' ?>" placeholder="Masukkan Kode Voucher" onfocus="this.placeholder=''" onblur="this.placeholder = 'Masukkan Kode Voucher'" id="name" name="name">
 						<!-- <span class="placeholder" data-placeholder="Username or Email"></span> -->
 					</div>
 					<div class="col-md-6 form-group">
@@ -149,7 +149,7 @@
 				<div class="col-lg-4">
 					<div class="order_box">
 						<h2>Pesanan Anda</h2>
-						<ul class="list">
+						<ul class="list mb-3">
 							<li><a href="#">
 									<h4>Produk <span>Subtotal</span></h4>
 								</a></li>
@@ -161,6 +161,12 @@
 						<ul class="list list_2">
 							<li><a href="#">Subtotal <span><?= "Rp " . number_format($this->cart->total(), 2, ',', '.') ?></span></a></li>
 							<li><a href="#">Biaya Ongkir <span>Flat rate: $50.00</span></a></li>
+							<?php if($voucher['jenis_voucher'] == 1): ?>
+							<li><a href="#">Potongan Ongkir <span>-Rp <?= number_format( $voucher['potongan_voucher'],0,'.','.') ?></span></a></li>
+							<?php else: ?>
+								<?php $potongan = $this->cart->total() * $voucher['potongan_voucher']/100;  ?>
+							<li><a href="#">Potongan Harga <span>-Rp <?= number_format($potongan, 0,'.','.') ?></span></a></li>
+							<?php endif; ?>
 							<li><a href="#">Total <span>$2210.00</span></a></li>
 						</ul>
 						<div id ="transfercard" class="payment_item hide">
@@ -168,11 +174,6 @@
 						</div>
 						<div id = "codcard" class="payment_item active hide">
 							<p>Silahkan memilih tempat COD terlebih dahulu.</p>
-						</div>
-						<div class="creat_account">
-							<input type="checkbox" id="f-option4" name="selector">
-							<label for="f-option4">I’ve read and accept the </label>
-							<a href="#">terms & conditions*</a>
 						</div>
 						<div class="text-center">
 							<a class="button button-paypal" href="<?= base_url('pelanggan/Order/inputpesanan'); ?>">Pembayaran</a>

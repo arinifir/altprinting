@@ -49,8 +49,8 @@
 				<div class="mb-3">
 					<div class="cupon_text">
 						<form action="<?= base_url('pelanggan/Checkout'); ?>" method="get">
-							<input type="text" id="input_voucher" name="kd_voucher" placeholder="Kode Voucher" value="">
-							<a class="primary-btn" id="tambah_voucher" href="javascript:void(0)">Tambah</a>
+							<input type="text" id="input_voucher" placeholder="Kode Voucher" value="">
+							<a class="primary-btn" id="tambah_voucher" href="javascript:void(0)">Pakai</a>
 					</div>
 				</div>
 				<div id="alert_voucher">

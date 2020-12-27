@@ -227,24 +227,27 @@ $(document).on('change', '#kabupaten', function(){
 			})
 		}
 	})
+})
+
 $(document).on('click', '#tambah_voucher', function(){
 	var kode_voucher = $('#input_voucher').val();
+	console.log(kode_voucher);
 	$.ajax({
 		method: 'GET',
 		url: base_url + `API/checkVoucher/${kode_voucher}`,
 		dataType: "JSON",
 		success: function (response) {
-			console.log(response);
 			var status = response.message;
-			var kode_voucher = response.data.kd_voucher;
 			if (status == 1) {
+				// var kode_voucher = response.data.kd_voucher;
 				$('#alert_voucher').html(`<div class="alert alert-success alert-dismissible fade show" role="alert">
 					Voucher Berhasil Dipakai
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>`)
-				$('#display_voucher').html(`<a href="#">Kode Voucher <span>${kode_voucher}</span></a>`);
+				$('#input_voucher').attr('name', 'kd_voucher');
+				$('#display_voucher').html(`<a href="#">Kode Voucher <span>${response.data.kd_voucher}</span></a>`);
 			} else {
 				$('#alert_voucher').html(`<div class="alert alert-danger alert-dismissible fade show" role="alert">
 					Voucher Tidak Berlaku
@@ -252,6 +255,7 @@ $(document).on('click', '#tambah_voucher', function(){
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>`)
+				$('#display_voucher').html('');
 				$('#input_voucher').val('');
 			}
 		}

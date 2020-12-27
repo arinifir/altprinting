@@ -20,10 +20,11 @@ class Checkout extends CI_Controller
 
     public function index()
     {
-        $voucher = $this->input->get('v');
+        $voucher = $this->input->get('kd_voucher');
         if ($voucher) {
             $data['voucher'] = $this->voucher->getVoucherByKode($voucher);
         }
+
         $id = $this->session->userdata('id_user');
         if ($id) {
             $cekalamat = $this->pelanggan->checkAddress($id);

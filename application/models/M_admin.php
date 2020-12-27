@@ -201,4 +201,19 @@ class M_admin extends CI_Model
     {
         return $this->db->get_where('tb_gambar', ['no_transaksi' => $no])->result();
     }
+    function jmlUlasan()
+    {
+        return $this->db->select('tb_produk.kd_produk, nama_produk, gambar_produk, count(id_ulas) as jml, round(avg(rating_ulas),1) as rerata')
+            ->from('tb_produk')
+            ->join('tb_ulasan', 'tb_produk.kd_produk=tb_ulasan.kd_produk', 'left')
+            ->group_by('tb_produk.kd_produk')->get()->result();
+    }
+    public function getUlasan($kode)
+    {
+        return $this->db->select('*')->from('tb_ulasan')->get_where('', ['kd_produk' => $kode])->result();
+    }
+    public function rating($kode)
+    {
+        return $this->db->select('*, count(id_ulas) as jml, round(avg(rating_ulas),1) as rerata')->from('tb_ulasan')->get_where('', ['kd_produk' => $kode])->result();
+    }
 }

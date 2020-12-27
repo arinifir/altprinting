@@ -36,6 +36,11 @@
                     <i class="mdi mdi-ticket-percent"></i><span class="nav-text pl-2">Voucher</span>
                 </a>
             </li>
+            <li>
+                <a href="<?= base_url('Sadmin/ulasanproduk') ?>" aria-expanded="false">
+                    <i class="mdi mdi-comment"></i><span class="nav-text pl-2">Ulasan</span>
+                </a>
+            </li>
             <li class="nav-label">Transaksi</li>
             <li>
                 <a href="<?= base_url('Sadmin/datatransaksi') ?>" aria-expanded="false">
@@ -75,11 +80,6 @@
             <li>
                 <a href="<?= base_url('Sadmin/tidakvalid') ?>" aria-expanded="false">
                     <i class="mdi mdi-close"></i><span class="nav-text pl-2">Pesanan Batal</span>
-                </a>
-            </li>
-            <li>
-                <a href="<?= base_url('Sadmin/dataulasan') ?>" aria-expanded="false">
-                    <i class="mdi mdi-comment"></i><span class="nav-text pl-2">Ulasan</span>
                 </a>
             </li>
             <li class="nav-label">Keuangan</li>

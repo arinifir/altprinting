@@ -860,4 +860,23 @@ class Sadmin extends CI_Controller
         $this->load->view('sadmin/gambartransaksi', $data);
         $this->load->view('sadmin/footer');
     }
+    public function ulasanproduk()
+    {
+        $data['ulasan'] = $this->admin->jmlUlasan();
+        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/topbar');
+        $this->load->view('sadmin/sidebar');
+        $this->load->view('sadmin/vulasan', $data);
+        $this->load->view('sadmin/footer');
+    }
+    public function lihatulasan($kode)
+    {
+            $data['ulas'] = $this->admin->getUlasan($kode);
+            $data['rating'] = $this->admin->rating($kode);
+            $this->load->view('sadmin/header');
+            $this->load->view('sadmin/topbar');
+            $this->load->view('sadmin/sidebar');
+            $this->load->view('sadmin/lihatulasan', $data);
+            $this->load->view('sadmin/footer');
+    }
 }
