@@ -9,15 +9,21 @@ class Checkout extends CI_Controller
         parent::__construct();
         $this->load->model('M_produk', 'produk');
         $this->load->model("M_pelanggan", 'pelanggan');
+        $this->load->model("M_voucher", 'voucher');
         //load model admin
         $this->load->helper('auth_helper');
         $this->load->library('user_agent');
         $this->load->library('primslib');
+        $this->load->library('configemail');
         // is_logged_in();
     }
 
     public function index()
     {
+        $voucher = $this->input->get('v');
+        if ($voucher) {
+            $data['voucher'] = $this->voucher->getVoucherByKode($voucher);
+        }
         $id = $this->session->userdata('id_user');
         if ($id) {
             $cekalamat = $this->pelanggan->checkAddress($id);

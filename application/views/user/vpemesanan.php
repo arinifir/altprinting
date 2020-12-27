@@ -9,7 +9,7 @@
 				<p class="mb-2">Jika Anda memiliki kupon, masukkan dibawah ini</p>
 				<form class="row contact_form" action="#" method="post" novalidate="novalidate">
 					<div class="col-md-6 form-group p_star">
-						<input type="text" class="form-control" placeholder="Masukkan Kode Voucher" onfocus="this.placeholder=''" onblur="this.placeholder = 'Masukkan Kode Voucher'" id="name" name="name">
+						<input type="text" class="form-control" value="<?= $voucher ? $voucher->kd_voucher : '' ?>" placeholder="Masukkan Kode Voucher" onfocus="this.placeholder=''" onblur="this.placeholder = 'Masukkan Kode Voucher'" id="name" name="name">
 						<!-- <span class="placeholder" data-placeholder="Username or Email"></span> -->
 					</div>
 					<div class="col-md-6 form-group">
@@ -175,7 +175,7 @@
 							<a href="#">terms & conditions*</a>
 						</div>
 						<div class="text-center">
-							<a class="button button-paypal" href="<?= base_url('pelanggan/Checkout/konfirmasi_pemesanan'); ?>">Pembayaran</a>
+							<a class="button button-paypal" href="<?= base_url('pelanggan/Order/inputpesanan'); ?>">Pembayaran</a>
 						</div>
 					</div>
 				</div>

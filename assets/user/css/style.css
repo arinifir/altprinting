@@ -983,6 +983,17 @@ a {
 .card-product:hover .card-product__title a {
 	color: #A80201;
 }
+.rating:hover {
+	color: rgb(255, 209, 2);
+	cursor: pointer;
+}
+.rating {
+	color: #A80201;
+	cursor: pointer;
+}
+.rating.aktif{
+	color: rgb(255, 209, 2);
+}
 
 .offer {
 	background: url("../img/home/1shoppingbags.jpg") right center no-repeat;

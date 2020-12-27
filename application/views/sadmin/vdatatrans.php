@@ -41,13 +41,18 @@
                                         <tr>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <button id="btnDel" type="button" data-toggle="tooltip" data-id="<?= $t->no_transaksi; ?>" title="" class="btn mb-1 btn-danger btnDel" data-original-title="Remove">
-                                                        <i class="fa fa-trash"></i>
-                                                    </button>
+                                                    <?php if ($t->jenis_pembayaran == 2) { ?>
+                                                        <a href="<?= base_url('Sadmin/konfirmasi/' . $t->no_transaksi); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success text-white" data-original-title="Lanjut Pengemasan">
+                                                            <i class="mdi mdi-check"></i>
+                                                        </a>
+                                                    <?php } ?>
+                                                    <a href="<?= base_url('Sadmin/orderbatal/' . $t->no_transaksi); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Batalkan Pesanan">
+                                                        <i class="mdi mdi-close"></i>
+                                                    </a>
                                                 </div>
                                             </td>
                                             <td>
-                                                <a href="<?= base_url('Sadmin/lihatpaket/' . $t->no_transaksi) ?>" type="button" data-toggle="tooltip" class="btn mb-1 btn-secondary text-white" data-original-title="Detail Transaksi">Detail</a>
+                                                <a href="<?= base_url('Sadmin/detailtransaksi/' . $t->no_transaksi) ?>" type="button" data-toggle="tooltip" class="btn mb-1 btn-secondary text-white" data-original-title="Detail Transaksi">Detail</a>
                                             </td>
                                             <td><?= $t->no_transaksi; ?></td>
                                             <td><?= $t->tanggal_transaksi; ?></td>
@@ -58,10 +63,10 @@
                                                 <?php if ($t->jenis_pembayaran == 1) { ?>
                                                     <?= $t->alamat_pembeli . ', Kecamatan ' . $t->kec_pembeli . ', ' . $t->kab_pembeli . ', Provinsi ' . $t->prov_pembeli . ' ' . $t->kpos_pembeli; ?>
                                                 <?php } else if ($t->jenis_pembayaran == 2) { ?>
-                                                    <?= $t->detail_cod;?>
+                                                    <?= $t->detail_cod; ?>
                                                 <?php } else {
                                                     echo 'Tidak Valid';
-                                                } ?> 
+                                                } ?>
                                             </td>
                                             <td><?= $t->no_pembeli; ?></td>
                                             <td>

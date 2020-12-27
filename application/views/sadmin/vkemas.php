@@ -41,7 +41,7 @@
                                         <tr>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="<?= base_url('Sadmin/delproduk/' . $t->no_transaksi); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success text-white" data-original-title="Dikemas">
+                                                    <a href="<?= base_url('Sadmin/selesaikemas/' . $t->no_transaksi); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success text-white" data-original-title="Dikemas">
                                                         Selesai Dikemas
                                                     </a>
                                                 </div>

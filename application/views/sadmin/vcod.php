@@ -39,13 +39,13 @@
                                     <?php foreach ($transaksi as $t) { ?>
                                         <tr>
                                             <td>
-                                                <a href="#" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success text-white" data-original-title="Selesai">
+                                                <a href="<?= base_url('Sadmin/orderselesai/' . $t->no_transaksi) ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success text-white" data-original-title="Selesai">
                                                     Selesai
                                                 </a>
-                                                <a href="https://wa.me/62<?=$t->no_pembeli;?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger text-white" data-original-title="Dikemas">
+                                                <a href="https://wa.me/62<?=$t->no_pembeli;?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger text-white" data-original-title="Chat Nomor Ini">
                                                     <i class="fa fa-whatsapp"></i>
                                                 </a>
-                                                <a href="tel:<?= $t->no_pembeli;?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger text-white" data-original-title="Dikemas">
+                                                <a href="tel:<?= $t->no_pembeli;?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger text-white" data-original-title="Telfon Nomor Ini">
                                                     <i class="fa fa-phone"></i>
                                                 </a>
                                             </td>

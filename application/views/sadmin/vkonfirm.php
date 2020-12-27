@@ -52,10 +52,10 @@
                                         <tr>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="<?= base_url('Sadmin/delproduk/' . $t->no_transaksi); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success text-white" data-original-title="Valid">
+                                                    <a href="<?= base_url('Sadmin/konfirmasi/' . $t->no_transaksi); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success text-white" data-original-title="Konfirmasi Pembayaran">
                                                         <i class="mdi mdi-check"></i>
                                                     </a>
-                                                    <a href="<?= base_url('Sadmin/delproduk/' . $t->no_transaksi); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Tidak Valid">
+                                                    <a href="<?= base_url('Sadmin/orderbatal/' . $t->no_transaksi); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Batalkan Pesanan">
                                                         <i class="mdi mdi-close"></i>
                                                     </a>
                                                 </div>

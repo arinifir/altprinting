@@ -50,7 +50,28 @@
         <!-- SweetAlert -->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
         <script src="<?= base_url('assets/myjs/') ?>my.js"></script>
+        <script src="<?= base_url('assets/myjs/') ?>paket.js"></script>
+        <!-- Maps API -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAC-0J5sMuBiiUHW7Td24nL_CGEabgbs7Y&callback=initMap&libraries=&v=weekly" defer></script>
 
+        <script>
+            function initMap() {
+                const myLatLng = {
+                    lat: -8.167477,
+                    lng: 113.728764
+                };
+                const map = new google.maps.Map(document.getElementById("world-map"), {
+                    zoom: 17,
+                    center: myLatLng,
+                });
+                new google.maps.Marker({
+                    position: myLatLng,
+                    map,
+                    title: "Alt Printing",
+                });
+            }
+        </script>
         <?php
         if ($this->session->flashdata('gagal')) :
         ?>

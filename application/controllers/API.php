@@ -11,6 +11,7 @@ class API extends CI_Controller
         $this->load->model('m_api', 'api');
         $this->load->model('m_admin', 'admin');
         $this->load->model('m_produk', 'produk');
+        $this->load->model('m_voucher', 'voucher');
     }
 
     public function login()
@@ -231,4 +232,21 @@ class API extends CI_Controller
         }
     }
     /*====================================================  API WILAYAH INDONESIA  ====================================================*/ 
+    public function checkVoucher($kode)
+    {
+        $voucher = $this->voucher->getVoucherByKode($kode);
+        // var_dump($voucher);
+        if ($voucher) {
+            $data = [
+                'message' => '1',
+                'data' => $voucher
+            ];
+            echo json_encode($data);
+        } else {
+            $data = [
+                'message' => '0'
+            ];
+            echo json_encode($data);
+        }
+    }
 }

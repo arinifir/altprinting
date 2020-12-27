@@ -125,6 +125,10 @@ class M_produk extends CI_Model
         $this->db->where('kd_produk = '.$kode);
         return $this->db->get()->row();
     }
+    public function getUlasan($kode)
+    {
+        return $this->db->get_where('tb_ulasan', ['kd_produk' => $kode])->result();
+    }
 
     public function getPaketById($id)
     {

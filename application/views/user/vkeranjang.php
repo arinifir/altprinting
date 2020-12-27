@@ -47,19 +47,24 @@
 			</div>
 			<div class="col-lg-4">
 				<div class="mb-3">
-					<div class="cupon_text" >
-						<input type="text" placeholder="Kode Voucher">
-						<a class="primary-btn" href="#">Tambah</a>
+					<div class="cupon_text">
+						<form action="<?= base_url('pelanggan/Checkout'); ?>" method="get">
+							<input type="text" id="input_voucher" name="kd_voucher" placeholder="Kode Voucher" value="">
+							<a class="primary-btn" id="tambah_voucher" href="javascript:void(0)">Tambah</a>
 					</div>
+				</div>
+				<div id="alert_voucher">
+
 				</div>
 				<div class="order_box">
 					<h2>Total Keranjang</h2>
 					<ul class="list list_2 mb-3">
-						<li><a href="#">Subtotal <span><?= "Rp " . number_format($this->cart->total(), 2, ',', '.') ?></span></a></li>
-						<li><a href="#">Kode Voucher <span>-</span></a></li>
+						<li><a href="#">Subtotal <span><?= "Rp " . number_format($this->cart->total(), 0, '.', '.') ?></span></a></li>
+						<li id="display_voucher"></li>
 					</ul>
 					<div class="text-center">
-						<a class="button button-paypal" href="<?= base_url('pelanggan/Checkout'); ?>">Lanjutkan ke Checkout</a>
+						<button type="submit" class="button button-paypal">Lanjutkan ke Checkout</button>
+						</form>
 					</div>
 				</div>
 			</div>

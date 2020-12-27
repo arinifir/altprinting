@@ -74,26 +74,13 @@
             </li>
             <li>
                 <a href="<?= base_url('Sadmin/tidakvalid') ?>" aria-expanded="false">
-                    <i class="mdi mdi-close"></i><span class="nav-text pl-2">Tidak Valid</span>
+                    <i class="mdi mdi-close"></i><span class="nav-text pl-2">Pesanan Batal</span>
                 </a>
             </li>
             <li>
                 <a href="<?= base_url('Sadmin/dataulasan') ?>" aria-expanded="false">
                     <i class="mdi mdi-comment"></i><span class="nav-text pl-2">Ulasan</span>
                 </a>
-            </li>
-            <li>
-                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                    <i class="icon-graph menu-icon"></i><span class="nav-text pl-2">Charts</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li><a href="./chart-flot.html">Flot</a></li>
-                    <li><a href="./chart-morris.html">Morris</a></li>
-                    <li><a href="./chart-chartjs.html">Chartjs</a></li>
-                    <li><a href="./chart-chartist.html">Chartist</a></li>
-                    <li><a href="./chart-sparkline.html">Sparkline</a></li>
-                    <li><a href="./chart-peity.html">Peity</a></li>
-                </ul>
             </li>
             <li class="nav-label">Keuangan</li>
             <li>
@@ -108,7 +95,7 @@
             </li>
             <li class="nav-label">Laporan</li>
             <li>
-                <a href="<?= base_url('Sadmin/laporanmasuk') ?>" aria-expanded="false">
+                <a href="<?= base_url('Laporan') ?>" aria-expanded="false">
                     <i class="mdi mdi-text-box-plus"></i><span class="nav-text pl-2">Laporan Pendapatan</span>
                 </a>
             </li>

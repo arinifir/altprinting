@@ -138,10 +138,10 @@ class M_admin extends CI_Model
         return $this->db->get_where('tb_transaksi', ['status_transaksi' => $status])->result();
     }
 
-function statistik_pendapatan()
- {
-  
-  $sql= $this->db->query("
+    function statistik_pendapatan()
+    {
+
+        $sql = $this->db->query("
   
   select
   ifnull((SELECT count(no_transaksi) FROM (tb_transaksi)WHERE((Month(tanggal_transaksi)=1)AND (YEAR(tanggal_transaksi)=2020))),0) AS `Januari`,
@@ -159,8 +159,46 @@ function statistik_pendapatan()
  from tb_transaksi GROUP BY YEAR(tanggal_transaksi) 
   
   ");
-  
-  return $sql;
-  
- } 
+
+        return $sql;
+    }
+    public function transByNo($no)
+    {
+        return $this->db->get_where('tb_transaksi', ['no_transaksi' => $no])->row();
+    }
+    public function detailByNo($no)
+    {
+        return $this->db->get_where('tb_dtrans', ['no_transaksi' => $no])->result();
+    }
+    public function productSold()
+    {
+        $this->db->select('SUM(jumlah_produk) as jumlah');
+        $this->db->from('tb_dtrans');
+        $this->db->join('tb_transaksi', 'tb_dtrans.no_transaksi=tb_transaksi.no_transaksi');
+        $this->db->where(['status_transaksi' => 5]);
+        $query = $this->db->get();
+        return $query->row();
+    }
+    public function allPelanggan()
+    {
+        return $this->db->get_where('tb_user', ['level' => 3])->num_rows();
+    }
+    public function orderProcess()
+    {
+        $this->db->where('status_transaksi != 0');
+        $this->db->where('status_transaksi != 5');
+        return $this->db->get('tb_transaksi')->num_rows();
+    }
+    public function pendapatan()
+    {
+        $this->db->select('SUM(total_bayar) as bayar');
+        $this->db->from('tb_transaksi');
+        $this->db->where(['status_transaksi' => 5]);
+        $query = $this->db->get();
+        return $query->row();
+    }
+    public function getImage($no)
+    {
+        return $this->db->get_where('tb_gambar', ['no_transaksi' => $no])->result();
+    }
 }

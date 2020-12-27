@@ -31,7 +31,7 @@ class Keranjang extends CI_Controller
         $kd_paket = $this->input->post('kode_paket',true);
         $nama = $this->input->post('nama_produk',true);
         $jumlah = $this->input->post('quantity',true);
-        $harga = $this->input->post('harga',true);
+        $harga = $this->input->post('harga',true); 
         $data = array(
             'id'      => $kd_produk,
             'name'   => $nama,

@@ -177,7 +177,7 @@ $(document).on('change', 'input[name="selector"]', function(){
 	var radio = $(this).data('radio');
 	console.log(radio);
 	if(radio == 'transfer'){
-		$("#transfer").slideDown();
+		$("#transfer").slideDown(); 
 		$("#transfercard").show();
 		$('#cod').slideUp();
 		$('#codcard').hide();
@@ -227,4 +227,33 @@ $(document).on('change', '#kabupaten', function(){
 			})
 		}
 	})
+$(document).on('click', '#tambah_voucher', function(){
+	var kode_voucher = $('#input_voucher').val();
+	$.ajax({
+		method: 'GET',
+		url: base_url + `API/checkVoucher/${kode_voucher}`,
+		dataType: "JSON",
+		success: function (response) {
+			console.log(response);
+			var status = response.message;
+			var kode_voucher = response.data.kd_voucher;
+			if (status == 1) {
+				$('#alert_voucher').html(`<div class="alert alert-success alert-dismissible fade show" role="alert">
+					Voucher Berhasil Dipakai
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>`)
+				$('#display_voucher').html(`<a href="#">Kode Voucher <span>${kode_voucher}</span></a>`);
+			} else {
+				$('#alert_voucher').html(`<div class="alert alert-danger alert-dismissible fade show" role="alert">
+					Voucher Tidak Berlaku
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>`)
+				$('#input_voucher').val('');
+			}
+		}
+	});
 })
