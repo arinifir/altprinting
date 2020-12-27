@@ -137,4 +137,30 @@ class M_admin extends CI_Model
     {
         return $this->db->get_where('tb_transaksi', ['status_transaksi' => $status])->result();
     }
+
+function statistik_pendapatan()
+ {
+  
+  $sql= $this->db->query("
+  
+  select
+  ifnull((SELECT count(no_transaksi) FROM (tb_transaksi)WHERE((Month(tanggal_transaksi)=1)AND (YEAR(tanggal_transaksi)=2020))),0) AS `Januari`,
+  ifnull((SELECT count(no_transaksi) FROM (tb_transaksi)WHERE((Month(tanggal_transaksi)=2)AND (YEAR(tanggal_transaksi)=2020))),0) AS `Februari`,
+  ifnull((SELECT count(no_transaksi) FROM (tb_transaksi)WHERE((Month(tanggal_transaksi)=3)AND (YEAR(tanggal_transaksi)=2020))),0) AS `Maret`,
+  ifnull((SELECT count(no_transaksi) FROM (tb_transaksi)WHERE((Month(tanggal_transaksi)=4)AND (YEAR(tanggal_transaksi)=2020))),0) AS `April`,
+  ifnull((SELECT count(no_transaksi) FROM (tb_transaksi)WHERE((Month(tanggal_transaksi)=5)AND (YEAR(tanggal_transaksi)=2020))),0) AS `Mei`,
+  ifnull((SELECT count(no_transaksi) FROM (tb_transaksi)WHERE((Month(tanggal_transaksi)=6)AND (YEAR(tanggal_transaksi)=2020))),0) AS `Juni`,
+  ifnull((SELECT count(no_transaksi) FROM (tb_transaksi)WHERE((Month(tanggal_transaksi)=7)AND (YEAR(tanggal_transaksi)=2020))),0) AS `Juli`,
+  ifnull((SELECT count(no_transaksi) FROM (tb_transaksi)WHERE((Month(tanggal_transaksi)=8)AND (YEAR(tanggal_transaksi)=2020))),0) AS `Agustus`,
+  ifnull((SELECT count(no_transaksi) FROM (tb_transaksi)WHERE((Month(tanggal_transaksi)=9)AND (YEAR(tanggal_transaksi)=2020))),0) AS `September`,
+  ifnull((SELECT count(no_transaksi) FROM (tb_transaksi)WHERE((Month(tanggal_transaksi)=10)AND (YEAR(tanggal_transaksi)=2020))),0) AS `Oktober`,
+  ifnull((SELECT count(no_transaksi) FROM (tb_transaksi)WHERE((Month(tanggal_transaksi)=11)AND (YEAR(tanggal_transaksi)=2020))),0) AS `November`,
+  ifnull((SELECT count(no_transaksi) FROM (tb_transaksi)WHERE((Month(tanggal_transaksi)=12)AND (YEAR(tanggal_transaksi)=2020))),0) AS `Desember`
+ from tb_transaksi GROUP BY YEAR(tanggal_transaksi) 
+  
+  ");
+  
+  return $sql;
+  
+ } 
 }

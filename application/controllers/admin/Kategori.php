@@ -80,4 +80,6 @@ class Kategori extends CI_Controller
             redirect('admin/Kategori/datakategori');
         }
     }
+
+    
 }
