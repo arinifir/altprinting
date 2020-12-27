@@ -18,6 +18,35 @@
                         <div>
                             <h4 class="card-title">Resi Pengiriman</h4>
                         </div>
+                        <?php foreach ($transaksi as $t) { ?>
+                            <div class="modal fade" id="resi<?= $t->no_transaksi; ?>">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Tambah Resi <?= $t->no_transaksi; ?></h5>
+                                            <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                                            </button>
+                                        </div>
+                                        <form class="form-valide" action="<?= base_url('Sadmin/tambahresi') ?>" method="post">
+                                            <div class="modal-body">
+                                                <div class="form-group">
+                                                    <label class="col-lg-4 col-form-label" for="val-username">Resi <span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" id="val-username" name="nomor" value="<?= $t->no_transaksi; ?>" hidden>
+                                                        <input type="text" class="form-control" id="val-username" name="resi" placeholder="Masukkan resi" value="<?= $t->no_resi; ?>" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
+                                                <button type="submit" class="btn btn-primary">Tambah</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } ?>
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered zero-configuration">
                                 <thead>
@@ -45,10 +74,10 @@
                                                         Kirim Resi
                                                     </a>
                                                 <?php } else { ?>
-                                                    <a href="#" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success text-white" data-original-title="Selesai">
+                                                    <a href="<?= base_url('Sadmin/orderselesai/' . $t->no_transaksi); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success text-white" data-original-title="Selesai">
                                                         Selesai
                                                     </a>
-                                                    <a href="<?= base_url('Sadmin/delproduk/' . $t->no_transaksi); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger text-white" data-original-title="Dikemas">
+                                                    <a href="<?= base_url('Sadmin/resi/' . $t->no_transaksi); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger text-white" data-original-title="Dikemas">
                                                         Kirim Resi
                                                     </a>
                                                 <?php } ?>
@@ -56,12 +85,12 @@
                                             <td>
                                                 <?php if ($t->no_resi == "") { ?>
                                                     <div class="form-button-action">
-                                                        <a href="<?= base_url('Sadmin/delproduk/' . $t->no_transaksi); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-secondary text-white" data-original-title="Dikemas">
-                                                            Masukkan Resi
+                                                        <a type="button" href="#" data-toggle="modal" data-target="#resi<?= $t->no_transaksi; ?>" class="btn btn-secondary text-white" data-original-title="Resi"> Masukkan Resi
                                                         </a>
                                                     </div>
                                                 <?php } else { ?>
-                                                    <span class="label label-pill label-warning"><?= $t->no_resi; ?></span>
+                                                    <span class="label label-pill label-warning"><?= $t->no_resi; ?></span>&nbsp; <a title="Edit Resi" href="#" type="button" class="mdi mdi-pencil fa-lg text-warning" data-toggle="modal" data-target="#resi<?= $t->no_transaksi ?>"></a>
+
                                                 <?php } ?>
                                             </td>
                                             <td>

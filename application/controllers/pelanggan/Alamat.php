@@ -1,6 +1,5 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-
 class Alamat extends CI_Controller
 {
 
@@ -17,10 +16,46 @@ class Alamat extends CI_Controller
 
     public function index()
     {
-        $data['judul'] = "ALT Jember - Alamat";
+        $data['judul'] = "ALT Printing - Alamat";
+        $data['alamat'] = $this->M_pelanggan->getAll('tb_alamat');
+
+        // var_dump($data['provinsi']);die;
         $this->load->view('user/header', $data);
         $this->load->view('user/topbar');
         $this->load->view('user/valamat', $data);
+        $this->load->view('user/footer');
+    }
+
+    public function pageTambah()
+    {
+        $data['judul'] = "ALT Printing - Alamat";
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => base_url('API/getProvinsi'),
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        if ($err) {
+            echo "cURL Error #:" . $err;
+        } else {
+            $provinsi = json_decode($response);
+        }
+
+        $data['provinsi'] = $provinsi->data;
+        $this->load->view('user/header', $data);
+        $this->load->view('user/topbar');
+        $this->load->view('user/tambahalamat');
         $this->load->view('user/footer');
     }
 
@@ -69,7 +104,13 @@ class Alamat extends CI_Controller
         $where = array('id_alamat' => $id);
         // merekam data yang dikirim melalui form
         $data = array(
-            'tb_alamat' => $this->input->post('tb_alamat'),
+            'nama_penerima' => $this->input->post('nama_penerima'),
+            'nohp' => $this->input->post('nohp'),
+            'alamat' => $this->input->post('alamat'),
+            'provinsi' => $this->input->post('provinsi'),
+            'kabupaten' => $this->input->post('kabupaten'),
+            'kecamatan' => $this->input->post('kecamatan'),
+            'kodepos' => $this->input->post('kodepos')
         );
 
         // menjalankan fungsi insert untuk menambah data ke database

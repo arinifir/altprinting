@@ -11,6 +11,7 @@ class API extends CI_Controller
         $this->load->model('m_api', 'api');
         $this->load->model('m_admin', 'admin');
         $this->load->model('m_produk', 'produk');
+        $this->load->model('m_voucher', 'voucher');
     }
 
     public function login()
@@ -109,5 +110,143 @@ class API extends CI_Controller
         ];
         
         echo json_encode($data);
+    }
+
+    public function updatecart($rowid, $qty)
+    {
+        $data = [
+            'rowid' => $rowid,
+            'qty' => $qty
+        ];
+        $this->cart->update($data);
+        echo 'sukses diubah';
+    }
+
+
+    /*====================================================  API WILAYAH INDONESIA  ====================================================*/ 
+    private function _getTokenWilayah()
+    {
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => "https://x.rajaapi.com/poe",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        if ($err) {
+            echo "cURL Error #:" . $err;
+        } else {
+            $data = json_decode($response);
+            return $data->token; 
+        }
+    }
+
+    public function getProvinsi()
+    {
+        $token = $this->_getTokenWilayah();
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => "https://x.rajaapi.com/MeP7c5ne$token/m/wilayah/provinsi",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        if ($err) {
+            echo "cURL Error #:" . $err;
+        } else {
+            echo $response;
+        }
+    }
+
+    public function getKabKota($id_provinsi)
+    {
+        $token = $this->_getTokenWilayah();
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => "https://x.rajaapi.com/MeP7c5ne$token/m/wilayah/kabupaten?idpropinsi=$id_provinsi",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        if ($err) {
+            echo "cURL Error #:" . $err;
+        } else {
+            echo $response;
+        }
+    }
+
+    public function getKecamatan($id_kabkota)
+    {
+        $token = $this->_getTokenWilayah();
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => "https://x.rajaapi.com/MeP7c5ne$token/m/wilayah/kecamatan?idkabupaten=$id_kabkota",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        if ($err) {
+            echo "cURL Error #:" . $err;
+        } else {
+            echo $response;
+        }
+    }
+    /*====================================================  API WILAYAH INDONESIA  ====================================================*/ 
+    public function checkVoucher($kode)
+    {
+        $voucher = $this->voucher->getVoucherByKode($kode);
+        // var_dump($voucher);
+        if ($voucher) {
+            $data = [
+                'message' => '1',
+                'data' => $voucher
+            ];
+            echo json_encode($data);
+        } else {
+            $data = [
+                'message' => '0'
+            ];
+            echo json_encode($data);
+        }
     }
 }

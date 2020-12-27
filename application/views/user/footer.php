@@ -104,6 +104,9 @@
 
 
 <script src="<?= base_url('assets/user/') ?>vendors/jquery/jquery-3.2.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="https://www.jqueryscript.net/demo/Mobile-friendly-Custom-Scrollbar-Plugin-With-jQuery-NiceScroll/js/jquery.nicescroll.min.js"></script>
 <script src="<?= base_url('assets/user/') ?>vendors/bootstrap/bootstrap.bundle.min.js"></script>
 <script src="<?= base_url('assets/user/') ?>vendors/skrollr.min.js"></script>
 <script src="<?= base_url('assets/user/') ?>vendors/owl-carousel/owl.carousel.min.js"></script>
@@ -112,11 +115,12 @@
 <script src="<?= base_url('assets/user/') ?>vendors/jquery.ajaxchimp.min.js"></script>
 <script src="<?= base_url('assets/user/') ?>vendors/mail-script.js"></script>
 <script src="<?= base_url('assets/user/') ?>js/main.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
 <script src="<?= base_url('assets/myjs/') ?>my.js"></script>
 <script src="<?= base_url('assets/myjs/') ?>paket.js"></script>
 <script>
+    // $(document).ready(function() {
+    //     $('.js-example-basic-single').select2();
+    // });
     // Show Password
     function showPassword(button) {
         var inputPassword = $(button).parent().find('input');

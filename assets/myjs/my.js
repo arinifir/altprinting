@@ -152,3 +152,112 @@ function filter(kategori){
     window.location.href = base_url+`pelanggan/kategori?filter=true&ktg=${kategori}`;
 }
 
+$(document).ready(function(){
+	$("#cuponslide").hide();
+	$("#transfer").hide();
+	$("#transfercard").hide();
+	$("#cod").hide();
+	$("#codcard").hide();
+})
+
+$(document).on('click', '#slidecupon', function(){
+	var tampil = $(this).attr('class');
+	if (tampil == 'hide') {
+		$("#cuponslide").slideDown();
+		$("#slidecupon").removeClass("hide");
+		$("#slidecupon").addClass("show");
+	} else {
+		$("#cuponslide").slideUp();
+		$("#slidecupon").removeClass("show");
+		$("#slidecupon").addClass("hide");
+	}
+})
+
+$(document).on('change', 'input[name="selector"]', function(){
+	var radio = $(this).data('radio');
+	console.log(radio);
+	if(radio == 'transfer'){
+		$("#transfer").slideDown(); 
+		$("#transfercard").show();
+		$('#cod').slideUp();
+		$('#codcard').hide();
+		$('#input_bayar').val('1');
+	} else if(radio == 'cod') {
+		$('#cod').slideDown();
+		$('#codcard').show();
+		$("#transfer").slideUp();
+		$("#transfercard").hide();
+		$('#input_bayar').val('2');
+	}
+})
+
+$(document).on('change', '#provinsi', function(){
+	$('#kabupaten').attr('disabled',true);
+	$('#kabupaten').html('<option selected>Pilih Kabupaten</option>');
+	var id_provinsi = $(this).val();
+	$.ajax({
+		method: "GET",
+		url: base_url + `API/getKabKota/${id_provinsi}`,
+		dataType: "JSON",
+		success: function (response) {
+			$('#kabupaten').removeAttr('disabled');
+			var kabkota = response.data;
+			$.each(kabkota, function(i,value) {
+				$('#kabupaten').append(`<option value="${value.id}">${value.name}</option>`);
+				$('#kabupaten').niceSelect('update');
+			})
+		}
+	})
+})
+
+$(document).on('change', '#kabupaten', function(){
+	$('#kecamatan').attr('disabled',true);
+	$('#kecamatan').html('<option selected>Pilih Kecamatan</option>');
+	var id_kabkota = $(this).val();
+	$.ajax({
+		method: "GET",
+		url: base_url + `API/getKecamatan/${id_kabkota}`,
+		dataType: "JSON",
+		success: function (response) {
+			$('#kecamatan').removeAttr('disabled');
+			var kabkota = response.data;
+			$.each(kabkota, function(i,value) {
+				$('#kecamatan').append(`<option value="${value.id}">${value.name}</option>`);
+				$('#kecamatan').niceSelect('update');
+			})
+		}
+	})
+})
+
+$(document).on('click', '#tambah_voucher', function(){
+	var kode_voucher = $('#input_voucher').val();
+	console.log(kode_voucher);
+	$.ajax({
+		method: 'GET',
+		url: base_url + `API/checkVoucher/${kode_voucher}`,
+		dataType: "JSON",
+		success: function (response) {
+			var status = response.message;
+			if (status == 1) {
+				// var kode_voucher = response.data.kd_voucher;
+				$('#alert_voucher').html(`<div class="alert alert-success alert-dismissible fade show" role="alert">
+					Voucher Berhasil Dipakai
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>`)
+				$('#input_voucher').attr('name', 'kd_voucher');
+				$('#display_voucher').html(`<a href="#">Kode Voucher <span>${response.data.kd_voucher}</span></a>`);
+			} else {
+				$('#alert_voucher').html(`<div class="alert alert-danger alert-dismissible fade show" role="alert">
+					Voucher Tidak Berlaku
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>`)
+				$('#display_voucher').html('');
+				$('#input_voucher').val('');
+			}
+		}
+	});
+})

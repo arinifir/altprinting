@@ -1,126 +1,72 @@
 <!--================Cart Area =================-->
 <section class="cart_area">
 	<div class="container">
-		<div class="cart_inner">
-			<div class="table-responsive">
+		<div class="row cart_inner">
+			<div class="table-responsive col-lg-8">
 				<table class="table">
 					<thead>
 						<tr>
-							<th scope="col">Product</th>
-							<th scope="col">Price</th>
-							<th scope="col">Quantity</th>
-							<th scope="col">Total</th>
+							<th scope="col">Produk</th>
+							<th scope="col">Harga</th>
+							<th scope="col">Jumlah</th>
+							<th scope="col">Subtotal</th>
+							<th scope="col">Aksi</th>
 						</tr>
 					</thead>
-					<tbody>
-						<tr>
-							<td>
-								<div class="media">
-									<div class="d-flex">
-										<img src="img/cart/cart1.png" alt="">
+					<tbody id="cart_content">
+						<?php $no = 1;
+						foreach ($this->cart->contents() as $p) { ?>
+							<tr>
+								<td>
+									<div class="media">
+										<div class="media-body">
+											<p><?= $p['name']; ?></p>
+										</div>
 									</div>
-									<div class="media-body">
-										<p>Minimalistic shop for multipurpose use</p>
+								</td>
+								<td>
+									<h5>Rp <?= $p['price']; ?></h5>
+								</td>
+								<td>
+									<div class="product_count">
+										<input type="number" step="1" min="1" name="quantity" id="input_qty" data-rowid="<?= $p['rowid']; ?>" title="Qty" class="input-text qty text" value="<?= $p['qty']; ?>">
 									</div>
-								</div>
-							</td>
-							<td>
-								<h5>$360.00</h5>
-							</td>
-							<td>
-								<div class="product_count">
-									<input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
-								</div>
-							</td>
-							<td>
-								<h5>$720.00</h5>
-							</td>
-						</tr>
-						<tr class="bottom_button">
-							<td>
-								<a class="button" href="#">Update Cart</a>
-							</td>
-							<td>
-
-							</td>
-							<td>
-
-							</td>
-							<td>
-								<div class="cupon_text d-flex align-items-center">
-									<input type="text" placeholder="Coupon Code">
-									<a class="primary-btn" href="#">Apply</a>
-									<a class="button" href="#">Have a Coupon?</a>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td>
-
-							</td>
-							<td>
-
-							</td>
-							<td>
-								<h5>Subtotal</h5>
-							</td>
-							<td>
-								<h5>$2160.00</h5>
-							</td>
-						</tr>
-						<tr class="shipping_area">
-							<td class="d-none d-md-block">
-
-							</td>
-							<td>
-
-							</td>
-							<td>
-								<h5>Shipping</h5>
-							</td>
-							<td>
-								<div class="shipping_box">
-									<ul class="list">
-										<li><a href="#">Flat Rate: $5.00</a></li>
-										<li><a href="#">Free Shipping</a></li>
-										<li><a href="#">Flat Rate: $10.00</a></li>
-										<li class="active"><a href="#">Local Delivery: $2.00</a></li>
-									</ul>
-									<h6>Calculate Shipping <i class="fa fa-caret-down" aria-hidden="true"></i></h6>
-									<select class="shipping_select">
-										<option value="1">Bangladesh</option>
-										<option value="2">India</option>
-										<option value="4">Pakistan</option>
-									</select>
-									<select class="shipping_select">
-										<option value="1">Select a State</option>
-										<option value="2">Select a State</option>
-										<option value="4">Select a State</option>
-									</select>
-									<input type="text" placeholder="Postcode/Zipcode">
-									<a class="gray_btn" href="#">Update Details</a>
-								</div>
-							</td>
-						</tr>
-						<tr class="out_button_area">
-							<td class="d-none-l">
-
-							</td>
-							<td class="">
-
-							</td>
-							<td>
-
-							</td>
-							<td>
-								<div class="checkout_btn_inner d-flex align-items-center">
-									<a class="gray_btn" href="#">Continue Shopping</a>
-									<a class="primary-btn ml-2" href="<?= base_url('pelanggan/Checkout'); ?>">Proceed to checkout</a>
-								</div>
-							</td>
-						</tr>
+								</td>
+								<td>
+									<h5><?= "Rp " . number_format($p['subtotal'], 0, ',', '.') ?></h5>
+								</td>
+								<td>
+									<a href="<?= base_url('pelanggan/Keranjang/delcart/' . $p['rowid']) ?>" type="button" data-toggle="tooltip" title="" class="btn btn-link text-danger" data-original-title="Hapus">
+										<i class="fa fa-times"></i>
+									</a>
+								</td>
+							</tr>
+						<?php } ?>
 					</tbody>
 				</table>
+			</div>
+			<div class="col-lg-4">
+				<div class="mb-3">
+					<div class="cupon_text">
+						<form action="<?= base_url('pelanggan/Checkout'); ?>" method="get">
+							<input type="text" id="input_voucher" placeholder="Kode Voucher" value="">
+							<a class="primary-btn" id="tambah_voucher" href="javascript:void(0)">Pakai</a>
+					</div>
+				</div>
+				<div id="alert_voucher">
+
+				</div>
+				<div class="order_box">
+					<h2>Total Keranjang</h2>
+					<ul class="list list_2 mb-3">
+						<li><a href="#">Subtotal <span><?= "Rp " . number_format($this->cart->total(), 0, '.', '.') ?></span></a></li>
+						<li id="display_voucher"></li>
+					</ul>
+					<div class="text-center">
+						<button type="submit" class="button button-paypal">Lanjutkan ke Checkout</button>
+						</form>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

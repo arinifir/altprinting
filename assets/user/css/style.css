@@ -983,6 +983,17 @@ a {
 .card-product:hover .card-product__title a {
 	color: #A80201;
 }
+.rating:hover {
+	color: rgb(255, 209, 2);
+	cursor: pointer;
+}
+.rating {
+	color: #A80201;
+	cursor: pointer;
+}
+.rating.aktif{
+	color: rgb(255, 209, 2);
+}
 
 .offer {
 	background: url("../img/home/1shoppingbags.jpg") right center no-repeat;
@@ -1236,6 +1247,27 @@ a {
 	transition: all 0.4s ease;
 }
 
+
+.button_cupon {
+	display: inline-block;
+	border: 1px solid #A80201;
+	border-radius: 30px;
+	color: #222;
+	font-weight: 500;
+	font-size: 15px;
+	padding: 7px 44px;
+	background: #A80201;
+	color: #fff;
+	transition: all 0.4s ease;
+}
+
+@media(max-width:767px) {
+	.button_cupon {
+		float: right;
+	}
+}
+
+
 .buttonforsale {
 	display: inline-block;
 	border: 1px solid #F4FAFF;
@@ -1260,6 +1292,12 @@ a {
 
 @media (max-width: 767px) {
 	.button {
+		padding: 8px 25px !important;
+	}
+}
+
+@media (max-width: 767px) {
+	.tombol {
 		padding: 8px 25px !important;
 	}
 }
@@ -1340,6 +1378,7 @@ a {
 	border-color: #eeeeee;
 }
 
+
 .button-hero {
 	padding: 12px 41px;
 }
@@ -1380,6 +1419,7 @@ a {
 	background: transparent;
 	color: #222;
 }
+
 
 .accordion .card {
 	margin-bottom: 7px;
@@ -3230,6 +3270,13 @@ html[dir="rtl"] .default-accordion-style .card .card-header h5 i {
 	margin-bottom: 0px;
 }
 
+@media (max-width: 767px) {
+	.check_title h2 {
+		font-size: 12px;
+		padding-left: 10px;
+	}
+}
+
 .check_title h2 a {
 	color: #A80201;
 	text-decoration: underline;
@@ -3487,12 +3534,12 @@ html[dir="rtl"] .default-accordion-style .card .card-header h5 i {
 	width: 50px;
 	text-align: right;
 	display: inline-block;
-	margin-left: 30px;
+	/* margin-left: 30px; */
 	color: #222;
 }
 
 .order_box .list li:nth-child(4) a .middle {
-	margin-left: 48px;
+	/* margin-left: 48px; */
 }
 
 .order_box .list_2 li a {
@@ -4135,23 +4182,17 @@ html[dir="rtl"] .default-accordion-style .card .card-header h5 i {
 	width: 60px;
 }
 
-.cart_inner .table tbody tr.bottom_button td .cupon_text {
-	margin-left: -429px;
-}
+.cart_inner .table tbody tr.bottom_button td .cupon_text {}
 
 @media (min-width: 991px) {
-	.cart_inner .table tbody tr.bottom_button td .cupon_text {
-		margin-left: -465px;
-	}
+	.cart_inner .table tbody tr.bottom_button td .cupon_text {}
 }
 
 @media (max-width: 600px) {
-	.cart_inner .table tbody tr.bottom_button td .cupon_text {
-		margin-left: -380px;
-	}
+	.cart_inner .table tbody tr.bottom_button td .cupon_text {}
 }
 
-.cart_inner .table tbody tr.bottom_button td .cupon_text input {
+.cupon_text input {
 	width: 200px;
 	padding: 0px 10px 0 18px;
 	border-radius: 30px;
@@ -4165,37 +4206,37 @@ html[dir="rtl"] .default-accordion-style .card .card-header h5 i {
 	box-shadow: none;
 }
 
-.cart_inner .table tbody tr.bottom_button td .cupon_text input.placeholder {
+.cupon_text input.placeholder {
 	font-size: 14px;
 	color: #cccccc;
 	font-weight: normal;
 }
 
-.cart_inner .table tbody tr.bottom_button td .cupon_text input:-moz-placeholder {
+.cupon_text input:-moz-placeholder {
 	font-size: 14px;
 	color: #cccccc;
 	font-weight: normal;
 }
 
-.cart_inner .table tbody tr.bottom_button td .cupon_text input::-moz-placeholder {
+.cupon_text input::-moz-placeholder {
 	font-size: 14px;
 	color: #cccccc;
 	font-weight: normal;
 }
 
-.cart_inner .table tbody tr.bottom_button td .cupon_text input::-webkit-input-placeholder {
+.cupon_text input::-webkit-input-placeholder {
 	font-size: 14px;
 	color: #cccccc;
 	font-weight: normal;
 }
 
 @media (max-width: 600px) {
-	.cart_inner .table tbody tr.bottom_button td .cupon_text input {
-		width: 120px;
+	.cupon_text input {
+		width: 11.5rem;
 	}
 }
 
-.cart_inner .table tbody tr.bottom_button td .cupon_text .primary-btn {
+.cupon_text .primary-btn {
 	height: 40px;
 	line-height: 38px;
 	text-transform: uppercase;
@@ -4324,7 +4365,7 @@ html[dir="rtl"] .default-accordion-style .card .card-header h5 i {
 }
 
 .cart_inner .table tbody tr.out_button_area .checkout_btn_inner {
-	margin-left: -395px;
+	margin-left: -195px;
 }
 
 .cart_inner .table tbody tr.out_button_area .checkout_btn_inner .primary-btn {

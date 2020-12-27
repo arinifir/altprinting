@@ -41,9 +41,9 @@
                                         <tr>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <button id="btnDel" type="button" data-toggle="tooltip" data-id="<?= $t->no_transaksi; ?>" title="" class="btn mb-1 btn-danger btnDel" data-original-title="Remove">
+                                                    <a href="<?= base_url('Sadmin/hapusorder/' . $t->no_transaksi) ?>" type="button" data-toggle="tooltip" class="btn mb-1 btn-danger text-white" data-original-title="Hapus Transaksi">
                                                         <i class="fa fa-trash"></i>
-                                                    </button>
+                                                    </a>
                                                 </div>
                                             </td>
                                             <td>

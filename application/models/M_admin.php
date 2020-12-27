@@ -137,4 +137,83 @@ class M_admin extends CI_Model
     {
         return $this->db->get_where('tb_transaksi', ['status_transaksi' => $status])->result();
     }
+
+    function statistik_pendapatan()
+    {
+
+        $sql = $this->db->query("
+  
+  select
+  ifnull((SELECT count(no_transaksi) FROM (tb_transaksi)WHERE((Month(tanggal_transaksi)=1)AND (YEAR(tanggal_transaksi)=2020))),0) AS `Januari`,
+  ifnull((SELECT count(no_transaksi) FROM (tb_transaksi)WHERE((Month(tanggal_transaksi)=2)AND (YEAR(tanggal_transaksi)=2020))),0) AS `Februari`,
+  ifnull((SELECT count(no_transaksi) FROM (tb_transaksi)WHERE((Month(tanggal_transaksi)=3)AND (YEAR(tanggal_transaksi)=2020))),0) AS `Maret`,
+  ifnull((SELECT count(no_transaksi) FROM (tb_transaksi)WHERE((Month(tanggal_transaksi)=4)AND (YEAR(tanggal_transaksi)=2020))),0) AS `April`,
+  ifnull((SELECT count(no_transaksi) FROM (tb_transaksi)WHERE((Month(tanggal_transaksi)=5)AND (YEAR(tanggal_transaksi)=2020))),0) AS `Mei`,
+  ifnull((SELECT count(no_transaksi) FROM (tb_transaksi)WHERE((Month(tanggal_transaksi)=6)AND (YEAR(tanggal_transaksi)=2020))),0) AS `Juni`,
+  ifnull((SELECT count(no_transaksi) FROM (tb_transaksi)WHERE((Month(tanggal_transaksi)=7)AND (YEAR(tanggal_transaksi)=2020))),0) AS `Juli`,
+  ifnull((SELECT count(no_transaksi) FROM (tb_transaksi)WHERE((Month(tanggal_transaksi)=8)AND (YEAR(tanggal_transaksi)=2020))),0) AS `Agustus`,
+  ifnull((SELECT count(no_transaksi) FROM (tb_transaksi)WHERE((Month(tanggal_transaksi)=9)AND (YEAR(tanggal_transaksi)=2020))),0) AS `September`,
+  ifnull((SELECT count(no_transaksi) FROM (tb_transaksi)WHERE((Month(tanggal_transaksi)=10)AND (YEAR(tanggal_transaksi)=2020))),0) AS `Oktober`,
+  ifnull((SELECT count(no_transaksi) FROM (tb_transaksi)WHERE((Month(tanggal_transaksi)=11)AND (YEAR(tanggal_transaksi)=2020))),0) AS `November`,
+  ifnull((SELECT count(no_transaksi) FROM (tb_transaksi)WHERE((Month(tanggal_transaksi)=12)AND (YEAR(tanggal_transaksi)=2020))),0) AS `Desember`
+ from tb_transaksi GROUP BY YEAR(tanggal_transaksi) 
+  
+  ");
+
+        return $sql;
+    }
+    public function transByNo($no)
+    {
+        return $this->db->get_where('tb_transaksi', ['no_transaksi' => $no])->row();
+    }
+    public function detailByNo($no)
+    {
+        return $this->db->get_where('tb_dtrans', ['no_transaksi' => $no])->result();
+    }
+    public function productSold()
+    {
+        $this->db->select('SUM(jumlah_produk) as jumlah');
+        $this->db->from('tb_dtrans');
+        $this->db->join('tb_transaksi', 'tb_dtrans.no_transaksi=tb_transaksi.no_transaksi');
+        $this->db->where(['status_transaksi' => 5]);
+        $query = $this->db->get();
+        return $query->row();
+    }
+    public function allPelanggan()
+    {
+        return $this->db->get_where('tb_user', ['level' => 3])->num_rows();
+    }
+    public function orderProcess()
+    {
+        $this->db->where('status_transaksi != 0');
+        $this->db->where('status_transaksi != 5');
+        return $this->db->get('tb_transaksi')->num_rows();
+    }
+    public function pendapatan()
+    {
+        $this->db->select('SUM(total_bayar) as bayar');
+        $this->db->from('tb_transaksi');
+        $this->db->where(['status_transaksi' => 5]);
+        $query = $this->db->get();
+        return $query->row();
+    }
+    public function getImage($no)
+    {
+        return $this->db->get_where('tb_gambar', ['no_transaksi' => $no])->result();
+    }
+    function jmlUlasan()
+    {
+        return $this->db->select('tb_produk.kd_produk, nama_produk, gambar_produk, count(id_ulas) as jml, round(avg(rating_ulas),1) as rerata')
+            ->from('tb_produk')
+            ->join('tb_ulasan', 'tb_produk.kd_produk=tb_ulasan.kd_produk', 'left')
+            ->group_by('tb_produk.kd_produk')->get()->result();
+    }
+    public function getUlasan($kode)
+    {
+        return $this->db->select('*')->from('tb_ulasan')->get_where('', ['kd_produk' => $kode])->result();
+    }
+    public function rating($kode)
+    {
+        return $this->db->select('*, count(id_ulas) as jml, round(avg(rating_ulas),1) as rerata')->from('tb_ulasan')->get_where('', ['kd_produk' => $kode])->result();
+    }
 }

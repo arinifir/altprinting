@@ -18,8 +18,47 @@ $(document).ready(() => {
         }
     });
 })
+$(document).ready(() => {
+    const gambar = $('.carousel-item');
+    for(var i = 0; i<gambar.length;i++){
+        gambar[0].addClass(' active');
+        gambar[i].addEventListener("click", function(){
+            var current = $('.active');
+            current[0].className = current[0].className.replace(' active', '');
+            this.className += " active";
+        })
+    }
+})
+
+$(document).on('change','#input_qty', function () {
+    console.log('ok')
+    var qty = $(this).val();
+    var rowid = $(this).data('rowid');
+    console.log(rowid);
+    $.ajax({
+        method: 'POST',
+        url: base_url + `API/updatecart/${rowid}/${qty}`,
+        dataType: "text",
+        success: function (response) {
+            console.log(response);
+            location.reload();
+        }
+    });
+})
 
 /* ==================================================================================================== */
+function tampilbintang() {
+    const rating = $('.rating');
+    for (var i = 0; i < rating.length; i++) {
+        rating[i].addEventListener('click', function () {
+            var current = $('.aktif');
+            current[0].className = current[0].className.replace(' aktif','');
+            this.className += " aktif";
+            let id = $(this).data('kode');
+            $('#input_rating').val(id);
+        })
+    }
+} 
 
 function adaPaket(){
     const card_area = $('.card_area');
