@@ -43,7 +43,7 @@
                 </a>
             </li>
             <li>
-                <a href="<?= base_url('admin/Admin/antriankirim') ?>" aria-expanded="false">
+                <a href="<?= base_url('admin/Datatrans') ?>" aria-expanded="false">
                     <i class="mdi mdi-truck-fast"></i><span class="nav-text pl-2">Menunggu Pengiriman</span>
                 </a>
             </li>

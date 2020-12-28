@@ -51,9 +51,9 @@
                                             <td><?= $p->no_hp; ?></td>
                                             <td>
                                                 <?php if ($p->status == 1) { ?>
-                                                    <span class="label label-pill label-success">Aktif</span>
+                                                    <span class="badge badge-success">Aktif</span>
                                                 <?php } else { ?>
-                                                    <span class="label label-pill label-danger">Non-Aktif</span>
+                                                    <span class="badge badge-danger">Non-Aktif</span>
                                                 <?php } ?>
                                             <td>
                                                 <div class="form-button-action">

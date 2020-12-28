@@ -73,7 +73,7 @@
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title">Ubah Data <?= $a->id_user; ?></h5>
+                                            <h5 class="modal-title">Ubah Data <?= $a->nama_lengkap; ?></h5>
                                             <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                                             </button>
                                         </div>
@@ -147,9 +147,9 @@
                                             <td><?= $a->no_hp; ?></td>
                                             <td>
                                                 <?php if ($a->status == 1) { ?>
-                                                    <span class="label label-pill label-success">Aktif</span>
+                                                    <span class="badge badge-success">Aktif</span>
                                                 <?php } else { ?>
-                                                    <span class="label label-pill label-danger">Non-Aktif</span>
+                                                    <span class="badge badge-danger">Non-Aktif</span>
                                                 <?php } ?>
                                             <td>
                                                 <div class="form-button-action">

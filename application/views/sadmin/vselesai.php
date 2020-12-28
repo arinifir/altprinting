@@ -16,7 +16,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div>
-                            <h4 class="card-title">COD</h4>
+                            <h4 class="card-title">Transaksi Selesai</h4>
                         </div>
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered zero-configuration">
