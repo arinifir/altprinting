@@ -52,16 +52,16 @@
                                         <tr>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="<?= base_url('admin/Confirmbayar/konfirmasi/' . $t->no_transaksi); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success text-white" data-original-title="Konfirmasi Pembayaran">
+                                                    <a href="<?= base_url('admin/Transaksi/konfirmasi/' . $t->no_transaksi); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success text-white" data-original-title="Konfirmasi Pembayaran">
                                                         <i class="mdi mdi-check"></i>
                                                     </a>
-                                                    <a href="<?= base_url('admin/Confirmbayar/orderbatal/' . $t->no_transaksi); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Batalkan Pesanan">
+                                                    <a href="<?= base_url('admin/Transaksi/orderbatal/' . $t->no_transaksi); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Batalkan Pesanan">
                                                         <i class="mdi mdi-close"></i>
                                                     </a>
                                                 </div>
                                             </td>
                                             <td>
-                                                <a href="<?= base_url('admin/Confirmbayar/detailtransaksi/' . $t->no_transaksi) ?>" type="button" data-toggle="tooltip" class="btn mb-1 btn-secondary text-white" data-original-title="Detail Transaksi">Detail</a>
+                                                <a href="<?= base_url('admin/Transaksi/detailtransaksi/' . $t->no_transaksi) ?>" type="button" data-toggle="tooltip" class="btn mb-1 btn-secondary text-white" data-original-title="Detail Transaksi">Detail</a>
                                             </td>
                                             <td><?= $t->no_transaksi; ?></td>
                                             <td><?= $t->tanggal_transaksi; ?></td>

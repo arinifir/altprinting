@@ -33,33 +33,48 @@
             </li>
             <li class="nav-label">Transaksi</li>
             <li>
-                <a href="<?= base_url('admin/Admin/datatransaksi') ?>" aria-expanded="false">
-                    <i class="mdi mdi-view-list"></i><span class="nav-text pl-2">Data Transaksi</span>
+                <a href="<?= base_url('admin/Transaksi/datatransaksi') ?>" aria-expanded="false">
+                    <i class="mdi mdi-credit-card-remove"></i><span class="nav-text pl-2">Menunggu Pembayaran</span>
                 </a>
             </li>
             <li>
-                <a href="<?= base_url('admin/Datatrans') ?>" aria-expanded="false">
-                    <i class="mdi mdi-truck-fast"></i><span class="nav-text pl-2">Menunggu Pengiriman</span>
-                </a>
-            </li>
-            <li>
-                <a href="<?= base_url('admin/Confirmbayar') ?>" aria-expanded="false">
+                <a href="<?= base_url('admin/Transaksi/confirmbayar') ?>" aria-expanded="false">
                     <i class="mdi mdi-credit-card-check"></i><span class="nav-text pl-2">Konfirmasi Pembayaran</span>
                 </a>
             </li>
             <li>
-                <a href="<?= base_url('admin/Admin/resikirim') ?>" aria-expanded="false">
+                <a href="<?= base_url('admin/Transaksi/pengemasan') ?>" aria-expanded="false">
+                    <i class="mdi mdi-package-variant"></i><span class="nav-text pl-2">Pengemasan</span>
+                </a>
+            </li>
+            <li>
+                <a href="<?= base_url('admin/Transaksi/kemascod') ?>" aria-expanded="false">
+                    <i class="mdi mdi-package"></i><span class="nav-text pl-2">Pengemasan(COD)</span>
+                </a>
+            </li>
+            <li>
+                <a href="<?= base_url('admin/Transaksi/resikirim') ?>" aria-expanded="false">
                     <i class="mdi mdi-tag-text"></i><span class="nav-text pl-2">Resi Pengiriman</span>
                 </a>
             </li>
             <li>
-                <a href="<?= base_url('admin/Admin/transelesai') ?>" aria-expanded="false">
+                <a href="<?= base_url('admin/Transaksi/datacod') ?>" aria-expanded="false">
+                    <i class="mdi mdi-run-fast"></i><span class="nav-text pl-2">COD</span>
+                </a>
+            </li>
+            <li>
+                <a href="<?= base_url('admin/Transaksi/transelesai') ?>" aria-expanded="false">
                     <i class="mdi mdi-check"></i><span class="nav-text pl-2">Selesai</span>
                 </a>
             </li>
             <li>
-                <a href="<?= base_url('admin/Admin/dataulasan') ?>" aria-expanded="false">
+                <a href="<?= base_url('admin/Transaksi/ulasanproduk') ?>" aria-expanded="false">
                     <i class="mdi mdi-comment"></i><span class="nav-text pl-2">Ulasan</span>
+                </a>
+            </li>
+            <li>
+                <a href="<?= base_url('admin/Transaksi/tidakvalid') ?>" aria-expanded="false">
+                    <i class="mdi mdi-close"></i><span class="nav-text pl-2">Pesanan Batal</span>
                 </a>
             </li>
             <li>

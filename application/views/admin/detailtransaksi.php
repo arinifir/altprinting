@@ -18,7 +18,7 @@
                     <div class="card-body">
                         <div>
                             <h4 class="card-title">No <?= $transaksi->no_transaksi; ?></h4>
-                            <a href="<?= base_url('admin/gambartransaksi/' . $transaksi->no_transaksi); ?>" type="button" class="btn mb-1 btn-primary">Lihat Gambar
+                            <a href="<?= base_url('admin/Transaksi/gambartransaksi/' . $transaksi->no_transaksi); ?>" type="button" class="btn mb-1 btn-primary">Lihat Gambar
                                 <span class="btn-icon-right"><i class="fa fa-eye"></i></span>
                             </a>
                         </div>

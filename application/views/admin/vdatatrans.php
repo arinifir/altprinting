@@ -42,17 +42,17 @@
                                             <td>
                                                 <div class="form-button-action">
                                                     <?php if ($t->jenis_pembayaran == 2) { ?>
-                                                        <a href="<?= base_url('admin/Datatrans/konfirmasi/' . $t->no_transaksi); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success text-white" data-original-title="Lanjut Pengemasan">
+                                                        <a href="<?= base_url('admin/Transaksi/konfirmasi/' . $t->no_transaksi); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-success text-white" data-original-title="Lanjut Pengemasan">
                                                             <i class="mdi mdi-check"></i>
                                                         </a>
                                                     <?php } ?>
-                                                    <a href="<?= base_url('admin/Datatrans/orderbatal/' . $t->no_transaksi); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Batalkan Pesanan">
+                                                    <a href="<?= base_url('admin/Transaksi/orderbatal/' . $t->no_transaksi); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Batalkan Pesanan">
                                                         <i class="mdi mdi-close"></i>
                                                     </a>
                                                 </div>
                                             </td>
                                             <td>
-                                                <a href="<?= base_url('admin/Datatrans/detailtransaksi/' . $t->no_transaksi) ?>" type="button" data-toggle="tooltip" class="btn mb-1 btn-secondary text-white" data-original-title="Detail Transaksi">Detail</a>
+                                                <a href="<?= base_url('admin/Transaksi/detailtransaksi/' . $t->no_transaksi) ?>" type="button" data-toggle="tooltip" class="btn mb-1 btn-secondary text-white" data-original-title="Detail Transaksi">Detail</a>
                                             </td>
                                             <td><?= $t->no_transaksi; ?></td>
                                             <td><?= $t->tanggal_transaksi; ?></td>
