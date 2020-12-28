@@ -36,7 +36,7 @@ class Keranjang extends CI_Controller
             'id'      => $kd_produk,
             'name'   => $nama,
             'qty'   => $jumlah,
-            'price'    => $harga,
+            'price'    => $harga, 
             'options' => array('kd_paket' => $kd_paket)
         );
         // var_dump($data);

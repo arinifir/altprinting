@@ -238,7 +238,7 @@ $(document).on('click', '#tambah_voucher', function(){
 		dataType: "JSON",
 		success: function (response) {
 			var status = response.message;
-			if (status == 1) {
+			if (status == 1) { 
 				// var kode_voucher = response.data.kd_voucher;
 				$('#alert_voucher').html(`<div class="alert alert-success alert-dismissible fade show" role="alert">
 					Voucher Berhasil Dipakai
@@ -248,6 +248,10 @@ $(document).on('click', '#tambah_voucher', function(){
 				</div>`)
 				$('#input_voucher').attr('name', 'kd_voucher');
 				$('#display_voucher').html(`<a href="#">Kode Voucher <span>${response.data.kd_voucher}</span></a>`);
+				$('.btn_voucher').removeClass('primary-btn');
+				$('.btn_voucher').addClass('secondary-btn');
+				$('.btn_voucher').html('Batal');
+				$('.btn_voucher').attr('id', 'batal_voucher');
 			} else {
 				$('#alert_voucher').html(`<div class="alert alert-danger alert-dismissible fade show" role="alert">
 					Voucher Tidak Berlaku
@@ -260,4 +264,15 @@ $(document).on('click', '#tambah_voucher', function(){
 			}
 		}
 	});
+})
+
+$(document).on('click', '#batal_voucher', function(){
+	$('#input_voucher').removeAttr('name');
+	$('#input_voucher').val('');
+	$('.btn_voucher').removeClass('secondary-btn');
+	$('.btn_voucher').addClass('primary-btn');
+	$('.btn_voucher').html('Pakai');
+	$('.btn_voucher').attr('id', 'tambah_voucher');
+	$('#display_voucher').html('');
+	$('.alert').hide();
 })

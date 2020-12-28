@@ -47,10 +47,10 @@
 			</div>
 			<div class="col-lg-4">
 				<div class="mb-3">
-					<div class="cupon_text">
+					<div class="cupon_text"> 
 						<form action="<?= base_url('pelanggan/Checkout'); ?>" method="get">
 							<input type="text" id="input_voucher" placeholder="Kode Voucher" value="">
-							<a class="primary-btn" id="tambah_voucher" href="javascript:void(0)">Pakai</a>
+							<a class="primary-btn btn_voucher" id="tambah_voucher" href="javascript:void(0)">Pakai</a>
 					</div>
 				</div>
 				<div id="alert_voucher">

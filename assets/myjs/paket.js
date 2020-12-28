@@ -17,7 +17,7 @@ $(document).ready(() => {
             }
         }
     });
-})
+}) 
 $(document).ready(() => {
     const gambar = $('.carousel-item');
     for(var i = 0; i<gambar.length;i++){
