@@ -139,4 +139,8 @@ class M_produk extends CI_Model
     {
         return $this->db->get_where('tb_paket', ['kd_produk' => $id])->num_rows();
     }
+    public function getProdukByKG()
+    {
+        return $this->db->get_where('tb_produk', ['kategori_produk'=>'KTG02'])->result();
+    }
 }

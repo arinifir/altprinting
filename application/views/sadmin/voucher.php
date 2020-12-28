@@ -176,9 +176,9 @@
                                             </td>
                                             <td>
                                                 <?php if ($v->status_voucher == 1) { ?>
-                                                    <span class="label label-pill label-success">Aktif</span>
+                                                    <span class="badge badge-success">Aktif</span>
                                                 <?php } else { ?>
-                                                    <span class="label label-pill label-danger">Non-Aktif</span>
+                                                    <span class="badge badge-danger">Non-Aktif</span>
                                                 <?php } ?>
                                             </td>
                                             <td>

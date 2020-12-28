@@ -72,7 +72,7 @@ class Konfirmasi extends CI_Controller
         }else{
             redirect($this->agent->referrer());
         }
-        $status = 2;
+        $status = 2; 
         $data = [
             'status_transaksi' => $status
         ];

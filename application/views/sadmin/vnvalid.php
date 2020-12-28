@@ -16,7 +16,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div>
-                            <h4 class="card-title">COD</h4>
+                            <h4 class="card-title">Pesanan Dibatalkan</h4>
                         </div>
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered zero-configuration">
@@ -47,7 +47,7 @@
                                                 </div>
                                             </td>
                                             <td>
-                                                <a href="<?= base_url('Sadmin/lihatpaket/' . $t->no_transaksi) ?>" type="button" data-toggle="tooltip" class="btn mb-1 btn-info text-white" data-original-title="Detail Transaksi">Detail</a>
+                                                <a href="<?= base_url('Sadmin/detailtransaksi/' . $t->no_transaksi) ?>" type="button" data-toggle="tooltip" class="btn mb-1 btn-info text-white" data-original-title="Detail Transaksi">Detail</a>
                                             </td>
                                             <td><?= $t->no_transaksi; ?></td>
                                             <td><?= $t->tanggal_transaksi; ?></td>

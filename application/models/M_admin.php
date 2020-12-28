@@ -115,6 +115,7 @@ class M_admin extends CI_Model
         $this->db->from('tb_paket');
         $this->db->join('tb_produk', 'tb_produk.kd_produk = tb_paket.kd_produk');
         $this->db->where(['tb_paket.kd_produk' => $kode]);
+        $this->db->where(['status_paket' => 1]);
         return $this->db->get()->result();
     }
     public function produkbykode($kode)

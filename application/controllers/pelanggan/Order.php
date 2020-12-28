@@ -43,7 +43,7 @@ class Order extends CI_Controller
     }
     public function kirimnota($no)
     {
-        $this->configemail->email_config();
+        $this->configemail->email_config(); 
         $from = "altprinting3@gmail.com";
         $subject = "Halo Pelanggan ALT Printing Jember";
         $data['order'] = $this->db->query('select * from tb_transaksi where no_transaksi='.$no)->row();

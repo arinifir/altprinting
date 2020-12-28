@@ -9,6 +9,8 @@ class Sadmin extends CI_Controller
         parent::__construct();
         //load model admin
         $this->load->model('m_admin', 'admin');
+        $this->load->model('m_produk', 'produk');
+        $this->load->model('m_transaksi', 'transaksi');
         $this->load->helper('auth_helper');
         $this->load->library('user_agent');
         $this->load->library('primslib');
@@ -890,6 +892,77 @@ class Sadmin extends CI_Controller
             $this->load->view('sadmin/topbar');
             $this->load->view('sadmin/sidebar');
             $this->load->view('sadmin/lihatulasan', $data);
+            $this->load->view('sadmin/footer');
+    }
+    public function pembelian()
+    {
+            $data['produk'] = $this->produk->getProdukByKG();
+            $this->load->view('sadmin/header');
+            $this->load->view('sadmin/topbar');
+            $this->load->view('sadmin/sidebar');
+            $this->load->view('sadmin/vpembelian', $data);
+            $this->load->view('sadmin/footer');
+    }
+    public function tambahcart($kode)
+    {
+        $data1 = $this->db->get_where('tb_produk', ['kd_produk'=>$kode])->row();
+        $data = array(
+            'id'      => $data1->kd_produk,
+            'qty'     => $this->input->post('qty'),
+            'price'   => $data1->harga_produk,
+            'name'    => $data1->nama_produk
+        );
+        $this->cart->insert($data);
+        redirect($this->agent->referrer());
+    }
+    public function hapuscart($id){
+        $this->cart->remove($id);
+        redirect($this->agent->referrer());
+    }
+    public function tambahbeli()
+    {
+        $text = '123457890';
+        $panj = 4;
+        $txtl = strlen($text) - 1;
+        $result = '';
+        for ($i = 1; $i <= $panj; $i++) {
+            $result .= $text[rand(0, $txtl)];
+        }
+        $id = $this->session->userdata('id_sadmin');
+        $tanggal = date('Y-m-d');
+        $detail = $this->cart->contents();
+        $array = [];
+        foreach ($detail as $d){
+            $dtrans = [
+                'no_beli' => $result,
+                'kode_produk' => $d['id'],
+                'produk_beli' => $d['name'],
+                'harga_beli' => $d['price'],
+                'jumlah_beli' => $d['qty'],
+                'subtotal_beli' => $d['subtotal']
+            ];
+            $array[]=$dtrans;
+        }
+        $data1=[
+            'no_beli' => $result,
+            'tanggal_beli' => $tanggal,
+            'user_beli' => $id,
+            'nama_beli' => $this->session->userdata('nama'),
+            'total_beli' => $this->cart->total()
+        ];
+        $this->admin->addData('tb_pembelian', $data1);
+        $this->db->insert_batch('tb_dbeli', $array);
+        $this->cart->destroy();
+        $this->session->set_flashdata('berhasil', 'Data Pembelian Ditambahkan');
+        redirect($this->agent->referrer());
+    }
+    public function riwayatpembelian()
+    {
+            $data['beli'] = $this->transaksi->getBeli();
+            $this->load->view('sadmin/header');
+            $this->load->view('sadmin/topbar');
+            $this->load->view('sadmin/sidebar');
+            $this->load->view('sadmin/riwayatpembelian', $data);
             $this->load->view('sadmin/footer');
     }
 }

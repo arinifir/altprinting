@@ -75,7 +75,7 @@
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title">Ubah Data <?= $p->kd_paket; ?></h5>
+                                            <h5 class="modal-title">Ubah Data Paket <?= $p->nama_paket; ?></h5>
                                             <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                                             </button>
                                         </div>
