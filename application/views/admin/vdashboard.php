@@ -5,7 +5,7 @@
 
             <div class="container-fluid mt-3">
                 <div class="row">
-                   
+
                     <div class="col-lg-3 col-sm-6">
                         <div class="card gradient-2">
                             <div class="card-body">
@@ -51,54 +51,55 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
-                                   
-               
-<div id="chart">
-</div>
 
 
- <script src="<?= base_url('assets/highcharts/') ?>jquery.min.js" type="text/javascript"></script>
- <script src="<?= base_url('assets/highcharts/') ?>highcharts.js" type="text/javascript"></script>
- <script src="<?= base_url('assets/highcharts/') ?>modules/exporting.js" type="text/javascript"></script>
- <script src="<?= base_url('assets/highcharts/') ?>modules/offline-exporting.js" type="text/javascript"></script>
-<script type="text/javascript">
-jQuery(function(){
- new Highcharts.Chart({
-  chart: {
-   renderTo: 'chart',
-   type: 'line',
-  },
-  title: {
-   text: 'Grafik Statistik Pembelian',
-   x: -20
-  },
-  subtitle: {
-   text: 'Jumlah Pembelian',
-   x: -20
-  },
-  xAxis: {
-   categories: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun',
-                    'Jul', 'Ags', 'Sep', 'Okt', 'Nov', 'Des']
-  },
-  yAxis: {
-   title: {
-    text: 'Total Pembelian'
-   }
-  },
-  series: [{
-   name: 'Data dalam Bulan',
-   data: <?php echo json_encode($grafik); ?>
-  }]
- });
-}); 
-</script>
-</div>
-</div>
-</div>
-</div>
-               
+                                    <div id="chart">
+                                    </div>
 
 
+                                    <script src="<?= base_url('assets/highcharts/') ?>jquery.min.js" type="text/javascript"></script>
+                                    <script src="<?= base_url('assets/highcharts/') ?>highcharts.js" type="text/javascript"></script>
+                                    <script src="<?= base_url('assets/highcharts/') ?>modules/exporting.js" type="text/javascript"></script>
+                                    <script src="<?= base_url('assets/highcharts/') ?>modules/offline-exporting.js" type="text/javascript"></script>
+                                    <script type="text/javascript">
+                                        jQuery(function() {
+                                            new Highcharts.Chart({
+                                                chart: {
+                                                    renderTo: 'chart',
+                                                    type: 'line',
+                                                },
+                                                title: {
+                                                    text: 'Grafik Statistik Pembelian',
+                                                    x: -20
+                                                },
+                                                subtitle: {
+                                                    text: 'Jumlah Pembelian',
+                                                    x: -20
+                                                },
+                                                xAxis: {
+                                                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun',
+                                                        'Jul', 'Ags', 'Sep', 'Okt', 'Nov', 'Des'
+                                                    ]
+                                                },
+                                                yAxis: {
+                                                    title: {
+                                                        text: 'Total Pembelian'
+                                                    }
+                                                },
+                                                series: [{
+                                                    name: 'Data dalam Bulan',
+                                                    data: <?php echo json_encode($grafik); ?>
+                                                }]
+                                            });
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
             <!-- #/ container -->
         </div>
         <!--**********************************

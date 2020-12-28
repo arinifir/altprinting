@@ -703,7 +703,7 @@ class Sadmin extends CI_Controller
         $data['order'] = $this->db->query('select * from tb_transaksi where no_transaksi='.$no)->row();
         $data['detail'] = $this->db->query('select * from tb_dtrans where no_transaksi='.$data['order']->no_transaksi)->result();
         // $message = $data['transaksi']->nama_pembeli;
-        $data['judul'] = "ALT Printing - Nota Pemesanan";
+        $data['judul'] = " Nota Pemesanan";
         $message = $this->load->view('email/vkirimkonfirm', $data, true);
         $this->email->from($from, 'ALT Printing Jember');
         $this->email->to($data['order']->email_pembeli);
@@ -794,7 +794,7 @@ class Sadmin extends CI_Controller
         $data['order'] = $this->db->query('select * from tb_transaksi where no_transaksi='.$no)->row();
         $data['detail'] = $this->db->query('select * from tb_dtrans where no_transaksi='.$data['order']->no_transaksi)->result();
         // $message = $data['transaksi']->nama_pembeli;
-        $data['judul'] = "ALT Printing - Nota Pemesanan";
+        $data['judul'] = " Nota Pemesanan";
         $message = $this->load->view('email/vkirimresi', $data, true);
         $this->email->from($from, 'ALT Printing Jember');
         $this->email->to($data['order']->email_pembeli);

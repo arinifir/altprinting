@@ -76,7 +76,7 @@
                                             <a href="<?= base_url('sadmin/profilsadm') ?>"><i class="icon-user"></i> <span>Profil</span></a>
                                         </li>
                                         <hr class="my-2">
-                                        <li><a href="<?= base_url('Auth/logout'); ?>" onclick="return confirm('Anda yakin ingin keluar?')"><i class="icon-key"></i> <span>Logout</span></a></li>
+                                        <li><a href="javascript:void(0)" onclick="logout()"><i class="icon-key"></i> <span>Logout</span></a></li>
                                     </ul>
                                 </div>
                             </div>

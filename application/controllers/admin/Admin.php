@@ -17,27 +17,25 @@ class Admin extends CI_Controller
 
     public function index()
     {
-        foreach($this->admin->statistik_pendapatan()->result_array() as $row)
-        {
-         $dataa['grafik'][]=(float)$row['Januari'];
-         $dataa['grafik'][]=(float)$row['Februari'];
-         $dataa['grafik'][]=(float)$row['Maret'];
-         $dataa['grafik'][]=(float)$row['April'];
-         $dataa['grafik'][]=(float)$row['Mei'];
-         $dataa['grafik'][]=(float)$row['Juni'];
-         $dataa['grafik'][]=(float)$row['Juli'];
-         $dataa['grafik'][]=(float)$row['Agustus'];
-         $dataa['grafik'][]=(float)$row['September'];
-         $dataa['grafik'][]=(float)$row['Oktober'];
-         $dataa['grafik'][]=(float)$row['November'];
-         $dataa['grafik'][]=(float)$row['Desember'];
+        foreach ($this->admin->statistik_pendapatan()->result_array() as $row) {
+            $data['grafik'][] = (float)$row['Januari'];
+            $data['grafik'][] = (float)$row['Februari'];
+            $data['grafik'][] = (float)$row['Maret'];
+            $data['grafik'][] = (float)$row['April'];
+            $data['grafik'][] = (float)$row['Mei'];
+            $data['grafik'][] = (float)$row['Juni'];
+            $data['grafik'][] = (float)$row['Juli'];
+            $data['grafik'][] = (float)$row['Agustus'];
+            $data['grafik'][] = (float)$row['September'];
+            $data['grafik'][] = (float)$row['Oktober'];
+            $data['grafik'][] = (float)$row['November'];
+            $data['grafik'][] = (float)$row['Desember'];
         }
         $data['judul'] = 'ALT | Admin';
         $this->load->view('admin/header', $data);
         $this->load->view('admin/topbar');
         $this->load->view('admin/sidebar');
-        $this->load->view('admin/vdashboard',$dataa);
+        $this->load->view('admin/vdashboard', $data);
         $this->load->view('admin/footer');
-      }
-       
+    }
 }

@@ -39,7 +39,7 @@ class Checkout extends CI_Controller
         }else{
             $data['kondisi'] = 0;
         }
-        $data['judul'] = "ALT Printing - Checkout";
+        $data['judul'] = " Checkout";
         $this->load->view('user/header', $data);
         $this->load->view('user/topbar');
         $this->load->view('user/vpemesanan');
@@ -47,7 +47,7 @@ class Checkout extends CI_Controller
     }
     public function konfirmasi_pemesanan()
     {
-        $data['judul'] = "ALT Printing - Konfirmasi Pemesanan";
+        $data['judul'] = " Konfirmasi Pemesanan";
         $this->load->view('user/header', $data);
         $this->load->view('user/topbar');
         $this->load->view('user/notapemesanan');

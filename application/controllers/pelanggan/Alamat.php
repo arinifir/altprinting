@@ -16,7 +16,7 @@ class Alamat extends CI_Controller
 
     public function index()
     {
-        $data['judul'] = "ALT Printing - Alamat";
+        $data['judul'] = " Alamat";
         $data['alamat'] = $this->M_pelanggan->getAll('tb_alamat');
 
         // var_dump($data['provinsi']);die;
