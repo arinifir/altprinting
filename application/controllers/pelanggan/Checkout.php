@@ -36,7 +36,7 @@ class Checkout extends CI_Controller
                 $data['user'] = $this->pelanggan->getUserById($id);
                 $data['kondisi'] =2;
             } 
-        }else{
+        }else{ 
             $data['kondisi'] = 0;
         }
         $data['judul'] = " Checkout";

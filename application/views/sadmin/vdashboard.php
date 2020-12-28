@@ -54,6 +54,149 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <h4>Pelanggan Login Hari Ini</h4>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Nama</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php $no = 1;
+                                            foreach ($pelanggan as $u) { ?>
+                                                <tr>
+                                                    <th><?= $no++; ?></th>
+                                                    <td><?= $u->nama_lengkap; ?></td>
+                                                    <td><span class="badge badge-success px-2">Login</span>
+                                                    </td>
+                                                </tr>
+                                            <?php } ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <h4>Admin Login Hari Ini</h4>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Nama</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php $no = 1;
+                                            foreach ($admin as $a) { ?>
+                                                <tr>
+                                                    <th><?= $no++; ?></th>
+                                                    <td><?= $a->nama_lengkap; ?></td>
+                                                    <td><span class="badge badge-success px-2">Login</span>
+                                                    </td>
+                                                </tr>
+                                            <?php } ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <h4>Super Admin Login Hari Ini</h4>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Nama</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php $no = 1;
+                                            foreach ($sadmin as $s) { ?>
+                                                <tr>
+                                                    <th><?= $no++; ?></th>
+                                                    <td><?= $s->nama_lengkap; ?></td>
+                                                    <td><span class="badge badge-success">Login</span>
+                                                    </td>
+                                                </tr>
+                                            <?php } ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div id="chart">
+                                    </div>
+                                    <script src="<?= base_url('assets/highcharts/') ?>jquery.min.js" type="text/javascript"></script>
+                                    <script src="<?= base_url('assets/highcharts/') ?>highcharts.js" type="text/javascript"></script>
+                                    <script src="<?= base_url('assets/highcharts/') ?>modules/exporting.js" type="text/javascript"></script>
+                                    <script src="<?= base_url('assets/highcharts/') ?>modules/offline-exporting.js" type="text/javascript"></script>
+                                    <script type="text/javascript">
+                                        jQuery(function() {
+                                            new Highcharts.Chart({
+                                                chart: {
+                                                    renderTo: 'chart',
+                                                    type: 'line',
+                                                },
+                                                title: {
+                                                    text: 'Grafik Statistik Pembelian',
+                                                    x: -20
+                                                },
+                                                subtitle: {
+                                                    text: 'Jumlah Pembelian',
+                                                    x: -20
+                                                },
+                                                xAxis: {
+                                                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun',
+                                                        'Jul', 'Ags', 'Sep', 'Okt', 'Nov', 'Des'
+                                                    ]
+                                                },
+                                                yAxis: {
+                                                    title: {
+                                                        text: 'Total Pembelian'
+                                                    }
+                                                },
+                                                series: [{
+                                                    name: 'Data dalam Bulan',
+                                                    data: <?php echo json_encode($grafik); ?>
+                                                }]
+                                            });
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div>
                     <div class="col-xl-12 col-lg-12 col-sm-12 col-xxl-12">
                         <div class="card">

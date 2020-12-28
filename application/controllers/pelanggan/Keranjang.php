@@ -25,7 +25,7 @@ class Keranjang extends CI_Controller
         $this->load->view('user/vkeranjang');
         $this->load->view('user/footer');
     }
-    public function addcart()
+    public function addcart() 
     { 
         $kd_produk = $this->input->post('kode_produk',true);
         $kd_paket = $this->input->post('kode_paket',true);

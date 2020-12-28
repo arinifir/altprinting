@@ -19,7 +19,7 @@
 					<!-- </div> -->
 				</form>
 			</div>
-		</div>
+		</div> 
 		<div class="billing_details">
 			<div class="row">
 				<div class="col-lg-8">

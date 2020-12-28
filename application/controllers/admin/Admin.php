@@ -31,6 +31,13 @@ class Admin extends CI_Controller
             $data['grafik'][] = (float)$row['November'];
             $data['grafik'][] = (float)$row['Desember'];
         }
+        $data['sold'] = $this->admin->productSold();
+        $data['user'] = $this->admin->allPelanggan();
+        $data['order'] = $this->admin->orderProcess();
+        $data['total'] = $this->admin->pendapatan();
+        //ambil data login
+        $date = date('Y-m-d');
+        $data['pelanggan'] = $this->db->get_where('tb_user',['level'=>3,'date_online'=>$date])->result();
         $data['judul'] = 'ALT | Admin';
         $this->load->view('admin/header', $data);
         $this->load->view('admin/topbar');

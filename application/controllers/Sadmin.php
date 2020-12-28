@@ -20,10 +20,29 @@ class Sadmin extends CI_Controller
     
     public function index()
     {
+        foreach ($this->admin->statistik_pendapatan()->result_array() as $row) {
+            $data['grafik'][] = (float)$row['Januari'];
+            $data['grafik'][] = (float)$row['Februari'];
+            $data['grafik'][] = (float)$row['Maret'];
+            $data['grafik'][] = (float)$row['April'];
+            $data['grafik'][] = (float)$row['Mei'];
+            $data['grafik'][] = (float)$row['Juni'];
+            $data['grafik'][] = (float)$row['Juli'];
+            $data['grafik'][] = (float)$row['Agustus'];
+            $data['grafik'][] = (float)$row['September'];
+            $data['grafik'][] = (float)$row['Oktober'];
+            $data['grafik'][] = (float)$row['November'];
+            $data['grafik'][] = (float)$row['Desember'];
+        }
         $data['sold'] = $this->admin->productSold();
         $data['user'] = $this->admin->allPelanggan();
         $data['order'] = $this->admin->orderProcess();
         $data['total'] = $this->admin->pendapatan();
+        //ambil data login
+        $date = date('Y-m-d');
+        $data['pelanggan'] = $this->db->get_where('tb_user',['level'=>3,'date_online'=>$date])->result();
+        $data['admin'] = $this->db->get_where('tb_user',['level'=>2,'date_online'=>$date])->result();
+        $data['sadmin'] = $this->db->get_where('tb_user',['level'=>1,'date_online'=>$date])->result();
         $this->load->view('sadmin/header');
         $this->load->view('sadmin/topbar');
         $this->load->view('sadmin/sidebar');

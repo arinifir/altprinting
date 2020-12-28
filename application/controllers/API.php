@@ -25,6 +25,7 @@ class API extends CI_Controller
             if ($data['status'] == 1) {
                 if ($data['password'] == $pass) {
                     if ($data['level'] == 1) {
+                        $this->date_online($data['id_user']);
                         $output = [
                             'status' => "success",
                             'role' => "super admin",
@@ -39,6 +40,7 @@ class API extends CI_Controller
                         $this->session->set_userdata($session_data);
                         echo json_encode($output);
                     } elseif ($data['level'] == 2) {
+                        $this->date_online($data['id_user']);
                         $output = [
                             'status' => "success",
                             'role' => "admin",
@@ -53,6 +55,7 @@ class API extends CI_Controller
                         $this->session->set_userdata($session_data);
                         echo json_encode($output);
                     } elseif ($data['level'] == 3) {
+                        $this->date_online($data['id_user']);
                         $output = [
                             'status' => "success",
                             'role' => "pelanggan",
@@ -88,6 +91,16 @@ class API extends CI_Controller
             ];
             echo json_encode($output);
         }
+    }
+
+    public function date_online($id){
+        $data = [
+            'date_online' => date('Y-m-d H:i:s')
+        ];
+        $where = [
+            'id_user' => $id
+        ];
+        $this->admin->editData('tb_user', $data, $where);
     }
 
     public function getPaketById($id_paket)
