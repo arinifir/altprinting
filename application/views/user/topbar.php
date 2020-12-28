@@ -11,13 +11,14 @@
                 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                     <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
                         <li class="nav-item"><a class="nav-link" href="<?= base_url('User') ?>">Beranda</a></li>
-                        <li class="nav-item submenu dropdown">
+                        <!-- <li class="nav-item submenu dropdown">
                             <a href="<?= base_url('pelanggan/Kategori/') ?>" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Produk</a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item"><a class="nav-link" href="<?= base_url('pelanggan/Kategori/') ?>detail_produk">Foto Polaroid</a></li>
                                 <li class="nav-item"><a class="nav-link" href="<?= base_url('assets/user/') ?>page/single-product.html">Figura Desain</a></li>
                             </ul>
-                        </li>
+                        </li> -->
+                        <li class="nav-item"><a class="nav-link" href="<?= base_url('pelanggan/Kategori') ?>">Belanja</a></li>
                         <li class="nav-item"><a class="nav-link" href="<?= base_url('pelanggan/Konfirmasi') ?>">Konfirmasi Pembayaran</a></li>
                         <li class="nav-item"><a class="nav-link" href="<?= base_url('pelanggan/Panduan') ?>">Panduan</a></li>
                         <li class="nav-item"><a class="nav-link" href="<?= base_url('pelanggan/Kontak') ?>">Kontak</a></li>

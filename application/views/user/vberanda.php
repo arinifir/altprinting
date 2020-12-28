@@ -14,7 +14,7 @@
                         <h4>Belanja itu menyenangkan</h4>
                         <h1>Dapatkan produk premium kami</h1>
                         <p>Bergabunglah dengan ALT Jember, dapatkan berbagai promo dan diskon bagi Anda yang mendaftar langsung di website ALT Jember.</p>
-                        <a class="button button-hero" href="#">Cek sekarang</a>
+                        <a class="button button-hero" href="<?= base_url('pelanggan/Kategori'); ?>">Cek sekarang</a>
                     </div>
                 </div>
             </div>
@@ -52,168 +52,8 @@
 
     <!-- ================ trending product section end ================= -->
 
-
-    <!-- ================ offer section start ================= -->
-    <section class="offer" id="parallax-1" data-anchor-target="#parallax-1" data-300-top="background-position: 20px 30px" data-top-bottom="background-position: 0 20px">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-5">
-                    <div class="offer__content text-center">
-                        <h3 style="color: #F4FAFF">Up To 50% Off</h3>
-                        <h4 style="color: #F4FAFF">Winter Sale</h4>
-                        <p style="color: #F4FAFF">Him she'd let them sixth saw light</p>
-                        <a class="buttonforsale button--active mt-3 mt-xl-4" href="#">Shop Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ================ offer section end ================= -->
-
-    <!-- ================ Best Selling item  carousel ================= -->
-    <section class="section-margin calc-60px">
-        <div class="container">
-            <div class="section-intro pb-60px">
-                <!-- <p>Popular Item in the market</p> -->
-                <h2><span class="section-intro__style">Produk</span></h2>
-            </div>
-            <div class="owl-carousel owl-theme" id="bestSellerCarousel">
-                <div class="card text-center card-product">
-                    <div class="card-product__img">
-                        <img class="img-fluid" src="<?= base_url('assets/user/') ?>img/product/product1.png" alt="">
-                        <ul class="card-product__imgOverlay">
-                            <li><button><i class="ti-search"></i></button></li>
-                            <li><button><i class="ti-shopping-cart"></i></button></li>
-                            <li><button><i class="ti-heart"></i></button></li>
-                        </ul>
-                    </div>
-                    <div class="card-body">
-                        <p>Polaroid</p>
-                        <h4 class="card-product__title"><a href="<?= base_url('assets/user/') ?>">Quartz Belt Watch</a></h4>
-                        <p class="card-product__price">$150.00</p>
-                    </div>
-                </div>
-
-                <div class="card text-center card-product">
-                    <div class="card-product__img">
-                        <img class="img-fluid" src="<?= base_url('assets/user/') ?>img/product/product2.png" alt="">
-                        <ul class="card-product__imgOverlay">
-                            <li><button><i class="ti-search"></i></button></li>
-                            <li><button><i class="ti-shopping-cart"></i></button></li>
-                            <li><button><i class="ti-heart"></i></button></li>
-                        </ul>
-                    </div>
-                    <div class="card-body">
-                        <p>Polaroid</p>
-                        <h4 class="card-product__title"><a href="<?= base_url('assets/user/') ?>page/single-product.html">Women Freshwash</a></h4>
-                        <p class="card-product__price">$150.00</p>
-                    </div>
-                </div>
-
-                <div class="card text-center card-product">
-                    <div class="card-product__img">
-                        <img class="img-fluid" src="<?= base_url('assets/user/') ?>img/product/product3.png" alt="">
-                        <ul class="card-product__imgOverlay">
-                            <li><button><i class="ti-search"></i></button></li>
-                            <li><button><i class="ti-shopping-cart"></i></button></li>
-                            <li><button><i class="ti-heart"></i></button></li>
-                        </ul>
-                    </div>
-                    <div class="card-body">
-                        <p>Figura</p>
-                        <h4 class="card-product__title"><a href="<?= base_url('assets/user/') ?>page/single-product.html">Room Flash Light</a></h4>
-                        <p class="card-product__price">$150.00</p>
-                    </div>
-                </div>
-
-                <div class="card text-center card-product">
-                    <div class="card-product__img">
-                        <img class="img-fluid" src="<?= base_url('assets/user/') ?>img/product/product4.png" alt="">
-                        <ul class="card-product__imgOverlay">
-                            <li><button><i class="ti-search"></i></button></li>
-                            <li><button><i class="ti-shopping-cart"></i></button></li>
-                            <li><button><i class="ti-heart"></i></button></li>
-                        </ul>
-                    </div>
-                    <div class="card-body">
-                        <p>Figura</p>
-                        <h4 class="card-product__title"><a href="<?= base_url('assets/user/') ?>page/single-product.html">Room Flash Light</a></h4>
-                        <p class="card-product__price">$150.00</p>
-                    </div>
-                </div>
-
-                <div class="card text-center card-product">
-                    <div class="card-product__img">
-                        <img class="img-fluid" src="<?= base_url('assets/user/') ?>img/product/product1.png" alt="">
-                        <ul class="card-product__imgOverlay">
-                            <li><button><i class="ti-search"></i></button></li>
-                            <li><button><i class="ti-shopping-cart"></i></button></li>
-                            <li><button><i class="ti-heart"></i></button></li>
-                        </ul>
-                    </div>
-                    <div class="card-body">
-                        <p>Polaroid</p>
-                        <h4 class="card-product__title"><a href="<?= base_url('assets/user/') ?>page/single-product.html">Quartz Belt Watch</a></h4>
-                        <p class="card-product__price">$150.00</p>
-                    </div>
-                </div>
-
-                <div class="card text-center card-product">
-                    <div class="card-product__img">
-                        <img class="img-fluid" src="<?= base_url('assets/user/') ?>img/product/product2.png" alt="">
-                        <ul class="card-product__imgOverlay">
-                            <li><button><i class="ti-search"></i></button></li>
-                            <li><button><i class="ti-shopping-cart"></i></button></li>
-                            <li><button><i class="ti-heart"></i></button></li>
-                        </ul>
-                    </div>
-                    <div class="card-body">
-                        <p>Polaroid</p>
-                        <h4 class="card-product__title"><a href="<?= base_url('assets/user/') ?>page/single-product.html">Women Freshwash</a></h4>
-                        <p class="card-product__price">$150.00</p>
-                    </div>
-                </div>
-
-                <div class="card text-center card-product">
-                    <div class="card-product__img">
-                        <img class="img-fluid" src="<?= base_url('assets/user/') ?>img/product/product3.png" alt="">
-                        <ul class="card-product__imgOverlay">
-                            <li><button><i class="ti-search"></i></button></li>
-                            <li><button><i class="ti-shopping-cart"></i></button></li>
-                            <li><button><i class="ti-heart"></i></button></li>
-                        </ul>
-                    </div>
-                    <div class="card-body">
-                        <p>Figura</p>
-                        <h4 class="card-product__title"><a href="<?= base_url('assets/user/') ?>page/single-product.html">Room Flash Light</a></h4>
-                        <p class="card-product__price">$150.00</p>
-                    </div>
-                </div>
-
-                <div class="card text-center card-product">
-                    <div class="card-product__img">
-                        <img class="img-fluid" src="<?= base_url('assets/user/') ?>img/product/product4.png" alt="">
-                        <ul class="card-product__imgOverlay">
-                            <li><button><i class="ti-search"></i></button></li>
-                            <li><button><i class="ti-shopping-cart"></i></button></li>
-                            <li><button><i class="ti-heart"></i></button></li>
-                        </ul>
-                    </div>
-                    <div class="card-body">
-                        <p>Figura</p>
-                        <h4 class="card-product__title"><a href="<?= base_url('assets/user/') ?>page/single-product.html">Room Flash Light</a></h4>
-                        <p class="card-product__price">$150.00</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ================ Best Selling item  carousel end ================= -->
-
-
-
     <!-- ================ Subscribe section start ================= -->
-    <section class="subscribe-position">
+    <!-- <section class="subscribe-position">
         <div class="container">
             <div class="subscribe text-center shadow">
                 <h4 class="subscribe__title">Dapatkan update kapanpun</h4>
@@ -231,7 +71,7 @@
 
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- ================ Subscribe section end ================= -->
 
 

@@ -28,6 +28,10 @@ class M_pelanggan extends CI_Model
     {
         return $this->db->get($table)->result();
     }
+    public function getKGByStatus()
+    {
+        return $this->db->get_where('tb_kategori',['status_kategori'=>1])->result();
+    }
 
     public function getIds($table, $order)
     {

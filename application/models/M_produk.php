@@ -143,4 +143,13 @@ class M_produk extends CI_Model
     {
         return $this->db->get_where('tb_produk', ['kategori_produk'=>'KTG02'])->result();
     }
+    public function getProdukAktif()
+    {
+        $this->db->select('*');
+        $this->db->from('tb_produk');
+        $this->db->join('tb_kategori', 'tb_produk.kategori_produk = tb_kategori.kd_kategori');
+        $this->db->where(['status_produk'=>1, 'status_kategori'=>1]);
+        $this->db->or_where(['status_produk'=>2]);
+        return $this->db->get()->result();
+    }
 }

@@ -28,10 +28,10 @@ class Kategori extends CI_Controller
         if ($kategori || $harga_min || $harga_max) {
             $data['produk'] = $this->produk->getByFilter($harga_min, $harga_max, $kategori)->result();
         } else {
-            $data['produk'] = $this->produk->getAll();
+            $data['produk'] = $this->produk->getProdukAktif();
         }
         // var_dump($data['produk']);die;
-        $data['kategori'] = $this->M_pelanggan->getAll('tb_kategori');
+        $data['kategori'] = $this->M_pelanggan->getKGByStatus();
         $data['judul'] = "ALT Jember - Kategori";
         $this->load->view('user/header', $data);
         $this->load->view('user/topbar');
@@ -39,9 +39,8 @@ class Kategori extends CI_Controller
         $this->load->view('user/footer');
     }
 
-    public function detail_produk()
+    public function detail_produk($kode)
     {
-        $kode = "00012782";
         $data['produk'] = $this->produk->getProduk($kode);
         $data['ulasan'] = $this->produk->getUlasan($kode);
         $data['paket'] = $this->admin->paketbykode($kode);

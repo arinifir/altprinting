@@ -20,11 +20,11 @@
                     <div class="single-footer-widget tp_widgets">
                         <h4 class="footer_title">Navigasi</h4>
                         <ul class="list">
-                            <li><a href="#">Beranda</a></li>
-                            <li><a href="#">Produk</a></li>
-                            <li><a href="#">Konfirmasi Pembayaran</a></li>
-                            <li><a href="#">Panduan</a></li>
-                            <li><a href="#">Kontak</a></li>
+                            <li><a href="<?= base_url('User'); ?>">Beranda</a></li>
+                            <li><a href="<?= base_url('pelanggan/Kategori'); ?>">Belanja</a></li>
+                            <li><a href="<?= base_url('pelanggan/Konfirmasi'); ?>">Konfirmasi Pembayaran</a></li>
+                            <li><a href="<?= base_url('pelanggan/Panduan'); ?>">Panduan</a></li>
+                            <li><a href="<?= base_url('pelanggan/Kontak'); ?>">Kontak</a></li>
                         </ul>
                     </div>
                 </div>
