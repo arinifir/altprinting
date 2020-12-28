@@ -10,6 +10,7 @@ class Auth extends CI_Controller
         $this->load->model('m_admin', 'admin');
         //load helper login
         $this->load->helper('auth_helper');
+        $this->load->library('configemail');
     }
     public function index()
     {
@@ -74,12 +75,23 @@ class Auth extends CI_Controller
             $user = $this->db->get_where('tb_user', ['email' => $email, 'status' => 1])->row_array();
             if ($user) {
                 $token = base64_encode($user['id_user']);
-                $href = 'auth/resetpassword/';
-                $this->_sendEmail($token, $email, $href);
-                $this->session->set_flashdata('message', '<div class="alert alert-success" role="success">Silahkan Cek Email Anda Untuk Reset Password!!</div>');
+                $this->configemail->email_config();
+                $from = "altprinting3@gmail.com";
+                $subject = "Reset Password Akun ALT Printing Jember";
+                $email = $this->input->post('email');
+                $data['token'] = $token;
+                $data['email'] = $email;
+                $data['href']  = 'auth/resetpassword';
+                $message = $this->load->view('email/lupapw', $data, true);
+                $this->email->from($from, 'ALT Printing Jember');
+                $this->email->to($email);
+                $this->email->subject($subject);
+                $this->email->message($message);
+                $this->email->send();
+                $this->session->set_flashdata('berhasil', 'Silahkan Cek Email Anda Untuk Mereset Kata Sandi Anda.');
                 redirect('auth');
             } else {
-                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Email Anda Belum Terdaftar! Atau Akun Belum Aktif</div>');
+                $this->session->set_flashdata('message', 'Email Anda Belum Terdaftar! Atau Akun Belum Aktif');
                 redirect('auth/lupapassword');
             }
         }
@@ -98,11 +110,11 @@ class Auth extends CI_Controller
                 $this->session->set_userdata('reset_email', $email);
                 $this->gantiPassword();
             } else {
-                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Reset Password Gagal! Email/Token Salah!</div>');
+                $this->session->set_flashdata('message', 'Reset Password Gagal! Email/Token Salah!');
                 redirect('auth');
             }
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Reset Password Gagal!Email Salah!</div>');
+            $this->session->set_flashdata('message', 'Reset Password Gagal! Email Salah!');
             redirect('auth');
         }
     }
@@ -130,7 +142,7 @@ class Auth extends CI_Controller
 
             $this->session->unset_userdata('reset_email');
 
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Password Berhasil Diubah! Silahkan Login</div>');
+            $this->session->set_flashdata('message', 'Password Berhasil Diubah! Silahkan Login');
             redirect('auth');
         }
     }
@@ -204,59 +216,6 @@ class Auth extends CI_Controller
         }
     }
 
-    private function _sendEmail($token, $email, $href)
-    {
-        // Config Setting 
-        $this->load->library('email');
-        $config = array();
-            $config['protocol'] = 'smtp';
-            $config['smtp_host'] = 'ssl://smtp.googlemail.com';
-            $config['smtp_user'] = 'altprinting3@gmail.com';
-            $config['smtp_pass'] = 'avenger12345678';
-            $config['smtp_port'] = 587;
-            $config['mailtype'] = 'html';
-            $config['charset'] = 'utf-8';
-            $config['newline'] = "\r\n";
-        $this->email->initialize($config);
-        $this->email->set_newline("\r\n");
-
-        $from = "no_reply@altprinting.com";
-        $subject = "Aktivasi Akun";
-
-        $this->email->from($from, 'ALT Printing');
-        $this->email->to($email);
-        $this->email->subject($subject);
-        
-        // Send Token Password
-        $aktivasi_akun = "
-                                <html>
-                                <head>
-                                    <title>Kode Aktivasi Akun + Isi Password</title>
-                                </head>
-                                <body>
-                                    <h2>Silahkan Klik Link Dibawah Ini!!</h2>
-                                    <p>Akun Anda</p>
-                                    <p>Email : " . $email . "</p>
-                                    <p>Tolong Klik Link Dibawah ini untuk Aktivasi Akun Anda!</p>
-                                    <h4><a href='" . base_url($href) . "?email=" . $email . "&token=" . urlencode($token) . "'>Aktivasi Akun!!</a></h4>
-                                </body>
-                                </html>
-        ";
-        $this->load->library('email', $config);
-        $this->email->from('altprinting3@gmail.com', 'Aktivasi Akun');
-        $this->email->to($email);
-
-        $this->email->subject('Aktivasi Akun');
-        $this->email->message($aktivasi_akun);
-        $this->email->set_mailtype('html');
-
-        if ($this->email->send()) {
-            return true;
-        } else {
-            echo $this->email->print_debugger();
-            die;
-        }
-    }
 
     public function register()
     {
@@ -307,12 +266,21 @@ class Auth extends CI_Controller
 
             $this->db->insert('tb_user', $data);
             // Function untuk send email ketika berhasil registrasi
-
+            $this->configemail->email_config();
+            $from = "altprinting3@gmail.com";
+            $subject = "Halo Pelanggan ALT Printing Jember";
             $email = $this->input->post('email');
             $token = base64_encode($id_user);
-            $this->_sendEmail($token, $email, 'auth/activation/');
-
-            $this->session->set_flashdata('message', 'Berhasil Mendaftar. Silahkan Lakukan Verifikasi Akun di Email Anda.');
+            $data['token'] = $token;
+            $data['email'] = $email;
+            $data['href']  = 'auth/activation';
+            $message = $this->load->view('email/verifakun', $data, true);
+            $this->email->from($from, 'ALT Printing Jember');
+            $this->email->to($email);
+            $this->email->subject($subject);
+            $this->email->message($message);
+            $this->email->send();
+            $this->session->set_flashdata('berhasil', 'Terima kasih sudah mendaftarkan diri anda di ALT Printing Jember. Silahkan cek email Anda untuk mememverifikasi akun Anda.');
             redirect('Auth');
         }
     }
