@@ -71,7 +71,7 @@
     <b><?php echo $ket; ?></b><br /><br />
     <a href="<?= base_url('Laporan') ?>">CETAK PDF</a><br /><br />
     <div class="table-responsive">
-    <table class="table table-bordered">
+    <table class="table table-hover table-bordered zero-configuration">
     <thead>
     <tr>
         <th>Tanggal</th>
