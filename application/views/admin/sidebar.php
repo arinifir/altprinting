@@ -38,13 +38,13 @@
                 </a>
             </li>
             <li>
-                <a href="<?= base_url('admin/Admin/confirmbayar') ?>" aria-expanded="false">
-                    <i class="mdi mdi-credit-card-check"></i><span class="nav-text pl-2">Konfirmasi Pembayaran</span>
+                <a href="<?= base_url('admin/Datatrans') ?>" aria-expanded="false">
+                    <i class="mdi mdi-truck-fast"></i><span class="nav-text pl-2">Menunggu Pengiriman</span>
                 </a>
             </li>
             <li>
-                <a href="<?= base_url('admin/Datatrans') ?>" aria-expanded="false">
-                    <i class="mdi mdi-truck-fast"></i><span class="nav-text pl-2">Menunggu Pengiriman</span>
+                <a href="<?= base_url('admin/Confirmbayar') ?>" aria-expanded="false">
+                    <i class="mdi mdi-credit-card-check"></i><span class="nav-text pl-2">Konfirmasi Pembayaran</span>
                 </a>
             </li>
             <li>

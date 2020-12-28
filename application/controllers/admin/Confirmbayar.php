@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Datatrans extends CI_Controller
+class Confirmbayar extends CI_Controller
 {
 
     public function __construct()
@@ -17,12 +17,13 @@ class Datatrans extends CI_Controller
 
     public function index()
     {
-        $status = 1;
-        $data['transaksi'] = $this->admin->transtatus($status);
+        $status = 2;
+        $jenis = 1;
+        $data['transaksi'] = $this->admin->transbystatus($status, $jenis);
         $this->load->view('admin/header');
         $this->load->view('admin/topbar');
         $this->load->view('admin/sidebar');
-        $this->load->view('admin/vdatatrans', $data);
+        $this->load->view('admin/vkonfirm', $data);
         $this->load->view('admin/footer');
     }
 
@@ -42,7 +43,7 @@ class Datatrans extends CI_Controller
         $data = ['status_transaksi' => 0];
         $where = ['no_transaksi' => $no];
         $this->admin->editData('tb_transaksi', $data, $where);
-        $this->session->set_flashdata('berhasil', 'Pesanan '.$no.' Dibatalkan');
+        $this->session->set_flashdata('berhasil', 'Pesanan ' . $no . ' Dibatalkan');
         redirect($this->agent->referrer());
     }
 
@@ -56,5 +57,4 @@ class Datatrans extends CI_Controller
         $this->load->view('sadmin/detailtransaksi', $data);
         $this->load->view('sadmin/footer');
     }
-
 }
