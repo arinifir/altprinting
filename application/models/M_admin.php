@@ -217,4 +217,11 @@ class M_admin extends CI_Model
     {
         return $this->db->select('*, count(id_ulas) as jml, round(avg(rating_ulas),1) as rerata')->from('tb_ulasan')->get_where('', ['kd_produk' => $kode])->result();
     }
+
+    public function ubahpsw($pswhash, $id)
+    {
+        $this->db->set('password', $pswhash);
+        $this->db->where($id);
+        $this->db->update('tb_user');
+    }
 }
