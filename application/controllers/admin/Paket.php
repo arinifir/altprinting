@@ -41,7 +41,7 @@ class Paket extends CI_Controller
             $cekkode = $this->admin->cekodepaket();
             // contoh JRD0004, angka 3 adalah awal pengambilan angka, dan 4 jumlah angka yang diambil
             $nourut = substr($cekkode, 4, 4);
-            $nourut++;
+            $nourut + rand();
             $char = substr($produk, 4, 4);
             $kode = $char . sprintf("%04s", $nourut);
             $nama = $this->input->post("namapaket", TRUE);

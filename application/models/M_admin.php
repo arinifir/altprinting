@@ -81,7 +81,7 @@ class M_admin extends CI_Model
     }
     public function cekodepaket()
     {
-        $query = $this->db->query("SELECT MAX(kd_paket) as kd_paket from tb_paket");
+        $query = $this->db->query("SELECT RAND(4) as kd_paket from tb_paket ORDER BY rand()");
         $hasil = $query->row();
         return $hasil->kd_paket;
     }
