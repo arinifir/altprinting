@@ -22,7 +22,7 @@ class Kategori extends CI_Controller
         $kategori = $this->input->get('ktg');
         // $harga_min = explode('.',$this->input->get('min'));
         // $harga_max = explode('.',$this->input->get('max'));
-        $harga_min = $this->input->get('min');
+        $harga_min = $this->input->get('min'); 
         $harga_max = $this->input->get('max');
         // var_dump($harga_min);die;
         if ($kategori || $harga_min || $harga_max) {
@@ -33,7 +33,7 @@ class Kategori extends CI_Controller
         // var_dump($data['produk']);die;
         $data['kategori'] = $this->M_pelanggan->getKGByStatus();
         $data['judul'] = "ALT Jember - Kategori";
-        $this->load->view('user/header', $data);
+        $this->load->view('user/header', $data); 
         $this->load->view('user/topbar');
         $this->load->view('user/vkategori');
         $this->load->view('user/footer');

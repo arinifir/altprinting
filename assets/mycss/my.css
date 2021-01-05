@@ -188,7 +188,12 @@
 .card_pesanan h3 {
 	color: #222;
 	font-size: 18px;
-	margin-bottom: 75px;
+	/* margin-bottom: 75px; */
+}
+@media only screen and (max-width: 700px) {
+	.card_pesanan h3 {
+		text-align: left;
+	}
 }
 .kapital{
 	font-size: 12px;
@@ -230,6 +235,7 @@
 	color: #fff;
 	transition: all 0.4s ease;
 	margin-bottom: 30px;
+	margin-left: 10px;
 
 }
 .tombol:hover {

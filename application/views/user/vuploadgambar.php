@@ -7,7 +7,7 @@
     <div><a class="text-danger"><i>*Upload gambar sesuai dengan jumlah Pesanan Anda. Jika lebih, kami akan memilih secara acak sesuai Pesanan Anda</i></a></div>
     <div align="center" class="py-2 mt-2">
         <a href="<?= base_url('pelanggan/Order/uploadgambar/' . $no); ?>" type="button" class="button btn-primary" id="submit-all">Upload</a>
-        <a href="<?= base_url('pelanggan/Order/orderfinal/' . $no); ?>" type="button" class="button btn-primary" id="submit-all">Lanjutkan</a>
+        <a href="<?= base_url('pelanggan/Order/orderfinal/' . $no); ?>" type="button" class="button btn-primary ml-2" id="submit-all">Lanjutkan</a>
     </div>
     <div class="row py-2">
         <?php foreach ($gambar as $g) { ?>

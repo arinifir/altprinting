@@ -135,6 +135,9 @@ $(document).ready(function(){
 	$("#copyButton").click(function() {
 		copy("#dataCopy");
 	});
+	$("#copyButton2").click(function() {
+		copy("#dataCopy2");
+	});
 });
 
 function reset(e) {
@@ -166,6 +169,10 @@ $('.remove-preview').on('click', function() {
 function filter(kategori){
     console.log('kepencet')
     window.location.href = base_url+`pelanggan/kategori?filter=true&ktg=${kategori}`;
+}
+function ambil(status){
+    console.log('kepencet')
+    window.location.href = base_url+`pelanggan/Profil/pesanansaya?ambil=true&sts=${status}`;
 }
 
 $(document).ready(function(){

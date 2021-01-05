@@ -10,46 +10,64 @@
 	<div class="container">
 		<div class="s_product_text mt-1">
 			<div class="row card_area d-flex align-items-center mx-1">
-				<a class="tombol_status mt-1 active" data-kode="1">Belum Bayar</a>
-				<a class="tombol_status mt-1" data-kode="2">Konfirmasi</a>
-				<a class="tombol_status mt-1" data-kode="3">Dikemas</a>
-				<a class="tombol_status mt-1" data-kode="4">Dikirim</a>
-				<a class="tombol_status mt-1" data-kode="5">Selesai</a>
-				<a class="tombol_status mt-1" data-kode="0">Dibatalkan</a>
-				<a class="tombol_status mt-1" data-kode="6">Pengembalian</a>
+				<form action="#">
+					<a onclick="ambil('1')" class="tombol_status mt-1 active" data-kode="1">Belum Bayar</a>
+					<a onclick="ambil('2')" class="tombol_status mt-1" data-kode="2">Konfirmasi<input hidden type="radio" id="men" name="brand" <?= $this->input->get('sts') == "2" ? 'checked="checked"' : '' ?>></a>
+					<a onclick="ambil('3')" class="tombol_status mt-1" data-kode="3">Dikemas<input hidden type="radio" id="men" name="brand" <?= $this->input->get('sts') == "3" ? 'checked="checked"' : '' ?>></a>
+					<a onclick="ambil('4')" class="tombol_status mt-1" data-kode="4">Dikirim<input hidden type="radio" id="men" name="brand" <?= $this->input->get('sts') == "4" ? 'checked="checked"' : '' ?>></a>
+					<a onclick="ambil('5')" class="tombol_status mt-1" data-kode="5">Selesai<input hidden type="radio" id="men" name="brand" <?= $this->input->get('sts') == "5" ? 'checked="checked"' : '' ?>></a>
+					<a onclick="ambil('0')" class="tombol_status mt-1" data-kode="0">Dibatalkan<input hidden type="radio" id="men" name="brand" <?= $this->input->get('sts') == "0" ? 'checked="checked"' : '' ?>></a>
+					<a onclick="ambil('6')" class="tombol_status mt-1" data-kode="6">Pengembalian<input hidden type="radio" id="men" name="brand" <?= $this->input->get('sts') == "6" ? 'checked="checked"' : '' ?>></a>
+				</form>
 			</div>
 		</div>
-		<?php foreach ($order as $order) { ?>
-		<div class="row mt-2">
-			<div class="col-lg-12">
-				<div class="card_pesanan">
-					<h3 class="mb-3">No Pesanan : <span id="dataCopy"><?= $order->no_transaksi; ?></span><sup><span class="kapital" id="copyButton"> Salin</span></sup></h3>
-					<hr />
-					<div class="media">
-						<div class="media-body">
-							<div class="row">
-								<div class="col-md-4">
-									<h6>Penerima:</h6>
-									<p><?= $order->nama_pembeli; ?></p>
-								</div>
-								<div class="col-md-4">
-									<h6>Pembayaran:</h6>
-									<p><?= $order->jenis_pembayaran == 1 ? 'Transfer Bank' : 'Cash On Delivery' ?></p>
-								</div>
-								<div class="col-md-4">
-									<h6>Total:</h6>
-									<p>Rp <?= number_format($order->total_bayar, 2, ',', '.'); ?></p>
+		<?php
+		if ($order) {
+			foreach ($order as $order) { ?>
+				<div class="row mt-2">
+					<div class="col-lg-12">
+						<div class="card_pesanan">
+							<div class="row mb-3">
+								<h3 class="col-md-6">No Pesanan : <span id="dataCopy"><?= $order->no_transaksi; ?></span><sup><span class="kapital" id="copyButton"> Salin</span></sup></h3>
+								<?php if ($order->status_transaksi == 4 || $order->status_transaksi == 5 || $order->status_transaksi == 6) { ?>
+									<h3 class="col-md-6" align="right">No Resi : <span id="dataCopy2"><?= $order->no_resi; ?></span><sup><span class="kapital" id="copyButton2"> Salin</span></sup></h3>
+								<?php } ?>
+							</div>
+							<hr />
+							<div class="media">
+								<div class="media-body">
+									<div class="row">
+										<div class="col-md-4">
+											<h6>Penerima:</h6>
+											<p><?= $order->nama_pembeli; ?></p>
+										</div>
+										<div class="col-md-4">
+											<h6>Pembayaran:</h6>
+											<p><?= $order->jenis_pembayaran == 1 ? 'Transfer Bank' : 'Cash On Delivery' ?></p>
+										</div>
+										<div class="col-md-4">
+											<h6>Total:</h6>
+											<p>Rp <?= number_format($order->total_bayar, 2, ',', '.'); ?></p>
+										</div>
+									</div>
+									<h6>Alamat Lengkap:</h6>
+									<p><?= $order->alamat_pembeli . ', ' . $order->kab_pembeli . ', Provinsi ' . $order->prov_pembeli . ' ' . $order->kpos_pembeli . ' (<strong>No Telp</strong> ' . $order->no_pembeli . ')'; ?></p>
 								</div>
 							</div>
-							<h6>Alamat Lengkap:</h6>
-							<p><?= $order->alamat_pembeli . ', ' . $order->kab_pembeli . ', Provinsi ' . $order->prov_pembeli . ' ' . $order->kpos_pembeli . ' (<strong>No Telp</strong> '.$order->no_pembeli.')'; ?></p>
+							<a href="<?= base_url('pelanggan/Order/notapesanan/' . $order->no_transaksi); ?>" class="tombol tombol_lihat">Lihat</a>
+							<a href="<?= base_url('pelanggan/Order/uploadgambar/' . $order->no_transaksi); ?>" class="tombol tombol_lihat">Gambar</a>
 						</div>
 					</div>
-					<a href="<?= base_url('pelanggan/Order/notapesanan/' . $order->no_transaksi); ?>" class="tombol tombol_lihat">Lihat</a>
-					<a href="<?= base_url('pelanggan/Order/uploadgambar/' . $order->no_transaksi); ?>" class="tombol tombol_lihat">Gambar</a>
+				</div>
+			<?php } ?>
+		<?php } else { ?>
+			<div class="mt-2">
+				<div class="col-lg-12">
+					<div class="card_pesanan">
+						<h3 align="center">Tidak Ada Pesanan</h3>
+					</div>
 				</div>
 			</div>
-		</div>
 		<?php } ?>
 		<!-- <div class="cart_inner">
 			<div class="table-responsive">
