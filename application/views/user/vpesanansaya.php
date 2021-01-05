@@ -6,7 +6,7 @@
 </div>
 <!--================End title area =================-->
 <!--================Cart Area =================-->
-<section class="cart_area">
+<section class="cart_area mt-1">
 	<div class="container">
 		<div class="s_product_text mt-1">
 			<div class="row card_area d-flex align-items-center mx-1">
