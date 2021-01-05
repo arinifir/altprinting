@@ -1108,11 +1108,8 @@ class Sadmin extends CI_Controller
     }
     public function zipfile($no)
     {
-        //Enter the name of directory
         $pathdir = './assets/images/order/' . $no . '/';
-        //Enter the name to creating zipped directory
         $zipcreated = './assets/images/order/'.$no . ".zip";
-        //Create new zip class
         $newzip = new ZipArchive;
         if ($newzip->open($zipcreated, ZipArchive::CREATE) === TRUE) {
             $dir = opendir($pathdir);
@@ -1124,6 +1121,5 @@ class Sadmin extends CI_Controller
             $newzip->close();
         }
         // phpinfo();
-
     }
 }
