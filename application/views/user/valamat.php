@@ -32,9 +32,10 @@
                             <!-- <a href="<?= base_url('pelanggan/Order/notapesanan/'); ?>" class="tombol tombol_lihat">Lihat</a>
                             <a href="<?= base_url('pelanggan/Order/uploadgambar/') ?>" class="tombol tombol_lihat">Gambar</a> -->
                         </div>
+                        <a align="right" href="<?= base_url('pelanggan/Alamat/edit/') . $alm['id_alamat'] ?>" data-tooltip="tooltip" title="Ubah Alamat" class="tombol tombol_lihat">Ubah</a>
                         <?php if ($alm['status_alamat'] == 1) { ?>
                         <?php } else { ?>
-                            <a align="right" href="<?= base_url('pelanggan/Alamat/alamatutama/') . $alm['id_alamat'] ?>" data-tooltip="tooltip" title="Atur Sebagai Utama" class="tombol tombol_lihat">Atur Sebagai Utama</a>
+                            <a align="right" href="<?= base_url('pelanggan/Alamat/alamatutama/') . $alm['id_alamat'] ?>" data-tooltip="tooltip" title="Atur Sebagai Utama" class="tombol tombol_lihat">Buat Utama</a>
                         <?php } ?>
                     </div>
                 </div>

@@ -198,21 +198,21 @@
 .kapital{
 	font-size: 12px;
 	text-transform: uppercase;
-	color: rgb(13, 120, 241);
+	color: #A80201;
 }
 .kapital:hover{
 	cursor: pointer;
-	color: #A80201;
+	color: #222;
 }
 
 .tombol_alamat{
 	font-size: 15px;
 	text-transform: uppercase;
-	color: rgb(13, 120, 241);
+	color: #A80201;
 }
 .tombol_alamat:hover{
 	cursor: pointer;
-	color: #A80201;
+	color: #222;
 }
 
 .card_pesanan .login_form {
