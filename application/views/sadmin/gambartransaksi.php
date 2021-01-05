@@ -17,7 +17,7 @@
             <div class="col-lg-8">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Slides With controls</h4>
+                        <h4 class="card-title">Gambar</h4>
                         <div class="bootstrap-carousel">
                             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                                 <div class="carousel-inner">
