@@ -135,17 +135,23 @@ class Order extends CI_Controller
     }
     public function uploadgambar($no)
     {
-        $data['no'] = $no;
-        $data['judul'] = "ALT Jember - Upload Gambar";
-        $data['gambar'] = $this->db->get_where('tb_gambar', ['no_transaksi' => $no])->result();
-        $this->load->view('user/head', $data);
-        $this->load->view('user/topbar');
-        $this->load->view('user/vuploadgambar');
-        $this->load->view('user/foot');
+        $cek = $this->db->get_where('tb_transaksi', ['no_transaksi' => $no])->row();
+        if ($cek->status_transaksi == 1 || $cek->status_transaksi == 2) {
+            $data['no'] = $no;
+            $data['judul'] = "ALT Jember - Upload Gambar";
+            $data['gambar'] = $this->db->get_where('tb_gambar', ['no_transaksi' => $no])->result();
+            $this->load->view('user/head', $data);
+            $this->load->view('user/topbar');
+            $this->load->view('user/vuploadgambar');
+            $this->load->view('user/foot');
+        } else {
+            $this->session->set_flashdata('gagal', 'Maaf, masa waktu untuk ubah data gambar telah lewat');
+            redirect('pelanggan/Profil/pesanansaya/'.$no);
+        }
     }
-    public function removegambar($no,$nama)
+    public function removegambar($no, $nama)
     {
-        $this->db->delete('tb_gambar', ['no_transaksi' => $no, 'foto_upload' =>$nama]);
+        $this->db->delete('tb_gambar', ['no_transaksi' => $no, 'foto_upload' => $nama]);
         unlink('./assets/images/order/' .  $no . '/' . $nama);
         redirect($this->agent->referrer());
     }

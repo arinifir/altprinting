@@ -55,7 +55,10 @@
 								</div>
 							</div>
 							<a href="<?= base_url('pelanggan/Order/notapesanan/' . $order->no_transaksi); ?>" class="tombol tombol_lihat">Lihat</a>
-							<a href="<?= base_url('pelanggan/Order/uploadgambar/' . $order->no_transaksi); ?>" class="tombol tombol_lihat">Gambar</a>
+							<?php if ($order->status_transaksi == 1 || $order->status_transaksi ==2) { ?>
+								<a href="<?= base_url('pelanggan/Order/uploadgambar/' . $order->no_transaksi); ?>" class="tombol tombol_lihat">Gambar</a>
+							<?php } ?>
+
 						</div>
 					</div>
 				</div>
