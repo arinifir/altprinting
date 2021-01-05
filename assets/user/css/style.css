@@ -3915,7 +3915,7 @@ html[dir="rtl"] .default-accordion-style .card .card-header h5 i {
 	box-shadow: 0px 10px 40px 0px rgba(56, 74, 235, 0.1);
 	height: 100%;
 	text-align: center;
-	padding: 30px 0;
+	padding: 30px 0; 
 }
 
 @media (min-width: 1000px) {

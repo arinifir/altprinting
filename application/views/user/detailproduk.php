@@ -38,7 +38,7 @@
                         } ?>
                     </div>
                     <div class="product_count">
-                        <label for="qty">Jumlah :</label>
+                        <label for="qty">Jumlah :</label> 
                         <div class="quantity buttons_added">
                             <!-- <input type="button" value="-" class="minus"> -->
                             <form action="<?= base_url('pelanggan/Keranjang/addcart'); ?>" method="post">

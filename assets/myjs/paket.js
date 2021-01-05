@@ -60,7 +60,7 @@ function tampilbintang() {
     }
 } 
 
-function adaPaket(){
+function adaPaket(){ 
     const card_area = $('.card_area');
     const card = $('.card_paket');
     for(var i = 0; i<card.length;i++){

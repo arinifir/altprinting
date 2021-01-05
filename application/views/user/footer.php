@@ -117,6 +117,23 @@
 <script src="<?= base_url('assets/user/') ?>js/main.js"></script>
 <script src="<?= base_url('assets/myjs/') ?>my.js"></script>
 <script src="<?= base_url('assets/myjs/') ?>paket.js"></script>
+<script type="text/javascript">
+    function copy(copyId) {
+        var $inp=$("<input>");
+        $("body").append($inp);
+        $inp.val($(""+copyId).text()).select();
+        document.execCommand("copy");
+        $inp.remove();
+        $(".alert").fadeIn(500, function() {
+            $(".alert").fadeOut();
+        }); 
+    }
+    $(document).ready(function(){
+        $("#copyButton").click(function() {
+            copy("#dataCopy");
+        });
+    });
+</script>
 <script>
     $(document).ready(function() {
 

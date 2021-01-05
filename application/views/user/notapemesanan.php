@@ -211,5 +211,5 @@
 			</div>
 		<?php } ?>
 	</div>
-</section>
+</section> 
 <!--================End Order Details Area =================-->
