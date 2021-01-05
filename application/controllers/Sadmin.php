@@ -1094,4 +1094,36 @@ class Sadmin extends CI_Controller
         $this->load->view('sadmin/riwayatpembelian', $data);
         $this->load->view('sadmin/footer');
     }
+    public function downloadfile($no)
+    {
+        $file = './assets/images/order/'.$no.'.zip';
+        if(file_exists($file)){
+            force_download($file, Null);
+            redirect($this->agent->referrer());
+        }else{
+            $this->zipfile($no);
+            force_download($file, Null);
+            redirect($this->agent->referrer());
+        }
+    }
+    public function zipfile($no)
+    {
+        //Enter the name of directory
+        $pathdir = './assets/images/order/' . $no . '/';
+        //Enter the name to creating zipped directory
+        $zipcreated = './assets/images/order/'.$no . ".zip";
+        //Create new zip class
+        $newzip = new ZipArchive;
+        if ($newzip->open($zipcreated, ZipArchive::CREATE) === TRUE) {
+            $dir = opendir($pathdir);
+            while ($file = readdir($dir)) {
+                if (is_file($pathdir . $file)) {
+                    $newzip->addFile($pathdir . $file, $file);
+                }
+            }
+            $newzip->close();
+        }
+        // phpinfo();
+
+    }
 }
