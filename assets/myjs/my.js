@@ -121,6 +121,22 @@ function readFile(input) {
     }
 }
 
+function copy(copyId) {
+	var $inp=$("<input>");
+	$("body").append($inp);
+	$inp.val($(""+copyId).text()).select();
+	document.execCommand("copy");
+	$inp.remove();
+	$(".alert").fadeIn(500, function() {
+		$(".alert").fadeOut();
+	}); 
+}
+$(document).ready(function(){
+	$("#copyButton").click(function() {
+		copy("#dataCopy");
+	});
+});
+
 function reset(e) {
     e.wrap('<form>').closest('form').get(0).reset();
     e.unwrap();

@@ -19,17 +19,38 @@
 				<a class="icon_btn card_paket mt-1" data-kode="0">Pengembalian</a>
 			</div>
 		</div>
+		<?php foreach ($order as $order) { ?>
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="card_pesanan">
-					<h3 class="mb-5">No Pesanan : <span id="dataCopy">5745843427 </span><sup><span class="kapital" id="copyButton">Salin</span></sup></h3>
-					<div id="login_error" class="col-md-8 login_form mb-4" role="alert">
+					<h3 class="mb-3">No Pesanan : <span id="dataCopy"><?= $order->no_transaksi; ?></span><sup><span class="kapital" id="copyButton"> Salin</span></sup></h3>
+					<hr />
+					<div class="media">
+						<div class="media-body">
+							<div class="row">
+								<div class="col-md-4">
+									<h6>Penerima:</h6>
+									<p><?= $order->nama_pembeli; ?></p>
+								</div>
+								<div class="col-md-4">
+									<h6>Pembayaran:</h6>
+									<p><?= $order->jenis_pembayaran == 1 ? 'Transfer Bank' : 'Cash On Delivery' ?></p>
+								</div>
+								<div class="col-md-4">
+									<h6>Total:</h6>
+									<p><?= number_format($order->total_bayar, 2, ',', '.'); ?></p>
+								</div>
+							</div>
+							<h6>Alamat Lengkap:</h6>
+							<p><?= $order->alamat_pembeli . ', ' . $order->kab_pembeli . ', Provinsi ' . $order->prov_pembeli . ' ' . $order->kpos_pembeli . ' (<strong>No Telp</strong> '.$order->no_pembeli.')'; ?></p>
+						</div>
 					</div>
-					<button class="tombol tombol_lihat">Lihat</button>
+					<a href="<?= base_url('pelanggan/Order/notapesanan/' . $order->no_transaksi); ?>" class="tombol tombol_lihat">Lihat</a>
 				</div>
 			</div>
 		</div>
-		<div class="cart_inner">
+		<?php } ?>
+		<!-- <div class="cart_inner">
 			<div class="table-responsive">
 				<table class="table">
 					<thead>
@@ -96,7 +117,7 @@
 					</tbody>
 				</table>
 			</div>
-		</div>
+		</div> -->
 	</div>
 </section>
 <!--================End Cart Area =================-->
