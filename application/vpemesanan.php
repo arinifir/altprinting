@@ -9,7 +9,7 @@
 			<div id="cuponslide">
 				<p>Jika Anda memiliki kupon, masukkan dibawah ini</p>
 				<!-- <div class="row contact_form"> -->
-				<form class="row contact_form" action="<?= base_url('pelanggan/Order/inputpesanan'); ?>" method="post" novalidate="novalidate">
+				<div class="row contact_form" action="#" method="post" novalidate="novalidate">
 					<div class="col-md-6 form-group p_star">
 						<input type="text" id="input_voucher" class="form-control" value="<?= isset($voucher) ? $voucher['kd_voucher'] : '' ?>" placeholder="Masukkan Kode Voucher" onfocus="this.placeholder=''" onblur="this.placeholder = 'Masukkan Kode Voucher'" id="name" name="kd_voucher">
 						<!-- <span class="placeholder" data-placeholder="Username or Email"></span> -->
@@ -17,6 +17,7 @@
 					<div class="col-md-6 form-group">
 						<a class="<?= isset($voucher) ? 'button_batal' : 'button_cupon' ?> btn_voucher" id="<?= isset($voucher) ? 'batal_voucher1' : 'pakai_voucher' ?>" href="javascript:void(0)"><?= isset($voucher) ? 'Batal' : 'Pakai' ?></a>
 					</div>
+				</div>
 				<!-- </div> -->
 			</div>
 		</div>
@@ -51,7 +52,7 @@
 			<div class="row">
 				<div class="col-lg-8">
 					<h3>Detail Pembeli</h3>
-					<div class="row contact_form" action="#" method="post" novalidate="novalidate">
+					<form class="row contact_form" action="#" method="post" novalidate="novalidate">
 						<div class="col-md-6 form-group p_star">
 							<input type="text" class="form-control" id="first" name="inputnama" placeholder="Nama Lengkap*" <?php if ($kondisi == 1) {	echo 'value="' .$alamat->nama_penerima . '"';} else if ($kondisi == 2) {echo 'value="' . $user->nama_lengkap . '"';} else {"";}?>>
 							<span class="placeholder" data-placeholder="First name"></span>
@@ -104,7 +105,6 @@
 											<?php endforeach ?>
 										<?php endif ?>
 									</select>
-									<input type="hidden" name="input_provinsi" id="input_provinsi">
 								</div>
 								<div class="col-md-6 form-group p_star">
 									<select name="inputkab" class="country_select" id="select_kabkota">
@@ -114,7 +114,6 @@
 										<option selected disabled>Silahkan Pilih Kabupaten/Kota</option>
 									<?php endif ?>
 									</select>
-									<input type="hidden" name="input_kabkota" id="input_kabkota">
 								</div>
 								<div class="col-md-12 form-group">
 									<textarea class="form-control" name="inputalamat" id="message" rows="1" placeholder="Alamat Lengkap*"><?= $kondisi == 1 ?  $alamat->alamat : '' ?></textarea>
@@ -122,7 +121,7 @@
 								<div class="col-md-12 form-group p_star">
 									<input type="text" class="form-control" id="add1" name="inputkdpos" placeholder="Kode Pos*" <?= $kondisi == 1 ? 'value="' . $alamat->kodepos . '"' : '' ?>>
 									<span class="placeholder" data-placeholder="Address line 01"></span>
-								</div> 
+								</div>
 							</div>
 							<div id="cod" class="row hide">
 								<p class="ml-3 text-danger">Silahkan pilih tempat pertemuan untuk COD, untuk lebih detailnya tambahkan di catatan pembeli.</p>
@@ -139,7 +138,7 @@
 							</div>
 						</div>
 						<input type="hidden" class="form-control" id="input_bayar" name="inputbayar" value="">
-					</div>
+					</form>
 				</div>
 				<div class="col-lg-4">
 					<div class="order_box">
@@ -174,14 +173,14 @@
 							<p>Silahkan memilih tempat COD terlebih dahulu.</p>
 						</div>
 						<div class="text-center">
-							<!-- <form action="" method="post"></form> -->
+							<form action="" method="post"></form>
 							<input type="hidden" name="subtotal" id="subtotal" value="<?= $this->cart->total(); ?>">
 							<input type="hidden" name="biaya_ongkir" id="biaya_ongkir">
 							<input type="hidden" name="potongan_voucher" id="potongan_voucher" value="<?= isset($voucher) ? $voucher['potongan_voucher'] : '' ?>">
 							<input type="hidden" name="jenis_voucher" id="jenis_voucher" value="<?= isset($voucher) ? $voucher['jenis_voucher'] : '0' ?>">
 							<input type="hidden" name="total" id="total">
 							<input type="hidden" name="jenis_pembayaran" id="jenis_pembayaran">
-							<button type="submit" class="button button-paypal">Pembayaran</button>
+							<a class="button button-paypal" href="<?= base_url('pelanggan/Order/inputpesanan'); ?>">Pembayaran</a>
 							</form>
 						</div>
 					</div>

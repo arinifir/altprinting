@@ -182,12 +182,20 @@ $(document).on('change', 'input[name="selector"]', function(){
 		$('#cod').slideUp();
 		$('#codcard').hide();
 		$('#input_bayar').val('1');
+		$('#jenis_pembayaran').val('1');
+		var provinsi = $('#select_provinsi').children("option:selected").html();
+		$('#input_provinsi').val(provinsi);
+		var kabkota = $('#select_kabkota').children("option:selected").html();
+		$('#input_kabkota').val(kabkota);
 	} else if(radio == 'cod') {
 		$('#cod').slideDown();
 		$('#codcard').show();
 		$("#transfer").slideUp();
 		$("#transfercard").hide();
 		$('#input_bayar').val('2');
+		$('#jenis_pembayaran').val('2');
+		$('#biaya_ongkir').val('0');
+		hitungTotal();
 	}
 })
 
@@ -266,6 +274,55 @@ $(document).on('click', '#tambah_voucher', function(){
 	});
 })
 
+$(document).on('click', '#pakai_voucher', function(){
+	var kode_voucher = $('#input_voucher').val();
+	var subtotal = parseInt($('#subtotal').val());
+	$.ajax({
+		method: "GET",
+		url: base_url + `API/checkVoucher/${kode_voucher}`,
+		dataType: "JSON",
+		success: function (response) {
+			var status = response.message;
+			if (status == 1) {
+				var potongan = response.data.potongan_voucher;
+				$('#alert_voucher').html(`<div class="alert alert-success alert-dismissible fade show" role="alert">
+					Voucher Berhasil Dipakai
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>`)
+				if(response.data.jenis_voucher == 1){
+					$('#ongkir_info').after(`<li id="ongkos_voucher"><a href="#">Potongan Harga <span id="potongan_ongkir">-Rp ${potongan}</span></a></li>`);
+					$('.btn_voucher').removeClass('button_cupon');
+					$('.btn_voucher').addClass('button_batal');
+					$('.btn_voucher').html('Batal');
+					$('.btn_voucher').attr('id', 'batal_voucher1');
+					$('#potongan_voucher').val(potongan);
+					$('#jenis_voucher').val(response.data.jenis_voucher);
+				} else {
+					var total_potongan = subtotal * potongan / 100;
+					$('#ongkir_info').after(`<li id="harga_voucher"><a href="#">Diskon <span id="potongan_ongkir">-Rp ${total_potongan}</span></a></li>`);
+					$('.btn_voucher').removeClass('button_cupon');
+					$('.btn_voucher').addClass('button_batal');
+					$('.btn_voucher').html('Batal');
+					$('.btn_voucher').attr('id', 'batal_voucher1');
+					$('#potongan_voucher').val(total_potongan);
+					$('#jenis_voucher').val(response.data.jenis_voucher);
+				}
+				hitungTotal();
+			} else {
+				$('#alert_voucher').html(`<div class="alert alert-danger alert-dismissible fade show" role="alert">
+				Voucher Tidak Berlaku
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>`)
+			}
+		}
+	});
+})
+
+
 $(document).on('click', '#batal_voucher', function(){
 	$('#input_voucher').removeAttr('name');
 	$('#input_voucher').val('');
@@ -276,3 +333,97 @@ $(document).on('click', '#batal_voucher', function(){
 	$('#display_voucher').html('');
 	$('.alert').hide();
 })
+
+$(document).on('click', '#batal_voucher1', function(){
+	$('.btn_voucher').removeClass('button_batal');
+	$('.btn_voucher').addClass('button_cupon');
+	$('.btn_voucher').html('Pakai');
+	$('.btn_voucher').attr('id', 'pakai_voucher');
+	$('#harga_voucher').remove();
+	$('#ongkos_voucher').remove();
+	$('.alert').hide();
+	$('#potongan_voucher').val('0');
+	$('#jenis_voucher').val('0');
+	hitungTotal();
+})
+
+$(document).on('change', '#select_provinsi', function(){
+	var id_provinsi = $(this).val();
+	$('#select_kabkota').html('<option selected disabled>Silahkan Pilih Kabupaten/Kota</option>');
+	$('#select_kabkota').attr('disabled', true);
+	$('#select_kabkota').niceSelect('update')
+	var provinsi = $(this).children("option:selected").html();
+	$('#input_provinsi').val(provinsi);
+	$.ajax({
+		method: "GET",
+		url: base_url + `API/getKabKota/${id_provinsi}`,
+		dataType: "JSON",
+		success: function (response) {
+			var kab_kota = response.rajaongkir.results;
+			kab_kota.forEach(value => {
+				$('#select_kabkota').append(`<option value="${value.city_id}">${value.type} ${value.city_name}</option>`)
+			})
+			$('#select_kabkota').attr('disabled', false);
+			$('#select_kabkota').niceSelect('update')
+		}
+	});
+})
+
+$(document).on('change', '#select_kabkota', function(){
+	$('#tampilan_ongkir').html(`Biaya Ongkir <span id="tampilan_ongkir">Loading...</span>`);
+	var id_kabkota = $(this).val();
+	var kab_kota = $(this).children("option:selected").html();
+	$('#input_kabkota').val(kab_kota);
+	$.ajax({
+		method: "GET",
+		url: base_url + `API/hitungOngkir/${id_kabkota}`,
+		dataType: "JSON",
+		success: function (response) {
+			var ongkir = response.rajaongkir.results[0].costs[1].cost[0].value;
+			$('#tampilan_ongkir').html(`Biaya Ongkir <span id="tampilan_ongkir">Rp ${ongkir}</span>`);
+			$('#biaya_ongkir').val(ongkir);
+			hitungTotal();
+		}
+	});
+})
+
+function hitungTotal(){
+	var subtotal = parseInt($('#subtotal').val());
+	var biaya_ongkir = parseInt($('#biaya_ongkir').val());
+	var potongan_voucher = parseInt($('#potongan_voucher').val());
+	var jenis_voucher = $('#jenis_voucher').val();
+	var jenis_pembayaran = $('#jenis_pembayaran').val();
+	var total = subtotal;
+	
+	if(jenis_pembayaran == 1){
+		if(jenis_voucher == 1){
+			total += biaya_ongkir - potongan_voucher;
+			$('#total_harga').html(`Rp ${total}`)
+			console.log(total);
+		}else if(jenis_voucher == 2){
+			total *= potongan_voucher/100 + biaya_ongkir;
+			$('#total_harga').html(`Rp ${total}`)
+			console.log(total, 'kode 2');
+		} else {
+			total += biaya_ongkir;
+			$('#total_harga').html(`Rp ${total}`);
+			console.log(total)
+		}
+	} else {
+		if(jenis_voucher == 1){
+			total += biaya_ongkir - potongan_voucher;
+			$('#total_harga').html(`Rp ${total}`)
+			console.log(total);
+		}else if(jenis_voucher == 2){
+			total *= potongan_voucher/100 + biaya_ongkir;
+			$('#total_harga').html(`Rp ${total}`)
+			console.log(total, 'kode 2');
+		} else {
+			total += biaya_ongkir;
+			$('#total_harga').html(`Rp ${total}`);
+			console.log(total)
+		}
+	}
+
+	}
+

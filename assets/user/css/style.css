@@ -1266,6 +1266,35 @@ a {
 		float: right;
 	}
 }
+.button_cupon:hover {
+	background: #fff !important;
+	color: #222 !important;
+	
+}
+
+.button_batal {
+	display: inline-block;
+	border: 1px solid #A80201;
+	border-radius: 30px;
+	color: #222;
+	font-weight: 500;
+	font-size: 15px;
+	padding: 7px 44px;
+	background: #fff;
+	transition: all 0.4s ease;
+}
+
+@media(max-width:767px) {
+	.button_batal {
+		float: right;
+	}
+}
+.button_batal:hover {
+	background: #A80201 !important;
+	color: #fff !important;
+	
+}
+
 
 
 .buttonforsale {

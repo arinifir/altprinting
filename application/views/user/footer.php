@@ -118,6 +118,83 @@
 <script src="<?= base_url('assets/myjs/') ?>my.js"></script>
 <script src="<?= base_url('assets/myjs/') ?>paket.js"></script>
 <script>
+    $(document).ready(function() {
+
+        Dropzone.options.dropzoneFrom = {
+            autoProcessQueue: false,
+            acceptedFiles: ".png,.jpg,.gif,.bmp,.jpeg",
+            init: function() {
+                var submitButton = document.querySelector('#submit-all');
+                myDropzone = this;
+                submitButton.addEventListener("click", function() {
+                    myDropzone.processQueue();
+                });
+                this.on("complete", function() {
+                    if (this.getQueuedFiles().length == 0 && this.getUploadingFiles().length == 0) {
+                        var _this = this;
+                        _this.removeAllFiles();
+                    }
+                    list_image();
+                });
+            },
+        };
+
+        list_image();
+
+        function list_image() {
+            $.ajax({
+                url: "upload.php",
+                success: function(data) {
+                    $('#preview').html(data);
+                }
+            });
+        }
+
+        $(document).on('click', '.remove_image', function() {
+            var name = $(this).attr('id');
+            $.ajax({
+                url: "upload.php",
+                method: "POST",
+                data: {
+                    name: name
+                },
+                success: function(data) {
+                    list_image();
+                }
+            })
+        });
+
+    });
+</script>
+<script>
+    Dropzone.autoDiscover = false;
+    $(document).ready(function(){
+        // var myDropzone = new Dropzone("form.dropzone", { url: "<?= base_url('pelanggan/Konfirmasi/uploadfile') ?>"});
+        var dropzone = new Dropzone('.dropzone', {
+  parallelUploads: 2,
+  thumbnailHeight: 120,
+  thumbnailWidth: 120,
+  maxFilesize: 3,
+  filesizeBase: 1000,
+//   thumbnail: function(file, dataUrl) {
+//     if (file.previewElement) {
+//       file.previewElement.classList.remove("dz-file-preview");
+//       var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
+//       for (var i = 0; i < images.length; i++) {
+//         var thumbnailElement = images[i];
+//         thumbnailElement.alt = file.name;
+//         thumbnailElement.src = dataUrl;
+//       }
+//       setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
+//     }
+//   }
+
+});
+    })
+
+</script>
+
+<script>
     // $(document).ready(function() {
     //     $('.js-example-basic-single').select2();
     // });
@@ -231,6 +308,47 @@ if ($this->session->flashdata('simpan')) :
         })
     </script>
 <?php endif ?>
+
+<?php if (isset($kondisi)) : ?>
+    <?php if ($kondisi == 1) : ?>
+        <script>
+            $(document).on('change', 'input[name="selector"]', function() {
+                $('#tampilan_ongkir').html(`Biaya Ongkir <span id="tampilan_ongkir"><i>Loading...</i></span>`);
+                var radio = $(this).data('radio');
+                var provinsi = $('#select_provinsi').val();
+                if (radio == 'transfer') {
+                    var kab_kota = $('#select_kabkota').val();
+                    $.ajax({
+                        method: "GET",
+                        url: base_url + `API/hitungOngkir/${kab_kota}`,
+                        dataType: "JSON",
+                        success: function(response) {
+                            var ongkir = response.rajaongkir.results[0].costs[1].cost[0].value;
+                            $('#tampilan_ongkir').html(`Biaya Ongkir <span id="tampilan_ongkir">Rp ${ongkir}</span>`);
+                            $('#biaya_ongkir').val(ongkir);
+                            hitungTotal();
+                        }
+                    });
+                } else {
+                    $('#tampilan_ongkir').html('');
+                }
+                $.ajax({
+                    method: "GET",
+                    url: base_url + `API/getKabKota/${provinsi}`,
+                    dataType: "JSON",
+                    success: function(response) {
+                        var kab_kota = response.rajaongkir.results;
+                        kab_kota.forEach(value => {
+                            $('#select_kabkota').append(`<option value="${value.city_id}">${value.type} ${value.city_name}</option>`)
+                        })
+                        $('#select_kabkota').attr('disabled', false);
+                        $('#select_kabkota').niceSelect('update')
+                    }
+                });
+            })
+        </script>
+    <?php endif; ?>
+<?php endif; ?>
 
 </body>
 
