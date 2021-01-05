@@ -12,6 +12,7 @@ class API extends CI_Controller
         $this->load->model('m_admin', 'admin');
         $this->load->model('m_produk', 'produk');
         $this->load->model('m_voucher', 'voucher');
+        $this->load->model('m_transaksi', 'transaksi');
     }
 
     public function login()
@@ -244,5 +245,10 @@ class API extends CI_Controller
             ];
             echo json_encode($data);
         }
+    }
+
+    public function getOrder($user, $status)
+    {
+        $order = $this->transaksi->getOrderBy($user,$status);
     }
 }

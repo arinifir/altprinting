@@ -1096,20 +1096,16 @@ class Sadmin extends CI_Controller
     }
     public function downloadfile($no)
     {
-        $file = './assets/images/order/'.$no.'.zip';
-        if(file_exists($file)){
-            force_download($file, Null);
-            redirect($this->agent->referrer());
-        }else{
-            $this->zipfile($no);
-            force_download($file, Null);
-            redirect($this->agent->referrer());
-        }
+        unlink('./assets/images/order/' .  $no . '.zip');
+        $file = './assets/images/order/' . $no . '.zip';
+        $this->zipfile($no);
+        force_download($file, Null);
+        redirect($this->agent->referrer());
     }
     public function zipfile($no)
     {
         $pathdir = './assets/images/order/' . $no . '/';
-        $zipcreated = './assets/images/order/'.$no . ".zip";
+        $zipcreated = './assets/images/order/' . $no . ".zip";
         $newzip = new ZipArchive;
         if ($newzip->open($zipcreated, ZipArchive::CREATE) === TRUE) {
             $dir = opendir($pathdir);

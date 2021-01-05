@@ -120,6 +120,7 @@ class Order extends CI_Controller
         // redirect($this->agent->referrer());
 
         $this->buatfolder($nomor);
+        $this->kirimnota($nomor);
         $this->uploadgambar($nomor);
     }
     public function buatfolder($no)
@@ -134,18 +135,29 @@ class Order extends CI_Controller
     }
     public function uploadgambar($no)
     {
-        $data['no'] =$no;
+        $data['no'] = $no;
         $data['judul'] = "ALT Jember - Upload Gambar";
-        $this->load->view('user/vuploadgambar', $data);
+        $data['gambar'] = $this->db->get_where('tb_gambar', ['no_transaksi' => $no])->result();
+        $this->load->view('user/head', $data);
+        $this->load->view('user/topbar');
+        $this->load->view('user/vuploadgambar');
+        $this->load->view('user/foot');
     }
-    public function upload($no)
+    public function removegambar($no,$nama)
     {
-        $folder_name = './assets/images/order/' .  $no.'/';
+        $this->db->delete('tb_gambar', ['no_transaksi' => $no, 'foto_upload' =>$nama]);
+        unlink('./assets/images/order/' .  $no . '/' . $nama);
+        redirect($this->agent->referrer());
+    }
+    public function unggah($no)
+    {
+        $folder_name = './assets/images/order/' .  $no . '/';
         if (!empty($_FILES)) {
             $temp_file = $_FILES['file']['tmp_name'];
             $location = $folder_name . $_FILES['file']['name'];
             move_uploaded_file($temp_file, $location);
-            $this->db->insert('tb_gambar', ['no_transaksi'=>$no, 'foto_upload'=>$_FILES['file']['name']]);
+            $this->db->insert('tb_gambar', ['no_transaksi' => $no, 'foto_upload' => $_FILES['file']['name']]);
+            redirect($this->agent->referrer());
         }
 
         if (isset($_POST["name"])) {
@@ -172,9 +184,17 @@ class Order extends CI_Controller
         $output .= '</div>';
         echo $output;
     }
+    public function upload($no)
+    {
+        $folder_name = './assets/images/order/' .  $no . '/';
+        $temp_file = $_FILES['file']['tmp_name'];
+        $location = $folder_name . $_FILES['file']['name'];
+        move_uploaded_file($temp_file, $location);
+        $this->db->insert('tb_gambar', ['no_transaksi' => $no, 'foto_upload' => $_FILES['file']['name']]);
+        redirect('pelanggan/Order/uploadgambar/' . $no);
+    }
     public function orderfinal($no)
     {
-        $this->kirimnota($no);
         $this->notapesanan($no);
     }
     public function notapesanan($no)

@@ -18,8 +18,15 @@ class M_transaksi extends CI_Model
     public function getOrderUser($id)
     {
         $this->db->where('user',$id);
-        $this->db->where('status_transaksi != 0');
-        $this->db->where('status_transaksi != 5');
+        $this->db->where('status_transaksi = 1');
+        // $this->db->where('status_transaksi != 0');
+        // $this->db->where('status_transaksi != 5');
+        return $this->db->get('tb_transaksi')->result();
+    }
+    public function getOrderBy($id,$status)
+    {
+        $this->db->where('user',$id);
+        $this->db->where('status_transaksi', $status);
         return $this->db->get('tb_transaksi')->result();
     }
     public function getOrderDone($id)

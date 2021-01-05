@@ -10,17 +10,17 @@
 	<div class="container">
 		<div class="s_product_text mt-1">
 			<div class="row card_area d-flex align-items-center mx-1">
-				<a class="icon_btn card_paket mt-1 active" data-kode="1">Belum Bayar</a>
-				<a class="icon_btn card_paket mt-1" data-kode="2">Konfirmasi</a>
-				<a class="icon_btn card_paket mt-1" data-kode="3">Dikemas</a>
-				<a class="icon_btn card_paket mt-1" data-kode="4">Dikirim</a>
-				<a class="icon_btn card_paket mt-1" data-kode="5">Selesai</a>
-				<a class="icon_btn card_paket mt-1" data-kode="0">Dibatalkan</a>
-				<a class="icon_btn card_paket mt-1" data-kode="0">Pengembalian</a>
+				<a class="tombol_status mt-1 active" data-kode="1">Belum Bayar</a>
+				<a class="tombol_status mt-1" data-kode="2">Konfirmasi</a>
+				<a class="tombol_status mt-1" data-kode="3">Dikemas</a>
+				<a class="tombol_status mt-1" data-kode="4">Dikirim</a>
+				<a class="tombol_status mt-1" data-kode="5">Selesai</a>
+				<a class="tombol_status mt-1" data-kode="0">Dibatalkan</a>
+				<a class="tombol_status mt-1" data-kode="6">Pengembalian</a>
 			</div>
 		</div>
 		<?php foreach ($order as $order) { ?>
-		<div class="row">
+		<div class="row mt-2">
 			<div class="col-lg-12">
 				<div class="card_pesanan">
 					<h3 class="mb-3">No Pesanan : <span id="dataCopy"><?= $order->no_transaksi; ?></span><sup><span class="kapital" id="copyButton"> Salin</span></sup></h3>
@@ -38,7 +38,7 @@
 								</div>
 								<div class="col-md-4">
 									<h6>Total:</h6>
-									<p><?= number_format($order->total_bayar, 2, ',', '.'); ?></p>
+									<p>Rp <?= number_format($order->total_bayar, 2, ',', '.'); ?></p>
 								</div>
 							</div>
 							<h6>Alamat Lengkap:</h6>
@@ -46,6 +46,7 @@
 						</div>
 					</div>
 					<a href="<?= base_url('pelanggan/Order/notapesanan/' . $order->no_transaksi); ?>" class="tombol tombol_lihat">Lihat</a>
+					<a href="<?= base_url('pelanggan/Order/uploadgambar/' . $order->no_transaksi); ?>" class="tombol tombol_lihat">Gambar</a>
 				</div>
 			</div>
 		</div>
