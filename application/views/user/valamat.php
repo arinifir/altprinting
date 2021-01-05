@@ -1,7 +1,9 @@
 <!--================ Start title area =================-->
 <div class="container">
     <div class="section-intro pt-5">
-        <h2>Alamat <span class="section-intro__style">Saya</span></h2>
+        <h2>Alamat <span class="section-intro__style">Saya</span>
+            <sup><span class="tombol_alamat"> Tambah Alamat Baru</span></sup>
+        </h2>
     </div>
 </div>
 <!--================End title area =================-->
@@ -18,7 +20,6 @@
                                     <sup><span class="text-danger"> [Utama]</span></sup>
                                 <?php } ?>
                             </h3>
-
                         </div>
                         <hr />
                         <div class="media">
