@@ -798,8 +798,24 @@ class Sadmin extends CI_Controller
         $data = ['status_transaksi' => 5];
         $where = ['no_transaksi' => $no];
         $this->admin->editData('tb_transaksi', $data, $where);
+        $this->kirimselesai($no);
         $this->session->set_flashdata('berhasil', 'Pesanan ' . $no . ' Selesai');
         redirect($this->agent->referrer());
+    }
+    public function kirimselesai($no)
+    {
+        $this->configemail->email_config();
+        $from = "altprinting3@gmail.com";
+        $subject = "Terima Kasih Telah Berbelanja di ALT Printing.";
+        $data['order'] = $this->db->query('select * from tb_transaksi where no_transaksi=' . $no)->row();
+        // $message = $data['transaksi']->nama_pembeli;
+        $data['judul'] = "ALT Printing | Pesanan Selesai";
+        $message = $this->load->view('email/vemailselesai', $data, true);
+        $this->email->from($from, 'ALT Printing Jember');
+        $this->email->to($data['order']->email_pembeli);
+        $this->email->subject($subject);
+        $this->email->message($message);
+        $this->email->send();
     }
     public function resi($no)
     {
@@ -854,7 +870,7 @@ class Sadmin extends CI_Controller
     }
     public function tidakvalid()
     {
-        $status = 0;
+        $status = 6;
         $data['transaksi'] = $this->admin->transtatus($status);
         $this->load->view('sadmin/header');
         $this->load->view('sadmin/topbar');

@@ -16,8 +16,7 @@
 					<a onclick="ambil('3')" class="tombol_status mt-1" data-kode="3">Dikemas<input hidden type="radio" id="men" name="brand" <?= $this->input->get('sts') == "3" ? 'checked="checked"' : '' ?>></a>
 					<a onclick="ambil('4')" class="tombol_status mt-1" data-kode="4">Dikirim<input hidden type="radio" id="men" name="brand" <?= $this->input->get('sts') == "4" ? 'checked="checked"' : '' ?>></a>
 					<a onclick="ambil('5')" class="tombol_status mt-1" data-kode="5">Selesai<input hidden type="radio" id="men" name="brand" <?= $this->input->get('sts') == "5" ? 'checked="checked"' : '' ?>></a>
-					<a onclick="ambil('0')" class="tombol_status mt-1" data-kode="0">Dibatalkan<input hidden type="radio" id="men" name="brand" <?= $this->input->get('sts') == "0" ? 'checked="checked"' : '' ?>></a>
-					<a onclick="ambil('6')" class="tombol_status mt-1" data-kode="6">Pengembalian<input hidden type="radio" id="men" name="brand" <?= $this->input->get('sts') == "6" ? 'checked="checked"' : '' ?>></a>
+					<a onclick="ambil('6')" class="tombol_status mt-1" data-kode="6">Dibatalkan<input hidden type="radio" id="men" name="brand" <?= $this->input->get('sts') == "6" ? 'checked="checked"' : '' ?>></a>
 				</form>
 			</div>
 		</div>
@@ -29,7 +28,7 @@
 						<div class="card_pesanan">
 							<div class="row mb-3">
 								<h3 class="col-md-6">No Pesanan : <span id="dataCopy"><?= $order->no_transaksi; ?></span><sup><span class="kapital" id="copyButton"> Salin</span></sup></h3>
-								<?php if ($order->status_transaksi == 4 || $order->status_transaksi == 5 || $order->status_transaksi == 6) { ?>
+								<?php if ($order->status_transaksi == 4 || $order->status_transaksi == 5 ) { ?>
 									<h3 class="col-md-6" align="right">No Resi : <span id="dataCopy2"><?= $order->no_resi; ?></span><sup><span class="kapital" id="copyButton2"> Salin</span></sup></h3>
 								<?php } ?>
 							</div>
@@ -54,9 +53,18 @@
 									<p><?= $order->alamat_pembeli . ', ' . $order->kab_pembeli . ', Provinsi ' . $order->prov_pembeli . ' ' . $order->kpos_pembeli . ' (<strong>No Telp</strong> ' . $order->no_pembeli . ')'; ?></p>
 								</div>
 							</div>
-							<a href="<?= base_url('pelanggan/Order/notapesanan/' . $order->no_transaksi); ?>" class="tombol tombol_lihat">Lihat</a>
+							<?php if ($order->status_transaksi == 1) { ?>
+								<a href="<?= base_url('pelanggan/Konfirmasi/upload/' . $order->no_transaksi); ?>" class="tombol tombol_lihat">Upload Bukti</a>
+							<?php } ?>
+							<a href="<?= base_url('pelanggan/Order/notapesanan/' . $order->no_transaksi); ?>" class="tombol tombol_lihat">Rincian</a>
 							<?php if ($order->status_transaksi == 1 || $order->status_transaksi ==2) { ?>
 								<a href="<?= base_url('pelanggan/Order/uploadgambar/' . $order->no_transaksi); ?>" class="tombol tombol_lihat">Gambar</a>
+							<?php } ?>
+							<?php if($order->status_transaksi == 5 || $order->status_transaksi == 6) { ?>
+								<a href="<?= base_url('pelanggan/Order/userkomplain/' . $order->no_transaksi); ?>" class="tombol tombol_lihat">Komplain</a>
+							<?php } ?>
+							<?php if($order->status_transaksi == 4) { ?>
+								<a href="javascript:void(0)" onclick="orderselesai(<?= $order->no_transaksi ?>)" class="tombol tombol_lihat">Selesai</a>
 							<?php } ?>
 
 						</div>

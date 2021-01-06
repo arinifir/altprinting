@@ -296,6 +296,25 @@ if ($this->session->flashdata('berhasil')) :
     }
 </script>
 
+<script>
+    function orderselesai(no) {
+        Swal.fire({
+            title: "Anda yakin?",
+            text: "Apakah pesanan Anda sudah diterima?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Ya",
+            cancelButtonText: "Tidak",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = base_url + "pelanggan/Order/orderselesai/"+no;
+            }
+        });
+    }
+</script>
+
 <?php
 if ($this->session->flashdata('simpan')) :
 ?>

@@ -146,7 +146,7 @@ class Order extends CI_Controller
             $this->load->view('user/foot');
         } else {
             $this->session->set_flashdata('gagal', 'Maaf, masa waktu untuk ubah data gambar telah lewat');
-            redirect('pelanggan/Profil/pesanansaya/'.$no);
+            redirect('pelanggan/Profil/pesanansaya/' . $no);
         }
     }
     public function removegambar($no, $nama)
@@ -229,5 +229,70 @@ class Order extends CI_Controller
         $this->email->message($message);
         $this->email->send();
         $this->session->set_flashdata('berhasil', 'Terima kasih sudah melakukan pemesanan di ALT Printing Jember. Silahkan cek email Anda untuk melihat detail pesanan Anda.');
+    }
+    public function userkomplain($no)
+    {
+        $data['transaksi'] = $this->db->get_where('tb_transaksi', ["no_transaksi" => $no])->row();
+        $data['judul'] = "ALT Jember - Ajukan Komplain";
+        $this->load->view('user/header', $data);
+        $this->load->view('user/topbar');
+        $this->load->view('user/vuserkomplain');
+        $this->load->view('user/footer');
+    }
+    public function ajukankomplain()
+    {
+        $text = '123457890';
+        $panj = 5;
+        $txtl = strlen($text) - 1;
+        $id = '';
+        for ($i = 1; $i <= $panj; $i++) {
+            $id .= $text[rand(0, $txtl)];
+        }
+        $no = $this->input->post('nomor', true);
+        $nowa = $this->input->post('nowa', true);
+        $isi = $this->input->post('isi', true);
+        $solusi = $this->input->post('solusi', true);
+        $status = 1;
+        $gambar = $_FILES['gambar']['name'];
+        $format = 'jpg|png|jpeg|jfif|gif';
+        if ($gambar) {
+            $this->primslib->upload_bukti('gambar', $gambar, $format, 10000);
+            $this->db->set('gambar_komplain', $gambar);
+        }
+        $data = [
+            'id_komplain' => $id,
+            'no_transaksi' => $no,
+            'no_pengaju' => $nowa,
+            'isi_komplain' => $isi,
+            'solusi_komplain' => $solusi,
+            'status_komplain' => $status
+        ];
+        $this->admin->addData('tb_komplain', $data);
+        $this->session->set_flashdata('berhasil', 'Pengajuan Anda berhasil terkirim. Kami akan menghubungi Anda melalui nomor WA yang Anda masukkan.');
+        redirect($this->agent->referrer());
+    }
+    public function orderselesai($no)
+    {
+        $data = ['status_transaksi' => 5];
+        $where = ['no_transaksi' => $no];
+        $this->admin->editData('tb_transaksi', $data, $where);
+        $this->kirimselesai($no);
+        $this->session->set_flashdata('berhasil', 'Pesanan ' . $no . ' Selesai');
+        redirect($this->agent->referrer());
+    }
+    public function kirimselesai($no)
+    {
+        $this->configemail->email_config();
+        $from = "altprinting3@gmail.com";
+        $subject = "Terima Kasih Telah Berbelanja di ALT Printing.";
+        $data['order'] = $this->db->query('select * from tb_transaksi where no_transaksi=' . $no)->row();
+        // $message = $data['transaksi']->nama_pembeli;
+        $data['judul'] = "ALT Printing | Pesanan Selesai";
+        $message = $this->load->view('email/vemailselesai', $data, true);
+        $this->email->from($from, 'ALT Printing Jember');
+        $this->email->to($data['order']->email_pembeli);
+        $this->email->subject($subject);
+        $this->email->message($message);
+        $this->email->send();
     }
 }
