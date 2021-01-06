@@ -60,10 +60,10 @@ class Kategori extends CI_Controller
         $this->form_validation->set_message('required', 'Please Enter Data!');
 
         if ($this->form_validation->run() == FALSE) {
-            $this->session->set_flashdata('gagal', 'Data tidak sesuai atau data kosong!');
+            $this->session->set_flashdata('gagal', 'Isi data ulasan Anda!');
             redirect($this->agent->referrer());
         }
-        $produk = $this->input->post('kode',true); 
+        $produk = $this->input->post('kode',true);  
         $nama = $this->input->post('nama',true);
         $email = $this->input->post('email',true);
         $isi = $this->input->post('isi',true);

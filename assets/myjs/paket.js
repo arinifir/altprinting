@@ -18,7 +18,7 @@ $(document).ready(() => {
         }
     });
 }) 
-$(document).ready(() => {
+$(document).ready(() => { 
     const gambar = $('.carousel-item');
     for(var i = 0; i<gambar.length;i++){
         gambar[0].addClass(' active');
@@ -47,18 +47,37 @@ $(document).on('change','#input_qty', function () {
 })
 
 /* ==================================================================================================== */
-function tampilbintang() {
-    const rating = $('.rating');
-    for (var i = 0; i < rating.length; i++) {
-        rating[i].addEventListener('click', function () {
-            var current = $('.aktif');
-            current[0].className = current[0].className.replace(' aktif','');
-            this.className += " aktif";
-            let id = $(this).data('kode');
+
+// $(document).ready(() => {
+//     const btn = $('.btn_star');
+//     const rating = $('.rating');
+//     for (var i = 0; i < rating.length; i++) {
+//         rating[i].addEventListener('click', function () {
+//             var current = $('.aktif');
+//             current[0].className = current[0].className.replace(' aktif', '');
+//             this.className += " aktif";
+//             let id = $(this).data('kode');
+//             $('#input_rating').val(id);
+//             // console.log(response);
+//         })
+//     }
+// }) 
+
+$(document).ready(() => {
+    $('.rating').click(function(){
+        $('.rating.aktif').removeClass('aktif');
+        $(this).addClass('aktif');
+        let id = $(this).data('kode');
             $('#input_rating').val(id);
-        })
-    }
-} 
+    })
+}) 
+
+$(document).ready(() => {
+    $('.tombol_status').click(function(){
+        $('.tombol_status.active').removeClass('active');
+        $(this).addClass('active');
+    })
+}) 
 
 function adaPaket(){ 
     const card_area = $('.card_area');
