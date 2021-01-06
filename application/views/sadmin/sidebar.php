@@ -82,6 +82,11 @@
                     <i class="mdi mdi-close"></i><span class="nav-text pl-2">Pesanan Batal</span>
                 </a>
             </li>
+            <li>
+                <a href="<?= base_url('Sadmin/datakomplain') ?>" aria-expanded="false">
+                    <i class="mdi mdi-comment-alert"></i><span class="nav-text pl-2">Pengajuan Komplain</span>
+                </a>
+            </li>
             <li class="nav-label">Keuangan</li>
             <li>
                 <a href="<?= base_url('Sadmin/pembelian') ?>" aria-expanded="false">

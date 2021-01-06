@@ -256,7 +256,7 @@ class Order extends CI_Controller
         $gambar = $_FILES['gambar']['name'];
         $format = 'jpg|png|jpeg|jfif|gif';
         if ($gambar) {
-            $this->primslib->upload_bukti('gambar', $gambar, $format, 10000);
+            $this->primslib->upload_komplain('gambar', $gambar, $format, 10000);
             $this->db->set('gambar_komplain', $gambar);
         }
         $data = [

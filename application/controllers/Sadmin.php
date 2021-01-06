@@ -1134,4 +1134,21 @@ class Sadmin extends CI_Controller
         }
         // phpinfo();
     }
+    public function datakomplain()
+    {
+        $data['komplain'] = $this->db->get('tb_komplain')->result();
+        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/topbar');
+        $this->load->view('sadmin/sidebar');
+        $this->load->view('sadmin/vkomplain', $data);
+        $this->load->view('sadmin/footer');
+    }
+    public function komplainselesai($id)
+    {
+        $data = ['status_komplain' => 2];
+        $where = ['id_komplain' => $id];
+        $this->admin->editData('tb_komplain', $data, $where);
+        $this->session->set_flashdata('berhasil', 'Komplain ' . $id . ' Terselesaikan');
+        redirect($this->agent->referrer());
+    }
 }
