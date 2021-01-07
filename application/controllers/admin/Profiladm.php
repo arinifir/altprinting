@@ -5,15 +5,18 @@ class Profiladm extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model('m_admin');
         $this->load->library('Primslib');
+        $this->load->model('M_transaksi', 'transaksi');
+        $this->load->model('M_produk', 'produk');
+        $this->load->model('M_pelanggan');
+        $this->load->model('M_admin', 'admin');
+        $this->load->helper('auth_helper');
+        $this->load->library('user_agent');
         admin_logged_in();
     }
 
     function index()
     {
-
-
         $this->form_validation->set_rules('email', 'Email', 'trim|required|min_length[4]|valid_email');
         $this->form_validation->set_rules('nohp', 'Nomor HP', 'trim|required|min_length[10]|max_length[13]|numeric');
         $this->form_validation->set_rules('alamat', 'Alamat', 'trim|required|min_length[4]|max_length[255]|callback_addr_line1');

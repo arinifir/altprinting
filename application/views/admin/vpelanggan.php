@@ -22,7 +22,6 @@
                             <table class="table table-hover table-bordered zero-configuration">
                                 <thead>
                                     <tr>
-                                        <th>Action</th>
                                         <th>No</th>
                                         <th>ID Pelanggan</th>
                                         <th>Nama</th>
@@ -30,6 +29,7 @@
                                         <th>No Telepon</th>
                                         <th>Status Akun</th>
                                         <th conspan="2">Aktif/Nonaktif</th>
+                                        <th>Aksi</th>
 
                                     </tr>
                                 </thead>
@@ -38,15 +38,6 @@
                                     $no = 1;
                                     foreach ($pelanggan as $p) { ?>
                                         <tr>
-                                            <td>
-                                                <?php echo form_open('admin/pelanggan/hapus/' . $p->id_user) ?>
-                                                <div class="form-button-action">
-                                                    <a href="<?= base_url('admin/pelanggan/delpelanggan/' . $p->id_user); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Hapus " onclick="return confirm('Anda yakin ingin menghapus?');">
-                                                        <i class="mdi mdi-delete"></i>
-                                                    </a>
-                                                    <?php echo form_close() ?>
-                                                </div>
-                                            </td>
                                             <td><?= $no++; ?></td>
                                             <td><?= $p->id_user; ?></td>
                                             <td><?= $p->nama_lengkap; ?></td>
@@ -69,13 +60,21 @@
                                                     </a>
                                                 </div>
                                             </td>
+                                            <td>
+                                                <?php echo form_open('admin/pelanggan/hapus/' . $p->id_user) ?>
+                                                <div class="form-button-action">
+                                                    <a href="<?= base_url('admin/pelanggan/delpelanggan/' . $p->id_user); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Hapus " onclick="return confirm('Anda yakin ingin menghapus?');">
+                                                        <i class="mdi mdi-delete"></i>
+                                                    </a>
+                                                    <?php echo form_close() ?>
+                                                </div>
+                                            </td>
                                         </tr>
                                     <?php }
                                     ?>
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>Action</th>
                                         <th>No</th>
                                         <th>ID Pelanggan</th>
                                         <th>Nama</th>
@@ -83,6 +82,7 @@
                                         <th>No Telepon</th>
                                         <th>Status Akun</th>
                                         <th conspan="2">Aktif/Nonaktif</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </tfoot>
                             </table>

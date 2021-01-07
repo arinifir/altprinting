@@ -115,7 +115,6 @@
                             <table class="table table-hover table-bordered zero-configuration">
                                 <thead>
                                     <tr>
-                                        <th conspan="2">Action</th>
                                         <th>No</th>
                                         <th>ID Admin</th>
                                         <th>Nama</th>
@@ -123,6 +122,7 @@
                                         <th>No Telepon</th>
                                         <th>Status Akun</th>
                                         <th conspan="2">Aktif/Nonaktif</th>
+                                        <th conspan="2">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -130,16 +130,6 @@
                                     $no = 1;
                                     foreach ($admin as $a) { ?>
                                         <tr>
-                                            <td>
-                                                <div class="form-button-action">
-                                                    <button type="button" data-toggle="modal" data-target="#editModal<?= $a->id_user; ?>" data-toggle="tooltip" title="" class="btn mb-1 btn-warning" data-original-title="Edit">
-                                                        <i class="mdi mdi-pencil text-white"></i>
-                                                    </button>
-                                                    <a href="<?= base_url('Sadmin/deladmin/' . $a->id_user); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Hapus">
-                                                        <i class="mdi mdi-delete"></i>
-                                                    </a>
-                                                </div>
-                                            </td>
                                             <td><?= $no++; ?></td>
                                             <td><?= $a->id_user; ?></td>
                                             <td><?= $a->nama_lengkap; ?></td>
@@ -147,9 +137,9 @@
                                             <td><?= $a->no_hp; ?></td>
                                             <td>
                                                 <?php if ($a->status == 1) { ?>
-                                                    <span class="badge badge-success">Aktif</span>
+                                                    <span class="label label-pill label-success">Aktif</span>
                                                 <?php } else { ?>
-                                                    <span class="badge badge-danger">Non-Aktif</span>
+                                                    <span class="label label-pill label-danger">Non-Aktif</span>
                                                 <?php } ?>
                                             <td>
                                                 <div class="form-button-action">
@@ -161,13 +151,22 @@
                                                     </a>
                                                 </div>
                                             </td>
+                                            <td>
+                                                <div class="form-button-action">
+                                                    <button type="button" data-toggle="modal" data-target="#editModal<?= $a->id_user; ?>" data-toggle="tooltip" title="" class="btn mb-1 btn-warning" data-original-title="Edit">
+                                                        <i class="mdi mdi-pencil text-white"></i>
+                                                    </button>
+                                                    <a href="<?= base_url('Sadmin/deladmin/' . $a->id_user); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Hapus">
+                                                        <i class="mdi mdi-delete"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
                                         </tr>
                                     <?php }
                                     ?>
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th conspan="2">Action</th>
                                         <th>No</th>
                                         <th>ID Admin</th>
                                         <th>Nama</th>
@@ -175,6 +174,7 @@
                                         <th>No Telepon</th>
                                         <th>Status Akun</th>
                                         <th conspan="2">Aktif/Nonaktif</th>
+                                        <th conspan="2">Aksi</th>
                                     </tr>
                                 </tfoot>
                             </table>

@@ -141,6 +141,17 @@ class Produk extends CI_Controller
         redirect('admin/produk/dataproduk');
     }
 
+    public function editdesk()
+    {
+        $kode = $this->input->post("kode", TRUE);
+        $desk = $this->input->post("desk", TRUE);
+        $data = ['desk_produk' => $desk];
+        $where = ['kd_produk' => $kode];
+        $this->admin->editData('tb_produk', $data, $where);
+        $this->session->set_flashdata('berhasil', 'Berhasil Mengubah Data.');
+        redirect('admin/produk/dataproduk');
+    }
+
     public function editdiskon()
     {
         $kode = $this->input->post("kode", TRUE);

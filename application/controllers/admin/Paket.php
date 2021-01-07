@@ -18,6 +18,7 @@ class Paket extends CI_Controller
     public function lihatpaket($kode)
     {
         $data['produk'] = $this->admin->produkbykode($kode);
+        // var_dump($data['produk']);die;
         $data['paket'] = $this->admin->paketbykode($kode);
         $this->load->view('admin/header');
         $this->load->view('admin/topbar');
@@ -38,12 +39,14 @@ class Paket extends CI_Controller
             redirect('admin/paket/lihatpaket');
         } else {
             $produk = $this->input->post("kodeproduk", TRUE);
-            $cekkode = $this->admin->cekodepaket();
-            // contoh JRD0004, angka 3 adalah awal pengambilan angka, dan 4 jumlah angka yang diambil
-            $nourut = substr($cekkode, 4, 4);
-            $nourut + rand();
             $char = substr($produk, 4, 4);
-            $kode = $char . sprintf("%04s", $nourut);
+            $prekode = $this->admin->getLastId($char);
+            if ($prekode == null) {
+                $nourut = substr($prekode['kd_paket'], 4, 4);
+                $kode = $char . sprintf("%04s", $nourut);
+            } else {
+                $kode = $prekode['kd_paket'] + 1;
+            }
             $nama = $this->input->post("namapaket", TRUE);
             $harga = $this->input->post("harga", TRUE);
             $isi = $this->input->post("isi", TRUE);

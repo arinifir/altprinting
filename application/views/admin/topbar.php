@@ -61,13 +61,13 @@
                                     <ul>
                                         <li>
                                             <a href="<?= base_url('admin/Profiladm') ?>">
-                                                <i class="icon-user"></i> <span>Profil</span>
+                                                <i class="mdi mdi-account"></i> <span>Profil</span>
                                             </a>
                                         </li>
                                         <hr class="my-2">
                                         <li>
                                             <a href="javascript:void(0)" onclick="logout()">
-                                                <i class="icon-key"></i> <span>Logout</span>
+                                                <i class="mdi mdi-logout"></i> <span>Logout</span>
                                             </a>
                                         </li>
                                     </ul>

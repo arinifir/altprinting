@@ -22,7 +22,6 @@
                             <table class="table table-hover table-bordered zero-configuration">
                                 <thead>
                                     <tr>
-                                        <th conspan="2">Action</th>
                                         <th>No</th>
                                         <th>ID Pelanggan</th>
                                         <th>Nama</th>
@@ -30,6 +29,7 @@
                                         <th>No Telepon</th>
                                         <th>Status Akun</th>
                                         <th conspan="2">Aktif/Nonaktif</th>
+                                        <th conspan="2">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -37,13 +37,6 @@
                                     $no = 1;
                                     foreach ($pelanggan as $p) { ?>
                                         <tr>
-                                            <td>
-                                                <div class="form-button-action">
-                                                    <a href="<?= base_url('Sadmin/delpelanggan/' . $p->id_user); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Hapus">
-                                                        <i class="mdi mdi-delete"></i>
-                                                    </a>
-                                                </div>
-                                            </td>
                                             <td><?= $no++; ?></td>
                                             <td><?= $p->id_user; ?></td>
                                             <td><?= $p->nama_lengkap; ?></td>
@@ -51,9 +44,9 @@
                                             <td><?= $p->no_hp; ?></td>
                                             <td>
                                                 <?php if ($p->status == 1) { ?>
-                                                    <span class="badge badge-success">Aktif</span>
+                                                    <span class="label label-pill label-success">Aktif</span>
                                                 <?php } else { ?>
-                                                    <span class="badge badge-danger">Non-Aktif</span>
+                                                    <span class="label label-pill label-danger">Non-Aktif</span>
                                                 <?php } ?>
                                             <td>
                                                 <div class="form-button-action">
@@ -65,13 +58,19 @@
                                                     </a>
                                                 </div>
                                             </td>
+                                            <td>
+                                                <div class="form-button-action">
+                                                    <a href="<?= base_url('Sadmin/delpelanggan/' . $p->id_user); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Hapus">
+                                                        <i class="mdi mdi-delete"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
                                         </tr>
                                     <?php }
                                     ?>
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th conspan="2">Action</th>
                                         <th>No</th>
                                         <th>ID Pelanggan</th>
                                         <th>Nama</th>
@@ -79,6 +78,7 @@
                                         <th>No Telepon</th>
                                         <th>Status Akun</th>
                                         <th conspan="2">Aktif/Nonaktif</th>
+                                        <th conspan="2">Aksi</th>
                                     </tr>
                                 </tfoot>
                             </table>
