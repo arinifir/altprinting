@@ -32,7 +32,8 @@
                     <div class="col-lg-8 col-xl-9">
                         <div class="card">
                             <div class="card-body">
-                                <form action="#" class="form-profile">
+                                <form action="<?= base_url('admin/Profiladm/') ?>" method="POST" class="form-profile">
+                                    <input type="hidden" value="<?= $admin->id_user; ?>" name="id_admin">
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label>Nama</label>

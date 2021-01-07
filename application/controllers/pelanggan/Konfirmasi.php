@@ -67,7 +67,7 @@ class Konfirmasi extends CI_Controller
         $gambar = $_FILES['gambar']['name'];
         $format = 'jpg|png|jpeg|jfif|gif';
         if ($gambar) {
-            $this->primslib->upload_image('gambar', $gambar, $format, 10000);
+            $this->primslib->upload_bukti('gambar', $gambar, $format, 10000);
             $this->db->set('bukti_pembayaran', $gambar);
         }else{
             redirect($this->agent->referrer());

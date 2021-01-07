@@ -12,6 +12,7 @@ class API extends CI_Controller
         $this->load->model('m_admin', 'admin');
         $this->load->model('m_produk', 'produk');
         $this->load->model('m_voucher', 'voucher');
+        $this->load->model('m_transaksi', 'transaksi');
     }
 
     public function login()
@@ -93,7 +94,8 @@ class API extends CI_Controller
         }
     }
 
-    public function date_online($id){
+    public function date_online($id)
+    {
         $data = [
             'date_online' => date('Y-m-d H:i:s')
         ];
@@ -105,13 +107,13 @@ class API extends CI_Controller
 
     public function getPaketById($id_paket)
     {
-            $paket = $this->produk->getPaketById($id_paket);
-            $data = [
-                'status' => 'success',
-                'data' => $paket
-            ];
+        $paket = $this->produk->getPaketById($id_paket);
+        $data = [
+            'status' => 'success',
+            'data' => $paket
+        ];
 
-            echo json_encode($data);
+        echo json_encode($data);
     }
 
     public function checkProduk($id_produk)
@@ -121,7 +123,7 @@ class API extends CI_Controller
             'status' => 'success',
             'data' => $paket
         ];
-        
+
         echo json_encode($data);
     }
 
@@ -136,47 +138,22 @@ class API extends CI_Controller
     }
 
 
-    /*====================================================  API WILAYAH INDONESIA  ====================================================*/ 
-    private function _getTokenWilayah()
-    {
-        $curl = curl_init();
-
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://x.rajaapi.com/poe",
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => "",
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 30,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "GET",
-        ));
-
-        $response = curl_exec($curl);
-        $err = curl_error($curl);
-
-        curl_close($curl);
-
-        if ($err) {
-            echo "cURL Error #:" . $err;
-        } else {
-            $data = json_decode($response);
-            return $data->token; 
-        }
-    }
-
+    /*====================================================  RAJA ONGKIR API  ====================================================*/
     public function getProvinsi()
     {
-        $token = $this->_getTokenWilayah();
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://x.rajaapi.com/MeP7c5ne$token/m/wilayah/provinsi",
+            CURLOPT_URL => "https://api.rajaongkir.com/starter/province",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
             CURLOPT_TIMEOUT => 30,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                "key: 7473506335604c508c524b09f2181bdc"
+            ),
         ));
 
         $response = curl_exec($curl);
@@ -193,17 +170,19 @@ class API extends CI_Controller
 
     public function getKabKota($id_provinsi)
     {
-        $token = $this->_getTokenWilayah();
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://x.rajaapi.com/MeP7c5ne$token/m/wilayah/kabupaten?idpropinsi=$id_provinsi",
+            CURLOPT_URL => "https://api.rajaongkir.com/starter/city?province=$id_provinsi",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
             CURLOPT_TIMEOUT => 30,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                "key: 7473506335604c508c524b09f2181bdc"
+            ),
         ));
 
         $response = curl_exec($curl);
@@ -218,19 +197,23 @@ class API extends CI_Controller
         }
     }
 
-    public function getKecamatan($id_kabkota)
+    public function hitungOngkir($id_kabkota)
     {
-        $token = $this->_getTokenWilayah();
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://x.rajaapi.com/MeP7c5ne$token/m/wilayah/kecamatan?idkabupaten=$id_kabkota",
+            CURLOPT_URL => "https://api.rajaongkir.com/starter/cost",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
             CURLOPT_TIMEOUT => 30,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => "origin=160&destination=$id_kabkota&weight=1000&courier=jne",
+            CURLOPT_HTTPHEADER => array(
+                "content-type: application/x-www-form-urlencoded",
+                "key: 7473506335604c508c524b09f2181bdc"
+            ),
         ));
 
         $response = curl_exec($curl);
@@ -244,7 +227,8 @@ class API extends CI_Controller
             echo $response;
         }
     }
-    /*====================================================  API WILAYAH INDONESIA  ====================================================*/ 
+
+    /*====================================================  RAJA ONGKIR API  ====================================================*/
     public function checkVoucher($kode)
     {
         $voucher = $this->voucher->getVoucherByKode($kode);
@@ -261,5 +245,10 @@ class API extends CI_Controller
             ];
             echo json_encode($data);
         }
+    }
+
+    public function getOrder($user, $status)
+    {
+        $order = $this->transaksi->getOrderBy($user,$status);
     }
 }

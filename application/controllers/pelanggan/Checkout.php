@@ -24,6 +24,29 @@ class Checkout extends CI_Controller
         if ($voucher) {
             $data['voucher'] = $this->voucher->getVoucherByKode($voucher);
         }
+        
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => base_url('API/getProvinsi'),
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        if ($err) {
+            echo "cURL Error #:" . $err;
+        } else {
+            $data['provinsi'] = json_decode($response)->rajaongkir->results;
+        }
 
         $id = $this->session->userdata('id_user');
         if ($id) {

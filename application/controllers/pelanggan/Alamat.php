@@ -7,6 +7,7 @@ class Alamat extends CI_Controller
     {
         parent::__construct();
         $this->load->model("M_pelanggan");
+        $this->load->model("M_admin", 'admin');
         //load model admin
         $this->load->helper('auth_helper');
         $this->load->library('user_agent');
@@ -16,14 +17,29 @@ class Alamat extends CI_Controller
 
     public function index()
     {
+        $user = $this->session->userdata('id_user');
         $data['judul'] = " Alamat";
-        $data['alamat'] = $this->M_pelanggan->getAll('tb_alamat');
+        $data['alamat'] = $this->db->get_where('tb_alamat',['id_user'=> $user])->result_array();
 
         // var_dump($data['provinsi']);die;
         $this->load->view('user/header', $data);
         $this->load->view('user/topbar');
         $this->load->view('user/valamat', $data);
         $this->load->view('user/footer');
+    }
+    public function alamatutama($id)
+    {
+        $user = $this->session->userdata('id_user');
+        $alamat = $this->db->get_where('tb_alamat', ['id_user'=> $user])->result();
+        foreach ($alamat as $a) {
+            $data = ['status_alamat' =>0];
+            $where = ['id_alamat'=> $a->id_alamat];
+            $this->admin->editData('tb_alamat', $data, $where);
+        }
+        $data = ['status_alamat'=>1];
+        $where = ['id_alamat'=>$id];
+        $this->admin->editData('tb_alamat', $data, $where);
+        redirect($this->agent->referrer());
     }
 
     public function pageTambah()

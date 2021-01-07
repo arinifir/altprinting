@@ -219,4 +219,11 @@ class M_admin extends CI_Model
         $this->db->limit(1);
         return $this->db->get('tb_paket')->row_array();
     }
+    
+    public function ubahpsw($pswhash, $id)
+    {
+        $this->db->set('password', $pswhash);
+        $this->db->where($id);
+        $this->db->update('tb_user');
+    }
 }

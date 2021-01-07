@@ -169,3 +169,126 @@
 	border-radius: 0;
 	margin-bottom: 0;
 }
+
+.card_pesanan {
+	box-shadow: 0px 10px 40px 0px rgba(56, 74, 235, 0.1);
+	border: 1px solid #eee;
+	border-radius:30px;
+	height: 100%;
+	padding: 30px !important;
+}
+
+/* @media (min-width: 1000px) {
+	.card_pesanan {
+		padding-top: 115px;
+		padding-bottom: 0;
+	}
+} */
+
+.card_pesanan h3 {
+	color: #222;
+	font-size: 18px;
+	/* margin-bottom: 75px; */
+}
+@media only screen and (max-width: 700px) {
+	.card_pesanan h3 {
+		text-align: left;
+	}
+}
+.kapital{
+	font-size: 12px;
+	text-transform: uppercase;
+	color: #A80201;
+}
+.kapital:hover{
+	cursor: pointer;
+	color: #222;
+}
+
+.tombol_alamat{
+	font-size: 15px;
+	text-transform: uppercase;
+	color: #A80201;
+}
+.tombol_alamat:hover{
+	cursor: pointer;
+	color: #222;
+}
+
+.card_pesanan .login_form {
+	max-width: 385px;
+	margin: auto;
+}
+
+.card_pesanan.reg_form {
+	padding-top: 60px;
+}
+
+.card_pesanan.reg_form h3 {
+	margin-bottom: 70px;
+}
+
+.card_pesanan .show-password {
+	float: right;
+	transform: translateY(-100%);
+	font-size: 20px;
+	cursor: pointer;
+}
+.tombol {
+	display: inline-block;
+	border: 1px solid #A80201;
+	border-radius: 30px;
+	color: #222;
+	font-weight: 500;
+	padding: 12px 50px;
+	background: #A80201;
+	color: #fff;
+	transition: all 0.4s ease;
+	margin-bottom: 30px;
+	margin-left: 10px;
+
+}
+.tombol:hover {
+	border-color: #A80201;
+	background: transparent;
+	color: #222;
+}
+.tombol_lihat {
+	float: right;
+	font-size: 15px;
+	padding: 7px 44px;
+}
+.s_product_text .card_area .tombol_status{
+	position: relative;
+	cursor: pointer;
+	max-width: 7rem;
+	width: 7rem;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: center;
+	background: #ffffff;
+	border: 1px solid #A80201;
+	border-radius: 30px;
+	display: inline-block;
+	color: #222;
+	-webkit-transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+	margin-right: 10px;
+	z-index: 1;
+}
+.s_product_text .card_area .tombol_status:hover {
+	background: #A80201;
+	color: #ffffff;
+	box-shadow: 0px 10px 20px 0px rgba(153, 153, 153, 0.3);
+}
+
+.s_product_text .card_area .tombol_status.active {
+	background: #A80201;
+	color: #ffffff;
+	box-shadow: 0px 10px 20px 0px rgba(153, 153, 153, 0.3);
+}
+

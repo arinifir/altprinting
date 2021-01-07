@@ -7,7 +7,7 @@
                     <div class="head">Kategori</div>
                     <ul class="main-categories">
                         <li class="common-filter">
-                            <form action="#">
+                            <form action="#"> 
                                 <ul>
                                     <?php foreach ($kategori as $ktg) : ?>
                                         <li class="filter-list " onclick="filter('<?= $ktg->kd_kategori ?>')"><input class="pixel-radio" type="radio" id="men" name="brand" <?= $this->input->get('ktg') == $ktg->kd_kategori ? 'checked="checked"' : '' ?>><label for="men"><?= $ktg->kategori ?><span></span></label></li>

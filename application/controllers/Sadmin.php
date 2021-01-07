@@ -17,7 +17,7 @@ class Sadmin extends CI_Controller
         $this->load->library('configemail');
         sadmin_logged_in();
     }
-    
+
     public function index()
     {
         foreach ($this->admin->statistik_pendapatan()->result_array() as $row) {
@@ -40,9 +40,9 @@ class Sadmin extends CI_Controller
         $data['total'] = $this->admin->pendapatan();
         //ambil data login
         $date = date('Y-m-d');
-        $data['pelanggan'] = $this->db->get_where('tb_user',['level'=>3,'date_online'=>$date])->result();
-        $data['admin'] = $this->db->get_where('tb_user',['level'=>2,'date_online'=>$date])->result();
-        $data['sadmin'] = $this->db->get_where('tb_user',['level'=>1,'date_online'=>$date])->result();
+        $data['pelanggan'] = $this->db->get_where('tb_user', ['level' => 3, 'date_online' => $date])->result();
+        $data['admin'] = $this->db->get_where('tb_user', ['level' => 2, 'date_online' => $date])->result();
+        $data['sadmin'] = $this->db->get_where('tb_user', ['level' => 1, 'date_online' => $date])->result();
         $this->load->view('sadmin/header');
         $this->load->view('sadmin/topbar');
         $this->load->view('sadmin/sidebar');
@@ -695,7 +695,7 @@ class Sadmin extends CI_Controller
         ];
         $this->admin->delData('tb_dtrans', $where);
         $this->admin->delData('tb_transaksi', $where);
-        $this->session->set_flashdata('berhasil', 'Pesanan '.$no.' Dihapus');
+        $this->session->set_flashdata('berhasil', 'Pesanan ' . $no . ' Dihapus');
         redirect($this->agent->referrer());
     }
     public function konfirmasi($no)
@@ -712,7 +712,7 @@ class Sadmin extends CI_Controller
         $data = ['status_transaksi' => 0];
         $where = ['no_transaksi' => $no];
         $this->admin->editData('tb_transaksi', $data, $where);
-        $this->session->set_flashdata('berhasil', 'Pesanan '.$no.' Dibatalkan');
+        $this->session->set_flashdata('berhasil', 'Pesanan ' . $no . ' Dibatalkan');
         redirect($this->agent->referrer());
     }
 
@@ -721,15 +721,15 @@ class Sadmin extends CI_Controller
         $this->configemail->email_config();
         $from = "altprinting3@gmail.com";
         $subject = "Pesanan Anda Diterima";
-        $data['order'] = $this->db->query('select * from tb_transaksi where no_transaksi='.$no)->row();
-        $data['detail'] = $this->db->query('select * from tb_dtrans where no_transaksi='.$data['order']->no_transaksi)->result();
+        $data['order'] = $this->db->query('select * from tb_transaksi where no_transaksi=' . $no)->row();
+        $data['detail'] = $this->db->query('select * from tb_dtrans where no_transaksi=' . $data['order']->no_transaksi)->result();
         // $message = $data['transaksi']->nama_pembeli;
         $data['judul'] = " Nota Pemesanan";
         $message = $this->load->view('email/vkirimkonfirm', $data, true);
         $this->email->from($from, 'ALT Printing Jember');
         $this->email->to($data['order']->email_pembeli);
         $this->email->subject($subject);
-        $this->email->message($message); 
+        $this->email->message($message);
         $this->email->send();
     }
 
@@ -760,7 +760,7 @@ class Sadmin extends CI_Controller
         $data = ['status_transaksi' => 4];
         $where = ['no_transaksi' => $no];
         $this->admin->editData('tb_transaksi', $data, $where);
-        $this->session->set_flashdata('berhasil', 'Pesanan '.$no.' Sudah Dikemas');
+        $this->session->set_flashdata('berhasil', 'Pesanan ' . $no . ' Sudah Dikemas');
         redirect($this->agent->referrer());
     }
     public function kemascod()
@@ -798,8 +798,24 @@ class Sadmin extends CI_Controller
         $data = ['status_transaksi' => 5];
         $where = ['no_transaksi' => $no];
         $this->admin->editData('tb_transaksi', $data, $where);
-        $this->session->set_flashdata('berhasil', 'Pesanan '.$no.' Selesai');
+        $this->kirimselesai($no);
+        $this->session->set_flashdata('berhasil', 'Pesanan ' . $no . ' Selesai');
         redirect($this->agent->referrer());
+    }
+    public function kirimselesai($no)
+    {
+        $this->configemail->email_config();
+        $from = "altprinting3@gmail.com";
+        $subject = "Terima Kasih Telah Berbelanja di ALT Printing.";
+        $data['order'] = $this->db->query('select * from tb_transaksi where no_transaksi=' . $no)->row();
+        // $message = $data['transaksi']->nama_pembeli;
+        $data['judul'] = "ALT Printing | Pesanan Selesai";
+        $message = $this->load->view('email/vemailselesai', $data, true);
+        $this->email->from($from, 'ALT Printing Jember');
+        $this->email->to($data['order']->email_pembeli);
+        $this->email->subject($subject);
+        $this->email->message($message);
+        $this->email->send();
     }
     public function resi($no)
     {
@@ -812,15 +828,15 @@ class Sadmin extends CI_Controller
         $this->configemail->email_config();
         $from = "altprinting3@gmail.com";
         $subject = "Pesanan Anda Sedang Dikirim.";
-        $data['order'] = $this->db->query('select * from tb_transaksi where no_transaksi='.$no)->row();
-        $data['detail'] = $this->db->query('select * from tb_dtrans where no_transaksi='.$data['order']->no_transaksi)->result();
+        $data['order'] = $this->db->query('select * from tb_transaksi where no_transaksi=' . $no)->row();
+        $data['detail'] = $this->db->query('select * from tb_dtrans where no_transaksi=' . $data['order']->no_transaksi)->result();
         // $message = $data['transaksi']->nama_pembeli;
         $data['judul'] = " Nota Pemesanan";
         $message = $this->load->view('email/vkirimresi', $data, true);
         $this->email->from($from, 'ALT Printing Jember');
         $this->email->to($data['order']->email_pembeli);
         $this->email->subject($subject);
-        $this->email->message($message); 
+        $this->email->message($message);
         $this->email->send();
     }
     public function datacod()
@@ -854,7 +870,7 @@ class Sadmin extends CI_Controller
     }
     public function tidakvalid()
     {
-        $status = 0;
+        $status = 6;
         $data['transaksi'] = $this->admin->transtatus($status);
         $this->load->view('sadmin/header');
         $this->load->view('sadmin/topbar');
@@ -873,6 +889,115 @@ class Sadmin extends CI_Controller
         $this->load->view('sadmin/sidebar');
         $this->load->view('sadmin/vprofil', $data);
         $this->load->view('sadmin/footer');
+    }
+
+    function edit($id)
+    {
+        if ($post = $this->input->post()) {
+
+            $this->form_validation->set_rules('email', 'Email', 'trim|required|min_length[4]|valid_email');
+            $this->form_validation->set_rules('nohp', 'Nomor HP', 'trim|required|min_length[10]|max_length[13]|numeric');
+            $this->form_validation->set_rules('alamat', 'Alamat', 'trim|required|min_length[4]|max_length[255]|callback_addr_line1');
+            // custom message
+            $this->form_validation->set_message('required', 'Mohon maaf, {field} harus diisi');
+            $this->form_validation->set_message('min_length', '{field} harus lebih dari {param} karakter');
+            $this->form_validation->set_message('max_length', '{field} harus kurang dari {param} karakter');
+            $this->form_validation->set_message('alpha_dash', 'Tidak boleh memberi masukan karakter spesial');
+            $this->form_validation->set_message('valid_email', 'Periksa kembali penulisan {field} anda.');
+            // custom delimiter
+            $this->form_validation->set_error_delimiters('<div class="text-center"><span class="badge badge-danger text-white mt-2 px-4">', '</span></div>');
+
+            // form validation
+            if ($this->form_validation->run() == false) {
+                $this->session->set_flashdata('gagal', 'Data tidak sesuai atau data kosong!');
+                $data['admin'] = $this->m_admin->edit(array('id_admin' => $id), 'tb_user')->result();
+                $this->load->view('admin/header');
+                $this->load->view('admin/topbar');
+                $this->load->view('admin/sidebar');
+                $this->load->view('admin/vprofil', $data);
+                $this->load->view('admin/footer');
+            } else {
+                // menentukan apa yang akan diupdate
+                $date_updated = date('Y-m-d H:i:s');
+                $data = array(
+                    'nama_lengkap' => $this->input->post('nama_lengkap'),
+                    'email' => $this->input->post('email'),
+                    'nohp' => $this->input->post('nohp'),
+                    'updated_at' => $date_updated
+                );
+
+                // diupdate berdasarkan apa..
+                $where = array(
+                    'id_user' => $this->input->post('id_user')
+                );
+
+                $this->m_admin->editdata('tb_admin', $where, $data);
+                if ($this->db->affected_rows() == true) {
+                    $this->session->set_flashdata('berhasil', 'Berhasil Mengubah Profil');
+                    redirect(base_url("admin/profiladm"));
+                } else {
+                    $this->session->set_flashdata('gagal', 'Gagal Mengubah Profil');
+                    redirect(base_url("admin/profiladm"));
+                }
+            }
+        } else {
+            $data['admin'] = $this->m_admin->edit(array('id_admin' => $id), 'tb_user')->result();
+            $this->load->view('admin/header');
+            $this->load->view('admin/topbar');
+            $this->load->view('admin/sidebar');
+            $this->load->view('admin/vprofil', $data);
+            $this->load->view('admin/footer');
+        }
+    }
+
+    public function editpsw()
+    {
+        $id = $this->session->userdata('id_sadmin');
+        /** Ambil data admin */
+        $data['admin'] = $this->admin->edit(array('id_user' => $id), 'tb_user')->row();
+
+        $this->form_validation->set_rules('passoword', 'Lma', 'trim|required|min_length[8]', [
+            'required' => 'kolom ini harus diisi',
+            'min_length' => 'password terlalu pendek'
+        ]);
+
+        $this->form_validation->set_rules('password1', 'bru', 'trim|required|matches[pswbru1]|min_length[8]', [
+            'required' => 'kolom ini harus diisi',
+            'min_length' => 'password terlalu pendek',
+            'matches' => ''
+        ]);
+
+        $this->form_validation->set_rules('password2', 'bru1', 'trim|required|matches[pswbru]|min_length[8]', [
+            'required' => 'kolom ini harus diisi',
+            'min_length' => 'password terlalu pendek',
+            'matches' => 'konfirmasi password tidak sesuai'
+        ]);
+
+        if ($this->form_validation->run() == false) {
+            $this->load->view('sadmin/header');
+            $this->load->view('sadmin/topbar');
+            $this->load->view('sadmin/sidebar');
+            $this->load->view('sadmin/vprofil', $data);
+            $this->load->view('sadmin/footer');
+        } else {
+            $pswlma = hash('sha256', $this->input->post(htmlspecialchars('pwlama')));
+            $pswbru1 = hash('sha256', $this->input->post(htmlspecialchars('password1')));
+
+            if ($pswlma != $data['admin']['password']) {
+                $this->session->set_flashdata('message', 'Password Salah');
+                redirect('sadmin/editpsw');
+            } else {
+                if ($pswbru1 == $data['admin']['password']) {
+                    $this->session->set_flashdata('message', 'Password Tidak Boleh Sama');
+                    redirect('sadmin/editpsw');
+                } else {
+                    $pswhash = $pswbru1;
+                    $this->m_admin->ubhpsw($pswhash, $id);
+                    $this->session->set_flashdata('berhasil', 'Password anda telah diperbarui');
+                    redirect('sadmin/profilsadm');
+                }
+            }
+        }
     }
     public function detailtransaksi($no)
     {
@@ -905,26 +1030,26 @@ class Sadmin extends CI_Controller
     }
     public function lihatulasan($kode)
     {
-            $data['ulas'] = $this->admin->getUlasan($kode);
-            $data['rating'] = $this->admin->rating($kode);
-            $this->load->view('sadmin/header');
-            $this->load->view('sadmin/topbar');
-            $this->load->view('sadmin/sidebar');
-            $this->load->view('sadmin/lihatulasan', $data);
-            $this->load->view('sadmin/footer');
+        $data['ulas'] = $this->admin->getUlasan($kode);
+        $data['rating'] = $this->admin->rating($kode);
+        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/topbar');
+        $this->load->view('sadmin/sidebar');
+        $this->load->view('sadmin/lihatulasan', $data);
+        $this->load->view('sadmin/footer');
     }
     public function pembelian()
     {
-            $data['produk'] = $this->produk->getProdukByKG();
-            $this->load->view('sadmin/header');
-            $this->load->view('sadmin/topbar');
-            $this->load->view('sadmin/sidebar');
-            $this->load->view('sadmin/vpembelian', $data);
-            $this->load->view('sadmin/footer');
+        $data['produk'] = $this->produk->getProdukByKG();
+        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/topbar');
+        $this->load->view('sadmin/sidebar');
+        $this->load->view('sadmin/vpembelian', $data);
+        $this->load->view('sadmin/footer');
     }
     public function tambahcart($kode)
     {
-        $data1 = $this->db->get_where('tb_produk', ['kd_produk'=>$kode])->row();
+        $data1 = $this->db->get_where('tb_produk', ['kd_produk' => $kode])->row();
         $data = array(
             'id'      => $data1->kd_produk,
             'qty'     => $this->input->post('qty'),
@@ -934,7 +1059,8 @@ class Sadmin extends CI_Controller
         $this->cart->insert($data);
         redirect($this->agent->referrer());
     }
-    public function hapuscart($id){
+    public function hapuscart($id)
+    {
         $this->cart->remove($id);
         redirect($this->agent->referrer());
     }
@@ -951,7 +1077,7 @@ class Sadmin extends CI_Controller
         $tanggal = date('Y-m-d');
         $detail = $this->cart->contents();
         $array = [];
-        foreach ($detail as $d){
+        foreach ($detail as $d) {
             $dtrans = [
                 'no_beli' => $result,
                 'kode_produk' => $d['id'],
@@ -960,9 +1086,9 @@ class Sadmin extends CI_Controller
                 'jumlah_beli' => $d['qty'],
                 'subtotal_beli' => $d['subtotal']
             ];
-            $array[]=$dtrans;
+            $array[] = $dtrans;
         }
-        $data1=[
+        $data1 = [
             'no_beli' => $result,
             'tanggal_beli' => $tanggal,
             'user_beli' => $id,
@@ -977,11 +1103,52 @@ class Sadmin extends CI_Controller
     }
     public function riwayatpembelian()
     {
-            $data['beli'] = $this->transaksi->getBeli();
-            $this->load->view('sadmin/header');
-            $this->load->view('sadmin/topbar');
-            $this->load->view('sadmin/sidebar');
-            $this->load->view('sadmin/riwayatpembelian', $data);
-            $this->load->view('sadmin/footer');
+        $data['beli'] = $this->transaksi->getBeli();
+        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/topbar');
+        $this->load->view('sadmin/sidebar');
+        $this->load->view('sadmin/riwayatpembelian', $data);
+        $this->load->view('sadmin/footer');
+    }
+    public function downloadfile($no)
+    {
+        unlink('./assets/images/order/' .  $no . '.zip');
+        $file = './assets/images/order/' . $no . '.zip';
+        $this->zipfile($no);
+        force_download($file, Null);
+        redirect($this->agent->referrer());
+    }
+    public function zipfile($no)
+    {
+        $pathdir = './assets/images/order/' . $no . '/';
+        $zipcreated = './assets/images/order/' . $no . ".zip";
+        $newzip = new ZipArchive;
+        if ($newzip->open($zipcreated, ZipArchive::CREATE) === TRUE) {
+            $dir = opendir($pathdir);
+            while ($file = readdir($dir)) {
+                if (is_file($pathdir . $file)) {
+                    $newzip->addFile($pathdir . $file, $file);
+                }
+            }
+            $newzip->close();
+        }
+        // phpinfo();
+    }
+    public function datakomplain()
+    {
+        $data['komplain'] = $this->db->get('tb_komplain')->result();
+        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/topbar');
+        $this->load->view('sadmin/sidebar');
+        $this->load->view('sadmin/vkomplain', $data);
+        $this->load->view('sadmin/footer');
+    }
+    public function komplainselesai($id)
+    {
+        $data = ['status_komplain' => 2];
+        $where = ['id_komplain' => $id];
+        $this->admin->editData('tb_komplain', $data, $where);
+        $this->session->set_flashdata('berhasil', 'Komplain ' . $id . ' Terselesaikan');
+        redirect($this->agent->referrer());
     }
 }

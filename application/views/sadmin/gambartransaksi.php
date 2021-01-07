@@ -17,7 +17,7 @@
             <div class="col-lg-8">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Slides With controls</h4>
+                        <h4 class="card-title">Gambar</h4>
                         <div class="bootstrap-carousel">
                             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                                 <div class="carousel-inner">
@@ -39,7 +39,7 @@
             <div class="col-lg-3">
                 <div class="card">
                     <div class="card-body">
-                        <a href="<?= base_url('Sadmin/gambartransaksi'); ?>" type="button" class="btn mb-1 btn-primary">Unduh File Gambar
+                        <a href="<?= base_url('Sadmin/downloadfile/'.$nomor); ?>" type="button" class="btn mb-1 btn-primary">Unduh File Gambar
                             <span class="btn-icon-right"><i class="fa fa-download"></i></span>
                         </a>
                     </div>

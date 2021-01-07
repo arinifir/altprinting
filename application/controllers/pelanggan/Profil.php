@@ -83,29 +83,35 @@ class Profil extends CI_Controller
 
     public function pesanansaya()
     {
-        $id= $this->session->userdata('id_user');
-        if($id){
-            $data['order'] = $this->transaksi->getOrderUser($id);
+        $id = $this->session->userdata('id_user');
+        if ($id) {
+            $status = $this->input->get('sts');
+            if ($status) {
+                $data['order'] = $this->transaksi->getByFilter($id,$status)->result();
+            } else {
+                $data['order'] = $this->transaksi->getOrderUser($id);
+            }
+            
             $data['judul'] = "ALT Jember - Pesanan Saya";
             $this->load->view('user/header', $data);
             $this->load->view('user/topbar');
             $this->load->view('user/vpesanansaya');
             $this->load->view('user/footer');
-        }else{
+        } else {
             redirect('User');
         }
     }
     public function riwayatpesanan()
     {
-        $id= $this->session->userdata('id_user');
-        if($id){
+        $id = $this->session->userdata('id_user');
+        if ($id) {
             $data['order'] = $this->transaksi->getOrderDone($id);
             $data['judul'] = "ALT Jember - Riwayat Pesanan";
             $this->load->view('user/header', $data);
             $this->load->view('user/topbar');
             $this->load->view('user/vriwayatpesanan');
             $this->load->view('user/footer');
-        }else{
+        } else {
             redirect('User');
         }
     }

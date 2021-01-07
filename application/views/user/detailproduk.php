@@ -38,7 +38,7 @@
                         } ?>
                     </div>
                     <div class="product_count">
-                        <label for="qty">Jumlah :</label>
+                        <label for="qty">Jumlah :</label> 
                         <div class="quantity buttons_added">
                             <!-- <input type="button" value="-" class="minus"> -->
                             <form action="<?= base_url('pelanggan/Keranjang/addcart'); ?>" method="post">
@@ -106,12 +106,12 @@
                     <div class="col-lg-6">
                         <div class="review_box">
                             <h4>Tambah Ulasan</h4>
-                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <!-- <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                 Anda belum memberi rating
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                            </div>
+                            </div> -->
                             <p>Rating Anda:</p>&nbsp;
                             <!-- <ul class="list">
                                 <li>
@@ -130,44 +130,49 @@
                                     <a href="#"><i class="fa fa-star"></i></a>
                                 </li>
                             </ul> -->
-                            <div class="row">
-                                <div id="rate" class="col-mb-2 ml-3">
+                            <div class="row btn_star">
+                                <!-- <div id="rate" class="col-mb-2 ml-3">
                                     <a type="button" id='bintang' data-kode="1"><i class="fa fa-star rating aktif"></i></a>
                                     <a type="button" id='bintang' data-kode="2"><i class="fa fa-star"></i></a>
                                     <a type="button" id='bintang' data-kode="3"><i class="fa fa-star"></i></a>
                                     <a type="button" id='bintang' data-kode="4"><i class="fa fa-star"></i></a>
                                     <a type="button" id='bintang' data-kode="5"><i class="fa fa-star"></i></a>
-                                </div>
-                                <!-- <div id="rate" class="col-mb-2 ml-3 rating">
-                                    <a type="button" data-kode="2">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </a>
-                                </div>
-                                <div id="rate" class="col-mb-3 ml-3 rating">
-                                    <a type="button" data-kode="3">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </a>
-                                </div>
-                                <div id="rate" class="col-mb-4 ml-3 rating">
-                                    <a type="button" data-kode="4">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </a>
-                                </div>
-                                <div id="rate" class="col-mb-5 ml-3 rating">
-                                    <a type="button" data-kode="5">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </a>
                                 </div> -->
+                                <div id="rate" class="col-mb-2 ml-3 rating" data-kode="1">
+                                    <a type="button">
+                                        <i class="fa fa-star"></i>
+                                    </a>
+                                </div>
+                                <div id="rate" class="col-mb-2 ml-3 rating" data-kode="2">
+                                    <a type="button">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </a>
+                                </div>
+                                <div id="rate" class="col-mb-3 ml-3 rating" data-kode="3">
+                                    <a type="button">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </a>
+                                </div>
+                                <div id="rate" class="col-mb-4 ml-3 rating" data-kode="4">
+                                    <a type="button">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </a>
+                                </div>
+                                <div id="rate" class="col-mb-5 ml-3 rating" data-kode="5">
+                                    <a type="button">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </a>
+                                </div>
                             </div>
                             <p>Outstanding</p>
                             <form action="<?= base_url('pelanggan/Kategori/addulasan'); ?>" class="form-contact form-review mt-3" method="post">
@@ -175,7 +180,7 @@
                                     <input class="form-control" name="nama" type="text" placeholder="Nama Anda*" <?php if ($this->session->userdata('nama')) {
                                                                                                                         echo 'value="' . $this->session->userdata('nama') . '"';
                                                                                                                     } ?> required>
-                                    <input class="form-control" name="rating" type="hidden" id="input_rating" value="1" required>
+                                    <input class="form-control" name="rating" type="hidden" id="input_rating" value="" required>
                                     <input class="form-control" name="kode" type="hidden" value="<?= $produk->kd_produk; ?>">
                                 </div>
                                 <div class="form-group">
