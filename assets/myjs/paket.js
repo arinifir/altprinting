@@ -72,13 +72,6 @@ $(document).ready(() => {
     })
 }) 
 
-$(document).ready(() => {
-    $('.tombol_status').click(function(){
-        $('.tombol_status.active').removeClass('active');
-        $(this).addClass('active');
-    })
-}) 
-
 function adaPaket(){ 
     const card_area = $('.card_area');
     const card = $('.card_paket');

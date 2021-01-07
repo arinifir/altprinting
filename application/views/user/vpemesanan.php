@@ -88,7 +88,7 @@
 										</div>
 									</div>
 								<?php endif; ?>
-							</div>
+							</div> 
 							<div id="transfer" class="row hide">
 								<div class="col-md-6 form-group p_star">
 									<select class="country_select" id="select_provinsi" name="inputprov">
