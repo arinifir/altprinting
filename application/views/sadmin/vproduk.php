@@ -224,9 +224,8 @@
                             <table class="table table-hover table-bordered zero-configuration">
                                 <thead>
                                     <tr>
-                                        <th>Aksi</th>
-                                        <th>Paket</th>
                                         <th>No</th>
+                                        <th>Paket</th>
                                         <th>Kode Produk</th>
                                         <th>Gambar</th>
                                         <th>Nama Produk</th>
@@ -236,7 +235,8 @@
                                         <th>Kategori</th>
                                         <th>Deskripsi</th>
                                         <th>Status Produk</th>
-                                        <th>Aktif/Nonaktif</th>
+                                        <th>Aktif/Arsip</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -244,21 +244,11 @@
                                     $no = 1;
                                     foreach ($produk as $pr) { ?>
                                         <tr>
+                                            <td><?= $no++; ?></td>
                                             <td>
-                                                <div class="form-button-action">
-                                                    <button type="button" data-toggle="modal" data-target="#editModal<?= $pr->kd_produk; ?>" data-toggle="tooltip" title="" class="btn mb-1 btn-warning" data-original-title="Edit">
-                                                        <i class="mdi mdi-pencil text-white"></i>
-                                                    </button>
-                                                    <a href="<?= base_url('Sadmin/delproduk/' . $pr->kd_produk); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Hapus">
-                                                        <i class="mdi mdi-delete"></i>
-                                                    </a>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <a href="<?= base_url('Sadmin/lihatpaket/' . $pr->kd_produk); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-secondary text-white" data-original-title="Lihat Paket">Paket
+                                                <a href="<?= base_url('Sadmin/lihatpaket/' . $pr->kd_produk); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-primary text-white" data-original-title="Lihat Paket">Paket
                                                 </a>
                                             </td>
-                                            <td><?= $no++; ?></td>
                                             <td><?= $pr->kd_produk; ?></td>
                                             <td><img src="<?= base_url('assets/'); ?>images/produk/<?= $pr->gambar_produk; ?>" width="32" /></td>
                                             <td><?= $pr->nama_produk; ?></td>
@@ -283,15 +273,24 @@
                                                     </a>
                                                 </div>
                                             </td>
+                                            <td>
+                                                <div class="form-button-action">
+                                                    <button type="button" data-toggle="modal" data-target="#editModal<?= $pr->kd_produk; ?>" data-toggle="tooltip" title="" class="btn mb-1 btn-warning" data-original-title="Edit">
+                                                        <i class="mdi mdi-pencil text-white"></i>
+                                                    </button>
+                                                    <a href="<?= base_url('Sadmin/delproduk/' . $pr->kd_produk); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Hapus">
+                                                        <i class="mdi mdi-delete"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
                                         </tr>
                                     <?php }
                                     ?>
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>Aksi</th>
-                                        <th>Paket</th>
                                         <th>No</th>
+                                        <th>Paket</th>
                                         <th>Kode Produk</th>
                                         <th>Gambar</th>
                                         <th>Nama Produk</th>
@@ -301,7 +300,8 @@
                                         <th>Kategori</th>
                                         <th>Deskripsi</th>
                                         <th>Status Produk</th>
-                                        <th>Aktif/Nonaktif</th>
+                                        <th>Aktif/Arsip</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </tfoot>
                             </table>

@@ -16,6 +16,7 @@ class Profil extends CI_Controller
         $this->load->helper('auth_helper');
         $this->load->library('user_agent');
         $this->load->library('primslib');
+        $this->load->library('form_validation');
         // is_logged_in();
     }
 
@@ -41,9 +42,9 @@ class Profil extends CI_Controller
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email|trim', [
             'valid_email' => 'Mohon gunakan email yang valid'
         ]);
-        $this->form_validation->set_message('required', 'Please Enter Data!');
+        $this->form_validation->set_message('required', 'Mohon masukkan data!');
         if ($this->form_validation->run() == FALSE) {
-            $this->session->set_flashdata('gagal', 'Data tidak sesuai atau data kosong!');
+            // $this->session->set_flashdata('gagal', 'Data tidak sesuai atau data kosong!');
             redirect('pelanggan/Profil');
         } else {
             $kode = $this->input->post("kode", TRUE);

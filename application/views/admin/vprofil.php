@@ -1,8 +1,6 @@
         <!--**********************************
             Content body start
         ***********************************-->
-
-
         <div class="content-body">
             <div class="row page-titles mx-0">
                 <div class="col p-md-0">

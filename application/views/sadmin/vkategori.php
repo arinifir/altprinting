@@ -80,10 +80,10 @@
                             <table class="table table-hover table-bordered zero-configuration">
                                 <thead>
                                     <tr>
-                                        <th conspan="2">Action</th>
                                         <th>No</th>
                                         <th>Kode Kategori</th>
                                         <th>Kategori</th>
+                                        <th conspan="2">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -91,6 +91,9 @@
                                     $no = 1;
                                     foreach ($kategori as $k) { ?>
                                         <tr>
+                                            <td><?= $no++; ?></td>
+                                            <td><?= $k->kd_kategori; ?></td>
+                                            <td><?= $k->kategori; ?></td>
                                             <td>
                                                 <div class="form-button-action">
                                                     <button type="button" data-toggle="modal" data-target="#editModal<?= $k->kd_kategori; ?>" data-toggle="tooltip" title="" class="btn mb-1 btn-warning" data-original-title="Edit">
@@ -101,19 +104,16 @@
                                                     </a>
                                                 </div>
                                             </td>
-                                            <td><?= $no++; ?></td>
-                                            <td><?= $k->kd_kategori; ?></td>
-                                            <td><?= $k->kategori; ?></td>
                                         </tr>
                                     <?php }
                                     ?>
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th conspan="2">Action</th>
                                         <th>No</th>
                                         <th>Kode Kategori</th>
                                         <th>Kategori</th>
+                                        <th conspan="2">Aksi</th>
                                     </tr>
                                 </tfoot>
                             </table>

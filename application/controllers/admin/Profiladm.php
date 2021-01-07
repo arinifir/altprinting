@@ -5,16 +5,20 @@ class Profiladm extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model('m_admin');
         $this->load->library('Primslib');
+        $this->load->model('M_transaksi', 'transaksi');
+        $this->load->model('M_produk', 'produk');
+        $this->load->model('M_pelanggan');
+        $this->load->model('M_admin', 'admin');
+        $this->load->helper('auth_helper');
+        $this->load->library('user_agent');
         admin_logged_in();
     }
 
     function index()
     {
         $id = $this->session->userdata('id_admin');
-        $data['admin'] = $this->m_admin->edit(array('id_user' => $id), 'tb_user')->row();
-
+        $data['admin'] = $this->m_admin->edit(array('id_user' => $id), 'tb_user')->row();    
         $this->load->view('admin/header');
         $this->load->view('admin/topbar');
         $this->load->view('admin/sidebar');

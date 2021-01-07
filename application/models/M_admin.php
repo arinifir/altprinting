@@ -79,12 +79,6 @@ class M_admin extends CI_Model
         $hasil = $query->row();
         return $hasil->kd_kategori;
     }
-    public function cekodepaket()
-    {
-        $query = $this->db->query("SELECT RAND(4) as kd_paket from tb_paket ORDER BY rand()");
-        $hasil = $query->row();
-        return $hasil->kd_paket;
-    }
 
     public function tampilproduk()
     {
@@ -216,5 +210,13 @@ class M_admin extends CI_Model
     public function rating($kode)
     {
         return $this->db->select('*, count(id_ulas) as jml, round(avg(rating_ulas),1) as rerata')->from('tb_ulasan')->get_where('', ['kd_produk' => $kode])->result();
+    }
+
+    public function getLastId($id)
+    {
+        $this->db->like('kd_paket', $id, 'after');
+        $this->db->order_by('kd_paket', 'DESC');
+        $this->db->limit(1);
+        return $this->db->get('tb_paket')->row_array();
     }
 }

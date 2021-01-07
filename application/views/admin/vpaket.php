@@ -42,6 +42,12 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
+                                                <label class="col-lg-4 col-form-label" for="">Isi <span class="text-danger">*</span></label>
+                                                <div class="col-lg-12">
+                                                    <input type="text" class="form-control" id="" name="isi" placeholder="Masukkan isi paket">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
                                                 <label class="col-lg-4 col-form-label" for="">Harga <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-12">
@@ -49,13 +55,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-lg-4 col-form-label" for="">Isi <span class="text-danger">*</span></label>
-                                                <div class="col-lg-12">
-                                                    <textarea type="text" class="form-control" id="" name="isi" rows="3"></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-lg-4 col-form-label" for="">Gambar <span class="text-danger">*</span></label>
+                                                <label class="col-lg-4 col-form-label" for="">Gambar</label>
                                                 <div class="col-lg-12">
                                                     <input type="file" name="gambar_paket" class="form-control-file" id="gambar">
                                                 </div>
@@ -91,6 +91,12 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
+                                                    <label class="col-lg-4 col-form-label" for="">Isi <span class="text-danger">*</span></label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" id="" value="<?= $p->isi_paket; ?>" name="harga" placeholder="Masukkan isi paket">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
                                                     <label class="col-lg-4 col-form-label" for="">Harga <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
@@ -98,13 +104,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label class="col-lg-4 col-form-label" for="">Isi <span class="text-danger">*</span></label>
-                                                    <div class="col-lg-12">
-                                                        <textarea type="text" class="form-control" id="isi" name="isi" rows="3"><?= $p->isi_paket; ?></textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-lg-4 col-form-label" for="">Gambar <span class="text-danger">*</span></label>
+                                                    <label class="col-lg-4 col-form-label" for="">Gambar</label>
                                                     <div class="col-lg-12">
                                                         <input type="file" name="gambar_paket" class="form-control-file" id="gambar" value="<?= $p->gambar_paket; ?>">
                                                     </div>

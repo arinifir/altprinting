@@ -132,7 +132,6 @@
                             <table class="table table-hover table-bordered zero-configuration">
                                 <thead>
                                     <tr>
-                                        <th>Action</th>
                                         <th>No</th>
                                         <th>Kode Voucher</th>
                                         <th>Voucher</th>
@@ -140,6 +139,7 @@
                                         <th>Jenis</th>
                                         <th>Status</th>
                                         <th>Aktif/Nonaktif</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -147,16 +147,6 @@
                                     $no = 1;
                                     foreach ($voucher as $v) { ?>
                                         <tr>
-                                            <td>
-                                                <div class="form-button-action">
-                                                    <button type="button" data-toggle="modal" data-target="#editModal<?= $v->kd_voucher; ?>" data-toggle="tooltip" title="" class="btn mb-1 btn-warning" data-original-title="Edit">
-                                                        <i class="mdi mdi-pencil text-white"></i>
-                                                    </button>
-                                                    <a href="<?= base_url('Sadmin/delvoucher/' . $v->kd_voucher); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Hapus" onclick="return confirm('Anda yakin ingin menghapus?');">
-                                                        <i class="mdi mdi-delete"></i>
-                                                    </a>
-                                                </div>
-                                            </td>
                                             <td><?= $no++; ?></td>
                                             <td><?= $v->kd_voucher; ?></td>
                                             <td><?= $v->voucher; ?></td>
@@ -176,9 +166,9 @@
                                             </td>
                                             <td>
                                                 <?php if ($v->status_voucher == 1) { ?>
-                                                    <span class="badge badge-success">Aktif</span>
+                                                    <span class="label label-pill label-success">Aktif</span>
                                                 <?php } else { ?>
-                                                    <span class="badge badge-danger">Non-Aktif</span>
+                                                    <span class="label label-pill label-danger">Non-Aktif</span>
                                                 <?php } ?>
                                             </td>
                                             <td>
@@ -191,13 +181,22 @@
                                                     </a>
                                                 </div>
                                             </td>
+                                            <td>
+                                                <div class="form-button-action">
+                                                    <button type="button" data-toggle="modal" data-target="#editModal<?= $v->kd_voucher; ?>" data-toggle="tooltip" title="" class="btn mb-1 btn-warning" data-original-title="Edit">
+                                                        <i class="mdi mdi-pencil text-white"></i>
+                                                    </button>
+                                                    <a href="<?= base_url('Sadmin/delvoucher/' . $v->kd_voucher); ?>" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger" data-original-title="Hapus" onclick="return confirm('Anda yakin ingin menghapus?');">
+                                                        <i class="mdi mdi-delete"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
                                         </tr>
                                     <?php }
                                     ?>
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>Action</th>
                                         <th>No</th>
                                         <th>Kode Voucher</th>
                                         <th>Voucher</th>
@@ -205,6 +204,7 @@
                                         <th>Jenis</th>
                                         <th>Status</th>
                                         <th>Aktif/Nonaktif</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </tfoot>
                             </table>
