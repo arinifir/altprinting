@@ -28,7 +28,7 @@
                                 <ul class="dropdown-menu">
                                     <li class="nav-item"><a class="nav-link" href="<?= base_url('pelanggan/Profil/') ?>">Profil Saya</a></li>
                                     <li class="nav-item"><a class="nav-link" href="<?= base_url('pelanggan/Alamat') ?>">Alamat Saya</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="<?= base_url('pelanggan/Profil/pesanansaya') ?>">Pesanan Saya</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="<?= base_url('pelanggan/Profil/pesanansaya?sts=1') ?>">Pesanan Saya</a></li>
                                     <!-- <li class="nav-item"><a class="nav-link" href="<?= base_url('pelanggan/Profil/riwayatpesanan') ?>">Riwayat Pesanan</a></li> -->
                                     <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="logout()" id="btnkeluar">Keluar</a></li>
                                 </ul>

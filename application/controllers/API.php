@@ -250,5 +250,18 @@ class API extends CI_Controller
     public function getOrder($user, $status)
     {
         $order = $this->transaksi->getOrderBy($user,$status);
+        if ($order) {
+            $data = [
+                'message' => '1',
+                'data' => $order
+            ];
+            echo json_encode($data);
+        } else {
+            $data = [
+                'message' => '0'
+            ];
+            echo json_encode($data);
+        }
     }
+
 }

@@ -100,11 +100,10 @@ class Profil extends CI_Controller
     {
         $id = $this->session->userdata('id_user');
         if ($id) {
-            $data['order'] = $this->transaksi->getOrderDone($id);
-            $data['judul'] = "ALT Jember - Riwayat Pesanan";
+            $data['judul'] = "ALT Jember - Pesanan Saya";
             $this->load->view('user/header', $data);
             $this->load->view('user/topbar');
-            $this->load->view('user/vriwayatpesanan');
+            $this->load->view('user/vpesanansayaa');
             $this->load->view('user/footer');
         } else {
             redirect('User');
