@@ -169,30 +169,29 @@
 </script>
 <script>
     Dropzone.autoDiscover = false;
-    $(document).ready(function(){
+    $(document).ready(function() {
         // var myDropzone = new Dropzone("form.dropzone", { url: "<?= base_url('pelanggan/Konfirmasi/uploadfile') ?>"});
         var dropzone = new Dropzone('.dropzone', {
-  parallelUploads: 2,
-  thumbnailHeight: 120,
-  thumbnailWidth: 120,
-  maxFilesize: 3,
-  filesizeBase: 1000,
-//   thumbnail: function(file, dataUrl) {
-//     if (file.previewElement) {
-//       file.previewElement.classList.remove("dz-file-preview");
-//       var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
-//       for (var i = 0; i < images.length; i++) {
-//         var thumbnailElement = images[i];
-//         thumbnailElement.alt = file.name;
-//         thumbnailElement.src = dataUrl;
-//       }
-//       setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
-//     }
-//   }
+            parallelUploads: 2,
+            thumbnailHeight: 120,
+            thumbnailWidth: 120,
+            maxFilesize: 3,
+            filesizeBase: 1000,
+            //   thumbnail: function(file, dataUrl) {
+            //     if (file.previewElement) {
+            //       file.previewElement.classList.remove("dz-file-preview");
+            //       var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
+            //       for (var i = 0; i < images.length; i++) {
+            //         var thumbnailElement = images[i];
+            //         thumbnailElement.alt = file.name;
+            //         thumbnailElement.src = dataUrl;
+            //       }
+            //       setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
+            //     }
+            //   }
 
-});
+        });
     })
-
 </script>
 
 <script>
@@ -309,7 +308,7 @@ if ($this->session->flashdata('berhasil')) :
             cancelButtonText: "Tidak",
         }).then((result) => {
             if (result.isConfirmed) {
-                window.location.href = base_url + "pelanggan/Order/orderselesai/"+no;
+                window.location.href = base_url + "pelanggan/Order/orderselesai/" + no;
             }
         });
     }
