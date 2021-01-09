@@ -43,10 +43,10 @@ class Sadmin extends CI_Controller
         $data['pelanggan'] = $this->db->get_where('tb_user', ['level' => 3, 'date_online' => $date])->result();
         $data['admin'] = $this->db->get_where('tb_user', ['level' => 2, 'date_online' => $date])->result();
         $data['sadmin'] = $this->db->get_where('tb_user', ['level' => 1, 'date_online' => $date])->result();
-        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/header', $data);
         $this->load->view('sadmin/topbar');
         $this->load->view('sadmin/sidebar');
-        $this->load->view('sadmin/vdashboard', $data);
+        $this->load->view('sadmin/vdashboard');
         $this->load->view('sadmin/footer');
     }
 
@@ -55,10 +55,10 @@ class Sadmin extends CI_Controller
     {
         $level = 2;
         $data['admin'] = $this->admin->userbylevel('tb_user', $level);
-        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/header', $data);
         $this->load->view('sadmin/topbar');
         $this->load->view('sadmin/sidebar');
-        $this->load->view('sadmin/vadmin', $data);
+        $this->load->view('sadmin/vadmin');
         $this->load->view('sadmin/footer');
     }
 
@@ -179,10 +179,10 @@ class Sadmin extends CI_Controller
     {
         $level = 3;
         $data['pelanggan'] = $this->admin->userbylevel('tb_user', $level);
-        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/header', $data);
         $this->load->view('sadmin/topbar');
         $this->load->view('sadmin/sidebar');
-        $this->load->view('sadmin/vpelanggan', $data);
+        $this->load->view('sadmin/vpelanggan');
         $this->load->view('sadmin/footer');
     }
 
@@ -218,10 +218,10 @@ class Sadmin extends CI_Controller
     public function datakategori()
     {
         $data['kategori'] = $this->admin->tampilkategori();
-        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/header', $data);
         $this->load->view('sadmin/topbar');
         $this->load->view('sadmin/sidebar');
-        $this->load->view('sadmin/vkategori', $data);
+        $this->load->view('sadmin/vkategori');
         $this->load->view('sadmin/footer');
     }
 
@@ -289,10 +289,10 @@ class Sadmin extends CI_Controller
         $data['produk'] = $this->admin->tampilproduk();
         // var_dump($data['produk']);
         // die;
-        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/header', $data);
         $this->load->view('sadmin/topbar');
         $this->load->view('sadmin/sidebar');
-        $this->load->view('sadmin/vproduk', $data);
+        $this->load->view('sadmin/vproduk');
         $this->load->view('sadmin/footer');
     }
 
@@ -456,10 +456,10 @@ class Sadmin extends CI_Controller
     {
         $data['produk'] = $this->admin->produkbykode($kode);
         $data['paket'] = $this->admin->paketbykode($kode);
-        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/header', $data, $data);
         $this->load->view('sadmin/topbar');
         $this->load->view('sadmin/sidebar');
-        $this->load->view('sadmin/vpaket', $data);
+        $this->load->view('sadmin/vpaket');
         $this->load->view('sadmin/footer');
     }
 
@@ -577,7 +577,7 @@ class Sadmin extends CI_Controller
     public function datavoucher()
     {
         $data['voucher'] = $this->admin->tampilvoucher();
-        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/header', $data);
         $this->load->view('sadmin/topbar');
         $this->load->view('sadmin/sidebar');
         $this->load->view('sadmin/voucher', $data);
@@ -682,7 +682,7 @@ class Sadmin extends CI_Controller
     {
         $status = 1;
         $data['transaksi'] = $this->admin->transtatus($status);
-        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/header', $data);
         $this->load->view('sadmin/topbar');
         $this->load->view('sadmin/sidebar');
         $this->load->view('sadmin/vdatatrans', $data);
@@ -738,7 +738,7 @@ class Sadmin extends CI_Controller
         $status = 2;
         $jenis = 1;
         $data['transaksi'] = $this->admin->transbystatus($status, $jenis);
-        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/header', $data);
         $this->load->view('sadmin/topbar');
         $this->load->view('sadmin/sidebar');
         $this->load->view('sadmin/vkonfirm', $data);
@@ -749,7 +749,7 @@ class Sadmin extends CI_Controller
         $status = 3;
         $jenis = 1;
         $data['transaksi'] = $this->admin->transbystatus($status, $jenis);
-        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/header', $data);
         $this->load->view('sadmin/topbar');
         $this->load->view('sadmin/sidebar');
         $this->load->view('sadmin/vkemas', $data);
@@ -768,7 +768,7 @@ class Sadmin extends CI_Controller
         $status = 3;
         $jenis = 2;
         $data['transaksi'] = $this->admin->transbystatus($status, $jenis);
-        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/header', $data);
         $this->load->view('sadmin/topbar');
         $this->load->view('sadmin/sidebar');
         $this->load->view('sadmin/vkemascod', $data);
@@ -779,7 +779,7 @@ class Sadmin extends CI_Controller
         $status = 4;
         $jenis = 1;
         $data['transaksi'] = $this->admin->transbystatus($status, $jenis);
-        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/header', $data);
         $this->load->view('sadmin/topbar');
         $this->load->view('sadmin/sidebar');
         $this->load->view('sadmin/vresi', $data);
@@ -844,7 +844,7 @@ class Sadmin extends CI_Controller
         $status = 4;
         $jenis = 2;
         $data['transaksi'] = $this->admin->transbystatus($status, $jenis);
-        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/header', $data);
         $this->load->view('sadmin/topbar');
         $this->load->view('sadmin/sidebar');
         $this->load->view('sadmin/vcod', $data);
@@ -854,7 +854,7 @@ class Sadmin extends CI_Controller
     {
         $status = 5;
         $data['transaksi'] = $this->admin->transtatus($status);
-        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/header', $data);
         $this->load->view('sadmin/topbar');
         $this->load->view('sadmin/sidebar');
         $this->load->view('sadmin/vselesai', $data);
@@ -872,7 +872,7 @@ class Sadmin extends CI_Controller
     {
         $status = 6;
         $data['transaksi'] = $this->admin->transtatus($status);
-        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/header', $data);
         $this->load->view('sadmin/topbar');
         $this->load->view('sadmin/sidebar');
         $this->load->view('sadmin/vnvalid', $data);
@@ -884,7 +884,7 @@ class Sadmin extends CI_Controller
         $id = $this->session->userdata('id_sadmin');
         $data['admin'] = $this->admin->edit(array('id_user' => $id), 'tb_user')->row();
 
-        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/header', $data);
         $this->load->view('sadmin/topbar');
         $this->load->view('sadmin/sidebar');
         $this->load->view('sadmin/vprofil', $data);
@@ -896,7 +896,7 @@ class Sadmin extends CI_Controller
         $id = $this->session->userdata('id_sadmin');
         $data['admin'] = $this->admin->edit(array('id_user' => $id), 'tb_user')->row();
 
-        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/header', $data);
         $this->load->view('sadmin/topbar');
         $this->load->view('sadmin/sidebar');
         $this->load->view('sadmin/gantipassword', $data);
@@ -1020,7 +1020,7 @@ class Sadmin extends CI_Controller
         $this->form_validation->set_message('required', 'Tolong masukkan data!');
 
         if ($this->form_validation->run() == false) {
-            $this->load->view('sadmin/header');
+            $this->load->view('sadmin/header', $data);
             $this->load->view('sadmin/topbar');
             $this->load->view('sadmin/sidebar');
             $this->load->view('sadmin/gantipassword', $data);
@@ -1050,7 +1050,7 @@ class Sadmin extends CI_Controller
     {
         $data['transaksi'] = $this->admin->transByNo($no);
         $data['detail'] = $this->admin->detailByNo($no);
-        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/header', $data);
         $this->load->view('sadmin/topbar');
         $this->load->view('sadmin/sidebar');
         $this->load->view('sadmin/detailtransaksi', $data);
@@ -1060,7 +1060,7 @@ class Sadmin extends CI_Controller
     {
         $data['nomor'] = $no;
         $data['gambar'] = $this->admin->getImage($no);
-        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/header', $data);
         $this->load->view('sadmin/topbar');
         $this->load->view('sadmin/sidebar');
         $this->load->view('sadmin/gambartransaksi', $data);
@@ -1069,7 +1069,7 @@ class Sadmin extends CI_Controller
     public function ulasanproduk()
     {
         $data['ulasan'] = $this->admin->jmlUlasan();
-        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/header', $data);
         $this->load->view('sadmin/topbar');
         $this->load->view('sadmin/sidebar');
         $this->load->view('sadmin/vulasan', $data);
@@ -1079,7 +1079,7 @@ class Sadmin extends CI_Controller
     {
         $data['ulas'] = $this->admin->getUlasan($kode);
         $data['rating'] = $this->admin->rating($kode);
-        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/header', $data);
         $this->load->view('sadmin/topbar');
         $this->load->view('sadmin/sidebar');
         $this->load->view('sadmin/lihatulasan', $data);
@@ -1088,7 +1088,7 @@ class Sadmin extends CI_Controller
     public function pembelian()
     {
         $data['produk'] = $this->produk->getProdukByKG();
-        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/header', $data);
         $this->load->view('sadmin/topbar');
         $this->load->view('sadmin/sidebar');
         $this->load->view('sadmin/vpembelian', $data);
@@ -1151,7 +1151,7 @@ class Sadmin extends CI_Controller
     public function riwayatpembelian()
     {
         $data['beli'] = $this->transaksi->getBeli();
-        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/header', $data);
         $this->load->view('sadmin/topbar');
         $this->load->view('sadmin/sidebar');
         $this->load->view('sadmin/riwayatpembelian', $data);
@@ -1184,7 +1184,7 @@ class Sadmin extends CI_Controller
     public function datakomplain()
     {
         $data['komplain'] = $this->db->get('tb_komplain')->result();
-        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/header', $data);
         $this->load->view('sadmin/topbar');
         $this->load->view('sadmin/sidebar');
         $this->load->view('sadmin/vkomplain', $data);
@@ -1197,5 +1197,12 @@ class Sadmin extends CI_Controller
         $this->admin->editData('tb_komplain', $data, $where);
         $this->session->set_flashdata('berhasil', 'Komplain ' . $id . ' Terselesaikan');
         redirect($this->agent->referrer());
+    }
+    public function statusbaca($no)
+    {
+        $data = ['status_baca' => 1];
+        $where = ['no_transaksi' => $no];
+        $this->admin->editData('tb_transaksi', $data, $where);
+        redirect('Sadmin/detailtransaksi/'.$no);
     }
 }

@@ -176,7 +176,7 @@
 							</tr>
 						<?php } ?>
 						<?php if ($order->kode_voucher == "") { ?>
-						
+
 						<?php } else { ?>
 							<tr>
 								<td>
@@ -211,10 +211,12 @@
 				</table>
 			</div>
 		</div>&nbsp;
-		<?php if ($order->jenis_pembayaran == 1) { ?>
-			<div class="col-md-12 form-group">
-				<a type="button" href="<?= base_url('pelanggan/Konfirmasi/upload/' . $order->no_transaksi); ?>" class="button button-tracking float-right">Lanjutkan</a>
-			</div>
+		<?php if ($order->jenis_pembayaran == 1) {
+			if ($order->status_transaksi == 1) { ?>
+				<div class="col-md-12 form-group">
+					<a type="button" href="<?= base_url('pelanggan/Konfirmasi/upload/' . $order->no_transaksi); ?>" class="button button-tracking float-right">Lanjutkan</a>
+				</div>
+			<?php } ?>
 		<?php } ?>
 	</div>
 </section>

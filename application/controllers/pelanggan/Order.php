@@ -58,7 +58,11 @@ class Order extends CI_Controller
         if ($jenis == 1) {
             $total = ($subtotal + $biaya) - $potongan;
         } else {
-            $total = $subtotal - (($subtotal * $potongan) / 100) + $biaya;
+            if ($kd_voucher == "") {
+                $total = $subtotal + $biaya;
+            } else {
+                $total = $subtotal - (($subtotal * $potongan) / 100) + $biaya;
+            }
         }
         $tanggal = date('Y-m-d H:i:s');
         $detail = $this->cart->contents();
@@ -149,11 +153,10 @@ class Order extends CI_Controller
                 $this->session->set_flashdata('gagal', 'Maaf, masa waktu untuk ubah data gambar telah lewat');
                 redirect('pelanggan/Profil/pesanansaya/' . $no);
             }
-        }else{
+        } else {
             $this->session->set_flashdata('gagal', 'Maaf pesanan tidak ada');
             redirect('User');
         }
-        
     }
     public function removegambar($no, $nama)
     {

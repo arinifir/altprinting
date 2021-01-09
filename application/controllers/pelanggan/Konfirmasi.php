@@ -49,10 +49,10 @@ class Konfirmasi extends CI_Controller
         $data['order'] = $this->transaksi->orderbyid($no);
         $cek = $data['order']->status_transaksi;
         if ($data['order']) {
-            if($cek==0 || $cek==5){
+            if($cek==5 || $cek==6){
                 $this->session->set_flashdata('gagal','Pesanan Anda telah selesai atau dibatalkan');
                 redirect($this->agent->referrer());
-            }else if($cek >= 2){
+            }else if($cek==2 || $cek==3 || $cek==4){
                 $this->session->set_flashdata('gagal','Anda sudah melakukan pembayaran. Silahkan cek email Anda.');
                 redirect($this->agent->referrer());
             }

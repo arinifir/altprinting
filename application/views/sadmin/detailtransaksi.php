@@ -13,34 +13,70 @@
 
     <div class="container-fluid">
         <div class="row">
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Info Pesanan</h5>
+                        <h6 class="card-subtitle mb-2 text-muted"><?= $transaksi->no_transaksi; ?> (<?php
+                                                                                                    $date = date_create($transaksi->tanggal_transaksi);
+                                                                                                    echo date_format($date, 'd M Y'); ?>, <?= date_format($date, 'H:i'); ?>)</h6>
+                        <p class="card-text">Pembayaran Via : <?= $transaksi->jenis_pembayaran == 1 ? 'Transfer Bank' : 'Cash On Delivery' ?></p>
+                        <p class="card-text d-inline">
+                            <?php if ($transaksi->status_transaksi == 0) {
+                                echo '<span class="text-danger">Pesanan Dibatalkan</span>';
+                            } else if ($transaksi->status_transaksi == 1) {
+                                echo '<span class="text-danger">Menunggu Pembayaran</span>';
+                            } else if ($transaksi->status_transaksi == 2) {
+                                echo '<span class="text-danger">Konfirmasi Pembayaran</span>';
+                            } else if ($transaksi->status_transaksi == 3) {
+                                echo '<span class="text-danger">Dikemas</span>';
+                            } else if ($transaksi->status_transaksi == 4) {
+                                echo '<span class="text-danger">Sedang Dikirim <br/>(No resi : ' . $transaksi->no_resi . ') </span>';
+                            } else {
+                                echo '<span class="text-success">Selesai</span>';
+                            }
+                            ?><span class="card-link float-right"><?= "Rp " . number_format($transaksi->total_bayar, 0, ',', '.'); ?></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Info Pelanggan</h5>
+                        <h6 class="card-subtitle mb-2 text-muted"><?= $transaksi->no_pembeli; ?></h6>
+                        <p class="card-text"><?= $transaksi->nama_pembeli; ?> (Catatan : <?= $transaksi->desk_transaksi; ?>)</p>
+                        <p class="card-text d-inline"><span class="text-muted"><?= $transaksi->email_pembeli; ?></span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Alamat Pengiriman</h5>
+                        <h6 class="card-subtitle mb-2 text-muted"><?= $transaksi->jenis_pembayaran == 1 ? 'Alamat Lengkap' : 'Tempat COD' ?></h6>
+                        <p class="card-text">
+                            <?php if ($transaksi->jenis_pembayaran == 1) { ?>
+                                <?= $transaksi->alamat_pembeli . ', ' . $transaksi->kab_pembeli . ', Provinsi ' . $transaksi->prov_pembeli . ' ' . $transaksi->kpos_pembeli; ?>
+                            <?php } else { ?>
+                                <?= $transaksi->detail_cod; ?>
+                            <?php } ?>
+                        </p>
+                        <p class="card-text d-inline"><span class="text-muted"><strong>No Telp </strong><?= $transaksi->no_pembeli; ?></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
                         <div>
-                            <h4 class="card-title">No <?= $transaksi->no_transaksi; ?></h4>
-                            <a href="<?= base_url('Sadmin/gambartransaksi/'. $transaksi->no_transaksi); ?>" type="button" class="btn mb-1 btn-primary">Lihat Gambar
-                                <span class="btn-icon-right"><i class="fa fa-eye"></i></span>
-                            </a>
-                        </div>
-                        <div class="row">
-                            <div class="col-mb-6">
-                                <div class="form-group">
-                                    <label for="exampleInputDiskon">Tanggal: &nbsp;</label>
-                                    <a><?= $transaksi->tanggal_transaksi; ?></a>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputDiskon">Nama: &nbsp;</label>
-                                    <a><?= $transaksi->nama_pembeli; ?></a>
-                                </div>
-                            </div>
-                            <div class="col-mb-6">
-                                <div class="form-group">
-                                    <label for="exampleInputDiskon">Tanggal: &nbsp;</label>
-                                    <a><?= $transaksi->tanggal_transaksi; ?></a>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputDiskon">Nama: &nbsp;</label>
-                                    <a><?= $transaksi->nama_pembeli; ?></a>
+                            <div class="row">
+                                <h4 class="col-md-6 card-title">Detail Transaksi</h4>
+                                <div class="col-md-6">
+                                    <a href="<?= base_url('Sadmin/gambartransaksi/' . $transaksi->no_transaksi); ?>" type="button" class="btn btn-primary float-right">Lihat Gambar
+                                        <span class="btn-icon-right"><i class="fa fa-eye"></i></span>
+                                    </a>
                                 </div>
                             </div>
                         </div>

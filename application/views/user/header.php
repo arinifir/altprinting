@@ -17,13 +17,8 @@
     <link rel="stylesheet" href="<?= base_url('assets/') ?>mycss/my.css">
     <link rel="stylesheet" href="<?= base_url('assets/user/') ?>vendors/nouislider/nouislider.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
-    <!-- <link rel="stylesheet" href="<?= base_url('assets/dropzone/') ?>dist/dropzone.css"> -->
-    <!-- <script src="<?= base_url('assets/dropzone') ?>/dist/dropzone.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.js"></script> -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js"></script> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js"></script>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,600" rel="stylesheet">
@@ -34,7 +29,6 @@
 
     <!-- Icons by MDI -->
     <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
-    <!-- <script src="<?= base_url('assets/user/myjs/') ?>quantity.js"></script> -->
 
 </head>
 
