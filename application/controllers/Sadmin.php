@@ -891,6 +891,18 @@ class Sadmin extends CI_Controller
         $this->load->view('sadmin/footer');
     }
 
+    public function pageGantiPw()
+    {
+        $id = $this->session->userdata('id_sadmin');
+        $data['admin'] = $this->admin->edit(array('id_user' => $id), 'tb_user')->row();
+
+        $this->load->view('sadmin/header');
+        $this->load->view('sadmin/topbar');
+        $this->load->view('sadmin/sidebar');
+        $this->load->view('sadmin/gantipassword', $data);
+        $this->load->view('sadmin/footer');
+    }
+
     function edit($id)
     {
         if ($post = $this->input->post()) {
@@ -954,51 +966,41 @@ class Sadmin extends CI_Controller
     {
         $id = $this->session->userdata('id_sadmin');
         /** Ambil data admin */
-        $data['admin'] = $this->admin->edit(array('id_user' => $id), 'tb_user')->row();
+        $data['admin'] = $this->admin->edit(array('id_user' => $id), 'tb_user')->row_array();
 
-        $this->form_validation->set_rules('passoword', 'Lma', 'trim|required|min_length[8]', [
-            'required' => 'kolom ini harus diisi',
-            'min_length' => 'password terlalu pendek'
-        ]);
+        $this->form_validation->set_rules('password', 'Password Lama', 'required');
+        $this->form_validation->set_rules('password1', 'Konfirmasi Password', 'required');
+        $this->form_validation->set_rules('password2', 'Konfirmasi Password Baru', 'required');
 
-        $this->form_validation->set_rules('password1', 'bru', 'trim|required|matches[pswbru1]|min_length[8]', [
-            'required' => 'kolom ini harus diisi',
-            'min_length' => 'password terlalu pendek',
-            'matches' => ''
-        ]);
-
-        $this->form_validation->set_rules('password2', 'bru1', 'trim|required|matches[pswbru]|min_length[8]', [
-            'required' => 'kolom ini harus diisi',
-            'min_length' => 'password terlalu pendek',
-            'matches' => 'konfirmasi password tidak sesuai'
-        ]);
+        $this->form_validation->set_message('required', 'Tolong masukkan data!');
 
         if ($this->form_validation->run() == false) {
             $this->load->view('sadmin/header');
             $this->load->view('sadmin/topbar');
             $this->load->view('sadmin/sidebar');
-            $this->load->view('sadmin/vprofil', $data);
+            $this->load->view('sadmin/gantipassword', $data);
             $this->load->view('sadmin/footer');
         } else {
-            $pswlma = hash('sha256', $this->input->post(htmlspecialchars('pwlama')));
+            $pswlma = hash('sha256', $this->input->post(htmlspecialchars('password')));
             $pswbru1 = hash('sha256', $this->input->post(htmlspecialchars('password1')));
 
             if ($pswlma != $data['admin']['password']) {
-                $this->session->set_flashdata('message', 'Password Salah');
-                redirect('sadmin/editpsw');
+                $this->session->set_flashdata('gagal', 'Password Salah');
+                redirect('sadmin/pageGantiPw');
             } else {
                 if ($pswbru1 == $data['admin']['password']) {
-                    $this->session->set_flashdata('message', 'Password Tidak Boleh Sama');
-                    redirect('sadmin/editpsw');
+                    $this->session->set_flashdata('gagal', 'Password Tidak Boleh Sama');
+                    redirect('sadmin/gantipassword');
                 } else {
                     $pswhash = $pswbru1;
-                    $this->m_admin->ubhpsw($pswhash, $id);
+                    $this->admin->ubahpsw($pswhash, $id);
                     $this->session->set_flashdata('berhasil', 'Password anda telah diperbarui');
                     redirect('sadmin/profilsadm');
                 }
             }
         }
     }
+
     public function detailtransaksi($no)
     {
         $data['transaksi'] = $this->admin->transByNo($no);

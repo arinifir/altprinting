@@ -223,7 +223,7 @@ class M_admin extends CI_Model
     public function ubahpsw($pswhash, $id)
     {
         $this->db->set('password', $pswhash);
-        $this->db->where($id);
+        $this->db->where('id_user', $id);
         $this->db->update('tb_user');
     }
 }

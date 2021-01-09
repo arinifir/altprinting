@@ -25,7 +25,7 @@
                                     <li class="mb-1"><strong class="text-dark mr-4">No HP</strong> <span><?= $admin->no_hp != '' ? $admin->no_hp : '-' ?></span></li>
                                     <li><strong class="text-dark mr-4">Email</strong><?= $admin->email ?></li>
                                 </ul>
-                                <div class="text-center col-md-12 mt-1"><button id="btn_harga" class="btn btn-primary button_merah btn-block" href="">Ganti Password</button></div>
+                                <div class="text-center col-md-12 mt-1"><button id="btn_harga" class="btn btn-primary button_merah btn-block" href="<?= base_url(''); ?>">Ganti Password</button></div>
                             </div>
                         </div>
                     </div>
