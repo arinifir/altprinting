@@ -200,34 +200,40 @@
                                     <p><?= "Rp " . number_format($subtotal, 0, ',', '.'); ?></p>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>
-                                    <h4>Biaya Ongkir</h4>
-                                </td>
-                                <td>
-                                    <h5></h5>
-                                </td>
-                                <td>
-                                    <h5></h5>
-                                </td>
-                                <td align="right">
-                                    <p><?= "Rp " . number_format($order->biaya_ongkir, 0, ',', '.'); ?></p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h4>Voucher</h4>
-                                </td>
-                                <td>
-                                    <h5></h5>
-                                </td>
-                                <td>
-                                    <h5></h5>
-                                </td>
-                                <td align="right">
-                                    <p class="text-danger"><i><?= "- Rp " . number_format($order->pot_voucher, 0, ',', '.'); ?></i></p>
-                                </td>
-                            </tr>
+                            <?php if ($order->jenis_pembayaran == 1) { ?>
+                                <tr>
+                                    <td>
+                                        <h4>Biaya Ongkir</h4>
+                                    </td>
+                                    <td>
+                                        <h5></h5>
+                                    </td>
+                                    <td>
+                                        <h5></h5>
+                                    </td>
+                                    <td align="right">
+                                        <p><?= "Rp " . number_format($order->biaya_ongkir, 0, ',', '.'); ?></p>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                            <?php if ($order->kode_voucher == "") { ?>
+
+                            <?php } else { ?>
+                                <tr>
+                                    <td>
+                                        <h4>Voucher</h4>
+                                    </td>
+                                    <td>
+                                        <h5></h5>
+                                    </td>
+                                    <td>
+                                        <h5></h5>
+                                    </td>
+                                    <td align="right">
+                                        <p class="text-danger"><i><?= "- Rp " . number_format($order->pot_voucher, 0, ',', '.'); ?></i></p>
+                                    </td>
+                                </tr>
+                            <?php } ?>
                             <tr>
                                 <td>
                                     <h4>Total</h4>
