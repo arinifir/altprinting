@@ -172,7 +172,7 @@ function filter(kategori){
 }
 function ambil(status){
     console.log('kepencet')
-    window.location.href = base_url+`pelanggan/Profil/pesanansaya?ambil=true&sts=${status}`;
+    window.location.href = base_url+`pelanggan/Profil/pesanansaya?sts=${status}`;
 }
 
 $(document).ready(function(){
@@ -377,7 +377,7 @@ $(document).on('change', '#select_provinsi', function(){
 	$('#select_kabkota').niceSelect('update')
 	var provinsi = $(this).children("option:selected").html();
 	$('#input_provinsi').val(provinsi);
-	$.ajax({
+	$.ajax({ 
 		method: "GET",
 		url: base_url + `API/getKabKota/${id_provinsi}`,
 		dataType: "JSON",

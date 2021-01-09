@@ -961,6 +961,51 @@ class Sadmin extends CI_Controller
             $this->load->view('admin/footer');
         }
     }
+    
+    public function editprofilsadm()
+    {
+        $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+        $this->form_validation->set_rules('nomer', 'Nomer', 'required|max_length[13]|min_length[11]|numeric|trim');
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email|trim');
+        $this->form_validation->set_message('required', 'Mohon masukkan data!');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('gagal', 'Data tidak sesuai!');
+            redirect('Sadmin/profilsadm');
+        } else {
+            $kode = $this->input->post("kode", TRUE);
+            $nama = $this->input->post("nama", TRUE);
+            $email = $this->input->post("email", TRUE);
+            $no = $this->input->post("nomer", TRUE);
+            $data1 = $this->db->get_where('tb_user',  ['id_user' => $kode, 'email' => $email])->num_rows();
+            if ($data1 == 1) {
+                $data = [
+                    'nama_lengkap' => $nama,
+                    'no_hp' => $no
+                ];
+                $where = ['id_user' => $kode];
+                $this->admin->editData('tb_user', $data, $where);
+                $this->session->set_flashdata('simpan', 'Data berhasil diubah!');
+                redirect('Sadmin/profilsadm');
+            } else {
+                $data = $this->admin->cekEmail($email);
+                if ($data == 0) {
+                    $data = [
+                        'nama_lengkap' => $nama,
+                        'no_hp' => $no,
+                        'email' => $email
+                    ];
+                    $where = ['id_user' => $kode];
+                    $this->admin->editData('tb_user', $data, $where);
+                    $this->session->set_flashdata('simpan', 'Data berhasil diubah!');
+                    redirect('Sadmin/profilsadm');
+                } else {
+                    $this->session->set_flashdata('gagal', 'Email sudah terdaftar!');
+                    redirect('Sadmin/profilsadm');
+                }
+            }
+        }
+    }
 
     public function editpsw()
     {

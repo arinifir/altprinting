@@ -18,7 +18,7 @@ class Alamat extends CI_Controller
     public function index()
     {
         $user = $this->session->userdata('id_user');
-        $data['judul'] = " Alamat";
+        $data['judul'] = "ALT Printing | Alamat Saya";
         $data['alamat'] = $this->db->get_where('tb_alamat',['id_user'=> $user])->result_array();
 
         // var_dump($data['provinsi']);die;

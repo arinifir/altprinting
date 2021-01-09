@@ -17,7 +17,7 @@ class Profil extends CI_Controller
         $this->load->library('user_agent');
         $this->load->library('primslib');
         $this->load->library('form_validation');
-        // is_logged_in();
+        is_logged_in();
     }
 
     public function index()
@@ -34,17 +34,12 @@ class Profil extends CI_Controller
     public function editprofil()
     {
         $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
-        $this->form_validation->set_rules('nomer', 'Nomer', 'required|max_length[13]|min_length[11]|numeric|trim', [
-            'max_length[13]'    => 'Maksimal 13 angka!',
-            'min_length[11]'    => 'Minimal 11 angka!',
-            'numeric'           => 'Hanya diperbolehkan input angka!'
-        ]);
-        $this->form_validation->set_rules('email', 'Email', 'required|valid_email|trim', [
-            'valid_email' => 'Mohon gunakan email yang valid'
-        ]);
+        $this->form_validation->set_rules('nomer', 'Nomer', 'required|max_length[13]|min_length[11]|numeric|trim');
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email|trim');
         $this->form_validation->set_message('required', 'Mohon masukkan data!');
-        if ($this->form_validation->run() == FALSE) {
-            // $this->session->set_flashdata('gagal', 'Data tidak sesuai atau data kosong!');
+
+        if ($this->form_validation->run() == FALSE) { 
+            $this->session->set_flashdata('gagal', 'Data tidak sesuai!');
             redirect('pelanggan/Profil');
         } else {
             $kode = $this->input->post("kode", TRUE);
@@ -87,11 +82,11 @@ class Profil extends CI_Controller
         if ($id) {
             $status = $this->input->get('sts');
             if ($status) {
-                $data['order'] = $this->transaksi->getByFilter($id,$status)->result();
+                $data['order'] = $this->transaksi->getByFilter($id, $status)->result();
             } else {
                 $data['order'] = $this->transaksi->getOrderUser($id);
             }
-            
+
             $data['judul'] = "ALT Jember - Pesanan Saya";
             $this->load->view('user/header', $data);
             $this->load->view('user/topbar');
@@ -105,11 +100,10 @@ class Profil extends CI_Controller
     {
         $id = $this->session->userdata('id_user');
         if ($id) {
-            $data['order'] = $this->transaksi->getOrderDone($id);
-            $data['judul'] = "ALT Jember - Riwayat Pesanan";
+            $data['judul'] = "ALT Jember - Pesanan Saya";
             $this->load->view('user/header', $data);
             $this->load->view('user/topbar');
-            $this->load->view('user/vriwayatpesanan');
+            $this->load->view('user/vpesanansayaa');
             $this->load->view('user/footer');
         } else {
             redirect('User');

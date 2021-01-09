@@ -11,18 +11,12 @@
 		<div class="s_product_text mt-1">
 			<div class="row card_area d-flex align-items-center mx-1">
 				<form action="#">
-				<?php 
-				$status = [
-					'Belum Bayar',
-					'Konfirmasi',
-					'Dikemas',
-					'Dikirim',
-					'Selesai',
-					'Dibatalkan'
-				];
-					foreach($status as $key => $value) { ?>
-						<a href="<?= base_url('Pelanggan/Profil/pesanansaya') . '?sts=' . ($key+1) ?>" class="tombol_status mt-1 <?= $this->input->get('sts') != $key+1 ? '' : 'active' ?>"><?= $value ?></a>
-					<?php } ?>
+					<a onclick="ambil('1')" class="tombol_status mt-1 active" data-kode="1">Belum Bayar</a>
+					<a onclick="ambil('2')" class="tombol_status mt-1" data-kode="2">Konfirmasi<input hidden type="radio" id="men" name="brand" <?= $this->input->get('sts') == "2" ? 'checked="checked"' : '' ?>></a>
+					<a onclick="ambil('3')" class="tombol_status mt-1" data-kode="3">Dikemas<input hidden type="radio" id="men" name="brand" <?= $this->input->get('sts') == "3" ? 'checked="checked"' : '' ?>></a>
+					<a onclick="ambil('4')" class="tombol_status mt-1" data-kode="4">Dikirim<input hidden type="radio" id="men" name="brand" <?= $this->input->get('sts') == "4" ? 'checked="checked"' : '' ?>></a>
+					<a onclick="ambil('5')" class="tombol_status mt-1" data-kode="5">Selesai<input hidden type="radio" id="men" name="brand" <?= $this->input->get('sts') == "5" ? 'checked="checked"' : '' ?>></a>
+					<a onclick="ambil('6')" class="tombol_status mt-1" data-kode="6">Dibatalkan<input hidden type="radio" id="men" name="brand" <?= $this->input->get('sts') == "6" ? 'checked="checked"' : '' ?>></a>
 				</form>
 			</div>
 		</div>
