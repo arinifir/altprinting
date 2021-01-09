@@ -22,8 +22,6 @@
                             <table class="table table-striped table-bordered zero-configuration">
                                 <thead>
                                     <tr>
-                                        <th>Aksi</th>
-                                        <th>Detail</th>
                                         <th>No Transaksi</th>
                                         <th>Tanggal</th>
                                         <th>Deskripsi</th>
@@ -34,21 +32,13 @@
                                         <th>Pembayaran</th>
                                         <th>Potongan</th>
                                         <th>Ongkir</th>
+                                        <th>Detail</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php foreach ($transaksi as $t) { ?>
                                         <tr>
-                                            <td>
-                                                <div class="form-button-action">
-                                                    <a href="<?= base_url('Sadmin/hapusorder/' . $t->no_transaksi) ?>" type="button" data-toggle="tooltip" class="btn mb-1 btn-danger text-white" data-original-title="Hapus Transaksi">
-                                                        <i class="fa fa-trash"></i>
-                                                    </a>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <a href="<?= base_url('Sadmin/detailtransaksi/' . $t->no_transaksi) ?>" type="button" data-toggle="tooltip" class="btn mb-1 btn-info text-white" data-original-title="Detail Transaksi">Detail</a>
-                                            </td>
                                             <td><?= $t->no_transaksi; ?></td>
                                             <td><?= $t->tanggal_transaksi; ?></td>
                                             <td><?= $t->desk_transaksi; ?></td>
@@ -75,14 +65,22 @@
                                             </td>
                                             <td><?= "Rp " . number_format($t->pot_voucher, 0, ',', '.') ?></td>
                                             <td><?= "Rp " . number_format($t->biaya_ongkir, 0, ',', '.') ?></td>
+                                            <td>
+                                                <a href="<?= base_url('Sadmin/detailtransaksi/' . $t->no_transaksi) ?>" type="button" data-toggle="tooltip" class="btn mb-1 btn-info text-white" data-original-title="Detail Transaksi">Detail</a>
+                                            </td>
+                                            <td>
+                                                <div class="form-button-action">
+                                                    <a href="<?= base_url('Sadmin/hapusorder/' . $t->no_transaksi) ?>" type="button" data-toggle="tooltip" class="btn mb-1 btn-danger text-white" data-original-title="Hapus Transaksi">
+                                                        <i class="fa fa-trash"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
                                         </tr>
                                     <?php }
                                     ?>
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>Aksi</th>
-                                        <th>Detail</th>
                                         <th>No Transaksi</th>
                                         <th>Tanggal</th>
                                         <th>Deskripsi</th>
@@ -93,6 +91,8 @@
                                         <th>Pembayaran</th>
                                         <th>Potongan</th>
                                         <th>Ongkir</th>
+                                        <th>Detail</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </tfoot>
                             </table>
