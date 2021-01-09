@@ -195,6 +195,13 @@
 		text-align: left;
 	}
 }
+.tombol_icon{ 
+	color:#A80201
+}
+.tombol_icon:hover{
+	cursor: pointer;
+	color: #222;
+}
 .kapital{
 	font-size: 12px;
 	text-transform: uppercase;

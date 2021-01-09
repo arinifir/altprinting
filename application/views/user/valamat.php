@@ -1,15 +1,22 @@
 <!--================ Start title area =================-->
 <div class="container">
     <div class="section-intro pt-5">
-        <h2>Alamat <span class="section-intro__style">Saya</span>
-            <sup><span class="tombol_alamat"> Tambah Alamat Baru</span></sup>
-        </h2>
+        <div class="row">
+            <h2 class="col-md-6">Alamat <span class="section-intro__style">Saya</span> </h2>
+            <div class="col-md-6">
+                    <a href="<?= base_url('pelanggan/Alamat/pageTambah') ?>" class="tombol tombol_lihat">Tambah Alamat Baru</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- <sup><a><span class="tombol_alamat"> Tambah Alamat Baru</span><a></sup> -->
     </div>
 </div>
 <!--================End title area =================-->
 <!--================Cart Area =================-->
 <section class="cart_area">
     <div class="container">
+
         <?php foreach ($alamat as $alm) : ?>
             <div class="row mt-2">
                 <div class="col-lg-12">
@@ -20,6 +27,7 @@
                                     <sup><span class="text-danger"> [Utama]</span></sup>
                                 <?php } ?>
                             </h3>
+                            <a class="col-md-6" align="right" href="<?= base_url('pelanggan/Alamat/delalamat/'.$alm['id_alamat']) ?>" class="tombol tombol_lihat"><i class="fa fa-trash tombol_icon"></i></a>
                         </div>
                         <hr />
                         <div class="media">
@@ -32,7 +40,7 @@
                             <!-- <a href="<?= base_url('pelanggan/Order/notapesanan/'); ?>" class="tombol tombol_lihat">Lihat</a>
                             <a href="<?= base_url('pelanggan/Order/uploadgambar/') ?>" class="tombol tombol_lihat">Gambar</a> -->
                         </div>
-                        <a align="right" href="<?= base_url('pelanggan/Alamat/edit/') . $alm['id_alamat'] ?>" data-tooltip="tooltip" title="Ubah Alamat" class="tombol tombol_lihat">Ubah</a>
+                        <a align="right" href="<?= base_url('pelanggan/Alamat/pageEdit/') . $alm['id_alamat'] ?>" data-tooltip="tooltip" title="Ubah Alamat" class="tombol tombol_lihat">Ubah</a>
                         <?php if ($alm['status_alamat'] == 1) { ?>
                         <?php } else { ?>
                             <a align="right" href="<?= base_url('pelanggan/Alamat/alamatutama/') . $alm['id_alamat'] ?>" data-tooltip="tooltip" title="Atur Sebagai Utama" class="tombol tombol_lihat">Buat Utama</a>

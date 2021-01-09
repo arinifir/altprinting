@@ -19,7 +19,7 @@ class Alamat extends CI_Controller
     {
         $user = $this->session->userdata('id_user');
         $data['judul'] = "ALT Printing | Alamat Saya";
-        $data['alamat'] = $this->db->get_where('tb_alamat',['id_user'=> $user])->result_array();
+        $data['alamat'] = $this->db->get_where('tb_alamat', ['id_user' => $user])->result_array();
 
         // var_dump($data['provinsi']);die;
         $this->load->view('user/header', $data);
@@ -30,21 +30,20 @@ class Alamat extends CI_Controller
     public function alamatutama($id)
     {
         $user = $this->session->userdata('id_user');
-        $alamat = $this->db->get_where('tb_alamat', ['id_user'=> $user])->result();
+        $alamat = $this->db->get_where('tb_alamat', ['id_user' => $user])->result();
         foreach ($alamat as $a) {
-            $data = ['status_alamat' =>0];
-            $where = ['id_alamat'=> $a->id_alamat];
+            $data = ['status_alamat' => 0];
+            $where = ['id_alamat' => $a->id_alamat];
             $this->admin->editData('tb_alamat', $data, $where);
         }
-        $data = ['status_alamat'=>1];
-        $where = ['id_alamat'=>$id];
+        $data = ['status_alamat' => 1];
+        $where = ['id_alamat' => $id];
         $this->admin->editData('tb_alamat', $data, $where);
         redirect($this->agent->referrer());
     }
 
     public function pageTambah()
     {
-        $data['judul'] = "ALT Printing - Alamat";
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
@@ -65,83 +64,138 @@ class Alamat extends CI_Controller
         if ($err) {
             echo "cURL Error #:" . $err;
         } else {
-            $provinsi = json_decode($response);
+            $data['provinsi'] = json_decode($response)->rajaongkir->results;
         }
-
-        $data['provinsi'] = $provinsi->data;
+        $data['judul'] = "ALT Printing - Tambah Alamat";
         $this->load->view('user/header', $data);
         $this->load->view('user/topbar');
-        $this->load->view('user/tambahalamat');
+        $this->load->view('user/vtambahalamat');
+        $this->load->view('user/footer');
+    }
+    public function pageEdit($id)
+    {
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => base_url('API/getProvinsi'),
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        if ($err) {
+            echo "cURL Error #:" . $err;
+        } else {
+            $data['provinsi'] = json_decode($response)->rajaongkir->results;
+        }
+        $data['alamat'] = $this->db->get_where('tb_alamat', ['id_alamat' => $id])->row();
+        $data['judul'] = "ALT Printing - Ubah Alamat";
+        $this->load->view('user/header', $data);
+        $this->load->view('user/topbar');
+        $this->load->view('user/vubahalamat');
         $this->load->view('user/footer');
     }
 
-    function tambah()
+    public function addalamat()
     {
-        // memeriksa apakah ada id pada database
-        $row_id = $this->M_pelanggan->getIds('tb_alamat', 'id_alamat')->num_rows();
-        // mengambil 1 baris data terakhir
-        $old_id = $this->M_pelanggan->getIds('tb_alamat', 'id_alamat')->row();
-
-        if ($row_id > 0) {
-            // melakukan auto number dari id terakhir
-            $id = $this->primslib->autonumber($old_id->id_alamat, 3, 3);
+        $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+        $this->form_validation->set_rules('nomor', 'Nomor', 'required|trim');
+        $this->form_validation->set_rules('alamatlengkap', 'Alamat', 'required|trim');
+        $this->form_validation->set_rules('kdpos', 'Kode Pos', 'required|trim');
+        $this->form_validation->set_rules('inputprov', 'ID Provinsi', 'required|trim');
+        $this->form_validation->set_rules('input_provinsi', 'Nama Provinsi', 'required|trim');
+        $this->form_validation->set_rules('inputkab', 'ID Kabupaten', 'required|trim');
+        $this->form_validation->set_rules('input_kabkota', 'Nama Kabupaten', 'required|trim');
+        $this->form_validation->set_message('required', 'Please Enter Data!');
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('error', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Gagal Tambah Data</strong> Silahkan Isi Data dengan Benar!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button></div>');
+            redirect('pelanggan/Alamat/pageTambah');
         } else {
-            // generate id pertama kali jika tidak ada data sama sekali di dalam database
-            $id = 'ALM001';
-        }
+            $row_id = $this->M_pelanggan->getIds('tb_alamat', 'id_alamat')->num_rows();
+            $old_id = $this->M_pelanggan->getIds('tb_alamat', 'id_alamat')->row();
 
-        // merekam data yang dikirim melalui form
-        $data = array(
-            'id_alamat' => $id,
-            'id_user' => $this->session->userdata('id_user'),
-            'nama_penerima' => $this->input->post('nama_penerima'),
-            'nohp' => $this->input->post('nohp'),
-            'alamat' => $this->input->post('alamat'),
-            'provinsi' => $this->input->post('provinsi'),
-            'kabupaten' => $this->input->post('kabupaten'),
-            'kecamatan' => $this->input->post('kecamatan'),
-            'kodepos' => $this->input->post('kodepos')
-        );
-
-        // menjalankan fungsi insert untuk menambah data ke database
-        $this->M_pelanggan->addData('tb_alamat', $data);
-        // mengirim pesan berhasil insert
-        if ($this->db->affected_rows() == true) {
-            $this->session->set_flashdata('pesan', $this->primslib->notify('Selamat!', 'Berhasil menambahkan data.', 'success', 'success'));
-            redirect('pelanggan/alamat');
-        } else {
-            $this->session->set_flashdata('pesan', $this->primslib->notify('Perhatian!', 'Gagal menambahkan data.', 'danger', 'error'));
-            redirect('pelanggan/alamat');
+            if ($row_id > 0) {
+                $id = $this->primslib->autonumber($old_id->id_alamat, 3, 3);
+            } else {
+                $id = 'ALM001';
+            }
+            $data = [
+                'id_alamat' => $id,
+                'id_user' => $this->session->userdata('id_user'),
+                'nama_penerima' => $this->input->post('nama'),
+                'nohp' => $this->input->post('nomor'),
+                'alamat' => $this->input->post('alamatlengkap'),
+                'provinsi_id' => $this->input->post('inputprov'),
+                'provinsi' => $this->input->post('input_provinsi'),
+                'kota_id' => $this->input->post('inputkab'),
+                'kota_kab' => $this->input->post('input_kabkota'),
+                'kodepos' => $this->input->post('kdpos')
+            ];
+            $this->M_pelanggan->addData('tb_alamat', $data);
+            if ($this->db->affected_rows() == true) {
+                $this->session->set_flashdata('berhasil', 'Alamat Berhasil Ditambahkan');
+                redirect('pelanggan/Alamat');
+            } else {
+                $this->session->set_flashdata('gagal', 'Gagal Menambah Data. Terjadi Kesalahan Saat Menambahkan Data!');
+                redirect('pelanggan/Alamat');
+            }
         }
     }
 
-    function edit($id)
+    public function editalamat($id)
     {
-        $where = array('id_alamat' => $id);
-        // merekam data yang dikirim melalui form
-        $data = array(
-            'nama_penerima' => $this->input->post('nama_penerima'),
-            'nohp' => $this->input->post('nohp'),
-            'alamat' => $this->input->post('alamat'),
-            'provinsi' => $this->input->post('provinsi'),
-            'kabupaten' => $this->input->post('kabupaten'),
-            'kecamatan' => $this->input->post('kecamatan'),
-            'kodepos' => $this->input->post('kodepos')
-        );
-
-        // menjalankan fungsi insert untuk menambah data ke database
-        $this->M_pelanggan->editData( 'tb_alamat', $data, $where);
-        // mengirim pesan berhasil insert
-        if ($this->db->affected_rows() == true) {
-            $this->session->set_flashdata('pesan', $this->primslib->notify('Selamat!', 'Berhasil memperbarui data.', 'success', 'success'));
-            redirect('pelanggan/alamat');
+        $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+        $this->form_validation->set_rules('nomor', 'Nomor', 'required|trim');
+        $this->form_validation->set_rules('alamatlengkap', 'Alamat', 'required|trim');
+        $this->form_validation->set_rules('kdpos', 'Kode Pos', 'required|trim');
+        $this->form_validation->set_rules('inputprov', 'ID Provinsi', 'required|trim');
+        $this->form_validation->set_rules('input_provinsi', 'Nama Provinsi', 'required|trim');
+        $this->form_validation->set_rules('inputkab', 'ID Kabupaten', 'required|trim');
+        $this->form_validation->set_rules('input_kabkota', 'Nama Kabupaten', 'required|trim');
+        $this->form_validation->set_message('required', 'Please Enter Data!');
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('error', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Gagal Ubah Data</strong> Silahkan Isi Data dengan Benar!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button></div>');
+            redirect('pelanggan/Alamat/pageEdit/'.$id);
         } else {
-            $this->session->set_flashdata('pesan', $this->primslib->notify('Perhatian!', 'Gagal memperbarui data.', 'danger', 'error'));
-            redirect('pelanggan/alamat');
+            $where = array('id_alamat' => $id);
+            $data = [
+                'nama_penerima' => $this->input->post('nama'),
+                'nohp' => $this->input->post('nomor'),
+                'alamat' => $this->input->post('alamatlengkap'),
+                'provinsi_id' => $this->input->post('inputprov'),
+                'provinsi' => $this->input->post('input_provinsi'),
+                'kota_id' => $this->input->post('inputkab'),
+                'kota_kab' => $this->input->post('input_kabkota'),
+                'kodepos' => $this->input->post('kdpos')
+            ];
+            $this->M_pelanggan->editData('tb_alamat', $data, $where);
+            if ($this->db->affected_rows() == true) {
+                $this->session->set_flashdata('berhasil', 'Alamat Berhasil Diubah');
+                redirect('pelanggan/Alamat');
+            } else {
+                $this->session->set_flashdata('gagal', 'Gagal Mengubah Data. Terjadi Kesalahan Saat Mengubah Data!');
+                redirect('pelanggan/Alamat');
+            }
         }
     }
 
-    function hapus($id)
+    function delalamat($id)
     {
         // deklarasi $where by id
         $data = array('id_alamat' => $id);
@@ -149,11 +203,11 @@ class Alamat extends CI_Controller
         $this->M_pelanggan->delData('tb_alamat', $data);
         // mengirim pesan berhasil dihapus
         if ($this->db->affected_rows() == true) {
-            $this->session->set_flashdata('pesan', $this->primslib->notify('Selamat!', 'Berhasil menghapus data.', 'success', 'success'));
-            redirect('pelanggan/alamat');
+            $this->session->set_flashdata('berhasil', 'Alamat Berhasil Dihapus');
+            redirect('pelanggan/Alamat');
         } else {
-            $this->session->set_flashdata('pesan', $this->primslib->notify('Perhatian!', 'Gagal menghapus data.', 'danger', 'error'));
-            redirect('pelanggan/alamat');
+            $this->session->set_flashdata('gagal', 'Alamat Gagal Dihapus');
+            redirect('pelanggan/Alamat');
         }
     }
 }
