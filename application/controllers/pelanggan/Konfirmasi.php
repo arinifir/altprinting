@@ -48,18 +48,24 @@ class Konfirmasi extends CI_Controller
         $data['nomor'] = $no;
         $data['order'] = $this->transaksi->orderbyid($no);
         $cek = $data['order']->status_transaksi;
-        if($cek==0 || $cek==5){
-            $this->session->set_flashdata('gagal','Pesanan Anda telah selesai atau dibatalkan');
-            redirect($this->agent->referrer());
-        }else if($cek >= 2){
-            $this->session->set_flashdata('gagal','Anda sudah melakukan pembayaran. Silahkan cek email Anda.');
-            redirect($this->agent->referrer());
+        if ($data['order']) {
+            if($cek==0 || $cek==5){
+                $this->session->set_flashdata('gagal','Pesanan Anda telah selesai atau dibatalkan');
+                redirect($this->agent->referrer());
+            }else if($cek >= 2){
+                $this->session->set_flashdata('gagal','Anda sudah melakukan pembayaran. Silahkan cek email Anda.');
+                redirect($this->agent->referrer());
+            }
+            $data['judul'] = "ALT Jember - Konfirmasi Pembayaran";
+            $this->load->view('user/header',$data);
+            $this->load->view('user/topbar');
+            $this->load->view('user/vuploadbukti');
+            $this->load->view('user/footer');
+        }else{
+            $this->session->set_flashdata('gagal', 'Maaf pesanan tidak ada');
+            redirect('User');
         }
-        $data['judul'] = "ALT Jember - Konfirmasi Pembayaran";
-        $this->load->view('user/header',$data);
-        $this->load->view('user/topbar');
-        $this->load->view('user/vuploadbukti');
-        $this->load->view('user/footer');
+
     }
     public function uploadfile()
     {

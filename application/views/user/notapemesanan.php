@@ -34,20 +34,20 @@
 						</tr>
 						<tr>
 							<td>Status Pesanan</td>
-							<td>: 
-								<?php if($order->status_transaksi == 0) { 
+							<td>:
+								<?php if ($order->status_transaksi == 0) {
 									echo '<span class="text-danger">Pesanan Dibatalkan</span>';
-								}else if($order->status_transaksi == 1) {
+								} else if ($order->status_transaksi == 1) {
 									echo '<span class="text-danger">Menunggu Pembayaran</span>';
-								}else if($order->status_transaksi == 2) {
+								} else if ($order->status_transaksi == 2) {
 									echo '<span class="text-danger">Konfirmasi Pembayaran</span>';
-								}else if($order->status_transaksi == 3) {
+								} else if ($order->status_transaksi == 3) {
 									echo '<span class="text-danger">Dikemas</span>';
-								}else if($order->status_transaksi == 4) {
-									echo '<span class="text-danger">Sedang Dikirim <br/>(No resi : '.$order->no_resi.') </span>';
-								}else{
+								} else if ($order->status_transaksi == 4) {
+									echo '<span class="text-danger">Sedang Dikirim <br/>(No resi : ' . $order->no_resi . ') </span>';
+								} else {
 									echo '<span class="text-success">Selesai</span>';
-								}	
+								}
 								?>
 							</td>
 						</tr>
@@ -159,34 +159,40 @@
 								<p><?= "Rp " . number_format($subtotal, 0, ',', '.'); ?></p>
 							</td>
 						</tr>
-						<tr>
-							<td>
-								<h4>Biaya Ongkir</h4>
-							</td>
-							<td>
-								<h5></h5>
-							</td>
-							<td>
-								<h5></h5>
-							</td>
-							<td align="right">
-								<p><?= "Rp " . number_format($order->biaya_ongkir, 0, ',', '.'); ?></p>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<h4>Voucher</h4>
-							</td>
-							<td>
-								<h5></h5>
-							</td>
-							<td>
-								<h5></h5>
-							</td>
-							<td align="right">
-								<p class="text-danger"><i><?= "- Rp " . number_format($order->pot_voucher, 0, ',', '.'); ?></i></p>
-							</td>
-						</tr>
+						<?php if ($order->jenis_pembayaran == 1) { ?>
+							<tr>
+								<td>
+									<h4>Biaya Ongkir</h4>
+								</td>
+								<td>
+									<h5></h5>
+								</td>
+								<td>
+									<h5></h5>
+								</td>
+								<td align="right">
+									<p><?= "Rp " . number_format($order->biaya_ongkir, 0, ',', '.'); ?></p>
+								</td>
+							</tr>
+						<?php } ?>
+						<?php if ($order->kode_voucher == "") { ?>
+						
+						<?php } else { ?>
+							<tr>
+								<td>
+									<h4>Voucher</h4>
+								</td>
+								<td>
+									<h5></h5>
+								</td>
+								<td>
+									<h5></h5>
+								</td>
+								<td align="right">
+									<p class="text-danger"><i><?= "- Rp " . number_format($order->pot_voucher, 0, ',', '.'); ?></i></p>
+								</td>
+							</tr>
+						<?php } ?>
 						<tr>
 							<td>
 								<h4>Total</h4>
@@ -207,9 +213,9 @@
 		</div>&nbsp;
 		<?php if ($order->jenis_pembayaran == 1) { ?>
 			<div class="col-md-12 form-group">
-				<a type="button" href="<?= base_url('pelanggan/Konfirmasi/upload/'.$order->no_transaksi); ?>" class="button button-tracking float-right">Lanjutkan</a>
+				<a type="button" href="<?= base_url('pelanggan/Konfirmasi/upload/' . $order->no_transaksi); ?>" class="button button-tracking float-right">Lanjutkan</a>
 			</div>
 		<?php } ?>
 	</div>
-</section> 
+</section>
 <!--================End Order Details Area =================-->

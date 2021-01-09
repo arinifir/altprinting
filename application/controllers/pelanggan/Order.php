@@ -58,7 +58,7 @@ class Order extends CI_Controller
         if ($jenis == 1) {
             $total = ($subtotal + $biaya) - $potongan;
         } else {
-            $total = ($subtotal * $potongan) / 100 + $biaya;
+            $total = $subtotal - (($subtotal * $potongan) / 100) + $biaya;
         }
         $tanggal = date('Y-m-d H:i:s');
         $detail = $this->cart->contents();
@@ -112,7 +112,7 @@ class Order extends CI_Controller
                 'total_bayar' => $total
             ];
         }
-        // var_dump($array);die;
+        // var_dump($data);die;
         $this->admin->addData('tb_transaksi', $data);
         $this->db->insert_batch('tb_dtrans', $array);
         $this->cart->destroy();
@@ -136,18 +136,24 @@ class Order extends CI_Controller
     public function uploadgambar($no)
     {
         $cek = $this->db->get_where('tb_transaksi', ['no_transaksi' => $no])->row();
-        if ($cek->status_transaksi == 1 || $cek->status_transaksi == 2) {
-            $data['no'] = $no;
-            $data['judul'] = "ALT Jember - Upload Gambar";
-            $data['gambar'] = $this->db->get_where('tb_gambar', ['no_transaksi' => $no])->result();
-            $this->load->view('user/head', $data);
-            $this->load->view('user/topbar');
-            $this->load->view('user/vuploadgambar');
-            $this->load->view('user/foot');
-        } else {
-            $this->session->set_flashdata('gagal', 'Maaf, masa waktu untuk ubah data gambar telah lewat');
-            redirect('pelanggan/Profil/pesanansaya/' . $no);
+        if ($cek) {
+            if ($cek->status_transaksi == 1 || $cek->status_transaksi == 2) {
+                $data['no'] = $no;
+                $data['judul'] = "ALT Jember - Upload Gambar";
+                $data['gambar'] = $this->db->get_where('tb_gambar', ['no_transaksi' => $no])->result();
+                $this->load->view('user/head', $data);
+                $this->load->view('user/topbar');
+                $this->load->view('user/vuploadgambar');
+                $this->load->view('user/foot');
+            } else {
+                $this->session->set_flashdata('gagal', 'Maaf, masa waktu untuk ubah data gambar telah lewat');
+                redirect('pelanggan/Profil/pesanansaya/' . $no);
+            }
+        }else{
+            $this->session->set_flashdata('gagal', 'Maaf pesanan tidak ada');
+            redirect('User');
         }
+        
     }
     public function removegambar($no, $nama)
     {
@@ -233,11 +239,16 @@ class Order extends CI_Controller
     public function userkomplain($no)
     {
         $data['transaksi'] = $this->db->get_where('tb_transaksi', ["no_transaksi" => $no])->row();
-        $data['judul'] = "ALT Jember - Ajukan Komplain";
-        $this->load->view('user/header', $data);
-        $this->load->view('user/topbar');
-        $this->load->view('user/vuserkomplain');
-        $this->load->view('user/footer');
+        if ($data['transaksi']) {
+            $data['judul'] = "ALT Jember - Ajukan Komplain";
+            $this->load->view('user/header', $data);
+            $this->load->view('user/topbar');
+            $this->load->view('user/vuserkomplain');
+            $this->load->view('user/footer');
+        } else {
+            $this->session->set_flashdata('gagal', 'Maaf pesanan tidak ada');
+            redirect('User');
+        }
     }
     public function ajukankomplain()
     {

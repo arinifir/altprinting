@@ -244,6 +244,9 @@
                 <div class="col-md-12 form-group">
                     <a type="button" href="<?= base_url('pelanggan/Konfirmasi/upload/' . $order->no_transaksi); ?>" class="button button-tracking float-right">Pembayaran</a>
                 </div>
+                <div class="col-md-12 form-group">
+                    <a type="button" href="<?= base_url('pelanggan/Order/uploadgambar/' . $order->no_transaksi); ?>" class="button button-tracking float-right">Upload Gambar</a>
+                </div>
             <?php } ?>
         </div>
     </section>

@@ -11,17 +11,17 @@
 		<div class="s_product_text mt-1">
 			<div class="row card_area d-flex align-items-center mx-1">
 				<form action="#">
-				<?php 
-				$status = [
-					'Belum Bayar',
-					'Konfirmasi',
-					'Dikemas',
-					'Dikirim',
-					'Selesai',
-					'Dibatalkan'
-				];
-					foreach($status as $key => $value) { ?>
-						<a href="<?= base_url('Pelanggan/Profil/pesanansaya') . '?sts=' . ($key+1) ?>" class="tombol_status mt-1 <?= $this->input->get('sts') != $key+1 ? '' : 'active' ?>"><?= $value ?></a>
+					<?php
+					$status = [
+						'Belum Bayar',
+						'Konfirmasi',
+						'Dikemas',
+						'Dikirim',
+						'Selesai',
+						'Dibatalkan'
+					];
+					foreach ($status as $key => $value) { ?>
+						<a href="<?= base_url('Pelanggan/Profil/pesanansaya') . '?sts=' . ($key + 1) ?>" class="tombol_status mt-1 <?= $this->input->get('sts') != $key + 1 ? '' : 'active' ?>"><?= $value ?></a>
 					<?php } ?>
 				</form>
 			</div>
@@ -34,7 +34,7 @@
 						<div class="card_pesanan">
 							<div class="row mb-3">
 								<h3 class="col-md-6">No Pesanan : <span id="dataCopy"><?= $order->no_transaksi; ?></span><sup><span class="kapital" id="copyButton"> Salin</span></sup></h3>
-								<?php if ($order->status_transaksi == 4 || $order->status_transaksi == 5 ) { ?>
+								<?php if ($order->status_transaksi == 4 || $order->status_transaksi == 5) { ?>
 									<h3 class="col-md-6" align="right">No Resi : <span id="dataCopy2"><?= $order->no_resi; ?></span><sup><span class="kapital" id="copyButton2"> Salin</span></sup></h3>
 								<?php } ?>
 							</div>
@@ -56,20 +56,24 @@
 										</div>
 									</div>
 									<h6>Alamat Lengkap:</h6>
-									<p><?= $order->alamat_pembeli . ', ' . $order->kab_pembeli . ', Provinsi ' . $order->prov_pembeli . ' ' . $order->kpos_pembeli . ' (<strong>No Telp</strong> ' . $order->no_pembeli . ')'; ?></p>
+									<?php if ($order->jenis_pembayaran == 1) { ?>
+										<p><?= $order->alamat_pembeli . ', ' . $order->kab_pembeli . ', Provinsi ' . $order->prov_pembeli . ' ' . $order->kpos_pembeli . ' (<strong>No Telp</strong> ' . $order->no_pembeli . ')'; ?></p>
+									<?php } else { ?>
+										<p><?= $order->detail_cod .' (<strong>No Telp</strong> ' . $order->no_pembeli . ')'; ?></p>
+									<?php } ?>
 								</div>
 							</div>
-							<?php if ($order->status_transaksi == 1) { ?>
+							<?php if ($order->status_transaksi == 1 && $order->jenis_pembayaran == 1) { ?>
 								<a href="<?= base_url('pelanggan/Konfirmasi/upload/' . $order->no_transaksi); ?>" class="tombol tombol_lihat">Upload Bukti</a>
 							<?php } ?>
 							<a href="<?= base_url('pelanggan/Order/notapesanan/' . $order->no_transaksi); ?>" class="tombol tombol_lihat">Rincian</a>
-							<?php if ($order->status_transaksi == 1 || $order->status_transaksi ==2) { ?>
+							<?php if ($order->status_transaksi == 1 || $order->status_transaksi == 2) { ?>
 								<a href="<?= base_url('pelanggan/Order/uploadgambar/' . $order->no_transaksi); ?>" class="tombol tombol_lihat">Gambar</a>
 							<?php } ?>
-							<?php if($order->status_transaksi == 5 || $order->status_transaksi == 6) { ?>
+							<?php if ($order->status_transaksi == 5 || $order->status_transaksi == 6) { ?>
 								<a href="<?= base_url('pelanggan/Order/userkomplain/' . $order->no_transaksi); ?>" class="tombol tombol_lihat">Komplain</a>
 							<?php } ?>
-							<?php if($order->status_transaksi == 4) { ?>
+							<?php if ($order->status_transaksi == 4) { ?>
 								<a href="javascript:void(0)" onclick="orderselesai(<?= $order->no_transaksi ?>)" class="tombol tombol_lihat">Selesai</a>
 							<?php } ?>
 
