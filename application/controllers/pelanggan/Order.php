@@ -60,7 +60,7 @@ class Order extends CI_Controller
         } else {
             $total = ($subtotal * $potongan) / 100 + $biaya;
         }
-        $tanggal = date('Y-m-d');
+        $tanggal = date('Y-m-d H:i:s');
         $detail = $this->cart->contents();
         $array = [];
         foreach ($detail as $d) {

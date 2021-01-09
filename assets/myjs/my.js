@@ -367,6 +367,7 @@ $(document).on('click', '#batal_voucher1', function(){
 	$('.alert').hide();
 	$('#potongan_voucher').val('0');
 	$('#jenis_voucher').val('0');
+	$('#input_voucher').val('');
 	hitungTotal();
 })
 
@@ -414,8 +415,8 @@ function hitungTotal(){
 	var subtotal = parseInt($('#subtotal').val());
 	var biaya_ongkir = parseInt($('#biaya_ongkir').val());
 	var potongan_voucher = parseInt($('#potongan_voucher').val());
-	var jenis_voucher = $('#jenis_voucher').val();
-	var jenis_pembayaran = $('#jenis_pembayaran').val();
+	var jenis_voucher = parseInt($('#jenis_voucher').val());
+	var jenis_pembayaran = parseInt($('#jenis_pembayaran').val());
 	var total = subtotal;
 	
 	if(jenis_pembayaran == 1){
@@ -424,7 +425,7 @@ function hitungTotal(){
 			$('#total_harga').html(`Rp ${total}`)
 			console.log(total);
 		}else if(jenis_voucher == 2){
-			total *= potongan_voucher/100 + biaya_ongkir;
+			total = total - (total * potongan_voucher/100) + biaya_ongkir;
 			$('#total_harga').html(`Rp ${total}`)
 			console.log(total, 'kode 2');
 		} else {
@@ -434,15 +435,14 @@ function hitungTotal(){
 		}
 	} else {
 		if(jenis_voucher == 1){
-			total += biaya_ongkir - potongan_voucher;
+			total -= potongan_voucher;
 			$('#total_harga').html(`Rp ${total}`)
 			console.log(total);
 		}else if(jenis_voucher == 2){
-			total *= potongan_voucher/100 + biaya_ongkir;
+			total = total - (total * potongan_voucher/100);
 			$('#total_harga').html(`Rp ${total}`)
 			console.log(total, 'kode 2');
 		} else {
-			total += biaya_ongkir;
 			$('#total_harga').html(`Rp ${total}`);
 			console.log(total)
 		}

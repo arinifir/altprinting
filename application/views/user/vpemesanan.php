@@ -68,7 +68,7 @@
 						</div>
 						<div class="col-md-12 form-group mb-0">
 							<div class="creat_account">
-								<h3 class="mb-1">Detail Alamat</h3>
+								<h3 class="mb-1">Metode Pembayaran</h3>
 							</div>
 							<div class="row">
 								<div class="payment_item col-md-6">
