@@ -11,6 +11,22 @@
     <!-- row -->
     <div class="container-fluid">
         <div class="row">
+            <div class="col-lg-4 col-xl-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="media align-items-center mb-4">
+                            <div class="media-body">
+                                <h3 class="mb-0"><?= $admin->nama_lengkap ?></h3>
+                            </div>
+                        </div>
+                        <ul class="card-profile__info">
+                            <li class="mb-1"><strong class="text-dark mr-4">No HP</strong> <span><?= $admin->no_hp != '' ? $admin->no_hp : '-' ?></span></li>
+                            <li><strong class="text-dark mr-4">Email</strong><?= $admin->email ?></li>
+                        </ul>
+                        <div class="text-center col-md-12 mt-1"><a id="btn_harga" class="btn btn-primary button_merah btn-block" href="<?= base_url('sadmin/editpsw') ?>">Ganti Password</a></div>
+                    </div>
+                </div>
+            </div>
             <div class="col-lg-4 col-xl-6">
                 <div class="card">
                     <div class="card-body">
