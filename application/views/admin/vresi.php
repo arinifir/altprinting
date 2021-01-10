@@ -51,9 +51,8 @@
                             <table class="table table-striped table-bordered zero-configuration">
                                 <thead>
                                     <tr>
-                                        <th>Aksi</th>
                                         <th>No Resi</th>
-                                        <th>Detail</th>
+                           
                                         <th>No Transaksi</th>
                                         <th>Tanggal</th>
                                         <th>Deskripsi</th>
@@ -63,11 +62,38 @@
                                         <th>Notelp</th>
                                         <th>Potongan</th>
                                         <th>Ongkir</th>
+                                        <th>Detail</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php foreach ($transaksi as $t) { ?>
                                         <tr>
+                                            
+                                            <td>
+                                                <?php if ($t->no_resi == "") { ?>
+                                                    <div class="form-button-action">
+                                                        <a type="button" href="#" data-toggle="modal" data-target="#resi<?= $t->no_transaksi; ?>" class="btn btn-secondary text-white" data-original-title="Resi"> Masukkan Resi
+                                                        </a>
+                                                    </div>
+                                                <?php } else { ?>
+                                                    <span class="label label-pill label-warning"><?= $t->no_resi; ?></span>&nbsp; <a title="Edit Resi" href="#" type="button" class="mdi mdi-pencil fa-lg text-warning" data-toggle="modal" data-target="#resi<?= $t->no_transaksi ?>"></a>
+
+                                                <?php } ?>
+                                            </td>
+                                           
+                                            <td><?= $t->no_transaksi; ?></td>
+                                            <td><?= $t->tanggal_transaksi; ?></td>
+                                            <td><?= $t->desk_transaksi; ?></td>
+                                            <td><?= $t->nama_pembeli; ?></td>
+                                            <td><?= $t->email_pembeli; ?></td>
+                                            <td><?= $t->alamat_pembeli . ', Kecamatan ' . $t->kec_pembeli . ', ' . $t->kab_pembeli . ', Provinsi ' . $t->prov_pembeli . ' ' . $t->kpos_pembeli; ?></td>
+                                            <td><?= $t->no_pembeli; ?></td>
+                                            <td><?= "Rp " . number_format($t->pot_voucher, 0, ',', '.') ?></td>
+                                            <td><?= "Rp " . number_format($t->biaya_ongkir, 0, ',', '.') ?></td>
+                                            <td>
+                                                <a href="<?= base_url('admin/Transaksi/detailtransaksi/' . $t->no_transaksi) ?>" type="button" data-toggle="tooltip" class="btn mb-1 btn-info text-white" data-original-title="Detail Transaksi">Detail</a>
+                                            </td>
                                             <td>
                                                 <?php if ($t->no_resi == "") { ?>
                                                     <a href="#" type="button" data-toggle="tooltip" title="" class="btn mb-1 btn-danger text-white disabled" data-original-title="Dikemas">
@@ -82,38 +108,15 @@
                                                     </a>
                                                 <?php } ?>
                                             </td>
-                                            <td>
-                                                <?php if ($t->no_resi == "") { ?>
-                                                    <div class="form-button-action">
-                                                        <a type="button" href="#" data-toggle="modal" data-target="#resi<?= $t->no_transaksi; ?>" class="btn btn-secondary text-white" data-original-title="Resi"> Masukkan Resi
-                                                        </a>
-                                                    </div>
-                                                <?php } else { ?>
-                                                    <span class="label label-pill label-warning"><?= $t->no_resi; ?></span>&nbsp; <a title="Edit Resi" href="#" type="button" class="mdi mdi-pencil fa-lg text-warning" data-toggle="modal" data-target="#resi<?= $t->no_transaksi ?>"></a>
-
-                                                <?php } ?>
-                                            </td>
-                                            <td>
-                                                <a href="<?= base_url('admin/Transaksi/detailtransaksi/' . $t->no_transaksi) ?>" type="button" data-toggle="tooltip" class="btn mb-1 btn-info text-white" data-original-title="Detail Transaksi">Detail</a>
-                                            </td>
-                                            <td><?= $t->no_transaksi; ?></td>
-                                            <td><?= $t->tanggal_transaksi; ?></td>
-                                            <td><?= $t->desk_transaksi; ?></td>
-                                            <td><?= $t->nama_pembeli; ?></td>
-                                            <td><?= $t->email_pembeli; ?></td>
-                                            <td><?= $t->alamat_pembeli . ', Kecamatan ' . $t->kec_pembeli . ', ' . $t->kab_pembeli . ', Provinsi ' . $t->prov_pembeli . ' ' . $t->kpos_pembeli; ?></td>
-                                            <td><?= $t->no_pembeli; ?></td>
-                                            <td><?= "Rp " . number_format($t->pot_voucher, 0, ',', '.') ?></td>
-                                            <td><?= "Rp " . number_format($t->biaya_ongkir, 0, ',', '.') ?></td>
                                         </tr>
                                     <?php }
                                     ?>
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>Aksi</th>
+                                    
                                         <th>No Resi</th>
-                                        <th>Detail</th>
+                                       
                                         <th>No Transaksi</th>
                                         <th>Tanggal</th>
                                         <th>Deskripsi</th>
@@ -123,6 +126,8 @@
                                         <th>Notelp</th>
                                         <th>Potongan</th>
                                         <th>Ongkir</th>
+                                        <th>Detail</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </tfoot>
                             </table>
