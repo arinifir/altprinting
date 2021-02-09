@@ -30,7 +30,7 @@
             <div class="col-lg-4 col-xl-6">
                 <div class="card">
                     <div class="card-body">
-                        <form action="<?= base_url('sadmin/editprofilsadm') ?>" method="POST" class="form-profile">
+                        <form action="<?= base_url('Sadmin/editprofilsadm') ?>" method="POST" class="form-profile">
                             <input type="hidden" value="<?= $admin->id_user; ?>" name="kode">
                             <h4 class="card-title py-2">Profil Super Admin</h4>
                             <div class="form-group">
