@@ -31,11 +31,16 @@
                     <i class="mdi mdi-ticket-percent"></i><span class="nav-text pl-2">Voucher</span>
                 </a>
             </li>
+            <li>
+                <a href="<?= base_url('admin/Transaksi/ulasanproduk') ?>" aria-expanded="false">
+                    <i class="mdi mdi-comment"></i><span class="nav-text pl-2">Ulasan</span>
+                </a>
+            </li>
             <li class="nav-label">Transaksi</li>
             <li>
                 <a href="<?= base_url('admin/Transaksi/datatransaksi') ?>" aria-expanded="false">
                     <i class="mdi mdi-credit-card-remove"></i><span class="nav-text pl-2">Menunggu Pembayaran</span>
-                </a>
+                </a> 
             </li>
             <li>
                 <a href="<?= base_url('admin/Transaksi/confirmbayar') ?>" aria-expanded="false">
@@ -68,13 +73,13 @@
                 </a>
             </li>
             <li>
-                <a href="<?= base_url('admin/Transaksi/ulasanproduk') ?>" aria-expanded="false">
-                    <i class="mdi mdi-comment"></i><span class="nav-text pl-2">Ulasan</span>
+                <a href="<?= base_url('admin/Transaksi/tidakvalid') ?>" aria-expanded="false">
+                    <i class="mdi mdi-close"></i><span class="nav-text pl-2">Pesanan Batal</span>
                 </a>
             </li>
             <li>
-                <a href="<?= base_url('admin/Transaksi/tidakvalid') ?>" aria-expanded="false">
-                    <i class="mdi mdi-close"></i><span class="nav-text pl-2">Pesanan Batal</span>
+                <a href="<?= base_url('admin/Transaksi/datakomplain') ?>" aria-expanded="false">
+                    <i class="mdi mdi-comment-alert"></i><span class="nav-text pl-2">Pengajuan Komplain</span>
                 </a>
             </li>
         </ul>

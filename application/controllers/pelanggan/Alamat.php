@@ -123,13 +123,20 @@ class Alamat extends CI_Controller
             </button></div>');
             redirect('pelanggan/Alamat/pageTambah');
         } else {
+            $cekdata = $this->db->get_where('tb_alamat', ['id_user'=>$this->session->userdata('id_user')])->num_rows();
+            if($cekdata == 0){
+                $status = 1;
+            }else{
+                $status = 0;
+            }
+
             $row_id = $this->M_pelanggan->getIds('tb_alamat', 'id_alamat')->num_rows();
             $old_id = $this->M_pelanggan->getIds('tb_alamat', 'id_alamat')->row();
 
             if ($row_id > 0) {
-                $id = $this->primslib->autonumber($old_id->id_alamat, 3, 3);
+                $id = $this->primslib->autonumber($old_id->id_alamat, 2, 4);
             } else {
-                $id = 'ALM001';
+                $id = 'AL0001';
             }
             $data = [
                 'id_alamat' => $id,
@@ -141,7 +148,8 @@ class Alamat extends CI_Controller
                 'provinsi' => $this->input->post('input_provinsi'),
                 'kota_id' => $this->input->post('inputkab'),
                 'kota_kab' => $this->input->post('input_kabkota'),
-                'kodepos' => $this->input->post('kdpos')
+                'kodepos' => $this->input->post('kdpos'),
+                'status_alamat' => $status
             ];
             $this->M_pelanggan->addData('tb_alamat', $data);
             if ($this->db->affected_rows() == true) {

@@ -80,6 +80,10 @@
                                             <span class="badge badge-pill gradient-1"><?= $notif; ?></span>
                                         </a>
                                     </div>
+                                <?php } else { ?>
+                                    <div class="dropdown-content-heading d-flex justify-content-between">
+                                        <span><strong>Tidak Ada Pesanan Baru</strong></span>
+                                    </div>
                                 <?php } ?>
                                 <div class="dropdown-content-body">
                                     <ul>

@@ -76,7 +76,7 @@
                 <a href="<?= base_url('Sadmin/transelesai') ?>" aria-expanded="false">
                     <i class="mdi mdi-check"></i><span class="nav-text pl-2">Selesai</span>
                 </a>
-            </li>
+            </li> 
             <li>
                 <a href="<?= base_url('Sadmin/tidakvalid') ?>" aria-expanded="false">
                     <i class="mdi mdi-close"></i><span class="nav-text pl-2">Pesanan Batal</span>

@@ -17,7 +17,7 @@ class Transaksi extends CI_Controller
         $this->load->library('configemail');
         admin_logged_in();
     }
-    
+
     //Transaksi
     public function datatransaksi()
     {
@@ -239,6 +239,31 @@ class Transaksi extends CI_Controller
         $this->load->view('admin/gambartransaksi', $data);
         $this->load->view('admin/footer');
     }
+    //download file foto
+    public function downloadfile($no)
+    {
+        unlink('./assets/images/order/' .  $no . '.zip');
+        $file = './assets/images/order/' . $no . '.zip';
+        $this->zipfile($no);
+        force_download($file, Null);
+        redirect($this->agent->referrer());
+    }
+    public function zipfile($no)
+    {
+        $pathdir = './assets/images/order/' . $no . '/';
+        $zipcreated = './assets/images/order/' . $no . ".zip";
+        $newzip = new ZipArchive;
+        if ($newzip->open($zipcreated, ZipArchive::CREATE) === TRUE) {
+            $dir = opendir($pathdir);
+            while ($file = readdir($dir)) {
+                if (is_file($pathdir . $file)) {
+                    $newzip->addFile($pathdir . $file, $file);
+                }
+            }
+            $newzip->close();
+        }
+        // phpinfo();
+    }
     public function ulasanproduk()
     {
         $data['ulasan'] = $this->admin->jmlUlasan();
@@ -257,5 +282,30 @@ class Transaksi extends CI_Controller
         $this->load->view('admin/sidebar');
         $this->load->view('admin/lihatulasan', $data);
         $this->load->view('admin/footer');
+    }
+    //Komplain
+    public function datakomplain()
+    {
+        $data['komplain'] = $this->db->get('tb_komplain')->result();
+        $this->load->view('admin/header', $data);
+        $this->load->view('admin/topbar');
+        $this->load->view('admin/sidebar');
+        $this->load->view('admin/vkomplain', $data);
+        $this->load->view('admin/footer');
+    }
+    public function komplainselesai($id)
+    {
+        $data = ['status_komplain' => 2];
+        $where = ['id_komplain' => $id];
+        $this->admin->editData('tb_komplain', $data, $where);
+        $this->session->set_flashdata('berhasil', 'Komplain ' . $id . ' Terselesaikan');
+        redirect($this->agent->referrer());
+    }
+    public function statusbaca($no)
+    {
+        $data = ['status_baca' => 1];
+        $where = ['no_transaksi' => $no];
+        $this->admin->editData('tb_transaksi', $data, $where);
+        redirect('admin/Transaksi/detailtransaksi/' . $no);
     }
 }

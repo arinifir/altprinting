@@ -618,7 +618,7 @@ class Sadmin extends CI_Controller
                 redirect('Sadmin/datavoucher');
             }
         }
-    }
+    } 
 
     public function editvoucher()
     {
@@ -961,7 +961,7 @@ class Sadmin extends CI_Controller
             $this->load->view('admin/footer');
         }
     }
-    
+
     public function editprofilsadm()
     {
         $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
@@ -1046,6 +1046,7 @@ class Sadmin extends CI_Controller
         }
     }
 
+    //detail transaksi
     public function detailtransaksi($no)
     {
         $data['transaksi'] = $this->admin->transByNo($no);
@@ -1066,6 +1067,8 @@ class Sadmin extends CI_Controller
         $this->load->view('sadmin/gambartransaksi', $data);
         $this->load->view('sadmin/footer');
     }
+
+    //ulasan
     public function ulasanproduk()
     {
         $data['ulasan'] = $this->admin->jmlUlasan();
@@ -1085,6 +1088,8 @@ class Sadmin extends CI_Controller
         $this->load->view('sadmin/lihatulasan', $data);
         $this->load->view('sadmin/footer');
     }
+
+    //keuangan pembelian
     public function pembelian()
     {
         $data['produk'] = $this->produk->getProdukByKG();
@@ -1157,6 +1162,8 @@ class Sadmin extends CI_Controller
         $this->load->view('sadmin/riwayatpembelian', $data);
         $this->load->view('sadmin/footer');
     }
+
+    //download file foto
     public function downloadfile($no)
     {
         unlink('./assets/images/order/' .  $no . '.zip');
@@ -1181,6 +1188,8 @@ class Sadmin extends CI_Controller
         }
         // phpinfo();
     }
+
+    //Komplain
     public function datakomplain()
     {
         $data['komplain'] = $this->db->get('tb_komplain')->result();
@@ -1198,11 +1207,13 @@ class Sadmin extends CI_Controller
         $this->session->set_flashdata('berhasil', 'Komplain ' . $id . ' Terselesaikan');
         redirect($this->agent->referrer());
     }
+
+    //Notif dibaca
     public function statusbaca($no)
     {
         $data = ['status_baca' => 1];
         $where = ['no_transaksi' => $no];
         $this->admin->editData('tb_transaksi', $data, $where);
-        redirect('Sadmin/detailtransaksi/'.$no);
+        redirect('Sadmin/detailtransaksi/' . $no);
     }
 }
